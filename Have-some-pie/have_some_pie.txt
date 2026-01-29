@@ -1,0 +1,530 @@
+# Daniel Castaneda Mogollon, PhD
+# October 13th, 2025
+# Purpose: To create igraph networks from microbiome data
+
+# install.packages("igraph")
+# install.packages("ggraph")
+# Set up custom linters with longer line length
+# install.packages("psych")
+# BiocManager::install("RCy3")
+# install.packages("dendroNetwork")
+# my_linters = lintr::linters_with_defaults( line_length_linter = lintr::line_length_linter(length = 150L) )
+# lintr::lint("network_igraph.R", linters = my_linters)
+
+welcome_function = function() {
+    print("Welcome to the Diammatics T1D Network Analysis Script!")
+    print("This script will help you create and visualize networks based on microbiome taxa and pathway data.")
+    print("Make sure to have all required packages installed and your data files ready, which can be found in the loading packages function")
+    print("---------------------------------------------------")
+    print("INPUT FILES AND PATHS NEEDED: ")
+    print("1. Pathway file: A pathway file having all the pathways for all your groups, timepoints, etc. In my case it is the pathways of all communities")
+    print(" NS1, S2, S5, NS6 merged together from PICRUSt2 predictions. It should be a .tsv file.")
+    print("2. Taxa file: A taxa file for a particular group, i.e. ps_ns1_final.csv for NS1 community. It should be a .csv file.")
+    print("3. Metadata file: A metadata file containing all the sample information, including the filtering category and value. It should be a .csv file.")
+    print("4. Maasline filtered file: A maaslin2 output file that has the results from a pairwise comparison between two groups, i.e. NS1_w5w6 vs NS1_w9w10. It should be a .tsv file.")
+    print("5. Output path: A path to a folder where you want to save the output files, i.e. /Users/danielcm/Desktop/diammatics/T1D/Networks/NS1_w5w6_vs_NS1_w9w10")
+    print("INPUT VALUES NEEDED: ")
+    print("1. Filtering category: A category that you wish to plot and analyze, as part of a column in your metadata file, i.e. Week_and_consortia")
+    print("2. Filtering value: The value within the filtering category that you wish to analyze, i.e. NS1_w9w10")
+    print("3. An alpha significance value: This is for plotting significant correlations, i.e. 0.05, 0.001")
+    print("4. A rho minimum value: This is for plotting edges in the network, i.e. 0.7, 0.8 (We recommend not less than 0.7 for busy graphs)")
+    print("5. Community name: The name of the community you are individually analyzing in a single plot, i.e. NS1, S2, S5, NS6") 
+    print("6. Timepoint: The timepoint you are analyzing, i.e. w5w6, w9w10")
+    print("---------------------------------------------------")
+    print("OUTPUT FILES AND FIGURES: ")
+    print("1. summary_analysis.txt: A summary text file containing:
+    - Number of pathways from the original-merged pathway file
+    - Number of input pathways ran by Maaslin2
+    - Number of significant pathways found by Maaslin2 after q-val of 0.05 and Log2FC of > |1|
+    - Number of taxa of the original community file
+    - Sanity check of random samples between taxa and pathway matrices, ensuring the order is the same
+    - Number and name of taxa filtered by not having any mathematical value by Spearman Rho after CLR normalization
+    - Number and name of pathways filtered by not having any mathematical value by Spearman Rho after CLR normalization
+    - Total number of correlations calculated between taxa and pathways
+    - Number of significant correlations found after applying the alpha significance value and rho minimum value
+    - The range of the Spearman Rho values found in the significant correlations")
+    print("2. spearman_clear_correlation_test.tsv: A table containing all the Spearman correlation values and p-values between all CLR-normalized (separately) pathways and taxa and NAs removed")
+    print("3. spearman_p_val_matrix.tsv: A matrix file containing all the p-values from the Spearman correlation test between all CLR-normalized (separately) pathways and taxa and NAs removed")
+    print("4. spearman_significant_matrix.tsv: A matrix file containing only the rho values of significant correlations based on the alpha significance value and rho minimum value provided")
+    print("5. spearman_maaslin2_enriched_clean_correlation_test.tsv: A table containing only the Spearman correlation values and p-values between CLR-normalized (separately) pathways and taxa that were significantly enriched by maaslin2 and NAs removed")
+    print("5. maaslin2_significant_correlation_heatmap_plot.png: The heatmap plot for the maaslin2 significantly enriched pathways in the community of choice")
+    print("6. network_summary_analysis.txt: A summary text file containing all the relevant information about the network analysis")
+    print("7. Cytoscape network session: A Cytoscape session file containing the network created, which can be further modified and analyzed in Cytoscape")
+    print("---------------------------------------------------")
+}
+
+fetching_files = function(){
+    
+    #pathway_file = readline(prompt = "Enter the full path to the pathway file e.g., /path/to/pathway_file.tsv: ")
+    #if(!file.exists(pathway_file)){
+    #    stop("Pathway file does not exist. Please check the path and try again.")
+    #}
+    #taxa_file = readline(prompt = "Enter the full path to the taxa file e.g., /path/to/taxa_file.csv: ")
+    #if(!file.exists(taxa_file)){
+    #    stop("Taxa file does not exist. Please check the path and try again.")
+    #}
+    #maaslin_filt_file = readline(prompt = "Enter the full path to the maaslin filtered file e.g., /path/to/maaslin_filt/all_results.tsv: ")
+    #if(!file.exists(maaslin_filt_file)){
+    #    stop("Maaslin filtered file does not exist. Please check the path and try again.")
+    #}
+    #metadata_file = readline(prompt = "Enter the full path to the metadata file e.g., /path/to/metadata_file.csv: ")
+    #if(!file.exists(metadata_file)){
+    #    stop("Metadata file does not exist. Please check the path and try again.")
+    #}
+    #output_path = readline(prompt = "Enter the full path to the output directory e.g., /path/to/output_directory/: ")
+    #if(!dir.exists(output_path)){
+    #    print("The output directory does not exist. Creating it now...")
+    #    dir.create(output_path, recursive = TRUE)
+    #}
+
+    #filtering_category = readline(prompt = "Enter the filtering category from the metadata file e.g., Week_and_consortia: ")
+    #filtering_value = readline(prompt = "Enter the filtering value from the filtering category e.g., NS1_w5w6: ")
+    #alpha_sign = as.numeric(readline(prompt = "Enter the alpha significance value (to be used after BH adjustment) e.g., 0.05: "))
+    #rho_minimum = as.numeric(readline(prompt = "Enter the rho minimum value e.g., 0.7: "))
+    #community = readline(prompt = "Enter the community name e.g., NS1: ")
+    #timepoint = readline(prompt = "Enter the timepoint e.g., w5w6: ")
+
+    
+    pathway_file = "/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/Pathway_merged_metagenome.tsv"
+    taxa_file = "/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ps_ns1_final.csv"
+    maaslin_filt_file = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/w9w10/Pathway/maaslin2_Week_and_consortia_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_consortia,S2_w9w10/all_results.tsv"
+    metadata_file = "/Users/danielcm/Desktop/diammatics/T1D/metadata_ps.csv"
+    output_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/Networks/NS1"
+    filtering_category = "Week_and_consortia"
+    filtering_value = "NS1_w9w10"
+    alpha_sign = 0.05
+    rho_minimum = 0.7
+
+    #clean_correlation_matrix_file = as.matrix(read.table("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2/Picrust2_predictions/s2_network_output/spearman_maaslin2_enriched_clean_correlation_test.tsv", header = TRUE, sep = "\t"))
+
+    ref_value = sub(".*,(.*?)\\/.*", "\\1", maaslin_filt_file) # Extracting the reference value from the maaslin filtered file path)
+
+    return(c(pathway_file = pathway_file, taxa_file = taxa_file, maaslin_filt_file = maaslin_filt_file, metadata_file = metadata_file, 
+                output_path = output_path, filtering_category = filtering_category, filtering_value = filtering_value, alpha_sign = alpha_sign, 
+                rho_minimum = rho_minimum, community = strsplit(filtering_value,"_",)[[1]][1], timepoint = strsplit(filtering_value,"_",)[[1]][2], ref_value = ref_value))
+}
+
+loading_packages = function() {
+    library(igraph)
+    library(compositions)
+    library(RColorBrewer)
+    library(gplots)
+    library(beepr)
+    library(ggraph)
+    library(psych)
+    library(tidyr)
+    library(dplyr)
+    library(tibble)
+    library(ggplot2)
+    library(tidygraph)
+    library(ggrepel)
+    library(RCy3)
+    print("All packages loaded successfully")
+}
+
+correcting_names = function(maaslin_pathways, significant, filtering_category, filtering_value, ref_value) {
+    if (significant == "yes") {
+        if(filtering_value == ref_value){
+            maaslin_pathways = maaslin_pathways[maaslin_pathways$qval < 0.05 & maaslin_pathways$coef < -1, ] # If the filtering value is the reference, we look for negative coefficients
+        } else {
+            maaslin_pathways = maaslin_pathways[maaslin_pathways$qval < 0.05 & maaslin_pathways$coef > 1, ] # If the filtering value is not the reference, we look for positive coefficients
+        }
+    }
+    corrected_pathways_names = gsub("\\.", "-", maaslin_pathways$feature) # Replacing dots with dashes to match metacyc names
+    for (i in 1:nrow(maaslin_pathways)) {
+        if (grepl("^X", corrected_pathways_names[i])) { # If it starts with an X, remove it
+            corrected_pathways_names[i] = substr(corrected_pathways_names[i], 2, nchar(corrected_pathways_names[i])) # Remove the X at the start by taking the second character to the last one.
+        }
+    }
+    return(corrected_pathways_names)
+}
+
+normalizing_and_filtering = function(pathway_file, taxa_file, maaslin_filt_file, metadata_file, output_path, filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
+    # Open and read files
+    pathway_mat = as.matrix(read.table(pathway_file, header = TRUE, sep = "\t", row.names = 1))
+    taxa_mat = as.matrix(read.csv(taxa_file, header = TRUE, sep = ",", row.names = 1))
+    maaslin_filt = read.table(maaslin_filt_file, header = TRUE, sep = "\t")
+    metadata_df = read.csv(metadata_file, header = TRUE, sep = ",", row.names = 1)
+
+    filtered_IDs = metadata_df[metadata_df[[filtering_category]] == filtering_value, ] # Filtering metadata to only include samples with the desired value in the specified category
+    pathway_mat = pathway_mat[, colnames(pathway_mat) %in% rownames(filtered_IDs)] #Filtering pathway matrix to only have the samples present in the filtered metadata
+    taxa_mat = taxa_mat[, colnames(taxa_mat) %in% rownames(filtered_IDs)] #Filtering taxa matrix to only have the samples present in the filtered metadata
+
+    pathway_mat = pathway_mat[rowSums(pathway_mat) > 0, ] # Remove pathways with all zeros
+    taxa_mat = taxa_mat[rowSums(taxa_mat) > 0, ] # Remove taxa with all zeros
+
+    # Normalize by CLR and add pseudocount of 0.000001 to avoid issues with zeros
+    pathway_mat_t = t(pathway_mat) # Transpose to have samples as rows and pathways as columns for clr function
+    taxa_mat_t = t(taxa_mat) # Transpose to have samples as rows and taxa as columns for clr function
+
+    clr_pathway = as.matrix(clr(pathway_mat_t + 1)) # Adding a pseudocount of 1 to avoid issues with zeros
+    clr_taxa = as.matrix(clr(taxa_mat_t + 1)) # Adding a pseudocount of 1 to avoid issues with zeros
+
+    clr_pathway = t(clr_pathway) # Transpose back to have pathways as rows and samples as columns
+    clr_taxa = t(clr_taxa) # Transpose back to have taxa as rows and samples as columns
+
+    filtering_value = filt_value
+    #View(filtered_IDs)
+    #stop()
+    print(colnames(clr_pathway))
+    print(rownames(clr_pathway))
+
+    correlation_test = matrix(              # Making a matrix with the same number of rows and columns for taxa and pathways. Each row is taxa, each column is a pathway
+        data = NA, nrow = nrow(clr_taxa), ncol = nrow(clr_pathway),
+        dimnames = list(rownames(clr_taxa), rownames(clr_pathway))
+    )
+    p_values_mat = correlation_test # Create an empty matrix for p-values with the same dimensions as correlation_test
+    common_samples = intersect(colnames(clr_pathway), colnames(clr_taxa)) # This wll print the common samples between the two matrices
+    unique_samples = setdiff(colnames(clr_pathway), colnames(clr_taxa)) # This will print the samples that are unique to clr_pathway, in theory only week 7 should be different
+
+    # Only analyze common sample names between the two matrices
+    clr_taxa = clr_taxa[, common_samples, drop = FALSE] # Subset clr_taxa to only include common samples
+    clr_pathway = clr_pathway[, common_samples, drop = FALSE] # Subset clr_pathway to only include common samples
+
+    # Sanity checks for same sample order
+    print("Looking at 20% random samples to check if the order of the samples in both matrices is the same")
+    print("---- TAXA SAMPLE NAMES ----")
+    random_samples = sample(1:ncol(clr_taxa), (length(1:ncol(clr_taxa)) / 5)) # Taking 20% random samples
+    a = print(colnames(clr_taxa[, random_samples])) # Takes 20% random samples in the middle of the matrix
+    print("---------------------------")
+    print("---- PATHWAY SAMPLE NAMES ----")
+    b = print(colnames(clr_pathway[, random_samples])) # Takes 20% random samples in the middle of the matrix
+    print("---------------------------")
+
+    if (all(a == b)) {
+        print("The order of the samples in both matrices is the same, proceeding with correlation calculation: ")
+    } else {
+        print(".......WARNING.......")
+        print("THE ORDER OF THE SAMPLES IN THE TWO MATRICES IS DIFFERENT, PLEASE CHECK.")
+        print("EXITING FUNCTION")
+        return(NULL)
+    }
+
+    #Returns a vector of corrected names that are significant pathways under Maaslin2's eyes (q-val 0.001 and coef > 1 or < -1)
+    corrected_pathways_names = correcting_names(maaslin_pathways = maaslin_filt, significant = "yes", filtering_category = filtering_category, filtering_value = filt_value, ref_value = ref_value) #Modifying maaslin2 names for the right name and filtering by p-val and coefficient value Log2FC
+
+    print(colnames(correlation_test))
+    print(corrected_pathways_names)
+    # This part ensures that all the pathways found significant by Maaslin2 are present in the pathway matrix and that the naming is properly assigned in both matrices
+    pathway_sanity_check = corrected_pathways_names %in% colnames(correlation_test)
+
+    if(any(!pathway_sanity_check)){
+        missing_pathways = corrected_pathways_names[!pathway_sanity_check] # Getting the names of the missing pathways 
+        print(paste0("The following pathways were found significant by Maaslin2 but are missing in the pathway matrix: ", paste(missing_pathways, collapse = ", ")))
+        stop("PATHWAY NAMING MISMATCH - EXITING FUNCTION")
+    } 
+    
+    print(pathway_sanity_check)
+    sentence1 = paste0("Originally, there were a total of ", nrow(pathway_mat), " pathways in the merged metagenome pathway prediction file from PICRUSt2 across all data sets. \n")
+    sentence2 = paste0("After filtering by significant pathways found in the ", basename(taxa_file), " community, there are a total of: ", length(corrected_pathways_names), " pathways. \n")
+    sentence3 = paste0("The number of pathways calculated by Maaslin2 in the ", maaslin_filt_file, " is ", nrow(maaslin_filt))
+    print(sentence1)
+    print(sentence2)
+    print(sentence3)
+
+    # Running the spearman correlation test and storing values in the empty matrices
+    for (i in 1:nrow(clr_taxa)) {
+        for (j in 1:nrow(clr_pathway)) {
+            # print(paste0("Processing taxa ", i, " of ", nrow(clr_taxa), " and pathway ", j, " of ", nrow(clr_pathway)))
+            test = cor.test(clr_taxa[i, ], clr_pathway[j, ], method = "spearman")
+            correlation_test[i, j] = test$estimate
+            p_values_mat[i, j] = test$p.value
+        }
+    }
+
+    # P-value adjustment and removing NAs from rows
+    pval_vector = p.adjust(as.vector(p_values_mat), method = "BH") # Convert matrix to vector and then do BH adjustment
+    pval_matrix = matrix(pval_vector,
+        nrow = nrow(p_values_mat), ncol = ncol(p_values_mat), # Convert back to matrix
+        dimnames = list(rownames(p_values_mat), colnames(p_values_mat))
+    )
+    clean_correlation_test = correlation_test[rowSums(is.na(correlation_test)) != ncol(correlation_test), ] # Remove rows with all NAs for taxa
+    clean_correlation_test = clean_correlation_test[, colSums(is.na(clean_correlation_test)) != nrow(clean_correlation_test)] # Remove columns with all NAs for pathways
+
+    # Subsetting to only include enriched pathways by Maaslin2
+    enriched_clean_correlation_test = clean_correlation_test[, colnames(clean_correlation_test) %in% corrected_pathways_names]
+    pval_matrix_clean = pval_matrix[rownames(clean_correlation_test), colnames(clean_correlation_test)] # Subset pval_matrix to match clean_correlation_test
+
+    print(paste0("There are ", paste(dim(clean_correlation_test), collapse = " and "), " taxa and pathways in the rho correlation matrix, respectively."))
+    print(paste0("There are ", paste(dim(pval_matrix_clean), collapse = " and "), " taxa and pathways in the clean p-value matrix, respectively."))
+    
+    #PROBLEM HERE?
+    print(paste0("There are ", paste(dim(enriched_clean_correlation_test), collapse = " and "), " taxa and enriched pathways in the clean correlation test, respectively."))
+
+    # Filtering by significance and rho value
+    significant_matrix = clean_correlation_test
+    for (i in 1:nrow(significant_matrix)) {
+        for (j in 1:ncol(significant_matrix)) {
+            if (is.na(significant_matrix[i, j]) || significant_matrix[i, j] < abs(rho_minimum) || pval_matrix_clean[i, j] >= alpha_sign) {
+                significant_matrix[i, j] = NA
+            }
+        }
+    }
+
+    sign_ass = sum(as.numeric(clean_correlation_test > rho_minimum & pval_matrix_clean < alpha_sign)) # This will give you the number of significant correlations with rho > 0.8 and adjusted p-value < 0.001
+    range_ass = range(clean_correlation_test) # This will give you the range of correlation coefficients in your matrix
+
+
+    # Printing analyses and files
+    sentence4 = paste0("To make sure the order of the samples is the same, here are 6 random samples from each matrix:\n")
+    sentence5 = paste0(a, " and ", b, "...............MATCH!\n")
+    sentence6 = paste0(
+        "A total of ", (nrow(correlation_test) - nrow(clean_correlation_test)), " taxa were removed  out of ", (nrow(correlation_test)), " due to having all NA Spearman correlation values, those are: ",
+        paste(rownames(correlation_test)[which(rowSums(is.na(correlation_test)) == ncol(correlation_test))], collapse = ", "), "\n"
+    )
+    sentence7 = paste0(
+        "A total of ", (ncol(correlation_test) - ncol(clean_correlation_test)), " pathways were removed  out of ", (ncol(correlation_test)), " due to having all NA Spearman correlation values, those are: ",
+        paste(colnames(correlation_test)[which(colSums(is.na(correlation_test)) == nrow(correlation_test))], collapse = ", "), "\n"
+    )
+    sentence8 = paste0("There is a total of ", sign_ass, "/", length(clean_correlation_test), " significant associations with rho > ", rho_minimum, " and adjusted p-value < ", alpha_sign, "\n")
+    sentence9 = paste0("The range of correlation coefficients is: ", range_ass[1], " to ", range_ass[2], "\n")
+    writeLines(c(sentence1, sentence2, sentence3, sentence4, sentence5, sentence6, sentence7, sentence8, sentence9), paste0(output_path, "/summary_analysis.txt"))
+    write.table(clean_correlation_test, file = paste0(output_path, "/spearman_clean_correlation_test.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This saves a file where the columns/rows with NAs are removed from the Spearman correlation in taxa and pathways
+    write.table(pval_matrix_clean, file = paste0(output_path, "/spearman_p_val_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This saves a file with the p-values instead of the spearman correlation rho after removing NAs from taxa and pathways
+    write.table(significant_matrix, file = paste0(output_path, "/spearman_significant_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This prints the spearman values of those that have a greater 'n' rho, and lower 'n' q-value
+    write.table(enriched_clean_correlation_test, file = paste0(output_path, "/spearman_maaslin2_enriched_clean_correlation_test.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This one writes a file with the spearman correlation only found in the pathways enriched in maaslin2 when comparing it against another group.
+    beepr::beep(6) # Beep when done
+    list_of_matrices = list(correlation_test, clean_correlation_test, pval_matrix_clean, significant_matrix, enriched_clean_correlation_test)
+    return(list_of_matrices)
+}
+
+heatmap_plotting = function(matrix_to_plot, output_path) {
+    png(file.path(output_path, "maaslin2_significant_correlation_heatmap_plot.png"), width = 2400, height = 2400, res = 150)
+    my_palette = colorRampPalette(c("purple", "blue", "white", "orange", "darkred"))(n = 30)
+    heatmap1 = heatmap.2(matrix_to_plot,
+        col = my_palette,
+        trace = "none",
+        density.info = "none",
+        dendrogram = "both",
+        key.title = "Spearman\nCorrelation",
+        key.xlab = "Coefficient (ρ)",
+        key.par = list(cex = 1.1), # Legend text size
+        keysize = 0.8, # Legend size
+        margins = c(40, 20), # Margins
+        cexRow = 2.1, # Row text
+        cexCol = 1.3, # Column text
+        colsep = 0,
+        rowsep = 0:nrow(matrix_to_plot),
+        sepcolor = "black",
+        lmat = rbind(c(0, 3, 4), c(2, 1, 0)),
+        sepwidth = c(0.04, 0.04),
+        lhei = c(0.6, 2.5), lwid = c(0.6, 4, 1.5), lwd = 2
+    )
+    matrix_col_names_sorted = colnames(matrix_to_plot)[heatmap1$colInd] # Print column names in the order they appear in the heatmap
+    write.table(colnames(matrix_to_plot), file = paste0(output_path, "pathway_names_same_order_as_heatmap.tsv"), sep = "\t", quote = FALSE, col.names = FALSE)
+    dev.off()
+}
+
+make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, metadata_file_name, output_path, rho_minimum, filtering_category, filtering_value,
+                        community, timepoint, clean_correlation_matrix_file, ref_value) {
+    #Connecting to Cytoscape
+        print(cytoscapePing()) #Checking connection to Cytoscape
+
+    #Loading files
+    taxa_file = read.csv(taxa_file_name, header = TRUE, sep = ",", row.names = 1)
+    path_file = as.matrix(read.table(pathway_file_name, header = TRUE, sep = "\t", row.names = 1))
+    maaslin_filt = read.table(maaslin_file_name, header = TRUE, sep = "\t")
+    metadata = read.csv(metadata_file_name, header = TRUE, sep = ",", row.names = 1)
+
+    #Analyzing
+    corrected_names = correcting_names(maaslin_pathways = maaslin_filt, significant = "yes", filtering_category = filtering_category, filtering_value = filtering_value, ref_value = ref_value) #This fixes the naming of pathways in Maaslin2 from the file in question (NS1 vs S2 w9w10), and takes all the pathways (significant or not)
+    path_matrix_significant = path_file[rownames(path_file) %in% corrected_names, ] #This filters the WHOLE pathway matrix of all samples and filters by the ones found in the Maaslin2 comparison
+
+    #Filtering by consortia and by timepoint:
+    metadata_filtered = metadata[(metadata$Merged_weeks) == timepoint, ] #Filtering metadata by timepoint
+    metadata_filtered = metadata_filtered[metadata_filtered$Subcommunity == community, ] #Filtering metadata by community
+
+    path_matrix_clean = path_matrix_significant[,colnames(path_matrix_significant) %in% metadata_filtered$ID, drop = FALSE] #Filtering pathway matrix by IDs matching the community and timepoint of the filtered metadata
+    taxa_matrix_clean = as.matrix(taxa_file[,colnames(taxa_file) %in% metadata_filtered$ID, drop = FALSE]) #Filtering by sample IDs matching the community and timepoint
+    total_mice = ncol(path_matrix_clean) #Getting total number of mice after filtering by metadata filtered variable, 52
+
+    pathway_without_mouse = nrow(path_matrix_clean[rowSums(path_matrix_clean) == 0, ]) #Identifies number of pathways that are zero in all mice, 4
+    taxa_without_mouse = nrow(taxa_matrix_clean[rowSums(taxa_matrix_clean) == 0, ]) #Identifies number of taxa that are zero in all mice, 6
+
+    #These two will be used for the network and pivotted tables
+    path_matrix_final = path_matrix_clean[rowSums(path_matrix_clean) > 0, , drop = FALSE] #49 rows are pathways, 52 columns are mice
+    taxa_matrix_final = taxa_matrix_clean[rowSums(taxa_matrix_clean) > 0, , drop = FALSE] #31 rows are taxa, 52 columns are mice
+
+    num_of_mice_in_taxa = rowSums(taxa_matrix_final > 0) #Getting number of mice present in each taxa
+    num_of_mice_in_pathway = rowSums(path_matrix_final > 0) #Getting number of mice present in each pathway
+
+    log_file = file.path(output_path, "/network_summary_analysis.txt")
+    con = file(log_file, open = "wt")
+
+    sentence1 = "NETWORK ANALYSIS SUMMARY: "
+    sentence2 = "--------------------------------------------------"
+    sentence3 = paste0("The original pathway file with all samples and pathways has ", nrow(path_file), " pathways and ", ncol(path_file), " mice samples.")
+    sentence4 = paste0("After filtering by significant pathways using the Maaslin2 output file ", maaslin_file_name, ", there are a total of ", nrow(path_matrix_significant), " pathways in ", ncol(path_matrix_significant), " mice samples.")
+    sentence5 = paste0("Finally, after filtering the pathway file by only including those with at least one mouse present, and by metadata chosen categories, there are a total of ", nrow(path_matrix_final), " pathways in ", ncol(path_matrix_final), " mice samples.\n")
+    sentence6 = paste0("The original taxa file for the analyzed community has ", nrow(taxa_file), " taxa and ", ncol(taxa_file), " mice samples in ", community, ".")
+    sentence7 = paste0("Finally, after filtering the taxa file by only including those with at least one mouse present, and by metadata chosen categories, there are a total of ", ncol(taxa_matrix_final), " taxa in ", nrow(taxa_matrix_final), " mice samples.\n")
+    sentence8 = paste0("TOTAL NUMBER OF FINAL TAXA TO ANALYZE: ", nrow(taxa_matrix_final), "\n TOTAL NUMBER OF FINAL PATHWAYS TO ANALYZE: ", nrow(path_matrix_final), "\n TOTAL NUMBER OF MICE SAMPLES TO ANALYZE: ", total_mice, "\n")
+    sentence9 = ("--------------------------------------------------")
+
+    sentences = c(sentence1, sentence2, sentence3, sentence4, sentence5, sentence6, sentence7, sentence8, sentence9)
+    writeLines(sentences, con = con)
+
+    df_rho_estimate = as.data.frame(clean_correlation_matrix_file) #Using the cleaned correlation matrix from the previous function
+    df_rho_estimate = rownames_to_column(df_rho_estimate, var = "taxon") #This converts the rownames (taxa) into a column called 'taxon' in the dataframe df_rho_estimate
+
+    pivoted_rho_table = pivot_longer(data = df_rho_estimate, cols = -taxon,
+                                names_to = "pathway", values_to = "rho") #This 'pivots' (converts from wide to long format) the correlation matrix by taking all columns and converting them into two columns: 'pathway' and 'rho' (correlation value)
+
+    pivoted_edge_table = pivoted_rho_table %>%
+        mutate(filtered_rho = ifelse((abs(rho)) < rho_minimum, 0, (rho))) %>% #Filtering by rho value. If its absolute value is less than the minimum (my case, 0.70), set it to 0
+        mutate(sign_of_rho = ifelse(rho > 0, "positive", "negative"), corr_value = abs(rho)) %>%
+        mutate(source = taxon, target = pathway, interaction = sign_of_rho, weight = rho) %>% #Adding sign of rho and converting to absolute value for node size later
+        mutate(taxon_and_pathway = paste0(taxon, "&", pathway)) #Creating a new column with the taxon and pathway names combined for easier filtering later)
+
+    #Sanity check(looking at a random rows), choosing 10 random numbers from a uniform distribution to test if the values match in the pivoted table and the original matrices.
+    for(i in round(runif(10, min = 1, max = nrow(pivoted_edge_table)))) {
+        print(paste0("Row ", i, ": Taxon = ", pivoted_edge_table$taxon[i], ", Pathway = ", pivoted_edge_table$pathway[i], ", Rho = ", pivoted_edge_table$rho[i]))
+        rho_original_value = df_rho_estimate[df_rho_estimate$taxon == pivoted_edge_table$taxon[i], pivoted_edge_table$pathway[i]]
+        if(rho_original_value == pivoted_edge_table$weight[i]) {
+            writeLines(paste0("Rho matches original matrix: ", rho_original_value, " == ", pivoted_edge_table$rho[i]), con = con)
+        } else {
+            writeLines("RHO VALUE DOES NOT MATCH ORIGINAL MATRIX!", con = con)
+            return(NULL)
+        }
+        writeLines("--------------------------------------------------", con = con)
+    }
+
+    degree_taxa = pivoted_edge_table %>% count(taxon, wt = (filtered_rho != 0), name = "degree") #Centrality degree calculation in taxa
+    degree_pathway = pivoted_edge_table %>% count(pathway, wt = (filtered_rho != 0), name = "degree") #Centrality degree calculation in pathways
+    degree_node = bind_rows(degree_taxa, degree_pathway) #Merging both into one
+
+    pivoted_edge_table = pivoted_edge_table %>% #Filters the edge table to only include those with filtered rho not equal to 0, meaning those that passed the rho minimum threshold
+        filter(filtered_rho != 0)
+
+    nodes_ids_in_both = sort(unique(c(pivoted_edge_table$source, pivoted_edge_table$target))) #Getting unique node IDs present in the edge table after filtering by rho minimum
+
+    close(con)
+
+    nodes_table = tibble(id = nodes_ids_in_both) %>%
+                                mutate(
+                                    group = case_when(
+                                        id %in% rownames(taxa_matrix_final) ~ "taxa",
+                                        id %in% rownames(path_matrix_final) ~ "pathway",
+                                        TRUE ~ "unknown"
+                                    ),
+                                    score = case_when(
+                                        group == "taxa" ~ as.numeric(num_of_mice_in_taxa[id]),
+                                        group == "pathway" ~ as.numeric(num_of_mice_in_pathway[id]),
+                                        TRUE ~ NA_real_
+                                    )
+                                ) %>%
+                                left_join(degree_node, by = c("id" = "taxon")) %>%
+                                left_join(degree_node, by = c("id" = "pathway")) %>%
+                                mutate(degree = ifelse(is.na(degree.x), degree.y, degree.x))
+
+    #This block was working when I was doing normalization of pathways by samples (CONCEPTUALLY WRONG)
+    #nodes_table = bind_rows(tibble(id = rownames(taxa_matrix_final), #Typically I would get a size incompatibility error, but because the names of my vectors are the same as the node names, it matches them properly
+    #                                group = "taxa", score = as.numeric(num_of_mice_in_taxa)),
+    #                        tibble(id = rownames(path_matrix_final), group = "pathway", score = as.numeric(num_of_mice_in_pathway))) %>%
+    #                                left_join(degree_taxa, by = c("id" = "taxon")) %>%
+    #                                left_join(degree_pathway, by = c("id" = "pathway")) %>%
+    #                                mutate(degree = ifelse(is.na(degree.x), degree.y, degree.x))
+
+    #Generating the network in Cytoscape
+    createNetworkFromDataFrames(nodes_table, pivoted_edge_table,
+                                title = paste0("Taxa-Pathway Network for ", community, " at ", timepoint, " (rho >= ", rho_minimum, ")"),
+                                collection = "Diammatics_T1D_Networks")
+
+    print("GOOD 4")
+    #Setting default visual styles for the network
+    setNodeShapeDefault("ellipse", style.name = "default")              # Rectangle nodes
+    setNodeFontSizeDefault(new.size = 18, style.name = "default")       #Setting default font size to 18
+    setNodeLabelPositionDefault(new.nodeAnchor = "S",                   #Setting position of the node and text label
+                new.graphicAnchor = "S", new.justification = "c", 
+                new.xOffset = 0, new.yOffset = 20, style.name = "default")
+    setNodeBorderWidthDefault(new.width = 2, style.name = "default")    # Setting border width to 2 for all nodes
+
+    setNodeBorderColorDefault(new.color = "black", style.name = "default")  #Setting border color to black for all nodes
+                        
+
+    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_SHAPE", 
+                            value = "rectangle"), style.name = "default")   # Shape of the label_background
+    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_COLOR", 
+                            value = "black"), style.name = "default")       # label background to black
+    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_OPACITY", 
+                            value = 250), style.name = "default")           # label background opacity to none
+    setNodeLabelColorDefault(new.color = "white",                           #Setting default font color to white
+                            style.name = "default")
+    setNodeFillOpacityMapping(table.column = "score", #The score (number of mice having that taxa/pathway) defines the opacity of the node
+                        table.column.values = c(min(nodes_table$score), max(nodes_table$score)),
+                        opacities = c(5, 255),
+                        mapping.type = "continuous",
+                        style.name = "default")
+    setNodeColorMapping(table.column = "group",     #Taxa will have green nodes, pathways orange.
+                    table.column.values = c("taxa","pathway"),
+                    colors = c("green", "orange"),
+                    mapping.type = "discrete",
+                    style.name = "default")
+
+    setNodeSizeMapping(table.column = "degree", #The degree of the node defines its size, in this case, the number of connections in a node
+                    table.column.values = c(min(nodes_table$degree), max(nodes_table$degree)),
+                    sizes = c(20, 100),
+                    mapping.type = "continuous",
+                    style.name = "default")
+
+    setEdgeLineWidthMapping(table.column = "corr_value", #The correlation value is the absolute number from rho, defines the thickness of the edge by rho value
+                        table.column.values = c((rho_minimum), max(pivoted_edge_table$corr_value)),
+                        widths = c(0.5, 4),
+                        mapping.type = "continuous",
+                        style.name = "default")
+
+    setEdgeColorMapping(table.column = "interaction", #If rho is positive, then the edge will be black. If negative, then red.
+                        table.column.values= c("positive", "negative"),
+                        colors = c("black", "red"),
+                        mapping.type = "discrete",
+                        style.name = "default")
+
+    beep(8) #Beep when done
+
+}
+
+
+global = function() {
+    loading_packages()
+    
+    users_parameters = fetching_files()
+    print(users_parameters[12])
+
+    matrix_list = normalizing_and_filtering(
+        pathway_file = users_parameters[1],
+        taxa_file = users_parameters[2],
+        maaslin_filt_file = users_parameters[3],
+        metadata_file = users_parameters[4],
+        output_path = users_parameters[5],
+        filtering_category = users_parameters[6],
+        filtering_value = users_parameters[7],
+        alpha_sign = as.numeric(users_parameters[8]),
+        rho_minimum = as.numeric(users_parameters[9]),
+        ref_value = users_parameters[12])
+
+    heatmap_plotting(matrix_to_plot = matrix_list[[5]], output_path = users_parameters[5])
+
+    make_network(
+        pathway_file_name = users_parameters[1],
+        taxa_file_name = users_parameters[2],
+        maaslin_file_name = users_parameters[3],
+        metadata_file_name = users_parameters[4],
+        output_path = users_parameters[5],
+        filtering_category = users_parameters[6],
+        filtering_value = users_parameters[7],
+        rho_minimum = as.numeric(users_parameters[9]),
+        community = users_parameters[10],
+        timepoint = users_parameters[11],
+        clean_correlation_matrix_file = matrix_list[[5]],
+        ref_value = users_parameters[12])
+}
+
+global()
+
+#Taxa matrix must have samples in columns and taxa (species names!!!) in rows
+
+#/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/Pathway_merged_metagenome.tsv
+#/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ps_ns1_final.csv
+#/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/same_community/Pathway/maaslin2_Week_and_consortia_pathway_NS1_w5_vs_NS1_w9w10_ref_Week_and_consortia,NS1_w9w10/all_results.tsv
+#/Users/danielcm/Desktop/diammatics/T1D/metadata_ps.csv
+#/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/ns1_w5_network_output
