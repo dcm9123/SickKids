@@ -90,4 +90,4 @@ The `test_report` contains other type of information. Here, I also have the Meta
 Here is the difference between the naïve and the parsimonious approach in a figure *that does not belong to me*:
 https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fjournals.plos.org%2Fploscompbiol%2Farticle%3Fid%3D10.1371%2Fjournal.pcbi.1000465&ved=0CBYQjRxqFwoTCPDrnfSyvpIDFQAAAAAdAAAAABBO&opi=89978449<img width="600" height="407" alt="image" src="https://github.com/user-attachments/assets/433f6a0f-9d34-4e39-9573-a0ccbfc8ab38" />
 
-
+That image shows in a nutshell the differences between these two approaches. MinPath will use all of the families of ECs present and find the path that explains the lowest number of metabolic pathways possible, whereas the naïve approach overestimates this number by saying a pathway is present if a family is present for that pathway.
