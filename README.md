@@ -1,4 +1,4 @@
-# T1D Project ENTRIES FROM 2026 ONLY
+# T1D Project Entries from 2026
 
 ### February 2nd, 2026
 
@@ -27,6 +27,16 @@ path PWY-6562 fam0 4 fam-found 2 # norspermidine biosynthesis
    4.1.1.96 hits 1 # carboxynorspermidine decarboxylase
 path PWY-8072 fam0 1 fam-found 1 # alanine racemization
    5.1.1.1 hits 1 # alanine racemase
+path COMPLETE-ARO-PWY fam0 18 fam-found 9 # superpathway of aromatic amino acid biosynthesis
+   4.2.3.4 hits 1 # 3-dehydroquinate synthase
+   4.2.1.10 hits 1 # 3-dehydroquinate dehydratase
+   1.1.1.25 hits 1 # shikimate dehydrogenase
+   2.7.1.71 hits 1 # shikimate kinase
+   2.5.1.19 hits 1 # 3-phosphoshikimate 1-carboxyvinyltransferase
+   4.2.3.5 hits 1 # chorismate synthase
+   5.4.99.5 hits 1 # chorismate mutase
+   4.2.1.51 hits 1 # prephenate dehydratase
+   1.3.1.12 hits 1 # prephenate dehydrogenase
 ```
 
 b) test_report:
@@ -40,4 +50,40 @@ path PWY-43 any n/a  naive 1  minpath 0  fam0  3  fam-found  1  name  putrescine
 path PWY-6305 any n/a  naive 1  minpath 0  fam0  3  fam-found  1  name  superpathway of putrescine biosynthesis
 path P101-PWY any n/a  naive 1  minpath 0  fam0  4  fam-found  1  name  ectoine biosynthesis
 ```
+
+
+According to the developer, these files can be read like this:
+```
+4.3 How to read the MinPath report file?
+    e.g, demo.ko.minpath
+    ...
+    path 00030 kegg n/a  naive 1  minpath 1  fam0  42  fam-found  18  name  Pentose phosphate pathway
+    path 00031 kegg n/a  naive 1  minpath 0  fam0  12  fam-found  2  name  Inositol metabolism
+    ...
+    1) path 00030, path 00031 are the KEGG pathway IDs (if your input file has fig families, the pathways will then be SEED subsystems)
+    2) kegg n/a, indicates pathway reconstruction of your input dataset if not available (note: this information is only available for the genomes annotated 
+	 in KEGG database); for input with fig families, KEGG is replaced by SEED 
+    3) naive 1 or 0: the pathway is reconstructed, or not, by the naive mapping approach
+    4) minpath 1 or 0: the pathway is kept, or removed by MinPath
+    5) fam0: the total number of families involved in the corresponding pathway
+    6) fam-found: the total number of involved families that are annotated
+    7) name: the description of the corresponding pathway (subsystem)
+  
+ 4.4 How to read the MinPath detailed report file?
+    This report file lists all the pathways found MinPath, and a list of families each pathway includes
+    e.g. demo.ko.minpath.details
+    ...
+    path 00010 fam0 56 fam-found 27 # Glycolysis / Gluconeogenesis
+       K00001 hits 6 # E1.1.1.1, adh
+       K00002 hits 1 # E1.1.1.4, adh
+    ...
+    1) path 00010 is the KEGG pathway ID, and fam0 and fam-found are the same as in 4.3
+    2) this pathway includes families, K00001 and K00002, and so on 
+       (here K numbers are used for KEGG families, and FIG ids for FIG families)
+    3) family K00001 has 6 hits (i.e., 6 proteins/reads are annotated as this family)
+```
+
+In summary, the `test_details` file contains only the MinPath MetaCyc pathways using the minimum parsimonious approach. In my case, if I look at COMPLETE-ARO-PWY, there are 18 families involved in that pathway (families as Kegg families, Enzymes, etc (in my case each family is the EC ID), and it found 9 of them present in there, and there is one hit of each enzyme/read found and annotated as this family. 
+
+The `test_report` contains other type of information. Here, I also have the MetaCyc Pathway ID, a naive binary number of 0 or 1, where 0 means it is absent using a naive approach, and 1 saying it is present using the same approach. The minpath 1 or 0 is the same but using the minimum parsimonious approach. The fam0 and fam numbers are the same, and the name is the description of the corresponding pathway. I can use this file to compare the annotation differences between genomes.
 
