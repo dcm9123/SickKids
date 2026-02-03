@@ -1,4 +1,4 @@
-<img width="600" height="407" alt="image" src="https://github.com/user-attachments/assets/5da570d0-7216-4535-b387-50a56dcd6d90" /># T1D Project Entries from 2026
+# T1D Project Entries from 2026
 
 ### February 2nd, 2026
 
