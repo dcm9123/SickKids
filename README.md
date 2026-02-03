@@ -1,4 +1,4 @@
-# T1D Project Entries from 2026
+<img width="600" height="407" alt="image" src="https://github.com/user-attachments/assets/5da570d0-7216-4535-b387-50a56dcd6d90" /># T1D Project Entries from 2026
 
 ### February 2nd, 2026
 
@@ -8,7 +8,7 @@ I have finished coding the `metacyc_genome_annotator.py` which retrieves the gen
 
 ### February 3rd, 2026
 
-I ran the `MinPath` software across one sample to test it out. This is the command I used: `python MinPath.py -ec ../../diammatics/T1D/PICRUSt2.2/EC_annotated_genomes/S_NS1_Af_002_minpath_ecs.tsv -map ../Minpath_ready_Metacyc_pathway_file.tsv -report test_report -details test_details` inside this directory: `/Users/danielcm/Desktop/SickKids/MinPath_2026`
+I ran the `MinPath` software across one sample to test it out. This is the command I used: `python MinPath.py -ec ../../diammatics/T1D/PICRUSt2.2/EC_annotated_genomes/S_NS1_Af_002_minpath_ecs.tsv -report test_report -details test_details` inside this directory: `/Users/danielcm/Desktop/SickKids/MinPath_2026`
 
 That gave me the following output files:
 a) test_details:
@@ -86,6 +86,14 @@ According to the developer, these files can be read like this:
 In summary, the `test_details` file contains only the MinPath MetaCyc pathways using the minimum parsimonious approach. In my case, if I look at COMPLETE-ARO-PWY, there are 18 families involved in that pathway (families as Kegg families, Enzymes, etc (in my case each family is the EC ID), and it found 9 of them present in there, and there is one hit of each enzyme/read found and annotated as this family. 
 
 The `test_report` contains other type of information. Here, I also have the MetaCyc Pathway ID, a naive binary number of 0 or 1, where 0 means it is absent using a naive approach, and 1 saying it is present using the same approach. The minpath 1 or 0 is the same but using the minimum parsimonious approach. The fam0 and fam numbers are the same, and the name is the description of the corresponding pathway. I can use this file to compare the annotation differences between genomes. 
+
+That command was *specifically* to run my ECs using the developers database! This is the modified version of it: `python MinPath.py -any ../../diammatics/T1D/PICRUSt2.2/EC_annotated_genomes/S_NS1_Af_002_minpath_ecs.tsv -map ../Minpath_ready_Metacyc_pathway_file.tsv -report test_report2 -details test_details2` inside this directory: `/Users/danielcm/Desktop/SickKids/MinPath_2026`
+
+The difference is the mapping file. If I use the default one, I have a total of 5,009 and mine has 7,187 pathways (with the bacteria filter and the latest db available from MetaCyc).
+
+
+
+
 
 Here is the difference between the naïve and the parsimonious approach in a figure *that does not belong to me*:
 https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fjournals.plos.org%2Fploscompbiol%2Farticle%3Fid%3D10.1371%2Fjournal.pcbi.1000465&ved=0CBYQjRxqFwoTCPDrnfSyvpIDFQAAAAAdAAAAABBO&opi=89978449<img width="600" height="407" alt="image" src="https://github.com/user-attachments/assets/433f6a0f-9d34-4e39-9573-a0ccbfc8ab38" />
