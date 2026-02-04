@@ -1,7 +1,7 @@
 # Daniel Castaneda Mogollon, PhD
 # February 2nd, 2026
 # This script will take the *paid* database from MetaCyc and prepare the files with a more complete framework for Minpath
-# It filters out 
+# It filters out any EC that does not belong to bacteria or does not have an EC identifier
 
 #%%
 import pandas as pd
