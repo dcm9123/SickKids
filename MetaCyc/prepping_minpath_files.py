@@ -1,46 +1,60 @@
 # Daniel Castaneda Mogollon, PhD
 # February 2nd, 2026
-# Script to prepare MinPath input files from the annotated EggNOGs (ECs) to get the metabolic pathways This script takes the EC count from all of my genomes
-# That file was generated before for PICRUSt2. Then, it makes an output file where the first colummn is the genome name with a random ID identifier (i.e. S_NS1_Bf_084_1, S_NS1_Bf_004_2 ...
-# and the right column has the E.C. identified for that genome. In many many instances there are multiple EC counts per genome, so the output repeats the name of the genome with a new identifier
-# each time, and the exact same EC ID. (i.e) This format is necessary for MinPath to run with my local file. No headers are needed for this to work and no 'EC:' identifier is required.
-# S_NS1_Bf_084_1    1.14.19.3
-# S_NS1_Bf_084_2    1.14.19.3
-# S_NS1_Bf_084_3    1.23.4
-
+# This script will take the *paid* database from MetaCyc and prepare the files with a more complete framework for Minpath
+# It filters out 
 
 #%%
 import pandas as pd
 import os
-import glob as glob
+
 
 #%%
-path = "/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/"
+path = "/Users/danielcm/Desktop/SickKids/"
 os.chdir(path)
 
-df = pd.read_csv("EC_for_picrust2_renamed.tsv", sep = "\t")
+#%%
+pathway_file = pd.read_csv("../diammatics/T1D/Metacyc_files/Master_Metacyc_pathway_file.tsv", sep = "\t")
 
-# %%
-df.rename(columns = lambda col: col.replace("EC:",""), inplace=True)
-# %%
-i = 1
-for row in df.itertuples():
-    print(f"Processing genome {row.assembly}")
-    f_out = open(f"EC_annotated_genomes/{row.assembly}_minpath_ecs.tsv", "w")
-    i = i +1
-    j = 1
-    for column in range(1,len(df.columns),1):
-        number = df.at[row.Index, df.columns[column]]
-        number = int(number)
-        print(number)
-        if number > 0:
-            for k in range(1,number+1,1):
-                f_out.write(f"{row.assembly}_{j}\t{df.columns[column]}\n")
-                j = j+1
-        else:
-            continue
-    f_out.close()
-        
+#%%
+def cleaning_ECs(df):   #This function filters out any EC that does not belong to Bacteria or if there is no EC ID reaction
+    df = df.copy() # to avoid modifying the original dataframe
+    print(f"The number of retrieved Pathways from MetaCyc's 2025 file is: {df.shape[0]}")
+    df = df[df['Classification'] == "Bacteria"]
+    print(f"The original number of Pathways for bacteria is: {df.shape[0]}")
+    df = df.dropna(subset=["EC-Number"])
+    print(f"The number of Pathways with an existing EC number is: {df.shape[0]}")
+    for col in ["EC-Number","Reaction-List"]:
+        if col == "EC-Number":
+            df[col] = df[col].str.replace("EC-","")
+        df[col] = df[col].astype(str)
+        df[col] = df[col].str.split(";")
+        #df[col] = df[col].tolist()
+    #display(df)
+    return(df)
+
+#%%
+def exploding_pairs(df): #This function simply 'explodes' or expands the rows into multiple ones, one for each EC-Number and its corresponding Reaction id
+    tmp = df.copy()
+    tmp['Paired-values'] = tmp.apply(lambda row: list(zip(row['EC-Number'], row['Reaction-List'])), axis=1)
+    tmp = tmp.explode("Paired-values", ignore_index = True)
+    tmp[["EC-Number","Reaction-List"]] = pd.DataFrame(tmp["Paired-values"].tolist(), index=tmp.index)
+    tmp = tmp.drop(columns=["Paired-values"])
+    tmp.to_csv("Exploded_Metacyc_pathway_file.tsv", sep = "\t", index = False)
+    return(tmp)
+
+def refining_for_minpath(df): #Prints out and writes a new file that is formatted for MinPath, with  only two columns.
+    df_minpath = df[["Pathways","EC-Number"]]
+    df_minpath.to_csv("Minpath_ready_Metacyc_pathway_file.tsv", sep = "\t", index = False, header = False)
+    return(df_minpath)
+
+#%%
+def main():
+    df = cleaning_ECs(pathway_file)
+    df2 = exploding_pairs(df)
+    df_final = refining_for_minpath(df2)
+    display(df_final)
     
+if __name__ == "__main__":
+    main()
 
 # %%
