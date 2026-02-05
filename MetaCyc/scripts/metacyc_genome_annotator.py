@@ -1,12 +1,6 @@
 # Daniel Castaneda Mogollon, PhD
 # February 2nd, 2026
-# Script to prepare MinPath input files from the annotated EggNOGs (ECs) to get the metabolic pathways This script takes the EC count from all of my genomes
-# That file was generated before for PICRUSt2. Then, it makes an output file where the first colummn is the genome name with a random ID identifier (i.e. S_NS1_Bf_084_1, S_NS1_Bf_004_2 ...
-# and the right column has the E.C. identified for that genome. In many many instances there are multiple EC counts per genome, so the output repeats the name of the genome with a new identifier
-# each time, and the exact same EC ID. (i.e) This format is necessary for MinPath to run with my local file. No headers are needed for this to work and no 'EC:' identifier is required.
-# S_NS1_Bf_084_1    1.14.19.3
-# S_NS1_Bf_084_2    1.14.19.3
-# S_NS1_Bf_084_3    1.23.4
+# Script to prepare MinPath input files from the annotated EggNOGs (ECs) to get the metabolic pathways
 
 #%%
 import pandas as pd

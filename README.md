@@ -102,3 +102,9 @@ That image shows in a nutshell the differences between these two approaches. Min
 
 ### February 4th, 2026
 After running the following command `for file in EC_annotated_genomes/*; do python MinPath.py -any ${file} -map Minpath_ready_Metacyc_pathway_file.tsv -report ${file%%.tsv}_report.txt -details ${file%%.tsv}_detailed_report.txt; done;` to get all of the results and details across all of the genomes, I put the files in the directory `/Users/danielcm/Desktop/SickKids/MinPath_2026/annotated_pathways_genomes/`. I also made new directories to simplify my results by type of report. The next step is to add a summary and the category of the pathway next to each finding. I also need to parse the data from the report into a .tsv format to make it more 'friendly' to the user. 
+
+### February 5th, 2026
+Today I modified my 
+
+
+Today I am going to work on categorizing the pathways into broader categories (e.g., Metabolism, Genetic Information Processing, Environmental Information Processing, etc.) based on the MetaCyc classification. This will help in understanding the functional capabilities of each genome at a higher level.

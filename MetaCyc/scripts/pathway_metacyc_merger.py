@@ -2,7 +2,7 @@
 # January 29th, 2026
 # Script designed to merge multiple MetaCyc pathway, reaction, and enzyme files into a single file for easier processing
 
-# %%
+#%%
 import pandas as pd
 import os
 import re
@@ -10,17 +10,15 @@ import re
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
-# %%
+#%%
 def filtering_by_bacteria():
-    
-    os.chdir("/Users/danielcm/Desktop/diammatics/T1D/MetaCyc_files/")
+    os.chdir("/Users/danielcm/Desktop/SickKids/MetaCyc_files/")
     df = pd.read_csv("pathways_with_species.txt", sep="\t")
     df['Common-Name'] = df['Common-Name'].str.strip()
     df['Common-Name2'] = df['Common-Name2'].str.strip()
 
     df['Common-Name'] = df['Common-Name'].str.replace(' // ',',')
     df['Common-Name2'] = df['Common-Name2'].str.replace(' // ',',')
-    
     
     regex_bacteria = re.compile(
     r"""(?ix)                           # i=ignorecase, x=verbose
@@ -117,8 +115,6 @@ def filtering_by_bacteria():
     no_bacteria1 = df['Common-Name'].str.contains(regex_non_bacteria, na=False)
     no_bacteria2 = df['Common-Name2'].str.contains(regex_non_bacteria, na=False)
          
-    #print(bacteria_present1)
-    
     bacteria_dict = {}
     for i,row in df.iterrows():
         pathway = row['Pathways']
@@ -147,43 +143,73 @@ def filtering_by_bacteria():
         else:
             print("error in classification")
     
-    print(i,j,k)
-
+    print(f"The number of classified Bacterial pathways is: {j}")
+    print(f"The number of classified Non-Bacterial pathways is: {k}")
+    print(f"The number of Unclassified pathways is: {i}")
 
     df_bacterial = pd.DataFrame(bacteria_dict).T
     df_bacterial = df_bacterial.reset_index()
     df_bacterial = df_bacterial.rename(columns={"index":"Pathways"})
     df_bacterial = df_bacterial.set_index('Index')
-    #df_bacterial.columns = ['Pathways_Index', 'Common-Name', 'Common-Name2', 'Classification'] 
+    df_bacterial.columns = ['Pathways', 'Common-Name-Taxa', 'Common-Name2-Taxa', 'Classification'] 
     df_bacterial.reset_index()
     return(df_bacterial)
-    
+#%%   
+def structuring_summary_metacyc_file(summary_file):
+    final_list = []
+    pwy_dictionary = {}
+    counter = 0
+    with open(summary_file, 'r') as f:
+        for line in f:
+            if counter == 0:
+                counter = counter + 1
+                continue
+            line = line.replace('\n','')
+            if "\t" in line:
+                current_pwy = line.split("\t")[0]
+                current_description = line.split("\t")[1]
+                #print(current_pwy)
+                #print(current_description)
+                if current_pwy not in pwy_dictionary:
+                    pwy_dictionary[current_pwy] = []
+                pwy_dictionary[current_pwy].append(current_description)
+            else:
+                if line == "":
+                    continue
+                else:
+                    current_description = line
+                    pwy_dictionary[current_pwy].append(current_description)
+            counter = counter + 1
 
-def merging_files_pathways(df_pwy_bacteria, pwy_file1, pwy_file2):
-    df_file1 = pd.read_csv(pwy_file1, sep="\t")
-    df_file2 = pd.read_csv(pwy_file2, sep="\t")
-    df_columns_file1 = ["Reaction-List","EC-Number","Ontology - pathway type"]
-    for column in df_columns_file1:
-        df_file1[column] = df_file1[column].str.strip()
-        df_file1[column] = df_file1[column].str.replace(' // ',';')
+    joined_values = {}
+    for key in pwy_dictionary:
+        joined_values[key] = ', '.join(pwy_dictionary[key])
+    final_list = []
+    for key in joined_values:
+        final_list.append((key, joined_values[key]))
+    df_final = pd.DataFrame(final_list, columns=["Pathways","Summary"])
+    df_final.to_csv("List_parsed_with_descriptions_MetaCyc.tsv", sep="\t", index=False, header = True)
+    return(df_final)
+#%%
+def merging_files_pathways(df_pwy_bacteria, pwy_file1, pwy_file2, summary_metacyc_file):
+    df_file1 = pd.read_csv(pwy_file1, sep="\t") # This file is named ' 
+    df_file2 = pd.read_csv(pwy_file2, sep="\t") # This file is named 'Names_and_description_pwys.txt'
+    
+    df_file1 = df_file1[['Pathways','Ontology - pathway type','Key-Reactions','Reaction-List','EC-Number']]
+    df_file2 = df_file2[['Pathways','Names','Enzymes of pathway','Reactions of pathway']]
     
     df_merged = pd.merge(df_pwy_bacteria, df_file1, how = "inner", on = "Pathways")
     df_merged = pd.merge(df_merged, df_file2, how = "inner", on = "Pathways")
+    df_merged = pd.merge(df_merged, summary_metacyc_file, how = "inner", on = "Pathways")
     
     df_merged.to_csv("Master_Metacyc_pathway_file.tsv", sep="\t", index=True)
-    
-    
-    
-    
-    
-# %%
+    return(df_merged) 
+#%%
 def main():
     df = filtering_by_bacteria()
-    merging_files_pathways(df, "pathways_reactions_ECs_category.txt","Names_and_description_pwys.txt")
-    #print(df.head(10))
-    
-
-
-# %%
+    df_summary = structuring_summary_metacyc_file("pathway_summary_file_metacyc.txt")
+    merging_files_pathways(df, "pathways_reactions_ECs_category.txt", "Names_and_description_pwys.txt", df_summary)
+#%%
 main()
+
 # %%
