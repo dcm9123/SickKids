@@ -39,7 +39,7 @@ def exploding_pairs(df):
     tmp = tmp.explode("Paired-values", ignore_index = True)
     tmp[["EC-Number","Reaction-List"]] = pd.DataFrame(tmp["Paired-values"].tolist(), index=tmp.index)
     tmp = tmp.drop(columns=["Paired-values"])
-    tmp.to_csv("Exploded_Metacyc_pathway_file.tsv", sep = "\t", index = False)
+    tmp.to_csv("Bacterial_Metacyc_pathway_file.tsv", sep = "\t", index = False)
     return(tmp)
 
 def refining_for_minpath(df):

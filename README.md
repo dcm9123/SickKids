@@ -114,3 +114,6 @@ Today I modified my scripts so I could have a better database for whomever wants
 5. Finally, I ran MinPath across all genomes using the command mentioned yesterday.
 
 Today I am going to work on categorizing the pathways into broader categories (e.g., Metabolism, Genetic Information Processing, Environmental Information Processing, etc.) based on the MetaCyc classification. This will help in understanding the functional capabilities of each genome at a higher level. I will also try to parse the MinPath output files into a more user-friendly format, possibly converting them into .tsv files for easier analysis and visualization.
+
+### February 9th, 2026
+
