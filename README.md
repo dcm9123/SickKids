@@ -119,6 +119,13 @@ Today I am going to work on categorizing the pathways into broader categories (e
 
 Working on the Journal Club paper "Gut microbial production of imidazole propionate drives Parkinson's pathologies" (2025) by Huyunji Park et al, nature communications.
 
+### February 11th, 2026
+
+I'll start working on the script that aims to subset the PICRUSt2's MetaCyc database. I will be annotating my genomes based on these approaches:
+1) Default MetaCyc database in MinPath
+2) The 'Master' MetaCyc database I created from the 2026 download.
+3) The PICRUSt2's MetaCyc database that I will subset based on the bacterial pathways I have in my 'Master' MetaCyc database.
+
 
 
 
