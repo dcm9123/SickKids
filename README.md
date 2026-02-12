@@ -126,6 +126,7 @@ I'll start working on the script that aims to subset the PICRUSt2's MetaCyc data
 2) The 'Master' MetaCyc database I created from the 2026 download.
 3) The PICRUSt2's MetaCyc database that I will subset based on the bacterial pathways I have in my 'Master' MetaCyc database.
 
+### February 12th, 2026
 
-
+I realized some of the pathways I downloaded and present in the Master MetaCyc file do not have the corresponding ECs in them, which is a problem because MinPath needs the ECs to run. I will run a code to check which of these are missing. My suspicion is that most of them belong to Superpathways, as the corresponding 'ECs' are listed as subpathways, so I will have to remove the 'ECs' and replace them with reaction IDs which are present in all the pathways of my Master file table.
 
