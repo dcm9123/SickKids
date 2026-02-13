@@ -157,6 +157,7 @@ EC-input file:
 | S_NS1_Af_002_v1v9_17 |	3.2.1.23 |
 
 New output reaction file:
+
 |:--- |:--- |
 |S_NS1_Af_002_v1v9_1|	NADH-DEHYDROG-A-RXN|
 |S_NS1_Af_002_v1v9_2|	NADH-DEHYDROG-A-RXN|
