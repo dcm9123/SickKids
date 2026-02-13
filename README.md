@@ -158,29 +158,29 @@ EC-input file:
 
 New output reaction file:
 
-|:--- |:--- |
-|S_NS1_Af_002_v1v9_1|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_2|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_3|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_4|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_5|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_6|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_7|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_8|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_9|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_10|	NADH-DEHYDROG-A-RXN|
-|S_NS1_Af_002_v1v9_11|	RXN-11135|
-|S_NS1_Af_002_v1v9_12|	RXN-11135|
-|S_NS1_Af_002_v1v9_13|	RXN-11135|
-|S_NS1_Af_002_v1v9_14|	RXN-11135|
-|S_NS1_Af_002_v1v9_15|	RXN-11135|
-|S_NS1_Af_002_v1v9_16|	RXN-11135|
-|S_NS1_Af_002_v1v9_17|	3.2.1.23-RXN|
-|S_NS1_Af_002_v1v9_17|	RXN-12400|
-|S_NS1_Af_002_v1v9_17|	RXN-12399|
-|S_NS1_Af_002_v1v9_17|	RXN-12398|
-|S_NS1_Af_002_v1v9_17|	BETAGALACTOSID-RXN|
-|S_NS1_Af_002_v1v9_17|	KETOLACTOSE-RXN|
+|:--- | :--- |
+| S_NS1_Af_002_v1v9_1 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_2 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_3 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_4 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_5 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_6 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_7 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_8 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_9 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_10 |	NADH-DEHYDROG-A-RXN |
+| S_NS1_Af_002_v1v9_11 |	RXN-11135 |
+| S_NS1_Af_002_v1v9_12 |	RXN-11135 |
+| S_NS1_Af_002_v1v9_13 |	RXN-11135 |
+| S_NS1_Af_002_v1v9_14 |	RXN-11135 |
+| S_NS1_Af_002_v1v9_15 |	RXN-11135 |
+| S_NS1_Af_002_v1v9_16 |	RXN-11135 |
+| S_NS1_Af_002_v1v9_17 |	3.2.1.23-RXN |
+| S_NS1_Af_002_v1v9_17 |	RXN-12400 |
+| S_NS1_Af_002_v1v9_17 |	RXN-12399 |
+| S_NS1_Af_002_v1v9_17 |	RXN-12398 |
+| S_NS1_Af_002_v1v9_17 |	BETAGALACTOSID-RXN |
+| S_NS1_Af_002_v1v9_17 |	KETOLACTOSE-RXN |
 
 In this example, that genome has10 copies of EC 1.6.5.3, 6 of 3.6.4.12, and one for 3.2.1.23, but the first two ECs are only associated with one reaction each, whereas the last one is associated with 6 reactions. Therefore, the first 16 rows of the output file will have the same reaction ID, and the last row will have 6 different reactions. The report file will contain the ECs that were not present in the PICRUSt2 database, and it will also print the total number of ECs not present for each input file.
 
