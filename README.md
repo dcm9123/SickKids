@@ -135,6 +135,8 @@ I realized some of the pathways I downloaded and present in the Master MetaCyc f
 I have finalized a code called `picrust2_metacyc_annotation.py` that takes the input annotated EC files for each Barrnap and Sanger-annotated genomes, and it retrieves the ECs so it can write the matching reaction taken from the PICRUSt2 embedded database. If there are multiple reactions, it writes one row for each reaction with the same ID of the original row of the input file. If there are ECs that are not present in the PICRUSt2 database, it writes them in a separate report file and prints the total number of ECs not present in the PICRUSt2 database for each input file. This way, I can keep track of which ECs are missing and how many reactions I have in total. Naturally, all of my reaction files should be larger in rows than my EC files. It will look like this:
 
 EC-input file:
+
+|ID|EC|
 |:--- | :--- |
 | S_NS1_Af_002_v1v9_1 |	1.6.5.3 |
 | S_NS1_Af_002_v1v9_2 |	1.6.5.3 |
