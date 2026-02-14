@@ -185,3 +185,5 @@ New output reaction file:
 
 In this example, that genome has10 copies of EC 1.6.5.3, 6 of 3.6.4.12, and one for 3.2.1.23, but the first two ECs are only associated with one reaction each, whereas the last one is associated with 6 reactions. Therefore, the first 16 rows of the output file will have the same reaction ID, and the last row will have 6 different reactions. The report file will contain the ECs that were not present in the PICRUSt2 database, and it will also print the total number of ECs not present for each input file.
 
+Finally, I had to modify the existing PICRUSt2 file where the pathways were listed with the set of reactions but modified by hierarchy. That way the new PICRUSt2's metacyc file is compatible with my version of MinPath. After that, I ran a test with a sample and it lookes like it worked. I will check on it the next working day.
+
