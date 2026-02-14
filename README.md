@@ -187,3 +187,5 @@ In this example, that genome has10 copies of EC 1.6.5.3, 6 of 3.6.4.12, and one 
 
 Finally, I had to modify the existing PICRUSt2 file where the pathways were listed with the set of reactions but modified by hierarchy. That way the new PICRUSt2's metacyc file is compatible with my version of MinPath. After that, I ran a test with a sample and it lookes like it worked. I will check on it the next working day.
 
+This was the command I ran in the MinPath folder:
+`python MinPath.py -any ../MetaCyc/EC_annotated_genomes/Reactions/Sanger/S_NS1_Af_002_minpath_reactions.tsv -map ../MetaCyc/Master_Files/picrust2_pathways_reactions_subset.txt -report any_report -details any_details`
