@@ -204,3 +204,5 @@ I confirmed that the output files are generated in the output folders from my co
 After that, I modified and ran the `parsing_minpath_reports.py` script to parse the output files from MinPath and merge them with the Master MetaCyc file to add more information about each pathway. Each folder has different report files, and some of these include the `default` Minpath results (using the default database) and the `updated` MinPath results (using the PICRUSt2's database or Metacyc 2026).
 
 Tomorrow I will be working on comparing the results between the default and updated MinPath runs, and I will also be looking at the differences in pathway annotations between the two approaches. I will be categorizing each pathway as well and generate figures that will simplify my findings for each consortia, method, and database.
+
+### February 18th, 2026
