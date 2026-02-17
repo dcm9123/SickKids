@@ -189,3 +189,14 @@ Finally, I had to modify the existing PICRUSt2 file where the pathways were list
 
 This was the command I ran in the MinPath folder:
 `python MinPath.py -any ../MetaCyc/EC_annotated_genomes/Reactions/Sanger/S_NS1_Af_002_minpath_reactions.tsv -map ../MetaCyc/Master_Files/picrust2_pathways_reactions_subset.txt -report any_report -details any_details`
+
+
+### February 17th, 2026
+
+After generating the new database and new input files for MinPath, I am ready to run my annotated EC genomes with the PICRUSt2's database. The command I ran is this one:
+`for file in *; do python ../../../../MinPath_2026/MinPath.py -any ${file} -map /Users/danielcm/Desktop/SickKids/MetaCyc/Master_Files/picrust2_pathways_reactions_subset.txt -report /Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/updated/picrust2_db/${file%%.tsv}_picrust2_report.txt -details /Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/detailed_reports/updated/picrust2_db/${file%%.tsv}_picrust2_detailed_report.txt; done;` 
+
+In this directory: `/Users/danielcm/Desktop/SickKids/MetaCyc/EC_annotated_genomes/Reactions/Barrnap`
+And then repeated in this one: `/Users/danielcm/Desktop/SickKids/MetaCyc/EC_annotated_genomes/Reactions/Sanger`
+
+I confirmed that the output files are generated in the output folders from my command. 
