@@ -13,8 +13,8 @@ import glob as glob
 # %%
 
 dbs = ["default", "updated"]
-dir1 = "/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/"
-dir2 = "/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/detailed_reports/"
+dir1 = "/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/updated/picrust2_db/"
+dir2 = "/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/detailed_reports/updated/picrust2_db/"
 
 
 # %%

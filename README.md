@@ -200,3 +200,5 @@ In this directory: `/Users/danielcm/Desktop/SickKids/MetaCyc/EC_annotated_genome
 And then repeated in this one: `/Users/danielcm/Desktop/SickKids/MetaCyc/EC_annotated_genomes/Reactions/Sanger`
 
 I confirmed that the output files are generated in the output folders from my command. 
+
+After that, I modified and ran the `parsing_minpath_reports.py` script to parse the output files from MinPath and merge them with the Master MetaCyc file to add more information about each pathway. Each folder has different report files, and some of these include the `default` Minpath results (using the default database) and the `updated` MinPath results (using the PICRUSt2's database or Metacyc 2026).

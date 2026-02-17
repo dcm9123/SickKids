@@ -1,0 +1,513 @@
+	Pathways	Naive	MinPath	Total families	Families found	Ontology - pathway type	Names	Common-Name-Taxa
+0	PWYQT-4477	Yes	No	4	1			
+1	PWY-6012-1	Yes	Yes	1	1	Protein-Modification	acyl carrier protein activation // [acp] metabolism // ACP metabolism // ACP activation	Escherichia coli,Homo sapiens
+2	PWY-5143	Yes	Yes	1	1	Activation // Lipid-Biosynthesis	long-chain fatty acid activation // long-chain acyl-CoA synthetase pathway	Escherichia coli,Arabidopsis thaliana
+3	PWY-5340	Yes	Yes	2	2	Noncarbon-Nutrients // Activation	sulfate activation for sulfonation // sulfation pathway	Escherichia coli,Glycine max,Homo sapiens,Saccharomyces cerevisiae,Arabidopsis thaliana
+4	PWY-6012	Yes	Yes	1	1	Protein-Modification	acyl carrier protein metabolism // [acp] metabolism // ACP metabolism // ACP metab	Escherichia coli
+5	PWY-801	Yes	No	3	1			
+6	PWY-5083	Yes	Yes	3	1			
+7	PWY-8138	Yes	Yes	1	1	Noncarbon-Nutrients	polyphosphate metabolism	Escherichia coli
+8	PWY-5114	Yes	No	8	1			
+9	PWY-7723	Yes	Yes	7	1	Bioluminescence	bacterial bioluminescence	Aliivibrio fischeri,Photobacterium leiognathi,Photobacterium phosphoreum,Vibrio harveyi
+10	BETSYN-PWY	Yes	Yes	2	2	Polyamine-Biosynthesis // Metabolic-Regulators	glycine betaine biosynthesis I (Gram-negative bacteria)	Chromohalobacter israelensis,Escherichia coli
+11	PWY-3722	Yes	Yes	1	1	Polyamine-Biosynthesis // Metabolic-Regulators	glycine betaine biosynthesis II (Gram-positive bacteria)	Bacillus subtilis
+12	PWY1F-353	Yes	Yes	1	1			
+13	PWY-40	Yes	Yes	2	2	Polyamine-Biosynthesis	putrescine biosynthesis I	Homo sapiens,Bacillus subtilis,Escherichia coli,Mycolicibacterium phlei,Mycolicibacterium smegmatis
+14	PWY-43	Yes	Yes	3	1	Polyamine-Biosynthesis	putrescine biosynthesis II	Aeromonas caviae,Campylobacter jejuni,Pseudomonas aeruginosa,Arabidopsis thaliana
+15	PWY-46	Yes	Yes	2	1	Polyamine-Biosynthesis	putrescine biosynthesis III // ODC pathway	Escherichia coli,Homo sapiens,Nicotiana tabacum,Pseudomonas aeruginosa,Saccharomyces cerevisiae,Arabidopsis thaliana
+16	PWY-6305	Yes	Yes	3	2			
+17	BSUBPOLYAMSYN-PWY	Yes	Yes	2	2	Polyamine-Biosynthesis	spermidine biosynthesis I // arginine degradation to spermidine // spermidine biosynthesis	Solanum tuberosum,Archaea,Bacillus subtilis,Escherichia coli,Eukaryota,Homo sapiens,Saccharomyces cerevisiae,Thermococcus kodakarensis,Arabidopsis thaliana
+18	PWY0-1303	Yes	Yes	2	1	Polyamine-Biosynthesis	aminopropylcadaverine biosynthesis	Escherichia coli
+19	PWY0-1601	Yes	Yes	1	1	Acid-Resistance // Polyamine-Biosynthesis	cadaverine biosynthesis // acid resistance system 4 // L-lysine-dependent acid resistance	Anaerovibrio lipolyticus,Escherichia coli,Pseudomonas aeruginosa,Selenomonas ruminantium,Veillonella parvula
+20	P101-PWY	Yes	No	4	1	Polyamine-Biosynthesis	ectoine biosynthesis	Halomonas elongata,Chromohalobacter israelensis
+21	PWY-6562	Yes	No	4	1	Polyamine-Biosynthesis	norspermidine biosynthesis // <i>sym</i>-norspermidine biosynthesis	Vibrio vulnificus,Vibrio alginolyticus,Vibrio parahaemolyticus,Vibrio cholerae
+22	ARGSPECAT-PWY	Yes	Yes	2	1	Polyamine-Biosynthesis	spermine biosynthesis // Spermine Syn	Archaea,Aves,Bacillus subtilis,Bos taurus,Geobacillus stearothermophilus,Homo sapiens,Mammalia,Physarum polycephalum,Pseudomonas aeruginosa,Saccharolobus solfataricus,Saccharomyces cerevisiae,Salmonella enterica,Teleostei,Arabidopsis thaliana
+23	POLYAMSYN-PWY	Yes	Yes	6	5	Super-Pathways // Polyamine-Biosynthesis	superpathway of polyamine biosynthesis I // spermidine biosynthesis // putrescine biosynthesis // polyamine biosynthesis I // aminopropylcadaverine biosynthesis	Escherichia coli
+24	POLYAMINSYN3-PWY	Yes	No	7	3	Super-Pathways // Polyamine-Biosynthesis	superpathway of polyamine biosynthesis II // polyamn	Bos taurus,Homo sapiens,Nicotiana tabacum,Pseudomonas aeruginosa,Arabidopsis thaliana
+25	PWY-6565	Yes	No	5	1	Super-Pathways // Polyamine-Biosynthesis	superpathway of polyamine biosynthesis III	Vibrio vulnificus,Vibrio alginolyticus,Vibrio parahaemolyticus,Vibrio cholerae
+26	URSIN-PWY	Yes	Yes	2	1			
+27	PWY-8072	Yes	Yes	1	1	Amino-Acid-Biosynthesis	alanine racemization	Escherichia coli,Pseudomonas putida
+28	HOMOSERSYN-PWY	Yes	Yes	3	3	Amino-Acid-Biosynthesis	L-homoserine biosynthesis	Escherichia coli,Methanocaldococcus jannaschii
+29	PWY-6936	Yes	Yes	2	1			
+30	PWY-6395	Yes	No	5	2	Seleno-Amino-Acid-Detoxification // Noncarbon-Nutrients // Super-Pathways // Amino-Acid-Biosynthesis	superpathway of seleno-compound metabolism // superpathway of seleno-compound detoxification // superpathway of selenium uptake and metabolism // superpathway of seleno-amino acid biosynthesis and detoxification	Astragalus,Astragalus bisulcatus,Brassica juncea,Brassica oleracea,Neptunia,Pisum sativum,Saccharomyces cerevisiae,Spartina,Sporobolus alterniflorus,Spinacia oleracea,Arabidopsis thaliana
+31	COMPLETE-ARO-PWY	Yes	Yes	18	14	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of aromatic amino acid biosynthesis (from phospho<i>enol</i>pyruvate and D-erythrose 4-phosphate) // superpathway of L-phenylalanine, L-tyrosine, and L-tryptophan biosynthesis	Escherichia coli
+32	BRANCHED-CHAIN-AA-SYN-PWY	Yes	Yes	7	5	Super-Pathways // Metabolic-Clusters // Amino-Acid-Biosynthesis	superpathway of branched chain amino acid biosynthesis // superpathway of L-leucine, L-valine, and L-isoleucine biosynthesis	Escherichia coli
+33	ASPASN-PWY	Yes	Yes	3	2	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-aspartate and L-asparagine biosynthesis // Interconversion of L-aspartate and L-asparagine	Escherichia coli
+34	P4-PWY	Yes	Yes	17	16	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-lysine, L-threonine and L-methionine biosynthesis I	Escherichia coli
+35	PWY-724	Yes	Yes	7	5			
+36	PWY-3481	Yes	Yes	2	1			
+37	SER-GLYSYN-PWY	Yes	Yes	4	4	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-serine and glycine biosynthesis I	Escherichia coli,Glycine max,Homo sapiens
+38	PWY-821	Yes	No	9	4			
+39	TRNA-CHARGING-PWY	Yes	Yes	20	20	Aminoacyl-tRNAs-Charging // Metabolic-Clusters	tRNA charging	Deinococcus radiodurans,Escherichia coli
+40	PWY-6164	Yes	Yes	2	2	Carboxylate-Biosynthesis	3-dehydroquinate biosynthesis I	Bacillus subtilis,Escherichia coli,Haemophilus influenzae,Petunia x hybrida,Saccharomyces cerevisiae,Salmonella enterica
+41	PWY-6160	Yes	No	5	2			
+42	PWY-5755	Yes	Yes	1	1	AROMATIC-COMPOUNDS-BIOSYN	4-hydroxybenzoate biosynthesis II (bacteria) // <i>p</i>-hydroxybenzoate biosynthesis II	Escherichia coli,Methanocaldococcus jannaschii,Mycobacterium tuberculosis,Synechocystis sp. PCC 6803,Xanthomonas campestris
+43	PWY-6163	Yes	Yes	5	5	Carboxylate-Biosynthesis	chorismate biosynthesis from 3-dehydroquinate	Bacillus subtilis,Escherichia coli,Haemophilus influenzae,Methanocaldococcus jannaschii,Petunia x hybrida,Saccharomyces cerevisiae,Salmonella enterica,Saccharolobus solfataricus
+44	ARO-PWY	Yes	Yes	7	7	Super-Pathways // Carboxylate-Biosynthesis	chorismate biosynthesis I // aromatic amino acid biosynthesis // shikimate pathway	Bacillus subtilis,Escherichia coli,Haemophilus influenzae,Petunia x hybrida,Saccharomyces cerevisiae,Salmonella enterica,Toxoplasma gondii,Arabidopsis thaliana
+45	PWY-6165	Yes	Yes	8	5			
+46	PWY-7929	Yes	No	3	1	AROMATIC-COMPOUNDS-BIOSYN	polybrominated phenols biosynthesis	Hormoscilla spongeliae,Marinomonas mediterranea,Pseudoalteromonas luteoviolacea,Pseudoalteromonas phenolica,Thioalkalivibrio thiocyanoxidans
+47	PWY-7933	Yes	No	7	1	Super-Pathways // AROMATIC-COMPOUNDS-BIOSYN	superpathway of polybrominated aromatic compound biosynthesis	Marinomonas mediterranea,Pseudoalteromonas luteoviolacea,Pseudoalteromonas phenolica
+48	PWY-6406	Yes	Yes	2	2	AROMATIC-COMPOUNDS-BIOSYN	salicylate biosynthesis I // salicylic acid biosynthesis	Mycobacterium tuberculosis,Pseudomonas aeruginosa,Yersinia enterocolitica,Yersinia pestis
+49	PWY-5901	Yes	Yes	3	3	AROMATIC-COMPOUNDS-BIOSYN	2,3-dihydroxybenzoate biosynthesis	Bacillus subtilis,Escherichia coli,Vibrio cholerae
+50	PWY-8088	Yes	Yes	4	3	AROMATIC-COMPOUNDS-BIOSYN	dipicolinate biosynthesis // dipicolinic acid biosynthesis	Priestia megaterium,Bacillus subtilis
+51	PWY-6707	Yes	Yes	2	1	AROMATIC-COMPOUNDS-BIOSYN	gallate biosynthesis	Escherichia coli,Juglans regia,Arabidopsis thaliana
+52	PWY-5751	Yes	No	4	1			
+53	PWY-6333	Yes	Yes	1	1			
+54	PWY-1001	Yes	Yes	1	1	Glycan-Pathways // Cell-Structure-Biosynthesis // Carbohydrates-Biosynthesis	cellulose biosynthesis	Escherichia coli,Arabidopsis thaliana
+55	PWY-6981	Yes	Yes	9	5			
+56	LIPA-CORESYN-PWY	Yes	No	6	2	Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis // Carbohydrates-Biosynthesis	lipid A-core biosynthesis (<i>E. coli</i> K-12)	Escherichia coli
+57	CALVIN-PWY	Yes	Yes	11	8	C1-COMPOUNDS // Carbohydrates-Biosynthesis	Calvin-Benson-Bassham cycle // photosynthetic dark reactions // photosynthetic CO<SUB>2</SUB> fixation // reductive pentose phosphate pathway // Calvin cycle // photosynthesis - dark reaction // carbon fixation // Calvin-Benson cycle	Chlamydomonas reinhardtii,Nicotiana tabacum,Synechococcus elongatus,Synechocystis sp. PCC 6803,Arabidopsis thaliana
+58	COLANSYN-PWY	Yes	Yes	9	7	Super-Pathways // Carbohydrates-Biosynthesis	colanic acid building blocks biosynthesis	Escherichia coli
+59	PWY-6397	Yes	No	12	1	Glycan-Pathways // Cell-Structure-Biosynthesis	mycolyl-arabinogalactan-peptidoglycan complex biosynthesis // arabinogalactan biosynthesis // mAGP	Mycobacterium avium,Mycobacterium leprae,Mycobacterium tuberculosis,Mycolicibacterium smegmatis
+60	PWY-6404	Yes	Yes	16	2	Super-Pathways // Glycan-Pathways // Cell-Structure-Biosynthesis // Carbohydrates-Biosynthesis	superpathway of mycolyl-arabinogalactan-peptidoglycan complex biosynthesis	Mycobacterium avium,Mycobacterium leprae,Mycobacterium tuberculosis,Mycolicibacterium smegmatis
+61	PWY-7820	Yes	No	6	1	Cell-Structure-Biosynthesis	teichuronic acid biosynthesis (<i>B. subtilis</i> 168)	Bacillus licheniformis,Bacillus spizizenii,Bacillus subtilis
+62	PWY-6454	Yes	Yes	2	1	Antibiotic-Resistance // Cell-Structure-Biosynthesis	vancomycin resistance I // D-ala-D-lactate biosynthesis	Enterococcus raffinosus,Enterococcus faecalis,Enterococcus faecium
+63	ECASYN-PWY	Yes	Yes	9	8	Glycan-Pathways // Carbohydrates-Biosynthesis	enterobacterial common antigen biosynthesis // ECA biosynthesis	Escherichia coli
+64	NAGLIPASYN-PWY	Yes	Yes	5	5	Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis	lipid IV<sub>A</sub> biosynthesis (<i>E. coli</i>) // lipid-A-precursor biosynthesis (<i>E. coli</i>)	Caulobacter vibrioides,Escherichia coli
+65	PWY0-1338	Yes	Yes	4	3	Antibiotic-Resistance // Glycan-Pathways // Cell-Structure-Biosynthesis	polymyxin resistance // L-Ara4N-modified lipid A biosynthesis // 4-amino-4-deoxy-L-arabinose-modified lipid A biosynthesis	Escherichia coli
+66	KDO-NAGLIPASYN-PWY	Yes	Yes	13	13	Super-Pathways // Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis	superpathway of (Kdo)<SUB>2</SUB>-lipid A biosynthesis (<i>E. coli</i>)	Escherichia coli
+67	PWY-6733	Yes	No	7	1			
+68	PWY-1121	Yes	No	13	1			
+69	P2-PWY	Yes	Yes	3	3	Cofactor-Biosynthesis	citrate lyase activation	Escherichia coli,Klebsiella aerogenes,Klebsiella pneumoniae,Rubrivivax gelatinosus
+70	PWY-8099	Yes	Yes	2	1	Cofactor-Biosynthesis	tetrahydropteridine recycling	Chromobacterium violaceum,Homo sapiens
+71	GLUTATHIONESYN-PWY	Yes	Yes	2	2	Other-biosynthesis	glutathione biosynthesis	Escherichia coli,Homo sapiens,Synechocystis sp. PCC 6803,Arabidopsis thaliana
+72	PWY-7250	Yes	Yes	3	1			
+73	PANTOSYN-PWY	Yes	Yes	8	8	Super-Pathways // Cofactor-Biosynthesis	superpathway of coenzyme A biosynthesis I (bacteria)	Escherichia coli
+74	PWY-7999	Yes	Yes	3	1			
+75	PWY-8051	Yes	Yes	9	5			
+76	PWY-8053	Yes	No	7	3			
+77	FASYN-ELONG-PWY	Yes	Yes	5	3	Lipid-Biosynthesis	fatty acid elongation -- saturated	Bacillus subtilis,Brassica napus,Escherichia coli,Spinacia oleracea,Streptococcus pneumoniae,Vibrio cholerae,Arabidopsis thaliana
+78	PWY-7094	Yes	Yes	6	5	Lipid-Biosynthesis	fatty acid salvage // &beta;-oxidation degradation - de novo fatty acid biosynthesis shunt	Pseudomonas aeruginosa
+79	PWYG-321	Yes	No	23	7	Lipid-Biosynthesis	mycolate biosynthesis	Mycobacterium tuberculosis
+80	PWY-7388	Yes	Yes	3	2			
+81	PWY0-881	Yes	Yes	9	7			
+82	PWY-5156	Yes	Yes	9	5			
+83	FASYN-INITIAL-PWY	Yes	Yes	4	3	Super-Pathways // Lipid-Biosynthesis	superpathway of fatty acid biosynthesis initiation	Escherichia coli
+84	PWY-6285	Yes	Yes	11	9	Super-Pathways // Lipid-Biosynthesis	superpathway of fatty acids biosynthesis (<i>E. coli</i>)	Escherichia coli
+85	PWY-6113	Yes	Yes	26	10	Super-Pathways // Lipid-Biosynthesis	superpathway of mycolate biosynthesis	Mycobacterium tuberculosis
+86	PWY66-430	Yes	Yes	4	3			
+87	PWY-7902	Yes	Yes	3	1	Lipid-Biosynthesis	glucosylglycerol biosynthesis	Synechocystis sp. PCC 6803
+88	PWY-6350	Yes	Yes	6	1	Super-Pathways // Lipid-Biosynthesis	archaetidylinositol biosynthesis	Aeropyrum pernix,Archaeoglobus fulgidus,Methanothermobacter marburgensis,Methanothermobacter thermautotrophicus,Pyrococcus furiosus,Saccharolobus solfataricus
+89	PWY-7411	Yes	No	5	2			
+90	PWY-7039	Yes	Yes	4	2			
+91	PWY-7417	Yes	Yes	1	1			
+92	PWY-7782	Yes	Yes	11	2			
+93	PHOSLIPSYN-PWY	Yes	Yes	9	7	Super-Pathways // Lipid-Biosynthesis	superpathway of phospholipid biosynthesis III (<i>E. coli</i>)	Escherichia coli
+94	PHOSLIPSYN2-PWY	Yes	No	14	6			
+95	PWY66-5	Yes	No	19	4			
+96	KDO-LIPASYN-PWY	Yes	Yes	1	1	Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis	(Kdo)<sub>2</sub>-lipid A biosynthesis (<i>E. coli</i>)	Escherichia coli
+97	PWY0-1264	Yes	Yes	3	3	Energy-Metabolism	malonyl-CoA biosynthesis via biotin-carboxyl carrier protein // BCCP assembly // [biotin-carboxyl carrier protein]	Aquifex aeolicus,Bacillus subtilis,Corynebacterium glutamicum,Escherichia coli,Mycobacterium leprae,Mycobacterium tuberculosis,Myxococcus xanthus,Nicotiana tabacum,Pisum sativum,Propionibacterium freudenreichii,Pseudomonas aeruginosa,Ricinus communis,Arabidopsis thaliana
+98	PWY-321	Yes	No	4	1			
+99	TRIGLSYN-PWY	Yes	Yes	6	3			
+100	PWY-7745	Yes	No	8	1	Lipid-Biosynthesis	p-HBAD biosynthesis	Mycobacterium tuberculosis variant bovis,Mycobacterium marinum,Mycobacterium tuberculosis
+101	LPSSYN-PWY	Yes	Yes	18	14	Super-Pathways // Lipid-Biosynthesis	superpathway of Kdo<sub>2</sub>-lipid A biosynthesis	Escherichia coli
+102	PWY-4983	Yes	Yes	3	2			
+103	PPGPPMET-PWY	Yes	Yes	3	3	Metabolic-Regulators	ppGpp metabolism // guanosine 3'-diphosphate 5'-diphosphate biosynthesis // ppGpp biosynthesis	Escherichia coli
+104	PWY66-385	Yes	Yes	3	3			
+105	PWY-6519	Yes	Yes	6	5	Other-biosynthesis	8-amino-7-oxononanoate biosynthesis I // 7-keto-8-aminopelargonate biosynthesis I	Mycobacterium tuberculosis,Candidatus Nitrososphaera gargensis Ga9.2,Escherichia coli,Francisella tularensis,Haemophilus influenzae,Helicobacter pylori,Prochlorococcus marinus
+106	PWY-7147	Yes	Yes	1	1	Other-biosynthesis	8-amino-7-oxononanoate biosynthesis II // 7-keto-8-aminopelargonate biosynthesis II	Bacillus subtilis
+107	PWY-6578	Yes	Yes	2	1	Other-biosynthesis	8-amino-7-oxononanoate biosynthesis III // 7-keto-8-aminopelargonate biosynthesis III	Bacillus subtilis,Lysinibacillus sphaericus,Methylobacillus flagellatus,Priestia megaterium,Ectopseudomonas mendocina,Arabidopsis thaliana
+108	PWY-6390	Yes	Yes	1	1	Other-biosynthesis	(<i>S,S</i>)-butanediol biosynthesis // (<i>S,S</i>)-butylene glycol fermentation // (<i>S,S</i>)-butanediol fermentation // (<i>S</i>)-acetoin degradation	Geobacillus stearothermophilus,Klebsiella aerogenes,Corynebacterium glutamicum
+109	P125-PWY	Yes	Yes	2	1	Super-Pathways // Other-biosynthesis	superpathway of (<i>R,R</i>)-butanediol biosynthesis (from pyruvate) // butylene glycol fermentation // butanediol fermentation	Aeromonas hydrophila,Bacillus subtilis,Corynebacterium glutamicum,Klebsiella aerogenes,Klebsiella pneumoniae,Levilactobacillus brevis,Lacticaseibacillus casei,Lactobacillus helveticus,Lactiplantibacillus plantarum,Lactococcus lactis,Leuconostoc lactis,Leuconostoc mesenteroides,Oenococcus oeni,Pediococcus pentosaceus,Raoultella terrigena,Serratia marcescens,Brevibacillus brevis
+110	PWY-6396	Yes	Yes	7	3	Super-Pathways // Other-biosynthesis	superpathway of 2,3-butanediol biosynthesis (from pyruvate) // butylene glycol fermentation // butanediol fermentation	Saccharomyces cerevisiae,Paenibacillus polymyxa,Corynebacterium glutamicum,Klebsiella aerogenes,Klebsiella pneumoniae,Levilactobacillus brevis,Lactococcus lactis,Leuconostoc lactis,Brevibacillus brevis
+111	PWY-6871	Yes	No	3	1	Other-biosynthesis	3-methylbutanol biosynthesis (engineered)	Escherichia coli,Lactococcus lactis,Saccharomyces cerevisiae
+112	PWY-7442	Yes	Yes	3	2			
+113	PWY-8043	Yes	Yes	2	2	Other-biosynthesis	ophthalmate biosynthesis // ophthalmic acid biosynthesis	Homo sapiens,Synechocystis sp. PCC 6803,Arabidopsis thaliana
+114	PWY-5122	Yes	Yes	1	1	Polyprenyl-Biosynthesis	geranyl diphosphate biosynthesis // GPP biosynthesis	Escherichia coli,Hevea brasiliensis,Mentha x piperita,Methanothermobacter marburgensis,Saccharomyces cerevisiae,Arabidopsis thaliana
+115	POLYISOPRENSYN-PWY	Yes	Yes	5	5	Super-Pathways // Polyprenyl-Biosynthesis	polyisoprenoid biosynthesis (<i>E. coli</i>)	Escherichia coli
+116	PWY-5120	Yes	Yes	1	1	Polyprenyl-Biosynthesis	geranylgeranyl diphosphate biosynthesis // GGPP biosynthesis	Bacillus subtilis,Capsicum annuum,Homo sapiens,Methanothermobacter marburgensis,Micrococcus luteus,Pantoea agglomerans,Rhodobacter capsulatus,Saccharomyces cerevisiae
+117	PWY-5121	Yes	Yes	11	11	Super-Pathways // Polyprenyl-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	superpathway of geranylgeranyl diphosphate biosynthesis II (via MEP) // GGPP biosynthesis II (plastidic)	Capsicum annuum,Chlamydomonas reinhardtii,Escherichia coli,Hevea brasiliensis,Arabidopsis thaliana
+118	PWY-5910	Yes	Yes	10	5	Super-Pathways // Polyprenyl-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	superpathway of geranylgeranyldiphosphate biosynthesis I (via mevalonate) // GGPP biosynthesis	Homo sapiens,Saccharomyces cerevisiae,Arabidopsis thaliana
+119	PWY-5785	Yes	Yes	1	1	Cofactor-Biosynthesis // Polyprenyl-Biosynthesis	di-<i>trans</i>,poly-<i>cis</i>-undecaprenyl phosphate biosynthesis	Escherichia coli
+120	PWY-7141	Yes	Yes	2	1			
+121	PWY-6153	Yes	Yes	1	1	SECONDARY-METABOLITE-BIOSYNTHESIS	autoinducer AI-2 biosynthesis I	Escherichia coli,Porphyromonas gingivalis,Salmonella enterica
+122	PWY-6154	Yes	Yes	1	1	SECONDARY-METABOLITE-BIOSYNTHESIS	autoinducer AI-2 biosynthesis II (<i>Vibrio</i>)	Aliivibrio fischeri,Vibrio cholerae,Vibrio harveyi
+123	PWY-7255	Yes	No	4	1	SECONDARY-METABOLITE-BIOSYNTHESIS	ergothioneine biosynthesis I (bacteria)	Synechocystis sp. PCC 6803,Mycobacterium avium,Mycobacterium tuberculosis,Mycolicibacterium smegmatis
+124	PWY-735	Yes	No	6	1			
+125	PWY66-375	Yes	No	5	1			
+126	PWY-8052	Yes	No	3	1			
+127	PWY-8055	Yes	No	5	2			
+128	PWY-8047	Yes	No	7	1	SECONDARY-METABOLITE-BIOSYNTHESIS	bryostatin biosynthesis	Candidatus Endobugula sertula
+129	PWY-8049	Yes	No	6	1	SECONDARY-METABOLITE-BIOSYNTHESIS	pederin biosynthesis	Paederus sabaeus endosymbiont,symbiont bacterium of Paederus fuscipes
+130	PWY-6627	Yes	No	9	2	SECONDARY-METABOLITE-BIOSYNTHESIS	salinosporamide A biosynthesis	Salinispora tropica
+131	PWY-7659	Yes	No	7	1			
+132	AEROBACTINSYN-PWY	Yes	Yes	3	3	SECONDARY-METABOLITE-BIOSYNTHESIS	aerobactin biosynthesis	Klebsiella aerogenes,Escherichia coli,Klebsiella pneumoniae,Salmonella enterica,Shigella boydii,Shigella flexneri,Yersinia frederiksenii,Yersinia intermedia,Yersinia kristensenii
+133	PWY-5903	Yes	Yes	4	2	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	bacillibactin biosynthesis	Bacillus anthracis,Bacillus cereus,Bacillus subtilis,Bacillus thuringiensis
+134	PWY-6375	Yes	No	3	1	SECONDARY-METABOLITE-BIOSYNTHESIS	desferrioxamine E biosynthesis	Streptomyces coelicolor,Streptomyces pilosus
+135	ENTBACSYN-PWY	Yes	Yes	4	3	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	enterobactin biosynthesis	Escherichia coli
+136	PWY-7571	Yes	Yes	4	1			
+137	PWY-6409	Yes	No	7	1	SECONDARY-METABOLITE-BIOSYNTHESIS	pyoverdine I biosynthesis	Pseudomonas aeruginosa
+138	PWY-6374	Yes	Yes	4	2	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	vibriobactin biosynthesis	Vibrio cholerae
+139	PWY-5134	Yes	No	4	1			
+140	PWY-6644	Yes	No	3	1	SECONDARY-METABOLITE-BIOSYNTHESIS	fluoroacetate and fluorothreonine biosynthesis	Streptantibioticus cattleyicolor
+141	PWY-7533	Yes	No	7	1			
+142	PWY-7991	Yes	Yes	3	2	SECONDARY-METABOLITE-BIOSYNTHESIS	toxoflavin biosynthesis	Burkholderia gladioli,Burkholderia glumae,Pseudomonas protegens
+143	PWY-6661	Yes	No	3	1	SECONDARY-METABOLITE-BIOSYNTHESIS	4-hydroxy-2(1<i>H</i>)-quinolone biosynthesis // DHQ biosynthesis // 4-hydroxy-2-quinolone biosynthesis	Burkholderia thailandensis,Pseudomonas aeruginosa
+144	PWY-6920	Yes	No	5	1			
+145	PWY-6703	Yes	Yes	4	4	SECONDARY-METABOLITE-BIOSYNTHESIS	preQ<sub>0</sub> biosynthesis // deazapurine biosynthesis // 7-cyano-7-deazaguanine biosynthesis // 7-cyano-7-carbaguanine biosynthesis	Bacillus subtilis,Escherichia coli
+146	PWY-6662	Yes	No	5	1	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	superpathway of quinolone and alkylquinolone biosynthesis	Burkholderia thailandensis,Pseudomonas aeruginosa
+147	PWY-7216	Yes	No	4	1	Storage-Compounds-Biosynthesis	(R)- and (S)-3-hydroxybutanoate biosynthesis (engineered) // (R)- and (S)-3-hydroxybutyrate biosynthesis	Clostridium acetobutylicum,Cupriavidus necator,Escherichia coli
+148	PWY-7218	Yes	Yes	21	12	Super-Pathways // Storage-Compounds-Biosynthesis	photosynthetic 3-hydroxybutanoate biosynthesis (engineered) // photosynthetic 3-hydroxybutyrate biosynthesis (engineered)	Clostridium acetobutylicum,Cupriavidus necator,Escherichia coli,Synechocystis sp. PCC 6803
+149	PWY-5194	Yes	Yes	3	2	Tetrapyrrole-Biosynthesis	siroheme biosynthesis	Archaeoglobus fulgidus,Priestia megaterium,Escherichia coli,Paracoccus pantotrophus,Pseudomonas denitrificans (nom. rej.),Saccharomyces cerevisiae,Salmonella enterica,Spinacia oleracea
+150	PWY-5188	Yes	Yes	5	5	Tetrapyrrole-Biosynthesis	uroporphyrinogen-III I (from glutamate) // tetrapyrrole biosynthesis I (from glutamate)	Escherichia coli,Euglena gracilis,Nicotiana tabacum,Pseudomonas denitrificans (nom. rej.),Salmonella enterica,Triticum aestivum,Arabidopsis thaliana
+151	PWY-5189	Yes	Yes	4	3	Tetrapyrrole-Biosynthesis	uroporphyrinogen-III II (from glycine) // tetrapyrrole biosynthesis II (from glycine) // Shemin pathway	Cereibacter sphaeroides,Euglena gracilis,Homo sapiens,Plasmodium falciparum,Rhodobacter capsulatus,Saccharomyces cerevisiae,Streptomyces nodosus
+152	PWY-6146	Yes	No	20	9			
+153	PWY-6388	Yes	Yes	1	1	Alcohol-Degradation	(S,S)-butanediol degradation // (S,S)-butylene-glycol degradation	Klebsiella aerogenes,Corynebacterium glutamicum,Geobacillus stearothermophilus
+154	ETOH-ACETYLCOA-ANA-PWY	Yes	Yes	2	2	Alcohol-Degradation	ethanol degradation I // acetyl-CoA biosynthesis (from alcohol)	Citrobacter sp. S-77,Clostridium acetobutylicum,Clostridium kluyveri,Escherichia coli,Syntrophotalea acetylenica
+155	PWY66-21	Yes	Yes	2	2	Alcohol-Degradation	ethanol degradation II	Homo sapiens
+156	PWY66-161	Yes	Yes	2	2			
+157	PWY66-162	Yes	Yes	2	2			
+158	PWY0-381	Yes	Yes	2	2	Alcohol-Degradation // Carbohydrates-Degradation // Super-Pathways	glycerol and glycerophosphodiester degradation	Deinococcus radiodurans,Escherichia coli,Synechocystis
+159	PWY-4261	Yes	Yes	2	2	Alcohol-Degradation // Carbohydrates-Degradation	glycerol degradation I	Escherichia coli,Saccharomyces cerevisiae,Arabidopsis thaliana
+160	GLYCEROLMETAB-PWY	Yes	Yes	1	1	Alcohol-Degradation // Carbohydrates-Degradation	glycerol degradation V	Escherichia coli
+161	PWY-6952	Yes	Yes	1	1	Alcohol-Degradation // Carbohydrates-Degradation	glycerophosphodiester degradation	Deinococcus radiodurans,Escherichia coli,Pseudomonas putida,Saccharomyces cerevisiae,Synechocystis
+162	GOLPDLCAT-PWY	Yes	Yes	4	1	Alcohol-Degradation // Carbohydrates-Degradation // Super-Pathways	superpathway of glycerol degradation to 1,3-propanediol	Citrobacter freundii,Clostridium butyricum,Clostridium pasteurianum,Klebsiella aerogenes,Klebsiella pneumoniae,Levilactobacillus brevis,Lentilactobacillus buchneri
+163	PWY-7013	Yes	No	5	1	Alcohol-Degradation // Energy-Metabolism	(<i>S</i>)-propane-1,2-diol degradation // propylene glycol degradation // L-1,2-propanediol degradation	Citrobacter freundii,Klebsiella oxytoca,Listeria innocua,Salmonella enterica
+164	PWY0-1280	Yes	Yes	2	2	Alcohol-Degradation	ethylene glycol degradation	Escherichia coli,Saccharomyces cerevisiae
+165	PWY66-389	Yes	Yes	2	1			
+166	GLYCOL-GLYOXDEG-PWY	Yes	Yes	6	4	Alcohol-Degradation // Super-Pathways	superpathway of glycol metabolism and degradation	Escherichia coli,Pseudomonas putida
+167	PWY0-1317	Yes	Yes	2	1	Aldehyde-Degradation	L-lactaldehyde degradation (aerobic)	Chloroflexus aurantiacus,Bacillus subtilis,Escherichia coli
+168	PWY0-1315	Yes	Yes	1	1	Aldehyde-Degradation	L-lactaldehyde degradation (anaerobic)	Escherichia coli,Salmonella enterica
+169	PWY-5386	Yes	Yes	2	2	Methylglyoxal-Detoxification // Aldehyde-Degradation	methylglyoxal degradation I	Escherichia coli,Homo sapiens,Pseudomonas putida,Synechococcus sp. RS9916
+170	PWY-5458	Yes	Yes	2	2			
+171	PWY-5386-1	Yes	Yes	2	1			
+172	METHGLYUT-PWY	Yes	Yes	4	2	Aldehyde-Degradation // Super-Pathways	superpathway of methylglyoxal degradation	Escherichia coli
+173	PWY-6535	Yes	Yes	2	2	AMINE-DEG	4-aminobutanoate degradation I // &gamma;-amino-butyrate shunt // GABA degradation // 4-aminobutyrate degradation I // 4-aminobutanoic acid degradation I	Bacillus subtilis,Escherichia coli,Homo sapiens,Pseudomonas aeruginosa,Pseudomonas fluorescens,Solanum lycopersicum,Streptomyces griseus
+174	PWY-6537	Yes	Yes	1	1	AMINE-DEG	4-aminobutanoate degradation II // 4-aminobutyrate degradation II // 4-aminobutanoic acid degradation II	Synechocystis sp. PCC 6803,Cupriavidus necator,Escherichia coli
+175	PWY-6536	Yes	Yes	2	2	AMINE-DEG	4-aminobutanoate degradation III // &gamma;-amino-butyrate shunt // GABA degradation // 4-aminobutyrate degradation III // 4-aminobutanoic acid degradation III	Pseudomonas aeruginosa,Pseudomonas fluorescens,Cupriavidus necator,Saccharomyces cerevisiae,Streptomyces griseus
+176	PWY-6473	Yes	Yes	2	1			
+177	GLUDEG-I-PWY	Yes	Yes	4	2			
+178	4AMINOBUTMETAB-PWY	Yes	Yes	3	3	AMINE-DEG // Super-Pathways	superpathway of 4-aminobutanoate degradation to succinate // &gamma;-amino-butyrate shunt // GABA degradation	Escherichia coli
+179	PWY0-41	Yes	Yes	3	3	AMINE-DEG // Super-Pathways	allantoin degradation IV (anaerobic)	Escherichia coli,Arthrobacter allantoicus,Streptococcus allantoicus
+180	PWY-5694	Yes	Yes	2	1	AMINE-DEG // Super-Pathways	allantoin degradation to glyoxylate I	Pseudomonas aeruginosa,Saccharomyces cerevisiae
+181	PWY-5692	Yes	Yes	3	2			
+182	PWY-5705	Yes	Yes	3	3	AMINE-DEG // Super-Pathways	allantoin degradation to glyoxylate III	Metabacillus fastidiosus,Escherichia coli,Glycine max,Phaseolus vulgaris
+183	PWY-5698	Yes	Yes	3	3	AMINE-DEG	allantoin degradation to ureidoglycolate II (ammonia producing)	Escherichia coli,Glycine max,Phaseolus vulgaris,Pseudomonas aeruginosa,Metabacillus fastidiosus,Arabidopsis thaliana
+184	URDEGR-PWY	Yes	Yes	5	3			
+185	ALLANTOINDEG-PWY	Yes	Yes	4	2			
+186	PWY6666-2	Yes	No	3	1			
+187	PWY0-1477	Yes	Yes	5	4	AMINE-DEG	ethanolamine utilization	Escherichia coli,Salmonella enterica
+188	GLCMANNANAUT-PWY	Yes	Yes	5	5	AMINE-DEG // Super-Pathways	superpathway of <i>N</i>-acetylneuraminate, <i>N</i>-acetylglucosamine, and <i>N</i>-acetylmannosamine degradation to &beta;-D-fructofuranose 6-phosphate // N-acetylglucosamine, N-acetylmannosamine and N-acetylneuraminic acid dissimilation	Clostridium perfringens,Escherichia coli
+189	ORNDEG-PWY	Yes	Yes	6	4	AMINE-DEG // Super-Pathways	superpathway of ornithine degradation	Escherichia coli
+190	PWY-6071	Yes	Yes	7	7	AMINE-DEG // AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	superpathway of phenylethylamine degradation	Escherichia coli
+191	PWY-7009	Yes	No	3	1	AROMATIC-COMPOUNDS-DEGRADATION	2,2'-dihydroxybiphenyl degradation	Pseudomonas nitroreducens
+192	PWY-7480	Yes	Yes	4	2	AROMATIC-COMPOUNDS-DEGRADATION	2,3-dihydroxybenzoate degradation	Pseudomonas fluorescens,Pseudomonas reinekei,Pseudomonas putida
+193	PWY-6210	Yes	No	4	1	AROMATIC-COMPOUNDS-DEGRADATION	2-aminophenol degradation	Ectopseudomonas oleovorans,Pseudomonas sp. AP3,Pseudomonas putida
+194	PWY-7008	Yes	Yes	2	1	AROMATIC-COMPOUNDS-DEGRADATION	2-hydroxybiphenyl degradation	Pseudomonas nitroreducens
+195	PWY0-1277	Yes	Yes	7	7	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	3-phenylpropanoate and 3-(3-hydroxyphenyl)propanoate degradation // 3-phenylpropionate and 3-(3-hydroxyphenyl)propionate degradation	Escherichia coli
+196	3-HYDROXYPHENYLACETATE-DEGRADATION-PWY	Yes	Yes	6	5	AROMATIC-COMPOUNDS-DEGRADATION	4-hydroxyphenylacetate degradation // 4-HPA degradation // homoprotocatechuate degradation // 4-hydroxyphenylacetic acid degradation	Pseudomonas aeruginosa,Acinetobacter,Escherichia coli,Klebsiella pneumoniae,Pseudomonas putida
+197	P345-PWY	Yes	Yes	2	1	AROMATIC-COMPOUNDS-DEGRADATION	aldoxime degradation // aldoxime metabolism	Bacillus sp. OxB-1,Rhodococcus rhodochrous,Rhodococcus sp. N-771,Pseudomonas chlororaphis,Rhodococcus YH3-3
+198	PWY-5450	Yes	Yes	2	1	AROMATIC-COMPOUNDS-DEGRADATION	benzene degradation I (aerobic)	Pseudomonas putida,Pseudomonas sp. ML2
+199	PWY5F9-12	Yes	Yes	4	2	AROMATIC-COMPOUNDS-DEGRADATION	biphenyl degradation	Rhodococcus jostii
+200	PWY-7747	Yes	No	3	1	AROMATIC-COMPOUNDS-DEGRADATION	diphenyl ethers degradation	Burkholderia cepacia,Cupriavidus sp. WS,Erwinia sp.,Sphingomonas sp. PH-07,Sphingomonas sp. SS3
+201	PWY-6956	Yes	No	7	1	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	naphthalene degradation to acetyl-CoA	Pseudomonas sp. NCIB9816-4,Pseudomonas putida,pseudomonas putida,Pseudomonas sp. ATCC 17483,Pseudomonas sp. P<sub>G</sub>,Pseudomonas stutzeri
+202	PWY-5273	Yes	No	8	3	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	<i>p</i>-cumate degradation	Pseudomonas putida
+203	PWY-5266	Yes	No	10	3	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	<I>p</I>-cymene degradation	Pseudomonas putida
+204	PWY-6941	Yes	Yes	2	1	AROMATIC-COMPOUNDS-DEGRADATION	styrene degradation	Pseudomonas sp. VLB120,Pseudomonas fluorescens
+205	PWY-6954	Yes	Yes	35	8	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	superpathway of aromatic compound degradation (via 2-hydroxypentadienoate)	Acinetobacter baylyi,Delftia acidovorans,Paenibacillus sp. JJ-1b,Pseudomonas aeruginosa,Pseudomonas fluorescens,Ectopseudomonas oleovorans,Pseudomonas putida,Pseudomonas reinekei,Pseudomonas sp. NCIB9816-4,pseudomonas putida,Pseudomonas stutzeri
+206	PWY-2504	Yes	No	29	6	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	superpathway of aromatic compound degradation (via 3-oxoadipate)	Acinetobacter baylyi,Delftia acidovorans,Pseudomonas aeruginosa,Pseudomonas fluorescens,Ectopseudomonas oleovorans,Pseudomonas putida,Pseudomonas sp. NCIB9816-4
+207	PWY-6182	Yes	Yes	3	1	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	superpathway of salicylate degradation	Pseudomonas reinekei
+208	PWY-6339	Yes	Yes	9	1	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	syringate degradation	Novosphingobium aromaticivorans,Pseudomonas putida,Sphingomonas sp. SYK6
+209	PWY-7750	Yes	Yes	1	1	C1-COMPOUNDS	carbon monoxide oxidation to CO<sub>2</sub> // carboxydotrophy	Bradyrhizobium japonicum,Hydrogenophaga pseudoflava,Afipia carboxidovorans
+210	PWY-1722	Yes	Yes	3	2	C1-COMPOUNDS	formate assimilation into 5,10-methylenetetrahydrofolate	Homo sapiens,Methylorubrum extorquens,Saccharomyces cerevisiae,Arabidopsis thaliana,Hyphomicrobium zavarzinii
+211	PWY-1881	Yes	Yes	1	1	C1-COMPOUNDS // Energy-Metabolism	formate oxidation to CO<sub>2</sub>	Methylorubrum extorquens,Methylosinus trichosporium,Moraxella sp.,Mycolicibacterium vaccae,[Candida] boidinii
+212	PWY-1882	Yes	Yes	10	3	C1-COMPOUNDS // Super-Pathways	superpathway of C1 compounds oxidation to CO<sub>2</sub>	Methylobacillus flagellatus,Methylorubrum extorquens,Methylobacterium organophilum,Methylococcus capsulatus,Methylophilus methylotrophus,Methylosinus trichosporium,Paracoccus denitrificans,Methylomonas aminofaciens
+213	PWY-7779	Yes	No	10	1	Other-Degradation	methyl <i>tert</i>-butyl ether degradation // MTBE degradation	Aquincola tertiaricarbonis,Methylibium petroleiphilum,Hydrogenophaga flava,Mycobacterium austroafricanum,Mycobacterium vaccae
+214	PWY-5654	Yes	No	3	1	CARBOXYLATES-DEG	2-amino-3-carboxymuconate semialdehyde degradation to 2-hydroxypentadienoate	Burkholderia cenocepacia,Burkholderia terrae,Pseudomonas fluorescens
+215	PWY-5162	Yes	Yes	3	3	CARBOXYLATES-DEG	2-hydroxypenta-2,4-dienoate degradation // 2-oxopent-4-enoate degradation // 2-ketopentenoate degradation // 2-oxopentenoate degradation // (2Z)-2-hydroxypenta-2,4-dienoate degradation	Acidovorax sp. JS42,Bordetella sp. 10d,Burkholderia cepacia,Comamonas sp. JS765,Escherichia coli,Pseudomonas putida,Pseudomonas sp. CF600,Ralstonia pickettii
+216	PWY-2361	Yes	Yes	2	1	CARBOXYLATES-DEG	3-oxoadipate degradation // &beta;-ketoadipate degradation	Pseudomonas knackmussii,Acinetobacter calcoaceticus,Corynebacterium glutamicum,Pseudomonas putida
+217	PWY0-1313	Yes	Yes	1	1	CARBOXYLATES-DEG	acetate conversion to acetyl-CoA // acetic acid conversion to acetyl-CoA	Cupriavidus necator,Escherichia coli,Haloarcula marismortui,Halobacteria,Halococcus saccharolyticus,Haloferax volcanii,Halorubrum saccharovorum,Homo sapiens,Mammalia,Saccharomyces cerevisiae
+218	PWY-6038	Yes	Yes	2	2	CARBOXYLATES-DEG	citrate degradation	Escherichia coli,Klebsiella aerogenes,Klebsiella pneumoniae,Rubrivivax gelatinosus
+219	PWY-7872	Yes	Yes	2	1	CARBOXYLATES-DEG	D-erythronate degradation I	Heliomicrobium modesticaldum
+220	PWY-7873	Yes	Yes	3	3	CARBOXYLATES-DEG	D-erythronate degradation II	Haemophilus influenzae,Cupriavidus necator
+221	GLUCONSUPER-PWY	Yes	Yes	1	1	CARBOXYLATES-DEG	D-gluconate degradation // gluconate utilization	Escherichia coli
+222	PWY-7871	Yes	Yes	2	1	CARBOXYLATES-DEG	D-threonate degradation	Cupriavidus necator,Salmonella enterica
+223	PWY-5177	Yes	No	4	1	CARBOXYLATES-DEG	glutaryl-CoA degradation	Homo sapiens,Pseudomonas putida,Rhodopseudomonas palustris,Syntrophus aciditrophicus,Syntrophus buswellii,Syntrophus gentianae,Thauera aromatica,Pseudomonas Sp. K172,Pseudomonas sp. KB 740
+224	PWY-7874	Yes	Yes	3	3	CARBOXYLATES-DEG	L-threonate degradation	Haemophilus influenzae,Pectobacterium atrosepticum,Cupriavidus necator
+225	PYRUVDEHYD-PWY	Yes	Yes	3	3	CARBOXYLATES-DEG // Energy-Metabolism	pyruvate decarboxylation to acetyl CoA I // pyruvate dehydrogenase complex // acetyl-CoA biosynthesis I (pyruvate dehydrogenase complex) // pyruvic acid decarboxylation to acetyl CoA // pyruvate dehydrogenase system	Escherichia coli,Homo sapiens,Pisum sativum
+226	ACETATEUTIL-PWY	Yes	Yes	2	1	CARBOXYLATES-DEG // Super-Pathways	superpathway of acetate utilization and formation // superpathway of acetic acid utilization and formation	Escherichia coli
+227	P441-PWY	Yes	Yes	21	20	CARBOXYLATES-DEG // Super-Pathways	superpathway of <i>N</i>-acetylneuraminate degradation // <i>N</i>-acetylneuraminate catabolism // sialic acid degradation	Clostridium perfringens,Abiotrophia defectiva,Escherichia coli,Streptococcus anginosus,Streptococcus constellatus,Streptococcus gordonii,Streptococcus intermedius,Streptococcus mitis,Streptococcus oralis,Streptococcus sanguinis
+228	PCPDEG-PWY	Yes	Yes	5	2	CHLORINATED-COMPOUNDS-DEG	pentachlorophenol degradation	Sphingobium chlorophenolicum
+229	PWY-7559	Yes	Yes	2	1			
+230	ACETOACETATE-DEG-PWY	Yes	Yes	2	1	Other-Degradation	acetoacetate degradation (to acetyl CoA) // acetoacetic acid degradation (to acetyl CoA)	Escherichia coli
+231	PWY-4061	Yes	No	6	2			
+232	PWY-5744	Yes	No	11	1	C1-COMPOUNDS // Other-Degradation	glyoxylate assimilation	Chloroflexus aurantiacus,Sulfurisphaera tokodaii
+233	PWY-7978	Yes	No	3	1	Other-Degradation	<i>N</i>-methylpyrrolidone degradation	Alicycliphilus denitrificans
+234	P221-PWY	Yes	Yes	4	2	Other-Degradation	octane oxidation	Ectopseudomonas oleovorans
+235	LIPASYN-PWY	Yes	No	5	2	Fatty-Acid-and-Lipid-Degradation // Metabolic-Clusters	phospholipases // phospholipase pathway	Glycine max,Arabidopsis thaliana
+236	PWY-6342	Yes	No	5	2			
+237	PWY-6313	Yes	Yes	4	2			
+238	PWY-5532	Yes	No	8	1			
+239	PWY0-1297	Yes	Yes	4	4	NUCLEO-DEG // Super-Pathways	superpathway of purine deoxyribonucleosides degradation	Escherichia coli
+240	PWY0-1546	Yes	Yes	4	2	Polymer-Degradation	muropeptide degradation	Escherichia coli
+241	PWY-6995	Yes	Yes	4	1	SECONDARY-METABOLITE-DEGRADATION	5-hydroxymethylfurfural degradation	Paraburkholderia phymatum,Cupriavidus basilensis,Methylovorus sp. MP688,Telluria mixta
+242	PWY0-1569	Yes	Yes	2	2	SECONDARY-METABOLITE-DEGRADATION	autoinducer AI-2 degradation // (<i>S</i>)-4,5-dihydroxypentane-2,3-dione degradation // autoinducer 2 degradation // AI-2 degradation	Escherichia coli
+243	PWY-6502	Yes	Yes	2	1	8-Oxo-GTP-Detoxification // Metabolic-Clusters	8-oxo-(d)GTP detoxification I // oxidized GTP and dGTP detoxification I // oxidized guanosine triphosphate and deoxyguanosine triphosphate detoxification I // 8-oxo-7,8-dihydro-guanosine-triphosphate and 8-oxo-7,8-dihydro-deoxyguanosine-triphosphate I	Escherichia coli,Homo sapiens,Saccharomyces cerevisiae,Arabidopsis thaliana
+244	PWY-6471	Yes	Yes	2	1	Antibiotic-Resistance // Super-Pathways // Cell-Structure-Biosynthesis	peptidoglycan biosynthesis IV (<i>Enterococcus faecium</i>)	Enterococcus faecium,Enterococcus hirae,Lactococcus lactis
+245	PWY-4202	Yes	Yes	2	1			
+246	DETOX1-PWY-1	Yes	Yes	3	2	REACTIVE-OXYGEN-SPECIES-DEGRADATION // Super-Pathways	reactive oxygen species degradation // removal of superoxide radicals	Homo sapiens
+247	DETOX1-PWY	Yes	Yes	2	1	REACTIVE-OXYGEN-SPECIES-DEGRADATION	superoxide radicals degradation // removal of superoxide radicals	Escherichia coli,Arabidopsis thaliana
+248	PWY-7112	Yes	No	3	1			
+249	CYANCAT-PWY	Yes	Yes	2	1	Noncarbon-Nutrients	cyanate degradation // cyanate catabolism	Escherichia coli,Pseudomonas fluorescens,Arabidopsis thaliana
+250	PWY-3821	Yes	Yes	3	2			
+251	PWY-6997	Yes	Yes	2	1		furfural degradation	Coniochaeta ligniaria,Cupriavidus basilensis,Cupriavidus necator,Pseudomonas putida,Serratia plymuthica
+252	PWY-6842	Yes	No	5	2			
+253	PWY66-368	Yes	Yes	3	1			
+254	PWY-3781	Yes	No	4	1	Energy-Metabolism	aerobic respiration I (cytochrome c)	Homo sapiens,Pseudomonas putida,Solanum tuberosum,Arabidopsis thaliana
+255	PWY-7279	Yes	No	4	1			
+256	PWY-4302	Yes	No	3	1			
+257	PWY0-1356	Yes	Yes	2	2	Energy-Metabolism	formate to dimethyl sulfoxide electron transfer	Escherichia coli
+258	PWY0-1585	Yes	Yes	2	2	Energy-Metabolism	formate to nitrite electron transfer	Escherichia coli
+259	PWY0-1355	Yes	Yes	2	1	Energy-Metabolism	formate to trimethylamine <i>N</i>-oxide electron transfer	Escherichia coli
+260	PWY0-1561	Yes	Yes	2	1	Energy-Metabolism	glycerol-3-phosphate to cytochrome <i>bo</i> oxidase electron transfer	Pseudomonas putida,Escherichia coli
+261	PWY0-1582	Yes	Yes	2	2	Energy-Metabolism	glycerol-3-phosphate to fumarate electron transfer	Escherichia coli
+262	PWY0-1591	Yes	Yes	2	1	Energy-Metabolism	glycerol-3-phosphate to hydrogen peroxide electron transport	Escherichia coli
+263	PWY0-1577	Yes	Yes	2	2	Energy-Metabolism	hydrogen to dimethyl sulfoxide electron transfer // hydrogen to DMSO electron transfer	Escherichia coli
+264	PWY0-1576	Yes	Yes	2	2	Energy-Metabolism	hydrogen to fumarate electron transfer	Escherichia coli
+265	PWY0-1578	Yes	Yes	2	1	Energy-Metabolism	hydrogen to trimethylamine N-oxide electron transfer	Escherichia coli
+266	PWY0-1348	Yes	Yes	2	1	Energy-Metabolism	NADH to dimethyl sulfoxide electron transfer	Escherichia coli
+267	PWY0-1336	Yes	Yes	2	1	Energy-Metabolism	NADH to fumarate electron transfer	Escherichia coli
+268	PWY0-1321	Yes	Yes	2	2	Noncarbon-Nutrients // Energy-Metabolism	nitrate reduction III (dissimilatory) // formate to nitrate electron transfer	Escherichia coli
+269	PWY0-1581	Yes	Yes	2	2	Noncarbon-Nutrients // Energy-Metabolism	nitrate reduction IX (dissimilatory) // glycerol-3-phosphate to nitrate electron transfer	Escherichia coli
+270	PWY0-1352	Yes	Yes	2	1	Noncarbon-Nutrients // Energy-Metabolism	nitrate reduction VIII (dissimilatory) // NADH to nitrate electron transfer	Escherichia coli
+271	PWY0-1573	Yes	Yes	1	1	Noncarbon-Nutrients // Energy-Metabolism	nitrate reduction VIIIb (dissimilatory) // NADH to nitrate reductase electron transfer	Escherichia coli
+272	PWY-101	Yes	No	4	1	Energy-Metabolism	photosynthesis light reactions I (plastocyanin)	Chlamydomonas reinhardtii,Synechococcus elongatus,Synechocystis sp. PCC 6803,Arabidopsis thaliana
+273	PWY0-1544	Yes	Yes	2	1	Energy-Metabolism	proline to cytochrome <i>bo</i> oxidase electron transfer	Pseudomonas putida,Escherichia coli
+274	PWY0-1353	Yes	Yes	2	1	Energy-Metabolism	succinate to cytochrome <i>bd</i> oxidase electron transfer	Escherichia coli
+275	PWY0-1329	Yes	Yes	2	1	Energy-Metabolism	succinate to cytochrome <i>bo</i> oxidase electron transfer	Pseudomonas putida,Escherichia coli
+276	PWY-8004	Yes	Yes	8	7	Carbohydrates-Degradation // Super-Pathways // Energy-Metabolism	Entner-Doudoroff pathway I // ED pathway I	Escherichia coli,Thermotoga maritima
+277	NPGLUCAT-PWY	Yes	No	5	2			
+278	PWY-2221	Yes	No	6	2			
+279	PWY-7383	Yes	Yes	2	1			
+280	PWY-7389	Yes	Yes	8	5			
+281	PWY-5484	Yes	Yes	11	11	Energy-Metabolism	glycolysis II (from fructose 6-phosphate)	Escherichia coli,Streptococcus mutans
+282	ANAGLYCOLYSIS-PWY	Yes	Yes	10	9	Energy-Metabolism	glycolysis III (from glucose) // anaerobic glycolysis // Embden-Meyerhof-Parnas pathway // EMP pathway // glycolysis III (glucokinase)	Homo sapiens,Saccharomyces cerevisiae,Thermotoga maritima
+283	PWY-1042	Yes	Yes	5	4	Energy-Metabolism	glycolysis IV // glycolysis 4	Brassica napus,Brassica nigra,Glycine max,Hevea brasiliensis,Musa acuminata,Pisum sativum,Ricinus communis,Secale cereale,Solanum tuberosum,Spinacia oleracea,Triticum aestivum,Vigna radiata,Zea mays,Arabidopsis thaliana
+284	P341-PWY	Yes	Yes	9	7			
+285	PWY-6118	Yes	Yes	2	1			
+286	MALATE-ASPARTATE-SHUTTLE-PWY	Yes	Yes	2	2			
+287	PENTOSE-P-PWY	Yes	Yes	6	6	Super-Pathways // Energy-Metabolism	pentose phosphate pathway // pentose shunt // hexose monophosphate shunt // phosphogluconate pathway // superpathway of oxidative and non-oxidative branches of pentose phosphate pathway // HMP shunt	Escherichia coli,Arabidopsis thaliana
+288	NONOXIPENT-PWY	Yes	Yes	3	3	Energy-Metabolism	pentose phosphate pathway (non-oxidative branch) I	Escherichia coli
+289	OXIDATIVEPENT-PWY	Yes	Yes	3	3	Energy-Metabolism	pentose phosphate pathway (oxidative branch) I	Bacillus subtilis,Escherichia coli,Homo sapiens
+290	PWY-7796	Yes	Yes	1	1			
+291	P21-PWY	Yes	Yes	1	1	Energy-Metabolism	pentose phosphate pathway (partial) // pentose phosphate pathway, Mycoplasma pneumonia	Mycoplasmoides pneumoniae
+292	PWY-7115	Yes	Yes	2	2			
+293	PWY-241	Yes	Yes	4	2			
+294	PWY-7117	Yes	Yes	6	4			
+295	PHOTOALL-PWY	Yes	Yes	15	9	Super-Pathways // Energy-Metabolism	oxygenic photosynthesis // C3 photosynthesis	Synechococcus elongatus,Synechocystis sp. PCC 6803
+296	PWY-181	Yes	Yes	9	4			
+297	PWY-5084	Yes	Yes	3	3	Energy-Metabolism	2-oxoglutarate decarboxylation to succinyl-CoA // 2-oxoglutarate dehydrogenase complex // 2-ketoglutarate dehydrogenase complex // 2-oxoglutarate dehydrogenase system // 2-ketoglutarate dehydrogenase system // &alpha;-ketoglutarate dehydrogenase system	Bacillus subtilis,Deinococcus radiodurans,Escherichia coli,Geobacillus stearothermophilus,Homo sapiens,Mus musculus,Pseudomonas aeruginosa,Pseudomonas putida,Rattus norvegicus,Saccharolobus solfataricus,Synechocystis
+298	PWY-5046	Yes	No	3	1	Energy-Metabolism	2-oxoisovalerate decarboxylation to isobutanoyl-CoA // branched-chain &alpha;-keto acid dehydrogenase system // branched-chain &alpha;-keto acid dehydrogenase complex // branched-chain 2-oxo acid dehydrogenase complex // branched-chain 2-oxo acid dehydrogenase system	Geobacillus stearothermophilus,Homo sapiens,Mus musculus,Pseudomonas aeruginosa,Pseudomonas putida,Rattus norvegicus,Saccharolobus solfataricus,Synechocystis
+299	PWY-5690	Yes	No	5	2			
+300	PWY66-398	Yes	No	8	3			
+301	P105-PWY	Yes	Yes	1	1	Energy-Metabolism	TCA cycle IV (2-oxoglutarate decarboxylase) // citric acid cycle // tricarboxylic acid cycle // Szent-Gyorgyi-Krebs cycle // Krebs cycle	Euglena gracilis,Picosynechococcus sp. PCC 7002
+302	PWY-6969	Yes	Yes	9	7	Energy-Metabolism	TCA cycle V (2-oxoglutarate synthase) // citric acid cycle // tricarboxylic acid cycle // Szent-Gyorgyi-Krebs cycle // Krebs cycle // TCA cycle V (2-oxoglutarate:ferredoxin oxidoreductase) // reversed TCA cycle	Desulfurella acetivorans,Halobacterium salinarum,Hippea maritima,Mycobacterium tuberculosis,Mycobacterium tuberculosis variant bovis,Mycolicibacterium smegmatis,Pyrobaculum islandicum,Thermosulfidibacter takaii
+303	PWY-7254	Yes	Yes	1	1	Energy-Metabolism	TCA cycle VII (acetate-producers) // tricarboxylic acid cycle // citric acid cycle // Krebs cycle // Szent-Gyorgyi-Krebs cycle // TCA cycle VII (acetic acid-producers)	Acetobacter aceti,Geobacter sulfurreducens
+304	RUMP-PWY	Yes	Yes	4	3	C1-COMPOUNDS // Energy-Metabolism	formaldehyde oxidation I // dissimilatory RUMP cycle	Methylobacillus flagellatus,Brevibacillus brevis,Methylomonas aminofaciens,Mycobacterium gastri
+305	PWY-5197	Yes	Yes	2	2	Energy-Metabolism	lactate biosynthesis (archaea)	Methanocaldococcus jannaschii
+306	PWY-7007	Yes	Yes	4	2	Energy-Metabolism	methyl ketone biosynthesis (engineered)	Escherichia coli,Solanum habrochaites,Micrococcus luteus,Solanum lycopersicum
+307	PWY-6938	Yes	Yes	3	1			
+308	PWY-6938-1	Yes	Yes	1	1	Energy-Metabolism	NADH repair (prokaryotes)	Escherichia coli
+309	PWY-8136	Yes	Yes	1	1	Energy-Metabolism	NADPH repair (prokaryotes)	Escherichia coli
+310	PWY-5723	Yes	Yes	3	2			
+311	PWY0-1517	Yes	Yes	1	1	Energy-Metabolism	sedoheptulose bisphosphate bypass	Escherichia coli
+312	PWY-5464	Yes	Yes	11	7			
+313	PWY-561	Yes	Yes	13	9			
+314	PWY-6573	Yes	Yes	4	1			
+315	GLYCOCAT-PWY	Yes	Yes	6	5	Polymer-Degradation // Carbohydrates-Degradation // Glycan-Pathways	glycogen degradation I // glycogen catabolism I	Escherichia coli
+316	PWY-5941	Yes	No	5	2	Polymer-Degradation // Carbohydrates-Degradation // Glycan-Pathways	glycogen degradation II // glycogenolysis II	Drosophila melanogaster,Homo sapiens,Manduca sexta,Saccharomyces cerevisiae
+317	PWY-1081	Yes	Yes	4	1	Polymer-Degradation // Carbohydrates-Degradation // Glycan-Pathways	pectin degradation III // homogalacturonan degradation	Actinidia deliciosa,Aspergillus aculeatus,Aspergillus niger,Aspergillus tubingensis,Brassica napus,Chamaecyparis obtusa,Citrus sinensis,Cryptomeria japonica,Daucus carota,Gossypium barbadense,Gossypium hirsutum,Malus domestica,Medicago sativa,Nicotiana tabacum,Persea americana,Solanum lycopersicum,Vitis vinifera,Arabidopsis thaliana
+318	PWY-842	Yes	Yes	5	3			
+319	PWY-8006	Yes	No	5	1	Polymer-Degradation // Carbohydrates-Degradation // Glycan-Pathways	plant arabinogalactan type II degradation // arabino-3,6-galactan // AG II // plant AG type II	Aspergillus awamori,Aspergillus niger,Fusarium oxysporum,Neurospora crassa,Streptomyces avermitilis,Trichoderma viride
+320	PWY-6807	Yes	Yes	1	1			
+321	PWY-7286	Yes	Yes	4	1			
+322	PWY-7285	Yes	No	3	1			
+323	PWY0-1587	Yes	Yes	1	1	Nucleic-Acid-Processing	N<sup>6</sup>-L-threonylcarbamoyladenosine<sup>37</sup>-modified tRNA biosynthesis	Saccharomyces cerevisiae,Escherichia coli
+324	PWY-6829	Yes	No	9	1			
+325	PWY0-1479	Yes	Yes	4	4	Nucleic-Acid-Processing	tRNA processing	Escherichia coli
+326	PWY-7892	Yes	Yes	4	2	Nucleic-Acid-Processing	tRNA-uridine<sup>34</sup> modifications (<i>E. coli</i>)	Escherichia coli
+327	PWY-7800	Yes	Yes	5	1			
+328	PWY-7799	Yes	No	6	1			
+329	PWY-7884	Yes	Yes	3	1	Protein-Modification	lipoprotein posttranslational modification (Gram-negative bacteria) // lipoprotein lipoylation // Lol pathway	Escherichia coli
+330	PWY-7801	Yes	Yes	1	1	Protein-Modification // Metabolic-Clusters	N-end rule pathway I (prokaryotic)	Escherichia coli
+331	PWY-7798	Yes	Yes	1	1	Protein-Modification	protein <i>S</i>-nitrosylation and denitrosylation	Escherichia coli,Homo sapiens,Saccharomyces cerevisiae
+332	PWY-7887	Yes	Yes	4	2			
+333	PWY-7541	Yes	Yes	4	1	Metabolic-Clusters // Energy-Metabolism	1,2-propanediol biosynthesis from lactate (engineered)	Escherichia coli,Megasphaera elsdenii,Salmonella enterica
+334	PWY-8181	Yes	No	7	3			
+335	PWY-5505	Yes	Yes	6	3	Super-Pathways // Metabolic-Clusters // Amino-Acid-Biosynthesis	L-glutamate and L-glutamine biosynthesis	Escherichia coli,Haloferax mediterranei,Homo sapiens,Lupinus angustifolius,Ruminococcus albus,Saccharomyces cerevisiae,Arabidopsis thaliana
+336	OANTIGEN-PWY	Yes	Yes	8	8	Super-Pathways // Metabolic-Clusters // Carbohydrates-Biosynthesis	<i>O</i>-antigen building blocks biosynthesis (<i>E. coli</i>)	Escherichia coli
+337	PWY-7224	Yes	No	5	1	Metabolic-Clusters // Nucleotide-Biosynthesis	purine deoxyribonucleosides salvage	Escherichia coli,Homo sapiens,Arabidopsis thaliana
+338	PWY-7197	Yes	No	3	1	Metabolic-Clusters // Nucleotide-Biosynthesis	pyrimidine deoxyribonucleotide phosphorylation	Escherichia coli,Halobacterium salinarum,Homo sapiens,Mycobacterium tuberculosis,Saccharomyces cerevisiae,Solanum tuberosum,Arabidopsis thaliana
+339	PWY-7210	Yes	No	7	3	Metabolic-Clusters // Nucleotide-Biosynthesis	pyrimidine deoxyribonucleotides biosynthesis from CTP	Homo sapiens,Saccharomyces cerevisiae,Streptococcus mutans
+340	PWY-7184	Yes	Yes	6	3	Metabolic-Clusters // Nucleotide-Biosynthesis	pyrimidine deoxyribonucleotides <i>de novo</i> biosynthesis I	Chlamydia trachomatis,Escherichia coli,Homo sapiens,Pisum sativum,Saccharomyces cerevisiae,Thermotoga maritima,Arabidopsis thaliana
+341	PWY-6545	Yes	No	6	2	Metabolic-Clusters // Nucleotide-Biosynthesis	pyrimidine deoxyribonucleotides <i>de novo</i> biosynthesis III	Aeropyrum pernix,Aquifex aeolicus,Borreliella burgdorferi,Campylobacter jejuni,Chlamydia pneumoniae,Chlamydia psittaci,Chlamydia trachomatis,Corynebacterium glutamicum,Dictyostelium discoideum,Halobacterium salinarum,Helicobacter pylori,Mycobacterium tuberculosis variant bovis,Mycobacterium tuberculosis,Pyrobaculum aerophilum,Pyrococcus abyssi,Pyrococcus furiosus,Pyrococcus horikoshii,Rhodobacter capsulatus,Rickettsia prowazekii,Saccharolobus solfataricus,Sulfurisphaera tokodaii,Thermoplasma acidophilum,Thermoplasma volcanium,Thermotoga maritima,Treponema pallidum
+342	PWY-7198	Yes	Yes	1	1			
+343	PWY-6886	Yes	No	14	5	Super-Pathways // Energy-Metabolism	1-butanol autotrophic biosynthesis (engineered)	Clostridium acetobutylicum,Euglena gracilis,Synechococcus elongatus
+344	PWY-5647	Yes	No	6	1	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	2-nitrobenzoate degradation I	Burkholderia terrae,Pseudomonas fluorescens
+345	PWY-5130	Yes	Yes	4	1	CARBOXYLATES-DEG // Super-Pathways	2-oxobutanoate degradation I // 2-oxobutyrate catabolism // 2-oxobutyrate degradation	Rattus norvegicus,Oryctolagus cuniculus,Mesocricetus auratus,Mammalia,Homo sapiens,Bos taurus
+346	PWY-5676	Yes	No	4	1	Super-Pathways // Energy-Metabolism	acetyl-CoA fermentation to butanoate // acetyl-CoA fermentation to butyrate II // acetyl-CoA fermentation to butanoic acid II	Clostridium kluyveri,Eubacterium pyruvativorans
+347	PWY-5507	Yes	No	20	6	Super-Pathways // Cofactor-Biosynthesis	adenosylcobalamin biosynthesis I (anaerobic) // adenosylcobalamin biosynthesis I (early cobalt insertion) // vitamin B12 biosynthesis	Acetobacterium woodii,Chlorobaculum tepidum,Desulfuromonas acetoxidans,Eubacterium limosum,Leptospira interrogans,Methanocaldococcus jannaschii,Methanothermobacter thermautotrophicus,Priestia megaterium,Propionibacterium freudenreichii,Salmonella enterica
+348	P381-PWY	Yes	Yes	17	4	Super-Pathways // Cofactor-Biosynthesis	adenosylcobalamin biosynthesis II (aerobic) // adenosylcobalamin biosynthesis II (late cobalt incorporation) // vitamin B12 biosynthesis	Brucella melitensis,Pseudomonas denitrificans (nom. rej.),Rhodobacter capsulatus,Sinorhizobium meliloti
+349	PWY-6963	Yes	Yes	2	2			
+350	AMMASSIM-PWY	Yes	Yes	3	2	Noncarbon-Nutrients	ammonia assimilation cycle III // ammonia assimilation III // GS/GOGAT pathway	Escherichia coli,Saccharomyces cerevisiae
+351	PWY-7384	Yes	Yes	5	3			
+352	PWY-7592	Yes	No	5	1			
+353	PWY-5431	Yes	No	8	2	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	aromatic compounds degradation via 3-oxoadipate // &beta;-ketoadipate pathway // aromatic compounds degradation via &beta;-ketoadipate	Pseudomonas putida
+354	PWY0-781	Yes	Yes	24	22	Super-Pathways	aspartate superpathway	Escherichia coli
+355	SO4ASSIM-PWY	Yes	Yes	4	4	Noncarbon-Nutrients // Super-Pathways	assimilatory sulfate reduction I	Bacillus subtilis,Escherichia coli,Saccharomyces cerevisiae
+356	BIOTIN-BIOSYNTHESIS-PWY	Yes	Yes	9	7	Super-Pathways // Cofactor-Biosynthesis	superpathway of biotin biosynthesis I // vitamin H biosynthesis	Escherichia coli,Francisella tularensis,Haemophilus influenzae,Helicobacter pylori,Mycobacterium tuberculosis,Prochlorococcus marinus
+357	PWY-5005	Yes	No	5	2	Super-Pathways // Cofactor-Biosynthesis	superpathway of biotin biosynthesis II // vitamin H biosynthesis	Bacillus subtilis,Lysinibacillus sphaericus,Methylobacillus flagellatus
+358	PWY-7509	Yes	Yes	1	1	Super-Pathways // Lipid-Biosynthesis	cardiolipin and phosphatidylethanolamine biosynthesis (<i>Xanthomonas</i>)	Xanthomonas campestris
+359	PWY-5415	Yes	Yes	4	3	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	catechol degradation I (<I>meta</I>-cleavage pathway)	Saccharolobus solfataricus,Alcaligenes sp. O-1,Comamonas sp. JS765,Cupriavidus necator,Pseudomonas putida,Pseudomonas sp. CF600,Ralstonia pickettii
+360	PWY-5420	Yes	Yes	6	5	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	catechol degradation II (<I>meta</I>-cleavage pathway) // 4-oxalocrotonate pathway	Azotobacter vinelandii,Cupriavidus necator,Pseudomonas putida,Pseudomonas sp. CF600
+361	PWY-5417	Yes	No	5	2	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	catechol degradation III (ortho-cleavage pathway) // &beta;-ketoadipate pathway	Acinetobacter calcoaceticus,Agrobacterium tumefaciens,Cupriavidus necator,Cutaneotrichosporon cutaneum,Pseudomonas aeruginosa,Pseudomonas knackmussii,Pseudomonas putida,Rhizobium leguminosarum,Sinorhizobium meliloti Rm2011
+362	PWY-7494	Yes	Yes	2	1			
+363	P542-PWY	Yes	Yes	2	2	AMINE-DEG // Super-Pathways	choline-<i>O</i>-sulfate degradation // choline sulfate degradation	Pseudomonas aeruginosa,Sinorhizobium meliloti Rm2011
+364	PWY-7124	Yes	Yes	21	12	Super-Pathways // HORMONE-SYN	ethene biosynthesis V (engineered) // ethylene biosynthesis V (engineered)	Pseudomonas savastanoi,Saccharomyces cerevisiae,Synechococcus elongatus,Synechocystis sp. PCC 6803
+365	PWY-4041	Yes	Yes	6	3			
+366	PWY-6142	Yes	No	11	5			
+367	PWY-7003	Yes	No	7	1	Super-Pathways // Energy-Metabolism	glycerol degradation to butanol	Clostridium saccharobutylicum,Clostridium acetobutylicum,Clostridium pasteurianum
+368	P461-PWY	Yes	Yes	7	6	Alcohol-Degradation // Carbohydrates-Degradation // Super-Pathways // Energy-Metabolism	hexitol fermentation to lactate, formate, ethanol and acetate // sorbitol metabolism // sorbitol fermentation // mannitol fermentation // sugar alcohol fermentation // hexitol fermentation to lactic acid, formic acid, ethanol and acetic acid	Streptococcus equinus,Streptococcus gordonii,Streptococcus mitis,Streptococcus mutans,Streptococcus salivarius,Streptococcus sanguinis
+369	ANAEROFRUCAT-PWY	Yes	Yes	11	9	Super-Pathways // Energy-Metabolism	homolactic fermentation // anaerobic fructose catabolism // anaerobic fructose degradation // fructose fermentation to lactate // fructose fermentation to lactic acid	Enterococcus faecalis,Enterococcus faecium,Homo sapiens,Lactobacillus acidophilus,Lacticaseibacillus casei,Lactobacillus delbrueckii,Lapidilactobacillus dextrinicus,Lactiplantibacillus plantarum,Ligilactobacillus salivarius,Lactococcus lactis,Pediococcus acidilactici,Pediococcus damnosus,Rattus norvegicus,Streptococcus equinus,Streptococcus thermophilus
+370	PWY-6467	Yes	Yes	4	4	Glycan-Pathways // Cell-Structure-Biosynthesis	Kdo transfer to lipid IV<sub>A</sub> (four Kdo residues)	Chlamydia pneumoniae,Chlamydia psittaci
+371	KETOGLUCONMET-PWY	Yes	Yes	6	5	CARBOXYLATES-DEG // Super-Pathways	ketogluconate metabolism	Escherichia coli,Corynebacterium sp. SHS 0007
+372	ARGSYN-PWY	Yes	Yes	8	8	Super-Pathways // Amino-Acid-Biosynthesis	L-arginine biosynthesis I (via L-ornithine)	Escherichia coli,Moritella sp.,Myxococcus xanthus,Salmonella enterica,Vibrionaceae
+373	ARGDEGRAD-PWY	Yes	No	3	1	Amino-Acid-Degradation // Super-Pathways	L-arginine degradation V (arginine deiminase pathway) // L-arginine dihydrolase pathway // L-arginine deiminase degradation	Aeromonas caviae,Aphanocapsa,Acetoanaerobium sticklandii,Giardia duodenalis,Halobacterium salinarum,Hexamita inflata,Lentilactobacillus hilgardii,Metamycoplasma hominis,Mycoplasmoides pneumoniae,Pseudomonas aeruginosa,Spiroplasma citri,Streptococcus ratti,Treponema denticola,Trichomonas vaginalis,Tritrichomonas suis,Arabidopsis thaliana
+374	PWY-I9	Yes	Yes	4	3	Super-Pathways // Amino-Acid-Biosynthesis	L-cysteine biosynthesis VI (reverse transsulfuration) // methionine to cysteine transsulfuration	Helicobacter pylori
+375	GLUDEG-II-PWY	Yes	No	8	2	Amino-Acid-Degradation // Super-Pathways // Energy-Metabolism	L-glutamate degradation VII (to butanoate) // L-glutamate fermentation // mesaconate pathway // L-glutamate degradation VII (to butyrate) // L-glutamic acid degradation VII (to butanoic acid) // methylaspartate pathway	Citrobacter amalonaticus,Citrobacter freundii,Clostridium acetobutylicum,Clostridium cochlearium,Clostridium kluyveri,Clostridium malenominatum,Clostridium saccharobutylicum,Clostridium tetani,Clostridium tetanomorphum,Hathewaya limosa,Morganella morganii
+376	HSERMETANA-PWY	Yes	Yes	4	2	Super-Pathways // Amino-Acid-Biosynthesis	L-methionine biosynthesis III // L-methionine biosynthesis by sulfhydrylation	Corynebacterium glutamicum,Leptospira meyeri,Saccharomyces cerevisiae,[Brevibacterium] flavum
+377	PWY-7528	Yes	Yes	12	5	Super-Pathways // Amino-Acid-Biosynthesis	L-methionine salvage cycle I (bacteria and plants) // 5'-methylthioadenosine cycle // MTA cycle // Yang cycle	Solanum lycopersicum,Bacillus subtilis,Klebsiella oxytoca,Klebsiella pneumoniae,Lupinus luteus,Oryza sativa,Vibrio cholerae
+378	PWY-7270	Yes	No	10	3			
+379	PWY-7527	Yes	Yes	11	5	Super-Pathways // Amino-Acid-Biosynthesis	L-methionine salvage cycle III // 5'-methylthioadenosine cycle // MTA cycle	Bacillus subtilis,Homo sapiens,Klebsiella oxytoca,Mus musculus,Rattus norvegicus,Rhodospirillum rubrum
+380	PWY-6957	Yes	No	10	3	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	mandelate degradation to acetyl-CoA	Pseudomonas putida
+381	PWY-5430	Yes	Yes	10	5	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	<i>meta</i> cleavage pathway of aromatic compounds	Cupriavidus necator,Azotobacter vinelandii,Ralstonia pickettii,Acinetobacter calcoaceticus,Pseudomonas sp. CF600,Pseudomonas putida
+382	PWY-6517	Yes	Yes	3	3	AMINE-DEG // Carbohydrates-Degradation // Super-Pathways	<i>N</i>-acetylglucosamine degradation II	Bacteroides fragilis,Escherichia coli,Shewanella oneidensis,Xanthomonas campestris
+383	NADSYN-PWY	Yes	No	8	2	Super-Pathways // Cofactor-Biosynthesis	NAD <i>de novo</i> biosynthesis II (from tryptophan) // nicotinamide adenine dinucleotide biosynthesis	Actinomycetota,Cytophaga hutchinsonii,Gemmata sp. Wa1-1,Homo sapiens,Oryza sativa,Polaribacter filamentus,Saccharomyces cerevisiae,Streptomyces antibioticus,Xanthomonas arboricola,Xanthomonas axonopodis
+384	PWY-7287	Yes	No	15	3	SECONDARY-METABOLITE-BIOSYNTHESIS	novobiocin biosynthesis	Actinoalloteichus caeruleus
+385	PEPTIDOGLYCANSYN-PWY	Yes	Yes	9	9	Super-Pathways // Cell-Structure-Biosynthesis	peptidoglycan biosynthesis I (<I>meso</I>-diaminopimelate containing)	Bacillus anthracis,Bacillus subtilis,Corynebacterium ammoniagenes,Corynebacterium diphtheriae,Corynebacterium glutamicum,Corynebacterium pseudotuberculosis,Escherichia coli,Geobacillus stearothermophilus,Priestia megaterium,Propionibacterium freudenreichii,Pseudomonas aeruginosa,Rhizobium viscosum,Sinomonas albida
+386	PWY-5265	Yes	Yes	16	11	Super-Pathways // Cell-Structure-Biosynthesis	peptidoglycan biosynthesis II (staphylococci)	Aerococcus viridans,Arthrobacter citreus,Arthrobacter crystallopoietes,Enterococcus faecalis,Kocuria rosea,Lactococcus lactis,Leuconostoc mesenteroides,Ligilactobacillus salivarius,Micrococcus luteus,Pseudarthrobacter polychromogenes,Sporosarcina pasteurii,Sporosarcina ureae,Staphylococcus aureus,Staphylococcus epidermidis,Staphylococcus haemolyticus,Streptococcus equinus,Streptococcus pasteurianus,Streptococcus thermophilus,Weissella viridescens,Arthrobacter aurescens
+387	PWY-6385	Yes	Yes	12	9	Super-Pathways // Cell-Structure-Biosynthesis	peptidoglycan biosynthesis III (mycobacteria)	Mycobacterium leprae,Mycobacterium tuberculosis,Mycolicibacterium smegmatis
+388	PWY4FS-7	Yes	Yes	3	3	Super-Pathways // Lipid-Biosynthesis	phosphatidylglycerol biosynthesis I (acyl-[acp] donor)	Glycine max,Limnanthes douglasii,Pisum sativum,Ricinus communis,Triticum aestivum,Vigna radiata,Arabidopsis thaliana
+389	PWY4FS-8	Yes	Yes	3	3	Super-Pathways // Lipid-Biosynthesis	phosphatidylglycerol biosynthesis II (acyl-CoA donor)	Glycine max,Limnanthes douglasii,Pisum sativum,Ricinus communis,Saccharomyces cerevisiae,Triticum aestivum,Vigna radiata,Arabidopsis thaliana
+390	PWY-5044	Yes	Yes	3	3			
+391	PWY-6353	Yes	Yes	7	6	NUCLEO-DEG // Super-Pathways	purine nucleotides degradation II (aerobic) // purine nucleotides catabolism	Bos taurus,Escherichia coli,Gallus gallus,Homo sapiens,Mus musculus,Oryctolagus cuniculus,Rattus norvegicus
+392	PWY-7194	Yes	Yes	2	2	Super-Pathways // Nucleotide-Biosynthesis	pyrimidine nucleobases salvage II // cytosine salvage	Escherichia coli,Saccharomyces cerevisiae
+393	P41-PWY	Yes	No	4	1	Super-Pathways // Energy-Metabolism	pyruvate fermentation to acetate and (<i>S</i>)-lactate I // pyruvate metabolism // pyruvic acid fermentation to acetic acid and lactic acid II	Mycoplasmoides pneumoniae
+394	PWY-5096	Yes	Yes	3	2			
+395	PWY-5100	Yes	Yes	3	2	Super-Pathways // Energy-Metabolism	pyruvate fermentation to acetate and lactate II // pyruvic acid fermentation to acetic acid and lactic acid II	Thermotoga maritima
+396	P142-PWY	Yes	Yes	2	1	Super-Pathways // Energy-Metabolism	pyruvate fermentation to acetate I // acetate fermentation // pyruvic acid fermentation to acetic acid I	Clostridium pasteurianum,Clostridium acetobutylicum,Anaerotignum propionicum
+397	PWY-5483	Yes	Yes	2	1			
+398	PWY-5485	Yes	Yes	3	2	Super-Pathways // Energy-Metabolism	pyruvate fermentation to acetate IV // pyruvic acid fermentation to acetic acid IV	Enterococcus faecalis,Streptococcus,Escherichia coli
+399	PWY-5537	Yes	Yes	2	2	Super-Pathways // Energy-Metabolism	pyruvate fermentation to acetate V // acetate fermentation // acetate:succinate CoA transferase/SCoAS cycle // ASCT cycle // pyruvic acid fermentation to acetic acid V // acetic acid fermentation // SCACT/SCS pathway	Crithidia fasciculata,Cutibacterium granulosum,Fasciola hepatica,Leishmania infantum,Leishmania mexicana,Phytomonas,Trypanosoma brucei,Trypanosoma cruzi
+400	PWY-5538	Yes	Yes	1	1			
+401	PWY-5600	Yes	Yes	2	1			
+402	SUCSYN-PWY	Yes	Yes	8	5	Super-Pathways // Carbohydrates-Biosynthesis	sucrose biosynthesis I (from photosynthesis) // sucrose biosynthesis I (from Calvin cycle intermediates) // sucrose biosynthesis I	Glycine max,Malus domestica,Nicotiana tabacum,Oryza sativa,Solanum lycopersicum,Spinacia oleracea,Arabidopsis thaliana
+403	PWY-6277	Yes	Yes	5	4	Super-Pathways // Nucleotide-Biosynthesis	superpathway of 5-aminoimidazole ribonucleotide biosynthesis (from PRPP)	Escherichia coli
+404	PWY-7229	Yes	Yes	5	5	Super-Pathways // Nucleotide-Biosynthesis	superpathway of adenosine nucleotides <i>de novo</i> biosynthesis I (from IMP and L-aspartate)	Saccharomyces cerevisiae,Escherichia coli,Homo sapiens,Salmonella enterica,Arabidopsis thaliana
+405	PWY-6126	Yes	Yes	5	5	Super-Pathways // Nucleotide-Biosynthesis	superpathway of adenosine nucleotides <i>de novo</i> biosynthesis II (from IMP and L-aspartate)	Escherichia coli,Salmonella enterica
+406	COBALSYN-PWY	Yes	Yes	5	4	Super-Pathways // Cofactor-Biosynthesis	superpathway of adenosylcobalamin salvage from cobinamide I	Escherichia coli,Salmonella enterica
+407	PWY-6269	Yes	Yes	6	3	Super-Pathways // Cofactor-Biosynthesis	superpathway of adenosylcobalamin salvage from cobinamide II	Halobacterium salinarum,Methanopyrus kandleri,Methanosarcina mazei,Methanothermobacter thermautotrophicus,Cereibacter sphaeroides
+408	PWY-5183	Yes	No	18	6	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	superpathway of aerobic toluene degradation	Burkholderia cepacia,Ectopseudomonas mendocina,Pseudomonas putida,Ralstonia pickettii,Pseudomonas mendocina (pWWO) or (pTOL)
+409	PWY-3282	Yes	Yes	2	1			
+410	PWY-7345	Yes	Yes	14	11			
+411	PWY-5529	Yes	No	15	4	Super-Pathways // Tetrapyrrole-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	superpathway of bacteriochlorophyll <i>a</i> biosynthesis (from glycine)	Chlorobaculum tepidum,Allochromatium vinosum,Cereibacter sphaeroides,Rhodobacter capsulatus
+412	GLUCUROCAT-PWY	Yes	Yes	5	3	CARBOXYLATES-DEG // Carbohydrates-Degradation // Super-Pathways	superpathway of &beta;-D-glucuronides degradation (to pyruvate) // D-glucuronate catabolism // D-glucuronate degradation // glucuronic acid degradation // glucuronate degradation // &beta;-D-glucuronide degradation	Aquifex aeolicus,Bacillus subtilis,Clostridium acetobutylicum,Deinococcus radiodurans,Escherichia coli,Haemophilus influenzae,Pseudomonas aeruginosa,Thermotoga maritima
+413	PWY-7575	Yes	No	8	2	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	superpathway of candicidin biosynthesis (from chorismate)	Streptomyces griseus,Streptomyces sp. FR-008
+414	PWY-5823	Yes	Yes	7	1	Super-Pathways // Carbohydrates-Biosynthesis	superpathway of CDP-glucose-derived O-antigen building blocks biosynthesis // superpathway of CDP-3,6-dideoxyhexose biosynthesis	Salmonella enterica,Yersinia pseudotuberculosis
+415	PWY-6947	Yes	No	23	1	Fatty-Acid-and-Lipid-Degradation // Super-Pathways	superpathway of cholesterol degradation II (cholesterol dehydrogenase)	Mycobacterium tuberculosis,Streptomyces sp. SA-COO
+416	ALL-CHORISMATE-PWY	Yes	Yes	52	44	Super-Pathways	superpathway of chorismate metabolism	Escherichia coli
+417	PWY-6604	Yes	No	15	5	Super-Pathways // Energy-Metabolism	superpathway of <i>Clostridium acetobutylicum</i> acidogenic and solventogenic fermentation	Clostridium saccharobutylicum,Clostridium acetobutylicum,Clostridium beijerinckii
+418	PWY-6590	Yes	No	8	2	Super-Pathways // Energy-Metabolism	superpathway of <i>Clostridium acetobutylicum</i> acidogenic fermentation // acetobutylicum acidogenic fermentation	Clostridium saccharobutylicum,Clostridium acetobutylicum,Clostridium beijerinckii
+419	PWY-6594	Yes	No	11	4	Super-Pathways // Energy-Metabolism	superpathway of <i>Clostridium acetobutylicum</i> solventogenic fermentation // acetobutylicum solventogenic fermentation	Clostridium saccharobutylicum,Clostridium acetobutylicum,Clostridium beijerinckii
+420	PWY-6145	Yes	Yes	9	2	Super-Pathways // Carbohydrates-Biosynthesis	superpathway of CMP-sialic acids biosynthesis	Aliivibrio salmonicida,Asterias rubens,Bacteroides thetaiotaomicron,Campylobacter jejuni,Escherichia coli,Homo sapiens,Mus musculus,Neisseria meningitidis,Oncorhynchus mykiss,Rattus norvegicus,Sus scrofa
+421	PWY-4221	Yes	Yes	8	7			
+422	COA-PWY-1	Yes	Yes	5	4			
+423	GLUCARGALACTSUPER-PWY	Yes	Yes	4	4	Super-Pathways	superpathway of D-glucarate and D-galactarate degradation // D-glucarate and D-galactarate catabolism super-pathway // aldarate catabolism	Escherichia coli
+424	PWY-6358	Yes	Yes	5	1			
+425	PWY-5861	Yes	Yes	8	8	Super-Pathways // Cofactor-Biosynthesis	superpathway of demethylmenaquinol-8 biosynthesis I // superpathway of demethylmenaquinone-8 biosynthesis I	Aeromonas hydrophila,Citrobacter freundii,Klebsiella aerogenes,Enterococcus faecalis,Escherichia coli,Pectobacterium carotovorum,Proteus mirabilis,Proteus vulgaris
+426	PWY-5862	Yes	Yes	3	3	Super-Pathways // Cofactor-Biosynthesis	superpathway of demethylmenaquinol-9 biosynthesis // superpathway of demethylmenaquinone-9 biosynthesis	Mycobacterium tuberculosis,Glutamicibacter protophormiae,Lederbergia lenta,Blastochloris viridis,Brevibacterium fuscum,Clavibacter michiganensis,Clavibacter nebraskensis,Clavibacter sepedonicus,Corynebacterium diphtheriae,Curtobacterium citreum,Curtobacterium flaccumfaciens,Curtobacterium luteum,Dermatophilus congolensis,Enterococcus faecalis,Eisenibacter elegans,Gordonia bronchialis,Gordonia rubripertincta,Gordonia terrae,Jonesia denitrificans,Liquorilactobacillus mali,Lactococcus lactis,Lactococcus cremoris,Micrococcus luteus,Mycobacterium avium,Mycobacterium tuberculosis variant bovis,Mycolicibacterium farcinogenes,Mycobacterium intracellulare,Mycolicibacterium phlei,Mycolicibacterium smegmatis,Myxococcus fulvus,Odoribacter splanchnicus,Magnetospirillum fulvum,Magnetospirillum molischianum,Porphyromonas asaccharolytica,Porphyromonas levii,Rhodobacter capsulatus,Tsukamurella paurometabola
+427	PWY-7438	Yes	No	11	2	Super-Pathways // Carbohydrates-Biosynthesis	superpathway of dTDP-glucose-derived antibiotic building blocks biosynthesis	Micromonospora megalomicea,Saccharopolyspora erythraea,Saccharopolyspora spinosa,Streptomyces antibioticus,Streptomyces argillaceus
+428	PWY-7317	Yes	No	17	5	Super-Pathways // Carbohydrates-Biosynthesis	superpathway of dTDP-glucose-derived O-antigen building blocks biosynthesis	Aggregatibacter actinomycetemcomitans,Anoxybacteroides tepidamans,Escherichia coli,Saccharopolyspora spinosa,Shewanella denitrificans,Thermoanaerobacterium thermosaccharolyticum,Aneurinibacillus thermoaerophilus
+429	ERGOSTEROL-SYN-PWY	Yes	Yes	19	4			
+430	PWY-6977	Yes	No	16	1	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	superpathway of erythromycin biosynthesis	Saccharopolyspora erythraea
+431	PWY4LZ-257	Yes	Yes	8	5			
+432	FUC-RHAMCAT-PWY	Yes	Yes	10	9	Super-Pathways	superpathway of fucose and rhamnose degradation // fucose and rhamnose catabolism	Escherichia coli
+433	PWY-7323	Yes	No	9	4	Super-Pathways // Carbohydrates-Biosynthesis	superpathway of GDP-mannose-derived O-antigen building blocks biosynthesis	Aggregatibacter actinomycetemcomitans,Escherichia coli,Pseudomonas aeruginosa,Vibrio cholerae O1,Yersinia pseudotuberculosis
+434	PWY-6901	Yes	Yes	1	1	Carbohydrates-Degradation // Super-Pathways	superpathway of glucose and xylose degradation	Heyndrickxia coagulans
+435	PWY-6579	Yes	Yes	3	2	Super-Pathways // Nucleotide-Biosynthesis	superpathway of guanine and guanosine salvage	Escherichia coli
+436	PWY-7228	Yes	Yes	5	5	Super-Pathways // Nucleotide-Biosynthesis	superpathway of guanosine nucleotides <i>de novo</i> biosynthesis I	Saccharomyces cerevisiae,Homo sapiens,Escherichia coli,Salmonella enterica,Arabidopsis thaliana
+437	PWY-6125	Yes	Yes	5	5	Super-Pathways // Nucleotide-Biosynthesis	superpathway of guanosine nucleotides <i>de novo</i> biosynthesis II	Escherichia coli,Salmonella enterica
+438	PWY-6595	Yes	Yes	1	1			
+439	PWY-5918	Yes	Yes	9	8	Super-Pathways // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	superpathway of heme <i>b</i> biosynthesis from glutamate	Escherichia coli,Euglena gracilis,Nicotiana tabacum,Pseudomonas denitrificans (nom. rej.),Salmonella enterica,Triticum aestivum,Arabidopsis thaliana
+440	PWY-5920	Yes	Yes	8	6	Super-Pathways // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	superpathway of heme <i>b</i> biosynthesis from glycine	Agrobacterium tumefaciens,Euglena gracilis,Homo sapiens,Mammalia,Plasmodium falciparum,Rhizobiaceae,Cereibacter sphaeroides,Saccharomyces cerevisiae
+441	PWY0-1415	Yes	Yes	4	4	Super-Pathways // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	superpathway of heme <i>b</i> biosynthesis from uroporphyrinogen-III	Escherichia coli
+442	HEXITOLDEGSUPER-PWY	Yes	Yes	15	14	Alcohol-Degradation // Carbohydrates-Degradation // Super-Pathways	superpathway of hexitol degradation (bacteria)	Escherichia coli
+443	GALACT-GLUCUROCAT-PWY	Yes	Yes	8	6	Super-Pathways	superpathway of hexuronide and hexuronate degradation // galacturonate and glucuronate catabolism // superpathway of galacturonate and glucuronate degradation	Escherichia coli
+444	PRPP-PWY	Yes	Yes	37	33	Super-Pathways	superpathway of histidine, purine, and pyrimidine biosynthesis	Escherichia coli
+445	PWY0-1061	Yes	Yes	3	2	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-alanine biosynthesis	Escherichia coli
+446	PROPFERM-PWY	Yes	No	3	1	Super-Pathways // Energy-Metabolism	superpathway of L-alanine fermentation (Stickland reaction) // propionate fermentation, nonrandomizing pathway // acrylate pathway // propionate fermentation // L-alanine fermentation to propionate and acetate // L-alanine fermentation to propanoic and acetatic acids	Anaerotignum propionicum,Megasphaera elsdenii
+447	ORNARGDEG-PWY	Yes	Yes	11	9	Amino-Acid-Degradation // Super-Pathways	superpathway of L-arginine and L-ornithine degradation	Escherichia coli
+448	ARGDEG-PWY	Yes	Yes	10	8	Amino-Acid-Degradation // Super-Pathways	superpathway of L-arginine, putrescine, and 4-aminobutanoate degradation // L-arginine utilization // ADC pathway	Escherichia coli
+449	PWY0-1325	Yes	Yes	2	2	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-asparagine biosynthesis	Escherichia coli
+450	PWY-5004	Yes	Yes	11	6			
+451	PWY-6293	Yes	No	5	1			
+452	PWY-6292	Yes	No	4	1	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-cysteine biosynthesis (mammalian)	Homo sapiens,Rattus norvegicus
+453	METSYN-PWY	Yes	Yes	7	6			
+454	PWY-3001	Yes	Yes	10	9	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-isoleucine biosynthesis I	Bacillus subtilis,Escherichia coli
+455	PWY-5327	Yes	Yes	31	5	Amino-Acid-Degradation // Super-Pathways	superpathway of L-lysine degradation	Agrobacterium tumefaciens,Anaerovibrio lipolyticus,Bos taurus,Candida tropicalis,Clostridium peptidivorans,Clostridium subterminale,Cyberlindnera saturnus,Escherichia coli,Fusobacterium nucleatum,Geobacillus stearothermophilus,Homo sapiens,Meyerozyma guilliermondii,Mus musculus,Porphyromonas gingivalis,Pseudomonas fluorescens,Pseudomonas putida,Rattus norvegicus,Saccharomyces cerevisiae,Selenomonas ruminantium,Streptomyces clavuligerus,Trichoderma harzianum,Trichoderma viride,Veillonella parvula,Yarrowia lipolytica,Acetoanaerobium sticklandii,[Flavobacterium] lutescens,Slafractonia leguminicola,Candida maltosa L4,Clostridium SB4  ,Neurospora crassa 15069,Neurospora crassa 33933
+456	PWY-5345	Yes	Yes	10	8	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-methionine biosynthesis (by sulfhydrylation)	Corynebacterium glutamicum,Bacillus subtilis,Leptospira meyeri,Pseudomonas aeruginosa,Pseudomonas putida,Saccharomyces cerevisiae,[Brevibacterium] flavum
+457	PWY-5347	Yes	Yes	8	7	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-methionine biosynthesis (transsulfuration)	Escherichia coli
+458	PWY-5328	Yes	No	14	3			
+459	PWY-6628	Yes	Yes	10	9	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-phenylalanine biosynthesis	Escherichia coli
+460	THRESYN-PWY	Yes	Yes	5	5	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-threonine biosynthesis	Escherichia coli
+461	THREOCAT-PWY	Yes	Yes	14	8	Amino-Acid-Degradation // Super-Pathways	superpathway of L-threonine metabolism	Escherichia coli,Salmonella enterica
+462	PWY-6629	Yes	Yes	13	11	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-tryptophan biosynthesis	Escherichia coli
+463	PWY-6630	Yes	Yes	10	9	Super-Pathways // Amino-Acid-Biosynthesis	superpathway of L-tyrosine biosynthesis	Escherichia coli
+464	PWY2OL-4	Yes	No	3	1			
+465	PWY-7110	Yes	No	11	1	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	superpathway of megalomicin A biosynthesis	Micromonospora megalomicea
+466	PWY-5850	Yes	Yes	2	1	Super-Pathways // Cofactor-Biosynthesis	superpathway of menaquinol-6 biosynthesis // superpathway of menaquinone-6 biosynthesis	Capnocytophaga gingivalis,Capnocytophaga ochracea,Capnocytophaga sputigena,Desulfovibrio desulfuricans,Megalodesulfovibrio gigas,Nitratidesulfovibrio vulgaris,Mammaliicoccus lentus,Mammaliicoccus sciuri,Micrococcus luteus
+467	PWY-5840	Yes	Yes	7	6	Super-Pathways // Cofactor-Biosynthesis	superpathway of menaquinol-7 biosynthesis // vitamin K<sub>2</sub> biosynthesis // superpathway of menaquinone-7 biosynthesis	Alkalihalobacillus alcalophilus,Bacillus amyloliquefaciens,Pseudobacillus badius,Bacillus cereus,Bacillus halotolerans,Bacillus licheniformis,Bacillus pumilus,Bacillus racemilacticus,Bacillus subtilis,Bacillus thuringiensis,Brochothrix thermosphacta,Chlorobaculum thiosulfatiphilum,Cytobacillus firmus,Desulfotomaculum nigrificans,Domibacillus aminovorans,Eisenibacter elegans,Exiguobacterium acetylicum,Geobacillus stearothermophilus,Lactococcus cremoris,Listeria grayi,Myxococcus fulvus,Niallia circulans,Peribacillus psychrosaccharolyticus,Pimelobacter simplex,Prevotella melaninogenica,Priestia megaterium,Psychrobacillus insolitus,Salinivibrio costicola,Sporolactobacillus inulinus,Sporosarcina ureae,Staphylococcus aureus,Staphylococcus capitis,Staphylococcus cohnii,Staphylococcus epidermidis,Staphylococcus haemolyticus,Staphylococcus hominis,Staphylococcus saprophyticus,Staphylococcus simulans,Staphylococcus warneri,Thermoplasma acidophilum,Thermus aquaticus,Thermus thermophilus,Heyndrickxia coagulans
+468	PWY-5838	Yes	Yes	9	9	Super-Pathways // Cofactor-Biosynthesis	superpathway of menaquinol-8 biosynthesis I // vitamin K<sub>2</sub> biosynthesis I // superpathway of menaquinone-8 biosynthesis I	Aeromonas caviae,Aeromonas hydrophila,Allochromatium vinosum,Bacillus thuringiensis,Citrobacter freundii,Deinococcus radiodurans,Deinococcus radiophilus,Enterococcus casseliflavus,Escherichia coli,Glutamicibacter nicotianae,Halobacterium salinarum,Halococcus morrhuae,Haloferax volcanii,Halorubrum saccharovorum,Halorubrum trapanicum,Liquorilactobacillus mali,Micrococcus luteus,Mycolicibacterium phlei,Myxococcus fulvus,Nesterenkonia halobia,Pectobacterium carotovorum,Planococcus citreus,Proteus mirabilis,Proteus vulgaris,Rubrivivax gelatinosus,Salinivibrio costicola,Serratia marcescens,Staphylococcus aureus,Thermus aquaticus,Thermus thermophilus,Virgibacillus pantothenticus,Klebsiella aerogenes
+469	PWY-6830	Yes	No	18	1			
+470	PWY-6516	Yes	Yes	24	13	CARBOXYLATES-DEG // Carbohydrates-Degradation // Super-Pathways	superpathway of microbial D-galacturonate and D-glucuronate degradation	Acinetobacter baylyi,Agrobacterium fabrum,Agrobacterium tumefaciens,Aquifex aeolicus,Aspergillus nidulans,Aspergillus niger,Bacillus subtilis,Clostridium acetobutylicum,Deinococcus radiodurans,Delftia acidovorans,Dickeya chrysanthemi,Dickeya dadantii,Escherichia coli,Haemophilus influenzae,Pectobacterium carotovorum,Pseudomonas aeruginosa,Pseudomonas putida,Pseudomonas sp.,Pseudomonas syringae,Trichoderma reesei,Erwinia chrysanthemi EC16
+471	PWY-3502	Yes	Yes	12	6			
+472	PWY-7245	Yes	Yes	7	4			
+473	PWY-7342	Yes	Yes	2	1			
+474	PWY-5257	Yes	Yes	33	12	Alcohol-Degradation // Carbohydrates-Degradation // Super-Pathways	superpathway of pentose and pentitol degradation	Aspergillus niger,Aspergillus oryzae,Azospirillum brasilense,Caulobacter vibrioides,Klebsiella aerogenes,Escherichia coli,Haloarcula marismortui,Haloferax volcanii,Herbaspirillum seropedicae,Trichoderma reesei,Klebsiella pneumoniae,Morganella morganii,Roseateles saccharophilus,Penicillium chrysogenum,Providencia stuartii,Pseudomonas fluorescens,Serratia marcescens,Sinorhizobium meliloti,Saccharolobus solfataricus
+475	PWY-5863	Yes	Yes	12	8	Super-Pathways // Cofactor-Biosynthesis	superpathway of phylloquinol biosynthesis // superpathway of phylloquinone biosynthesis	Catharanthus roseus,Galium mollugo,Synechococcus elongatus,Picosynechococcus sp. PCC 7002,Synechocystis sp. PCC 6803,Arabidopsis thaliana
+476	PWY66-409	Yes	Yes	11	9			
+477	PWY-841	Yes	Yes	17	16	Super-Pathways // Nucleotide-Biosynthesis	superpathway of purine nucleotides <i>de novo</i> biosynthesis I // purine biosynthesis 2	Saccharomyces cerevisiae,Homo sapiens,Arabidopsis thaliana
+478	DENOVOPURINE2-PWY	Yes	Yes	18	17	Super-Pathways // Nucleotide-Biosynthesis	superpathway of purine nucleotides <i>de novo</i> biosynthesis II	Escherichia coli,Salmonella enterica
+479	P165-PWY	Yes	Yes	7	5			
+480	PWY0-845	Yes	Yes	8	8	Super-Pathways // Cofactor-Biosynthesis	superpathway of pyridoxal 5'-phosphate biosynthesis and salvage // vitamin B<sub>6</sub> biosynthesis and salvage	Escherichia coli
+481	PWY-7200	Yes	No	7	3	Super-Pathways // Nucleotide-Biosynthesis	superpathway of pyrimidine deoxyribonucleoside salvage	Bacillus anthracis,Bacillus subtilis,Homo sapiens,Methanocaldococcus jannaschii,Mycobacterium tuberculosis,Arabidopsis thaliana
+482	PWY0-1298	Yes	Yes	5	3	NUCLEO-DEG // Super-Pathways	superpathway of pyrimidine deoxyribonucleosides degradation	Escherichia coli
+483	PWY-7211	Yes	Yes	14	10	Super-Pathways // Nucleotide-Biosynthesis	superpathway of pyrimidine deoxyribonucleotides <i>de novo</i> biosynthesis	Escherichia coli,Homo sapiens,Pisum sativum,Saccharomyces cerevisiae,Arabidopsis thaliana
+484	PWY0-166	Yes	Yes	7	6	Super-Pathways // Nucleotide-Biosynthesis	superpathway of pyrimidine deoxyribonucleotides <i>de novo</i> biosynthesis (<i>E. coli</i>)	Escherichia coli,Mycobacterium tuberculosis,Salmonella enterica
+485	PWY-7208	Yes	Yes	4	3	Super-Pathways // Nucleotide-Biosynthesis	superpathway of pyrimidine nucleobases salvage	Escherichia coli,Saccharomyces cerevisiae,Arabidopsis thaliana
+486	PWY-7209	Yes	Yes	5	2	NUCLEO-DEG // Super-Pathways	superpathway of pyrimidine ribonucleosides degradation	Bacillus subtilis,Brevibacillus agri,Escherichia coli,Geobacillus stearothermophilus,Homo sapiens,Rattus norvegicus
+487	PWY-7196	Yes	Yes	9	5	Super-Pathways // Nucleotide-Biosynthesis	superpathway of pyrimidine ribonucleosides salvage	Escherichia coli,Saccharomyces cerevisiae,Arabidopsis thaliana
+488	PWY0-162	Yes	Yes	9	9	Super-Pathways // Nucleotide-Biosynthesis	superpathway of pyrimidine ribonucleotides <i>de novo</i> biosynthesis // pyrimidine biosynthesis	Escherichia coli,Homo sapiens,Arabidopsis thaliana
+489	MET-SAM-PWY	Yes	Yes	9	8	Super-Pathways // Cofactor-Biosynthesis	superpathway of <i>S</i>-adenosyl-L-methionine biosynthesis from L-aspartate	Escherichia coli
+490	PWY-7596	Yes	No	5	1	Super-Pathways // Lipid-Biosynthesis	superpathway of stearidonate biosynthesis (cyanobacteria)	Limnospira platensis,Synechocystis sp. PCC 6803
+491	SULFATE-CYS-PWY	Yes	Yes	9	9	Noncarbon-Nutrients // Super-Pathways	superpathway of sulfate assimilation and cysteine biosynthesis	Escherichia coli
+492	PWY-6676	Yes	No	7	1	Noncarbon-Nutrients // Super-Pathways	superpathway of sulfide oxidation (phototrophic sulfur bacteria)	Allochromatium vinosum,Chlorobaculum tepidum
+493	PWY-6641	Yes	No	4	1	Noncarbon-Nutrients // Super-Pathways	superpathway of sulfolactate degradation // bifurcated pathway of 3-sulfolactate degradation	Roseovarius nubinhibens
+494	PWY-1541	Yes	Yes	5	2	Noncarbon-Nutrients // Super-Pathways	superpathway of taurine degradation	Rhodococcus opacus,Escherichia coli,Bilophila wadsworthia,Achromobacter superficialis,Desulfonispora thiosulfatigenes,Paracoccus denitrificans
+495	PWY-6612	Yes	Yes	9	9	Super-Pathways // Cofactor-Biosynthesis	superpathway of tetrahydrofolate biosynthesis // folic acid biosynthesis // folate biosynthesis // THF biosynthesis	Escherichia coli,Glycine max,Lactococcus lactis,Oryza sativa,Pisum sativum,Saccharomyces cerevisiae,Solanum lycopersicum,Arabidopsis thaliana
+496	FOLSYN-PWY	Yes	Yes	10	10	Super-Pathways // Cofactor-Biosynthesis	superpathway of tetrahydrofolate biosynthesis and salvage	Escherichia coli
+497	PWY-7024	Yes	No	15	2	C1-COMPOUNDS // Super-Pathways	superpathway of the 3-hydroxypropanoate cycle // superpathway of the 3-hydroxypropionate cycle	Chloroflexus aurantiacus
+498	THISYN-PWY	Yes	Yes	9	7	Super-Pathways // Cofactor-Biosynthesis	superpathway of thiamine diphosphate biosynthesis I // superpathway of thiamine diphosphate biosynthesis (E .coli) // superpathway of vitamin B<sub>1</sub> biosynthesis (E .coli)	Escherichia coli,Salmonella enterica
+499	PWY-6895	Yes	Yes	8	6	Super-Pathways // Cofactor-Biosynthesis	superpathway of thiamine diphosphate biosynthesis II // superpathway of thiamine diphosphate biosynthesis (Bacillus) // superpathway of vitamin B<sub>1</sub> biosynthesis (Bacillus)	Bacillus subtilis
+500	THISYNARA-PWY	Yes	Yes	6	3			
+501	PWY-7235	Yes	No	8	2			
+502	UBISYN-PWY	Yes	Yes	12	9	Super-Pathways // Cofactor-Biosynthesis	superpathway of ubiquinol-8 biosynthesis (early decarboxylation) // superpathway of ubiquinone-8 biosynthesis (prokaryotic) // superpathway of ubiquinol-8 biosynthesis (prokaryotic)	Acinetobacter calcoaceticus,Acinetobacter lwoffii,Aeromonas caviae,Aeromonas hydrophila,Allochromatium vinosum,Azotobacter chroococcum,Azotobacter vinelandii,Bordetella pertussis,Citrobacter freundii,Cupriavidus necator,Escherichia coli,Halorhodospira halophila,Klebsiella aerogenes,Proteus mirabilis,Proteus vulgaris,Rubrivivax gelatinosus,Salinivibrio costicola,Serratia marcescens,Stenotrophomonas maltophilia,Xanthomonas campestris,Xanthomonas citri,Xanthomonas oryzae
+503	PWY-7328	Yes	Yes	6	3	Super-Pathways // Carbohydrates-Biosynthesis	superpathway of UDP-glucose-derived O-antigen building blocks biosynthesis	Escherichia coli,Escherichia coli O113,Mycobacterium tuberculosis,Streptococcus pneumoniae,Streptococcus thermophilus,Vibrio cholerae O139
+504	PWY-7332	Yes	No	18	6	Super-Pathways // Carbohydrates-Biosynthesis	superpathway of UDP-<I>N</i>-acetylglucosamine-derived O-antigen building blocks biosynthesis	Escherichia coli,Helicobacter pylori,Pseudomonas aeruginosa,Vibrio cholerae O37
+505	PWY-6284	Yes	Yes	7	5	Super-Pathways // Lipid-Biosynthesis	superpathway of unsaturated fatty acids biosynthesis (<i>E. coli</i>)	Escherichia coli
+506	PWY-7392	Yes	Yes	11	10	Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	taxadiene biosynthesis (engineered)	Escherichia coli,Pantoea agglomerans,Taxus brevifolia
+507	PWY-6897	Yes	Yes	5	5	Super-Pathways // Cofactor-Biosynthesis	thiamine diphosphate salvage II // thiamin salvage II	Paenibacillus thiaminolyticus,Bacillus subtilis,Escherichia coli,Rhizobium johnstonii
+508	PWY-5178	Yes	No	12	4	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	toluene degradation IV (aerobic) (via catechol)	Pseudomonas putida
+509	PWY-5179	Yes	Yes	7	4	AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	toluene degradation V (aerobic) (<I>via</I> toluene-<I>cis</I>-diol)	Pseudomonas putida
+510	PWY-7622	Yes	Yes	2	1	Super-Pathways // Carbohydrates-Biosynthesis	UDP-&alpha;-D-galactofuranose biosynthesis // UDP-galactofuranose biosynthesis	Aspergillus fumigatus,Aspergillus nidulans
+511	PWY-4821	Yes	Yes	2	1			
