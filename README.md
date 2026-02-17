@@ -206,3 +206,5 @@ After that, I modified and ran the `parsing_minpath_reports.py` script to parse 
 Tomorrow I will be working on comparing the results between the default and updated MinPath runs, and I will also be looking at the differences in pathway annotations between the two approaches. I will be categorizing each pathway as well and generate figures that will simplify my findings for each consortia, method, and database.
 
 ### February 18th, 2026
+
+Today I will be working on the categories of my pathways
