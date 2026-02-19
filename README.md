@@ -207,4 +207,8 @@ Tomorrow I will be working on comparing the results between the default and upda
 
 ### February 18th, 2026
 
-Today I will be working on the categories of my pathways
+Today I will be working on the categories of my pathways. 
+
+### February 19th, 2026
+
+I had to generate a new file where I am storing the Metacyc categories according to the specific 'Ontology'. This was a complete mess (not new from Metacyc), so I had to do it manually by looking at the 'Ontology - pathway type' column of the Master MetaCyc file and assigning a category to each pathway. This new file is called `metacyc_category_curation_2026.txt` and it has four columns. Each column has a Level 1 or Level 2 value. Level 1 is the highest hierarchy of a category (i.e. Degradation, Biosynthesis, Detoxification, etc.), and level 2 has a more specific category (i.e. Carbohydrate degradation, Amino acid biosynthesis, etc.). The next step is to assign the proper category to my annotated genomes from the minpath, Metacyc 2026, and PICRUSt2 databases. This new modification will be added to my existing python script `parsing_minpath_reports.py`.

@@ -1,0 +1,102 @@
+Unique	Level 1	Level 2	Level 1.1	Level 2.1	Level 1.2	Level 2.2	Level 1.3	Level 2.3
+Activation	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA	NA	NA
+Alcohol-Degradation	Degradation/utilization/assimilation	Alcohol degradation	NA	NA	NA	NA	NA	NA
+Alcohol-Degradation // Carbohydrates-Degradation	Degradation/utilization/assimilation	Alcohol degradation	Degradation/utilization/assimilation	Carbohydrate degradation	NA	NA	NA	NA
+Alcohol-Degradation // Energy-Metabolism	Degradation/utilization/assimilation	Alcohol degradation	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+Aldehyde-Degradation // Super-Pathways	Degradation/utilization/assimilation	Aldehyde degradation	Superpathways	NA	NA	NA	NA	NA
+AMINE-DEG	Degradation/utilization/assimilation	"Amide, amidine, amine, and polyamine degradation"	NA	NA	NA	NA	NA	NA
+AMINE-DEG // AROMATIC-COMPOUNDS-DEGRADATION	Degradation/utilization/assimilation	"Amide, amidine, amine, and polyamine degradation"	Degradation/utilization/assimilation	Aromatic compound degradation	NA	NA	NA	NA
+AMINE-DEG // AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	Degradation/utilization/assimilation	"Amide, amidine, amine, and polyamine degradation"	Degradation/utilization/assimilation	Aromatic compound degradation	Superpathways	NA	NA	NA
+AMINE-DEG // Carbohydrates-Degradation // Super-Pathways	Degradation/utilization/assimilation	"Amide, amidine, amine, and polyamine degradation"	Degradation/utilization/assimilation	Carbohydrate degradation	Superpathways	NA	NA	NA
+AMINE-DEG // Super-Pathways	Degradation/utilization/assimilation	"Amide, amidine, amine, and polyamine degradation"	Superpathways	NA	NA	NA	NA	NA
+Amino-Acid-Biosynthesis	Biosynthesis	Amino acid biosynthesis	NA	NA	NA	NA	NA	NA
+Amino-Acid-Degradation	Degradation/utilization/assimilation	Amino acid degradation	NA	NA	NA	NA	NA	NA
+Amino-Acid-Degradation // Energy-Metabolism	Degradation/utilization/assimilation	Amino acid degradation	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+Amino-Acid-Degradation // Super-Pathways	Degradation/utilization/assimilation	Amino acid degradation	Superpathways	NA	NA	NA	NA	NA
+Aminoacyl-tRNAs-Charging	Macromolecule modification	Aminoacyl-tRNAs-charging	NA	NA	NA	NA	NA	NA
+Antibiotic-Resistance	Detoxification	Antibiotic resistance	NA	NA	NA	NA	NA	NA
+Antibiotic-Resistance // Cell-Structure-Biosynthesis	Detoxification	Antibiotic resistance	Biosynthesis	Cell structure biosynthesis	NA	NA	NA	NA
+AROMATIC-COMPOUNDS-BIOSYN	Biosynthesis	Aromatic compound biosynthesis	NA	NA	NA	NA	NA	NA
+AROMATIC-COMPOUNDS-DEGRADATION	Degradation/utilization/assimilation	Aromatic compound degradation	NA	NA	NA	NA	NA	NA
+AROMATIC-COMPOUNDS-DEGRADATION // CHLORINATED-COMPOUNDS-DEG	Degradation/utilization/assimilation	Aromatic compound degradation	Degradation/utilization/assimilation	Chlorinated compound degradation	NA	NA	NA	NA
+AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	Degradation/utilization/assimilation	Aromatic compound degradation	Superpathways	NA	NA	NA	NA	NA
+Arsenic-Detoxification	Detoxification	Arsenic detoxification	NA	NA	NA	NA	NA	NA
+Arsenic-Detoxification // Energy-Metabolism	Detoxification	Arsenic detoxification	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+C1-COMPOUNDS	Degradation/utilization/assimilation	C1 Compound utilization and assimilation	NA	NA	NA	NA	NA	NA
+Carbohydrates-Biosynthesis	Biosynthesis	Carbohydrate biosynthesis	NA	NA	NA	NA	NA	NA
+Carbohydrates-Biosynthesis // Metabolic-Regulators	Biosynthesis	Carbohydrate biosynthesis	Biosynthesis	Metabolic regulator biosynthesis	NA	NA	NA	NA
+Carbohydrates-Degradation	Degradation/utilization/assimilation	Carbohydrate degradation	NA	NA	NA	NA	NA	NA
+CARBOXYLATES-DEG	Degradation/utilization/assimilation	Carboxylate degradation	NA	NA	NA	NA	NA	NA
+CARBOXYLATES-DEG // Carbohydrates-Degradation	Degradation/utilization/assimilation	Carboxylate degradation	Degradation/utilization/assimilation	Carbohydrate degradation	NA	NA	NA	NA
+CARBOXYLATES-DEG // Super-Pathways // Energy-Metabolism	Degradation/utilization/assimilation	Carboxylate degradation	Generation of precursor metabolites and energy	NA	Superpathways	NA	NA	NA
+Cell-Structure-Biosynthesis	Biosynthesis	Cell structure biosynthesis	NA	NA	NA	NA	NA	NA
+CHLORINATED-COMPOUNDS-DEG	Degradation/utilization/assimilation	Chlorinated compound degradation	NA	NA	NA	NA	NA	NA
+Cofactor-Biosynthesis	Biosynthesis	Cofactor biosynthesis	NA	NA	NA	NA	NA	NA
+Cofactor-Biosynthesis // Carboxylate-Biosynthesis	Biosynthesis	Cofactor biosynthesis	Biosynthesis	Carboxylate biosynthesis	NA	NA	NA	NA
+Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	Biosynthesis	Cofactor biosynthesis	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA	NA	NA
+Cyclitols-Biosynthesis	Biosynthesis	Cyclitol biosynthesis	NA	NA	NA	NA	NA	NA
+Energy-Metabolism	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA	NA	NA
+Fatty-Acid-and-Lipid-Degradation	Degradation/utilization/assimilation	Fatty acid and lipid degradation	NA	NA	NA	NA	NA	NA
+Fatty-Acid-and-Lipid-Degradation // Super-Pathways	Degradation/utilization/assimilation	Fatty acid and lipid degradation	Superpathways	NA	NA	NA	NA	NA
+Glycan-Pathways // Carbohydrates-Biosynthesis	Glycan pathways	NA	Biosynthesis	Carboxylate biosynthesis	NA	NA	NA	NA
+Glycan-Pathways // Cell-Structure-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	NA	NA	NA	NA
+Glycan-Pathways // Cell-Structure-Biosynthesis // Carbohydrates-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Carbohydrate biosynthesis	NA	NA
+Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Lipid biosynthesis	NA	NA
+Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis // Carbohydrates-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Lipid biosynthesis	Biosynthesis	Carbohydrate biosynthesis
+HORMONE-SYN	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	NA	NA	NA	NA	NA	NA
+Inactivation	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA	NA	NA
+Interconversion	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA	NA	NA
+Lipid-Biosynthesis	Biosynthesis	Lipid biosynthesis	NA	NA	NA	NA	NA	NA
+Metabolic-Regulators	Biosynthesis	Metabolic regulators	NA	NA	NA	NA	NA	NA
+Methylglyoxal-Detoxification // Aldehyde-Degradation	Detoxification	Methylglyoxal detoxification	Degradation/utilization/assimilation	Aldehyde degradation	NA	NA	NA	NA
+Noncarbon-Nutrients	Degradation/utilization/assimilation	Inorganic nutrient metabolism	NA	NA	NA	NA	NA	NA
+Noncarbon-Nutrients // Energy-Metabolism	Degradation/utilization/assimilation	Inorganic nutrient metabolism	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+Noncarbon-Nutrients // Super-Pathways	Degradation/utilization/assimilation	Inorganic nutrient metabolism	Superpathways	NA	NA	NA	NA	NA
+Nucleic-Acid-Processing	Macromolecule modification	Nucleic acid processing	NA	NA	NA	NA	NA	NA
+NUCLEO-DEG	Degradation/utilization/assimilation	Nucleoside and nucleotide degradation	NA	NA	NA	NA	NA	NA
+NUCLEO-DEG // Amino-Acid-Biosynthesis	Degradation/utilization/assimilation	Nucleoside and nucleotide degradation	Biosynthesis	Amino acid biosynthesis	NA	NA	NA	NA
+Nucleotide-Biosynthesis	Biosynthesis	Nucleoside and nucleotide biosynthesis	NA	NA	NA	NA	NA	NA
+Other-biosynthesis	Biosynthesis	Other biosynthesis	NA	NA	NA	NA	NA	NA
+Other-Degradation	Degradation/utilization/assimilation	Other degradation	NA	NA	NA	NA	NA	NA
+Polyamine-Biosynthesis	Biosynthesis	"Amide, amidine, amine, and polyamine biosynthesis"	NA	NA	NA	NA	NA	NA
+Polyamine-Biosynthesis // Metabolic-Regulators	Biosynthesis	"Amide, amidine, amine, and polyamine biosynthesis"	Biosynthesis	Metabolic regulator biosynthesis	NA	NA	NA	NA
+Polymer-Degradation // Carbohydrates-Degradation	Degradation/utilization/assimilation	Polymeric degradation	Degradation/utilization/assimilation	Carbohydrate degradation	NA	NA	NA	NA
+Polymer-Degradation // Carbohydrates-Degradation // Glycan-Pathways	Degradation/utilization/assimilation	Polymeric degradation	Degradation/utilization/assimilation	Carbohydrate degradation	Glycan pathways	NA	NA	NA
+Polyprenyl-Biosynthesis	Biosynthesis	Polyprenyl biosynthesis	NA	NA	NA	NA	NA	NA
+Protein-Modification // Glycan-Pathways // Carbohydrates-Biosynthesis	Macromolecule modification	Protein modification	Glycan pathways	NA	Biosynthesis	Carbohydrate biosynthesis	NA	NA
+SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA	NA	NA
+SECONDARY-METABOLITE-DEGRADATION	Degradation/utilization/assimilation	Secondary metabolite degradation	NA	NA	NA	NA	NA	NA
+SECONDARY-METABOLITE-DEGRADATION // Metabolic-Clusters	Degradation/utilization/assimilation	Secondary metabolite degradation	Metabolic clusters	NA	NA	NA	NA	NA
+Super-Pathways	Super pathways	NA	NA	NA	NA	NA	NA	NA
+Super-Pathways // Amino-Acid-Biosynthesis	Super pathways	NA	Biosynthesis	Amino acid biosynthesis	NA	NA	NA	NA
+Super-Pathways // Carbohydrates-Biosynthesis	Super pathways	NA	Biosynthesis	Carbohydrate biosynthesis	NA	NA	NA	NA
+Super-Pathways // Cofactor-Biosynthesis	Super pathways	NA	Biosynthesis	Cofactor biosynthesis	NA	NA	NA	NA
+Super-Pathways // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	Super pathways	NA	Biosynthesis	Cofactor biosynthesis	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA
+Super-Pathways // Energy-Metabolism	Super pathways	NA	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+Super-Pathways // Nucleotide-Biosynthesis	Super pathways	NA	Biosynthesis	Nucleotide biosynthesis	NA	NA	NA	NA
+Super-Pathways // Polyprenyl-Biosynthesis	Super pathways	NA	Biosynthesis	Polyprenyl biosynthesis	NA	NA	NA	NA
+Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	Super pathways	NA	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+Super-Pathways // Storage-Compounds-Biosynthesis	Super pathways	NA	Biosynthesis	Storage compound biosynthesis	NA	NA	NA	NA
+Tetrapyrrole-Biosynthesis	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA	NA	NA	NA	NA
+Tetrapyrrole-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	Tetrapyrrole biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+0	NA	NA	NA	NA	NA	NA	NA	NA
+Metabolic-Clusters // Nucleotide-Biosynthesis	Metabolic clusters	NA	Biosynthesis	Nucleotide biosynthesis	NA	NA	NA	NA
+Alcohol-Degradation // Carbohydrates-Degradation // Super-Pathways	Degradation/utilization/assimilation	Alcohol degradation	Degradation/utilization/assimilation	Carbohydrate degradation	Superpathways	NA	NA	NA
+Super-Pathways // Lipid-Biosynthesis	Super pathways	NA	Biosynthesis	Lipid biosynthesis	NA	NA	NA	NA
+8-Oxo-GTP-Detoxification // Metabolic-Clusters	Detoxification	8-oxo-GTP-detoxification	NA	NA	NA	NA	NA	NA
+Noncarbon-Nutrients // Activation	Degradation/utilization/assimilation	Inorganic nutrient metabolism	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA
+Noncarbon-Nutrients // Super-Pathways // Energy-Metabolism	Degradation/utilization/assimilation	Inorganic nutrient metabolism	Superpathways	NA	Generation of precursor metabolites and energy	NA	NA	NA
+Acid-Resistance // Polyamine-Biosynthesis	Detoxification	Acid resistance	Biosynthesis	Polyamine biosynthesis	NA	NA	NA	NA
+Mercury-Detoxification	Detoxification	Mercury detoxification	NA	NA	NA	NA	NA	NA
+Polymer-Degradation	Degradation/utilization/assimilation	Polymeric degradation	NA	NA	NA	NA	NA	NA
+Other-Degradation // Super-Pathways	Degradation/utilization/assimilation	Other degradation	NA	NA	NA	NA	NA	NA
+Hydrocarbon-Degradation	Degradation/utilization/assimilation	Hydrocarbon degradation	NA	NA	NA	NA	NA	NA
+Protein-Modification	Macromolecule modification	Protein modification	NA	NA	NA	NA	NA	NA
+Aminoacyl-tRNAs-Charging // Metabolic-Clusters	Macromolecule modification	Aminoacyl-tRNAs-charging	Metabolic clusters	NA	NA	NA	NA	NA
+CARBOXYLATES-DEG // Fatty-Acid-and-Lipid-Degradation	Degradation/utilization/assimilation	Carboxylate degradation	Degradation/utilization/assimilation	Fatty acid and lipid degradation	NA	NA	NA	NA
+AMINE-DEG // Energy-Metabolism	Degradation/utilization/assimilation	"Amide, amidine, amine, and polyamine degradation"	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+Protein-Modification // Metabolic-Clusters	Macromolecule modification	Protein modification	Metabolic clusters	NA	NA	NA	NA	NA
+CYCLITOLS-DEG // Super-Pathways	Degradation/utilization/assimilation	Cyclitol degradation	NA	NA	NA	NA	NA	NA
+Carboxylate-Biosynthesis	Biosynthesis	Carboxylate biosynthesis	NA	NA	NA	NA	NA	NA
+SECONDARY-METABOLITE-DEGRADATION // Super-Pathways	Degradation/utilization/assimilation	Secondary metabolite degradation	Superpathways	NA	NA	NA	NA	NA
+C1-COMPOUNDS // Noncarbon-Nutrients	Degradation/utilization/assimilation	C1 Compound utilization and assimilation	Degradation/utilization/assimilation	Inorganic nutrient metabolism	NA	NA	NA	NA
