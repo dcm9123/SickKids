@@ -17,7 +17,6 @@ import re
 def sanity_check():
     # Load curated category file and extract each level column as a list
     curated_cat_file = pd.read_csv("/Users/danielcm/Desktop/SickKids/MetaCyc/Master_Files/metacyc_category_curation_2026.txt", sep = "\t")
-    orig_pwy = curated_cat_file["Unique"].tolist()
     level1 = curated_cat_file["Level 1"].tolist()
     level1_1 = curated_cat_file["Level 1.1"].tolist()
     level1_2 = curated_cat_file["Level 1.2"].tolist()
@@ -199,9 +198,10 @@ def simplifying_categories():
                                     sorted_level1 = [element_level1, element_level1_1, element_level1_2, element_level1_3]
                                     sorted_level2 = [element_level2, element_level2_1, element_level2_2, element_level2_3]
                                 else:
-                                    # Unexpected element not in curated file — stop and report
-                                    print(f"ERROR: element {element} is not in the curated category file. Exiting now.")
-                                    sys.exit()
+                                    # Element not in curated file — fill with empty strings and warn
+                                    print(f"WARNING: element '{element}' is not in the curated category file. Filling with empty strings.")
+                                    sorted_level1 = ["", "", "", ""]
+                                    sorted_level2 = ["", "", "", ""]
                             # Append the sorted category values as one row dict per pathway
                             rows.append({"Level 1":sorted_level1[0], "Level 1.1":sorted_level1[1], "Level 1.2":sorted_level1[2], "Level 1.3":sorted_level1[3],
                                                    "Level 2":sorted_level2[0], "Level 2.1":sorted_level2[1], "Level 2.2":sorted_level2[2], "Level 2.3":sorted_level2[3]})
@@ -212,12 +212,39 @@ def simplifying_categories():
                         f_out_name = file.split('/')[-1]
                         print(f_out_name)    
                         df_final.to_csv(f_out_name, sep = "\t", index = False)
+                        
 def counting_classification():
     # Define methods and databases to iterate over
     method = ["default", "updated"]                                                 #One for each type of database used for the MinPath annotation (default MetaCyc or updated picrust2 or MetaCyc 2026)
     db = ["metacyc_2026", "picrust2_db"]                                            #One for each database used for the MinPath annotation (updated MetaCyc 2026 or PICRUSt2 database)      
     input_path = "/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/"
+    curated_file = pd.read_csv("/Users/danielcm/Desktop/SickKids/MetaCyc/Master_Files/metacyc_category_curation_2026.txt", sep = "\t")
+    categories_1 = curated_file.loc[:,["Level 1","Level 1.1","Level 1.2","Level 1.3"]].values.tolist()
+    categories_2 = curated_file.loc[:,["Level 2","Level 2.1","Level 2.2","Level 2.3"]].values.tolist()
+    categories_set1 = set()
+    categories_set2 = set()
+
+    for items in categories_1:
+        for element in items:
+            element = str(element)
+            categories_set1.add(element)
+    for items in categories_2:
+        for element in items:
+            element = str(element)
+            categories_set2.add(element)
+
+    #for thing in sorted(categories_set1):
+    #    print(thing)
+    #for thing in sorted(categories_set2):
+    #    print(thing)
+    
     os.chdir(input_path)
+    name = []
+    pwy_count = []
+    naive = []
+    minpath = []
+    bacteria = []
+    non_bacteria = []
     for mthd in method:     
         for database in db:
                 # Set input directory based on method and database
@@ -228,17 +255,54 @@ def counting_classification():
                 elif mthd == "updated":
                     dir1 = f"/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/{mthd}/{database}/parsed"
                 os.chdir(dir1)
+                
+                pwy_dict_1 = {}
+                pwy_dict_2 = {}
                 # Load each parsed TSV file for classification counting
                 for file in glob.glob(os.path.join(dir1,"*.tsv")):
                         print(f"Counting classifications for file: {file}")
                         file_in = pd.read_csv(file, sep = "\t")
+                        name.append(file.split('/')[-1])
+                        pwy_count.append(len(file_in["Pathways"]))
+                        naive.append(len(file_in[file_in["Naive"]=="Yes"]))
+                        minpath.append(len(file_in[file_in["MinPath"]=="Yes"]))
+                        bacteria.append(len(file_in[file_in["Classification"]=="Bacteria"]))
+                        non_bacteria.append(len(file_in[file_in["Classification"]!="Bacteria"]))
+                        
+                        for category in categories_set1:
+                            #print(category)
+                            pwy_dict_1[category] = 0
+                            for rows in file_in.itertuples(index = False, name = None):
+                                values = rows[10:13]
+                                if category in values:
+                                    pwy_dict_1[category] = pwy_dict_1.get(category, 0) + 1
+                        for category in categories_set2:
+                            pwy_dict_2[category] = 0
+                            for rows in file_in.itertuples(index = False, name = None):
+                                values2 = rows[14:18]
+                                if category in values2:
+                                    pwy_dict_2[category] = pwy_dict_2.get(category, 0) + 1
+                        print(sorted(pwy_dict_1.items()))
+                        print(sorted(pwy_dict_2.items()))
+                        pwy_dict_1 = {}
+                        pwy_dict_2 = {}
+                df_out_part1 = pd.DataFrame({"ID":name, "Total pathways":pwy_count, "Naive":naive, "MinPath":minpath, "Bacteria":bacteria, "Non-Bacteria":non_bacteria})
+                df_out_part1_1 = pd.DataFrame({sorted(categories_set1):sorted(pwy_dict_1.values())})
+                df_out_part2_1 = pd.DataFrame({sorted(categories_set2):sorted(pwy_dict_2.values())})
+                
+                df_final1 = pd.concat([df_out_part1, df_out_part1_1], axis = 1)
+                df_final2 = pd.concat([df_out_part1, df_out_part2_1], axis = 1)
+                df_final1.to_csv(f"Summary_classification_counting_{mthd}_{database}_level1.tsv", sep = "\t", index = False)
+                df_final2.to_csv(f"Summary_classification_counting_{mthd}_{database}_level2.tsv", sep = "\t", index = False)
+                            
+                            
                         
 # %%
 def main():
     sanity_check()             # Verify curated category file has no unexpected duplicates
     annotating()               # Parse raw MinPath reports and merge with master pathway metadata
     simplifying_categories()   # Add Level 1/2 category columns to each parsed file
-
+    counting_classification()
 main()
 
 # %%

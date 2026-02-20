@@ -49,7 +49,7 @@ AROMATIC-COMPOUNDS-DEGRADATION // Metabolic-Clusters	Degradation/utilization/ass
 AROMATIC-COMPOUNDS-DEGRADATION // Super-Pathways	Degradation/utilization/assimilation	Aromatic compound degradation	Superpathways	NA	NA	NA	NA	NA
 Arsenic-Detoxification	Detoxification	Arsenic detoxification	NA	NA	NA	NA	NA	NA
 Arsenic-Detoxification // Energy-Metabolism	Detoxification	Arsenic detoxification	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
-Bioluminescence	Bioluminescence	NA	NA	NA	NA	NA	NA	NA
+Bioluminescence	Bioluminescence/fluorescence/chromoprotein biosynthesis	NA	NA	NA	NA	NA	NA	NA
 C1-COMPOUNDS	Degradation/utilization/assimilation	C1 Compound utilization and assimilation	NA	NA	NA	NA	NA	NA
 C1-COMPOUNDS // Carbohydrates-Biosynthesis	Degradation/utilization/assimilation	C1 Compound utilization and assimilation	NA	NA	NA	NA	NA	NA
 C1-COMPOUNDS // Energy-Metabolism	Degradation/utilization/assimilation	C1 Compound utilization and assimilation	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
