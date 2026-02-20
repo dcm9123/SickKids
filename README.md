@@ -329,3 +329,20 @@ Found 1 jplace file
 
 Finished 2026-02-20 16:19:23
 ```
+
+The next part was to run the hidden state prediction placement. For that I ran the following command:
+`for community in {"ns1","ns6","s2","s5"}; do hsp.py -t ${community}_output/${community}_placed_seqs.tre --observed_trait_table trait_tables/16S.txt --calculate_NSTI -p 10 --seed 23 --verbose -o ${community}_output/${community}_16S_nsti.predicted.tsv; done`
+
+which gave me the following output:
+
+```
+Rscript /home/daniel.castanedamogo/anaconda3/envs/picrust2/lib/python3.9/site-packages/picrust2/Rscripts/castor_nsti.R ns1_output/ns1_placed_seqs.tre /home/daniel.castanedamogo/tmp/tmpsold53vi/known_tips.txt /home/daniel.castanedamogo/tmp/tmpsold53vi/nsti_out.txt
+
+Warning messages:
+1: package ‘castor’ was built under R version 4.4.1 
+2: package ‘Rcpp’ was built under R version 4.4.1 
+```
+
+I repeated the same command across the KOs and ECs trait tables, and I got the predicted tables for each community. The next step is to run the metagenome prediction:
+
+`for community in {"ns1","ns6","s2","s5"}; do for function in {"KO","EC"}; do hsp.py -t ${community}_output/${community}_placed_seqs.tre --observed_trait_table trait_tables/${function}_for_picrust2_renamed.tsv --calculate_NSTI -p 10 --seed 23 --verbose -o ${community}_output/${community}_${function}_nsti.predicted.tsv; done; done;`
