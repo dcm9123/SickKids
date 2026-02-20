@@ -1,212 +1,212 @@
-ID	Total pathways	Naive	MinPath	Bacteria	Non-Bacteria	Glycan pathways	Metabolite activation/inactivation/interconversion	Macromolecule modification	Detoxification	Transport	Bioluminescence/fluorescence/chromoprotein biosynthesis	Degradation/utilization/assimilation	Superpathways	Generation of precursor metabolites and energy	Metabolic clusters	nan	Biosynthesis
-S_NS6_Pp_057_v1v9_updated_parsed_report.tsv	614	614	378	614	0	47	0	12	8	0	1	197	39	79	7	614	350
-S_NS6_Bs_032_updated_parsed_report.tsv	710	710	517	710	0	45	2	11	10	0	1	222	39	95	7	709	406
-S_S5_Af_090_updated_parsed_report.tsv	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
-S_S5_Cc_098_updated_parsed_report.tsv	725	725	500	725	0	23	1	13	8	0	0	270	44	110	8	724	359
-S_NS1_He_021_v1v9_updated_parsed_report.tsv	693	693	494	693	0	20	1	12	9	0	1	263	43	91	7	693	349
-S_S2_Ea_077_v1v9_updated_parsed_report.tsv	733	733	471	733	0	50	0	15	9	0	0	265	39	93	8	732	389
-S_NS6_Am_029_v1v9_updated_parsed_report.tsv	622	622	417	622	0	37	0	17	9	0	0	152	38	88	7	621	386
-S_S2_Ca_088_v1v9_updated_parsed_report.tsv	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
-S_NS6_Ca_028_updated_parsed_report.tsv	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
-S_S5_Bp_095_updated_parsed_report.tsv	595	595	346	595	0	48	1	14	8	0	0	175	39	84	6	595	344
-S_NS1_Em_017_updated_parsed_report.tsv	1024	1024	759	1024	0	77	2	16	12	0	1	392	57	134	10	1021	518
-S_NS6_He_053_updated_parsed_report.tsv	708	708	502	708	0	21	1	13	9	0	1	256	44	90	7	708	371
-S_S2_Rf_118_v1v9_updated_parsed_report.tsv	616	616	407	616	0	13	1	11	8	0	1	204	43	92	7	616	334
-S_S5_Ca_088_v1v9_updated_parsed_report.tsv	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
-S_NS6_Af_030_v1v9_updated_parsed_report.tsv	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
-S_S5_Et_102_v1v9_updated_parsed_report.tsv	747	747	505	747	0	22	1	14	11	0	1	273	49	100	7	747	386
-S_NS1_Bp_010_updated_parsed_report.tsv	594	594	345	594	0	48	1	14	7	0	0	175	39	84	6	594	343
-S_S5_Em_101_updated_parsed_report.tsv	726	726	498	726	0	23	1	15	11	0	1	249	46	111	8	725	378
-S_S5_Et_102_updated_parsed_report.tsv	747	747	505	747	0	22	1	14	11	0	1	273	49	100	7	747	386
-S_S5_Fp_106_v1v9_updated_parsed_report.tsv	687	687	434	687	0	48	0	12	10	0	1	261	41	97	8	687	346
-S_NS6_Et_048_updated_parsed_report.tsv	753	753	516	753	0	22	1	14	11	0	1	273	48	100	8	753	391
-S_S5_Rf_112_v1v9_updated_parsed_report.tsv	647	647	416	647	0	48	1	13	5	0	0	199	42	82	7	647	380
-S_NS6_Pd_055_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_NS1_He_021_updated_parsed_report.tsv	693	693	494	693	0	20	1	12	9	0	1	263	43	91	7	693	349
-S_NS1_Fp_020_v1v9_updated_parsed_report.tsv	672	672	426	672	0	48	0	12	10	0	1	256	41	97	8	672	336
-S_NS6_Em_047_v1v9_updated_parsed_report.tsv	737	737	476	737	0	59	1	15	11	0	1	240	46	99	8	737	409
-S_NS1_Bs_004_updated_parsed_report.tsv	703	703	508	703	0	43	2	11	9	0	1	219	39	94	7	702	402
-S_NS1_Bs_004_v1v9_updated_parsed_report.tsv	703	703	508	703	0	43	2	11	9	0	1	219	39	94	7	702	402
-S_NS6_Pd_055_v1v9_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_NS1_Em_017_v1v9_updated_parsed_report.tsv	1024	1024	759	1024	0	77	2	16	12	0	1	392	57	134	10	1021	518
-S_S2_Et_074_v1v9_updated_parsed_report.tsv	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
-S_S5_Rg_113_v1v9_updated_parsed_report.tsv	628	628	435	628	0	19	0	11	10	0	0	208	39	84	8	628	349
-S_NS1_Ss_026_v1v9_updated_parsed_report.tsv	603	603	367	603	0	48	0	14	8	0	1	188	32	76	7	603	348
-S_NS6_Sh_058_v1v9_updated_parsed_report.tsv	695	695	456	695	0	46	2	15	8	0	1	217	39	101	6	694	390
-S_NS1_Pm_023_v1v9_updated_parsed_report.tsv	752	752	530	752	0	47	2	13	10	0	1	240	38	99	7	750	428
-S_NS6_He_053_v1v9_updated_parsed_report.tsv	708	708	502	708	0	21	1	13	9	0	1	256	44	90	7	708	371
-S_S2_Ef_078_updated_parsed_report.tsv	1002	1002	748	1002	0	78	2	16	13	0	1	360	56	134	10	998	527
-S_S2_Hf_081_updated_parsed_report.tsv	345	345	201	345	0	8	0	11	6	0	0	125	23	59	5	344	161
-S_NS1_Fp_020_updated_parsed_report.tsv	672	672	426	672	0	48	0	12	10	0	1	256	41	97	8	672	336
-S_S5_Pd_110_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_NS6_Bs_033_v1v9_updated_parsed_report.tsv	710	710	517	710	0	45	2	11	10	0	1	222	39	95	7	709	406
-S_NS6_Fp_052_updated_parsed_report.tsv	676	676	428	676	0	47	0	12	10	0	1	257	41	97	8	676	339
-S_NS1_Am_001_v1v9_updated_parsed_report.tsv	618	618	417	618	0	33	1	14	9	0	0	149	38	87	7	616	387
-S_S2_Pd_083_v1v9_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_NS6_Blss_040_v1v9_updated_parsed_report.tsv	600	600	351	600	0	47	1	14	7	0	0	178	39	84	6	600	346
-S_S2_Cc_069_updated_parsed_report.tsv	614	614	396	614	0	16	0	14	8	0	0	201	41	87	7	614	338
-S_NS1_Bt_005_v1v9_updated_parsed_report.tsv	758	758	523	758	0	63	2	11	10	0	1	238	37	98	7	756	434
-S_NS1_Bu_006_updated_parsed_report.tsv	774	774	532	774	0	84	2	14	9	0	1	223	39	92	7	772	470
-S_NS1_Am_001_updated_parsed_report.tsv	618	618	417	618	0	33	1	14	9	0	0	149	38	87	7	616	387
-S_S2_Blss_067_updated_parsed_report.tsv	591	591	351	591	0	47	1	14	7	0	0	173	39	84	6	591	342
-S_NS1_Cc_012_updated_parsed_report.tsv	774	774	525	774	0	23	1	14	9	0	0	301	46	111	8	774	376
-S_NS6_Sw_060_updated_parsed_report.tsv	584	584	383	584	0	35	1	12	9	0	0	179	41	86	8	583	332
-S_S2_Bs_063_v1v9_updated_parsed_report.tsv	855	855	585	855	0	51	2	16	8	0	1	326	43	111	7	854	435
-S_NS1_Bv_007_updated_parsed_report.tsv	741	741	535	741	0	47	2	12	10	0	1	232	38	96	9	740	423
-S_S5_Cc_097_updated_parsed_report.tsv	760	760	523	760	0	20	1	14	9	0	0	292	46	111	8	760	371
-S_S2_Bd_064_updated_parsed_report.tsv	765	765	544	765	0	61	2	13	10	0	1	241	38	95	9	764	439
-S_NS1_Ao_003_v1v9_updated_parsed_report.tsv	607	607	412	607	0	42	1	12	6	0	1	180	34	94	5	606	348
-S_S5_Fp_105_updated_parsed_report.tsv	602	602	394	602	0	11	1	13	6	0	0	199	41	87	7	602	329
-S_NS1_Et_015_v1v9_updated_parsed_report.tsv	752	752	511	752	0	22	1	14	11	0	1	272	47	97	8	752	392
-S_NS6_Cb_042_v1v9_updated_parsed_report.tsv	795	795	541	795	0	26	1	13	9	0	0	311	46	114	8	795	386
-S_S2_Bd_064_v1v9_updated_parsed_report.tsv	765	765	544	765	0	61	2	13	10	0	1	241	38	95	9	764	439
-S_NS1_Bv_007_v1v9_updated_parsed_report.tsv	741	741	535	741	0	47	2	12	10	0	1	232	38	96	9	740	423
-S_S2_Et_075_updated_parsed_report.tsv	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
-S_NS6_Bx_038_2_updated_parsed_report.tsv	795	795	554	795	0	82	2	11	9	0	1	241	43	100	8	794	468
-S_S5_Blss_094_v1v9_updated_parsed_report.tsv	589	589	350	589	0	47	1	14	4	0	0	174	39	84	6	589	342
-S_NS1_Af_002_updated_parsed_report.tsv	615	615	420	615	0	42	1	12	6	0	1	184	33	92	5	614	354
-S_NS1_Ig_115_v1v9_updated_parsed_report.tsv	647	647	403	647	0	47	0	13	10	0	0	234	41	101	8	647	329
-S_NS6_Ao_031_updated_parsed_report.tsv	612	612	423	612	0	42	1	12	6	0	1	178	33	95	5	611	355
-S_S2_Ea_076_v1v9_updated_parsed_report.tsv	740	740	478	740	0	50	0	16	9	0	0	269	42	93	9	739	390
-S_NS6_Pp_057_updated_parsed_report.tsv	614	614	378	614	0	47	0	12	8	0	1	197	39	79	7	614	350
-S_NS6_Bv_037_v1v9_updated_parsed_report.tsv	763	763	542	763	0	62	2	12	10	0	1	235	38	95	9	762	443
-S_S5_Blss_094_updated_parsed_report.tsv	589	589	350	589	0	47	1	14	4	0	0	174	39	84	6	589	342
-S_NS6_Cb_041_updated_parsed_report.tsv	769	769	540	769	0	21	1	13	9	0	0	298	47	113	8	769	375
-S_S5_Am_089_updated_parsed_report.tsv	614	614	412	614	0	33	1	14	9	0	0	147	38	88	7	612	383
-S_S2_Hf_081_v1v9_updated_parsed_report.tsv	345	345	201	345	0	8	0	11	6	0	0	125	23	59	5	344	161
-S_S2_Pd_083_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_NS6_Pm_056_v1v9_updated_parsed_report.tsv	751	751	528	751	0	47	2	13	10	0	1	240	38	99	7	749	427
-S_S2_Rg_085_v1v9_updated_parsed_report.tsv	630	630	440	630	0	17	0	13	11	0	0	204	40	84	8	630	353
-S_S2_Blss_067_v1v9_updated_parsed_report.tsv	591	591	351	591	0	47	1	14	7	0	0	173	39	84	6	591	342
-S_S5_Cc_098_v1v9_updated_parsed_report.tsv	725	725	500	725	0	23	1	13	8	0	0	270	44	110	8	724	359
-S_NS6_Sh_058_updated_parsed_report.tsv	695	695	456	695	0	46	2	15	8	0	1	217	39	101	6	694	390
-S_S2_Af_119_updated_parsed_report.tsv	604	604	413	604	0	42	1	12	6	0	1	172	34	92	6	603	354
-S_S2_Am_061_v1v9_updated_parsed_report.tsv	611	611	411	611	0	34	0	14	9	0	0	142	38	87	7	609	385
-S_S2_Rf_084_v1v9_updated_parsed_report.tsv	708	708	504	708	0	21	1	12	9	0	1	264	44	91	7	708	364
-S_S5_Rf_112_updated_parsed_report.tsv	647	647	416	647	0	48	1	13	5	0	0	199	42	82	7	647	380
-S_S2_Shsn_087_v1v9_updated_parsed_report.tsv	695	695	455	695	0	46	2	15	8	0	1	217	40	102	6	694	389
-S_S2_Et_075_v1v9_updated_parsed_report.tsv	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
-S_S2_Rf_084_updated_parsed_report.tsv	708	708	504	708	0	21	1	12	9	0	1	264	44	91	7	708	364
-S_NS6_Hh_054_v1v9_updated_parsed_report.tsv	691	691	493	691	0	22	1	11	9	0	1	258	43	91	7	691	352
-S_NS6_Em_046_v1v9_updated_parsed_report.tsv	742	742	480	742	0	59	1	15	11	0	1	240	46	100	8	742	413
-S_S5_Hf_107_updated_parsed_report.tsv	345	345	199	345	0	7	0	13	5	0	0	124	22	61	5	344	159
-S_S2_He_082_v1v9_updated_parsed_report.tsv	708	708	504	708	0	21	1	12	9	0	1	264	44	91	7	708	364
-S_NS6_Bu_034_v1v9_updated_parsed_report.tsv	767	767	535	767	0	82	2	12	9	0	1	223	39	90	7	765	465
-S_S5_Bv_093_v1v9_updated_parsed_report.tsv	768	768	547	768	0	63	2	13	10	0	1	234	38	96	9	767	448
-S_NS6_Em_046_updated_parsed_report.tsv	742	742	480	742	0	59	1	15	11	0	1	240	46	100	8	742	413
-S_NS6_Ss_059_v1v9_updated_parsed_report.tsv	605	605	368	605	0	48	0	14	8	0	1	188	34	76	8	605	350
-S_S5_Bp_095_v1v9_updated_parsed_report.tsv	595	595	346	595	0	48	1	14	8	0	0	175	39	84	6	595	344
-S_NS6_Bs_032_v1v9_updated_parsed_report.tsv	710	710	517	710	0	45	2	11	10	0	1	222	39	95	7	709	406
-S_NS1_Pd_022_updated_parsed_report.tsv	780	780	548	780	0	65	2	11	12	0	1	236	39	110	8	778	451
-S_NS6_Cp_043_updated_parsed_report.tsv	673	673	430	673	0	56	0	14	12	0	0	215	45	91	9	673	379
-S_S5_Dg_099_v1v9_updated_parsed_report.tsv	613	613	433	613	0	21	1	14	8	0	0	204	41	84	8	613	333
-S_S2_Bd_066_updated_parsed_report.tsv	619	619	367	619	0	46	1	14	6	0	0	199	40	84	6	619	349
-S_NS1_Ca_028_updated_parsed_report.tsv	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
-S_S5_El_100_v1v9_updated_parsed_report.tsv	582	582	363	582	0	48	0	12	8	0	0	168	40	87	8	581	340
-S_NS1_Eh_016_updated_parsed_report.tsv	678	678	430	678	0	50	0	16	9	0	1	230	39	100	7	678	356
-S_S5_Sc_120_updated_parsed_report.tsv	715	715	476	715	0	46	2	14	8	0	1	233	37	101	7	714	395
-S_NS1_Cc_012_v1v9_updated_parsed_report.tsv	774	774	525	774	0	23	1	14	9	0	0	301	46	111	8	774	376
-S_S5_Em_101_v1v9_updated_parsed_report.tsv	726	726	498	726	0	23	1	15	11	0	1	249	46	111	8	725	378
-S_NS6_El_044_updated_parsed_report.tsv	624	624	381	624	0	48	0	12	8	0	0	173	40	98	8	623	366
-S_S5_Dg_099_updated_parsed_report.tsv	613	613	433	613	0	21	1	14	8	0	0	204	41	84	8	613	333
-S_NS1_Fp_019_updated_parsed_report.tsv	680	680	421	680	0	48	0	12	10	0	1	256	41	97	8	680	344
-S_S2_Rf_118_updated_parsed_report.tsv	616	616	407	616	0	13	1	11	8	0	1	204	43	92	7	616	334
-S_S5_Cc_097_v1v9_updated_parsed_report.tsv	760	760	523	760	0	20	1	14	9	0	0	292	46	111	8	760	371
-S_NS6_El_045_updated_parsed_report.tsv	614	614	374	614	0	50	0	12	8	0	0	174	41	87	8	612	365
-S_NS6_Hh_054_updated_parsed_report.tsv	691	691	493	691	0	22	1	11	9	0	1	258	43	91	7	691	352
-S_NS1_El_014_v1v9_updated_parsed_report.tsv	621	621	391	621	0	48	0	12	7	0	0	169	40	97	8	620	367
-S_NS6_Ef_049_updated_parsed_report.tsv	696	696	433	696	0	49	0	15	8	0	0	247	38	100	7	695	361
-S_NS6_El_044_v1v9_updated_parsed_report.tsv	624	624	381	624	0	48	0	12	8	0	0	173	40	98	8	623	366
-S_S2_Cc_070_v1v9_updated_parsed_report.tsv	693	693	479	693	0	20	1	13	8	0	0	258	44	109	8	693	340
-S_S5_Cb_096_v1v9_updated_parsed_report.tsv	769	769	528	769	0	24	1	13	9	0	0	288	45	112	8	768	384
-S_S5_He_108_updated_parsed_report.tsv	748	748	510	748	0	28	1	12	9	0	1	275	46	93	7	748	391
-S_NS1_Ca_028_v1v9_updated_parsed_report.tsv	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
-S_S5_Fp_106_updated_parsed_report.tsv	687	687	434	687	0	48	0	12	10	0	1	261	41	97	8	687	346
-S_NS6_Ef_050_v1v9_updated_parsed_report.tsv	695	695	432	695	0	49	0	15	8	0	0	247	38	100	7	694	360
-S_S5_Am_089_v1v9_updated_parsed_report.tsv	614	614	412	614	0	33	1	14	9	0	0	147	38	88	7	612	383
-S_S2_Cb_068_updated_parsed_report.tsv	760	760	534	760	0	20	1	13	9	0	0	288	45	112	8	760	375
-S_NS6_Ba_039_v1v9_updated_parsed_report.tsv	584	584	337	584	0	47	1	14	3	0	0	166	39	84	6	584	346
-S_S2_Fp_080_v1v9_updated_parsed_report.tsv	694	694	438	694	0	57	0	12	10	0	1	259	41	97	8	694	355
-S_S5_Af_090_v1v9_updated_parsed_report.tsv	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
-S_NS6_Ca_028_v1v9_updated_parsed_report.tsv	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
-S_S5_Sc_120_v1v9_updated_parsed_report.tsv	715	715	476	715	0	46	2	14	8	0	1	233	37	101	7	714	395
-S_S2_Cs_071_updated_parsed_report.tsv	713	713	467	713	0	20	0	14	9	0	1	253	42	99	9	712	375
-S_S5_Cb_096_updated_parsed_report.tsv	769	769	528	769	0	24	1	13	9	0	0	288	45	112	8	768	384
-S_NS1_Shsn_025_v1v9_updated_parsed_report.tsv	704	704	464	704	0	46	2	15	8	0	1	226	39	101	7	703	390
-S_NS6_Am_029_updated_parsed_report.tsv	622	622	417	622	0	37	0	17	9	0	0	152	38	88	7	621	386
-S_S2_Shsn_087_updated_parsed_report.tsv	695	695	455	695	0	46	2	15	8	0	1	217	40	102	6	694	389
-S_S2_Cc_069_v1v9_updated_parsed_report.tsv	614	614	396	614	0	16	0	14	8	0	0	201	41	87	7	614	338
-S_S5_Ea_103_v1v9_updated_parsed_report.tsv	733	733	474	733	0	49	0	16	9	0	0	266	39	93	8	733	387
-S_NS6_Bx_038_updated_parsed_report.tsv	795	795	554	795	0	82	2	11	9	0	1	241	43	100	8	794	468
-S_NS1_Bp_010_v1v9_updated_parsed_report.tsv	594	594	345	594	0	48	1	14	7	0	0	175	39	84	6	594	343
-S_NS1_Ig_115_updated_parsed_report.tsv	647	647	403	647	0	47	0	13	10	0	0	234	41	101	8	647	329
-S_S5_Ea_103_updated_parsed_report.tsv	733	733	474	733	0	49	0	16	9	0	0	266	39	93	8	733	387
-S_S2_Ca_088_updated_parsed_report.tsv	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
-S_S2_Bv_065_updated_parsed_report.tsv	771	771	543	771	0	63	2	12	10	0	1	235	38	96	9	769	450
-S_S5_Lp_109_v1v9_updated_parsed_report.tsv	728	728	513	728	0	24	1	14	10	0	0	269	47	113	8	728	360
-S_S5_Lp_109_updated_parsed_report.tsv	728	728	513	728	0	24	1	14	10	0	0	269	47	113	8	728	360
-S_S5_Ef_104_v1v9_updated_parsed_report.tsv	1003	1003	745	1003	0	78	2	16	14	0	1	365	56	134	10	999	522
-S_S5_Pd_110_v1v9_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_NS1_Eh_016_v1v9_updated_parsed_report.tsv	678	678	430	678	0	50	0	16	9	0	1	230	39	100	7	678	356
-S_S2_Bd_066_v1v9_updated_parsed_report.tsv	619	619	367	619	0	46	1	14	6	0	0	199	40	84	6	619	349
-S_S2_El_073_v1v9_updated_parsed_report.tsv	622	622	379	622	0	50	0	12	8	0	0	177	40	87	8	620	370
-S_S2_Fp_079_updated_parsed_report.tsv	601	601	393	601	0	11	1	13	6	0	0	198	41	87	7	601	329
-S_NS6_Ss_059_updated_parsed_report.tsv	605	605	368	605	0	48	0	14	8	0	1	188	34	76	8	605	350
-S_S5_Bv_093_updated_parsed_report.tsv	768	768	547	768	0	63	2	13	10	0	1	234	38	96	9	767	448
-S_NS1_Bu_006_v1v9_updated_parsed_report.tsv	774	774	532	774	0	84	2	14	9	0	1	223	39	92	7	772	470
-S_NS1_Fp_019_v1v9_updated_parsed_report.tsv	680	680	421	680	0	48	0	12	10	0	1	256	41	97	8	680	344
-S_NS6_Bu_034_updated_parsed_report.tsv	767	767	535	767	0	82	2	12	9	0	1	223	39	90	7	765	465
-S_S5_Ef_104_updated_parsed_report.tsv	1003	1003	745	1003	0	78	2	16	14	0	1	365	56	134	10	999	522
-S_S2_Ef_078_v1v9_updated_parsed_report.tsv	1002	1002	748	1002	0	78	2	16	13	0	1	360	56	134	10	998	527
-S_S2_Cc_070_updated_parsed_report.tsv	693	693	479	693	0	20	1	13	8	0	0	258	44	109	8	693	340
-S_NS1_Ba_008_v1v9_updated_parsed_report.tsv	593	593	345	593	0	48	1	14	7	0	0	176	39	84	6	593	341
-S_S2_Bv_065_v1v9_updated_parsed_report.tsv	771	771	543	771	0	63	2	12	10	0	1	235	38	96	9	769	450
-S_NS6_Pm_056_updated_parsed_report.tsv	751	751	528	751	0	47	2	13	10	0	1	240	38	99	7	749	427
-S_NS1_Ss_026_updated_parsed_report.tsv	603	603	367	603	0	48	0	14	8	0	1	188	32	76	7	603	348
-S_S5_Hf_107_v1v9_updated_parsed_report.tsv	345	345	199	345	0	7	0	13	5	0	0	124	22	61	5	344	159
-S_NS6_Cp_043_v1v9_updated_parsed_report.tsv	673	673	430	673	0	56	0	14	12	0	0	215	45	91	9	673	379
-S_NS6_El_045_v1v9_updated_parsed_report.tsv	614	614	374	614	0	50	0	12	8	0	0	174	41	87	8	612	365
-S_NS6_Ef_051_v1v9_updated_parsed_report.tsv	1009	1009	755	1009	0	76	2	16	12	0	1	376	56	134	10	1006	517
-S_S5_Bg_092_updated_parsed_report.tsv	787	787	542	787	0	49	2	15	10	0	1	284	45	118	6	787	407
-S_S2_Et_074_updated_parsed_report.tsv	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
-S_NS6_Bu_036_v1v9_updated_parsed_report.tsv	767	767	535	767	0	82	2	12	9	0	1	223	39	90	7	765	465
-S_NS1_Cb_011_updated_parsed_report.tsv	766	766	530	766	0	23	1	13	9	0	0	296	45	112	8	766	373
-S_S5_Fp_105_v1v9_updated_parsed_report.tsv	602	602	394	602	0	11	1	13	6	0	0	199	41	87	7	602	329
-S_S2_Ea_076_updated_parsed_report.tsv	740	740	478	740	0	50	0	16	9	0	0	269	42	93	9	739	390
-S_NS1_Bt_005_updated_parsed_report.tsv	758	758	523	758	0	63	2	11	10	0	1	238	37	98	7	756	434
-S_NS6_Blss_040_updated_parsed_report.tsv	600	600	351	600	0	47	1	14	7	0	0	178	39	84	6	600	346
-S_NS1_Cp_013_v1v9_updated_parsed_report.tsv	702	702	446	702	0	56	0	14	12	0	0	218	45	91	9	702	405
-S_S5_He_108_v1v9_updated_parsed_report.tsv	748	748	510	748	0	28	1	12	9	0	1	275	46	93	7	748	391
-S_NS1_Em_018_v1v9_updated_parsed_report.tsv	1026	1026	760	1026	0	77	2	16	12	0	1	392	57	134	10	1023	520
-S_NS1_Ao_003_updated_parsed_report.tsv	607	607	412	607	0	42	1	12	6	0	1	180	34	94	5	606	348
-S_NS6_Af_030_updated_parsed_report.tsv	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
-S_NS6_Ao_031_v1v9_updated_parsed_report.tsv	612	612	423	612	0	42	1	12	6	0	1	178	33	95	5	611	355
-S_S5_Ca_088_updated_parsed_report.tsv	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
-S_S5_Pd_111_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_S2_Af_119_v1v9_updated_parsed_report.tsv	604	604	413	604	0	42	1	12	6	0	1	172	34	92	6	603	354
-S_NS6_Ba_039_updated_parsed_report.tsv	584	584	337	584	0	47	1	14	3	0	0	166	39	84	6	584	346
-S_S2_Fp_079_v1v9_updated_parsed_report.tsv	601	601	393	601	0	11	1	13	6	0	0	198	41	87	7	601	329
-S_S2_El_072_updated_parsed_report.tsv	617	617	376	617	0	49	0	12	8	0	0	172	40	87	8	615	370
-S_S5_Pd_111_v1v9_updated_parsed_report.tsv	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
-S_NS1_Cp_013_updated_parsed_report.tsv	702	702	446	702	0	56	0	14	12	0	0	218	45	91	9	702	405
-S_NS1_Shsn_025_updated_parsed_report.tsv	704	704	464	704	0	46	2	15	8	0	1	226	39	101	7	703	390
-S_NS6_Bv_037_updated_parsed_report.tsv	763	763	542	763	0	62	2	12	10	0	1	235	38	95	9	762	443
-S_NS6_Cb_041_v1v9_updated_parsed_report.tsv	769	769	540	769	0	21	1	13	9	0	0	298	47	113	8	769	375
-S_S2_El_072_v1v9_updated_parsed_report.tsv	617	617	376	617	0	49	0	12	8	0	0	172	40	87	8	615	370
-S_NS1_Cb_011_v1v9_updated_parsed_report.tsv	766	766	530	766	0	23	1	13	9	0	0	296	45	112	8	766	373
-S_S5_Rg_113_updated_parsed_report.tsv	628	628	435	628	0	19	0	11	10	0	0	208	39	84	8	628	349
-S_NS6_Ef_051_updated_parsed_report.tsv	1009	1009	755	1009	0	76	2	16	12	0	1	376	56	134	10	1006	517
-S_NS1_Pd_022_v1v9_updated_parsed_report.tsv	780	780	548	780	0	65	2	11	12	0	1	236	39	110	8	778	451
-S_NS1_Sw_027_v1v9_updated_parsed_report.tsv	596	596	392	596	0	35	1	12	9	0	0	192	41	82	8	595	335
-S_NS1_Et_015_updated_parsed_report.tsv	752	752	511	752	0	22	1	14	11	0	1	272	47	97	8	752	392
-S_S2_Fp_080_updated_parsed_report.tsv	694	694	438	694	0	57	0	12	10	0	1	259	41	97	8	694	355
-S_NS1_Ba_008_updated_parsed_report.tsv	593	593	345	593	0	48	1	14	7	0	0	176	39	84	6	593	341
-S_S2_Rg_085_updated_parsed_report.tsv	630	630	440	630	0	17	0	13	11	0	0	204	40	84	8	630	353
-S_S2_Cs_071_v1v9_updated_parsed_report.tsv	713	713	467	713	0	20	0	14	9	0	1	253	42	99	9	712	375
-S_NS1_El_014_updated_parsed_report.tsv	621	621	391	621	0	48	0	12	7	0	0	169	40	97	8	620	367
-S_NS1_Pm_023_updated_parsed_report.tsv	752	752	530	752	0	47	2	13	10	0	1	240	38	99	7	750	428
-S_NS1_Sw_027_updated_parsed_report.tsv	596	596	392	596	0	35	1	12	9	0	0	192	41	82	8	595	335
-S_S2_Bs_063_updated_parsed_report.tsv	855	855	585	855	0	51	2	16	8	0	1	326	43	111	7	854	435
-S_S2_Am_061_updated_parsed_report.tsv	611	611	411	611	0	34	0	14	9	0	0	142	38	87	7	609	385
-S_NS6_Cb_042_updated_parsed_report.tsv	795	795	541	795	0	26	1	13	9	0	0	311	46	114	8	795	386
-S_NS1_Af_002_v1v9_updated_parsed_report.tsv	615	615	420	615	0	42	1	12	6	0	1	184	33	92	5	614	354
+ID	Keep	Total pathways	Naive	MinPath	Bacteria	Non-Bacteria	Glycan pathways	Metabolite activation/inactivation/interconversion	Macromolecule modification	Detoxification	Transport	Bioluminescence/fluorescence/chromoprotein biosynthesis	Degradation/utilization/assimilation	Superpathways	Generation of precursor metabolites and energy	Metabolic clusters	nan	Biosynthesis
+S_NS1_Af_002_updated_parsed_report.tsv	Yes	615	615	420	615	0	42	1	12	6	0	1	184	33	92	5	614	354
+S_NS1_Af_002_v1v9_updated_parsed_report.tsv	No	615	615	420	615	0	42	1	12	6	0	1	184	33	92	5	614	354
+S_NS1_Am_001_updated_parsed_report.tsv	Yes	618	618	417	618	0	33	1	14	9	0	0	149	38	87	7	616	387
+S_NS1_Am_001_v1v9_updated_parsed_report.tsv	No	618	618	417	618	0	33	1	14	9	0	0	149	38	87	7	616	387
+S_NS1_Ao_003_updated_parsed_report.tsv	Yes	607	607	412	607	0	42	1	12	6	0	1	180	34	94	5	606	348
+S_NS1_Ao_003_v1v9_updated_parsed_report.tsv	No	607	607	412	607	0	42	1	12	6	0	1	180	34	94	5	606	348
+S_NS1_Ba_008_updated_parsed_report.tsv	Yes	593	593	345	593	0	48	1	14	7	0	0	176	39	84	6	593	341
+S_NS1_Ba_008_v1v9_updated_parsed_report.tsv	No	593	593	345	593	0	48	1	14	7	0	0	176	39	84	6	593	341
+S_NS1_Bp_010_updated_parsed_report.tsv	Yes	594	594	345	594	0	48	1	14	7	0	0	175	39	84	6	594	343
+S_NS1_Bp_010_v1v9_updated_parsed_report.tsv	No	594	594	345	594	0	48	1	14	7	0	0	175	39	84	6	594	343
+S_NS1_Bs_004_updated_parsed_report.tsv	Yes	703	703	508	703	0	43	2	11	9	0	1	219	39	94	7	702	402
+S_NS1_Bs_004_v1v9_updated_parsed_report.tsv	No	703	703	508	703	0	43	2	11	9	0	1	219	39	94	7	702	402
+S_NS1_Bt_005_updated_parsed_report.tsv	Yes	758	758	523	758	0	63	2	11	10	0	1	238	37	98	7	756	434
+S_NS1_Bt_005_v1v9_updated_parsed_report.tsv	No	758	758	523	758	0	63	2	11	10	0	1	238	37	98	7	756	434
+S_NS1_Bu_006_updated_parsed_report.tsv	Yes	774	774	532	774	0	84	2	14	9	0	1	223	39	92	7	772	470
+S_NS1_Bu_006_v1v9_updated_parsed_report.tsv	No	774	774	532	774	0	84	2	14	9	0	1	223	39	92	7	772	470
+S_NS1_Bv_007_updated_parsed_report.tsv	Yes	741	741	535	741	0	47	2	12	10	0	1	232	38	96	9	740	423
+S_NS1_Bv_007_v1v9_updated_parsed_report.tsv	No	741	741	535	741	0	47	2	12	10	0	1	232	38	96	9	740	423
+S_NS1_Ca_028_updated_parsed_report.tsv	Yes	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
+S_NS1_Ca_028_v1v9_updated_parsed_report.tsv	No	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
+S_NS1_Cb_011_updated_parsed_report.tsv	Yes	766	766	530	766	0	23	1	13	9	0	0	296	45	112	8	766	373
+S_NS1_Cb_011_v1v9_updated_parsed_report.tsv	No	766	766	530	766	0	23	1	13	9	0	0	296	45	112	8	766	373
+S_NS1_Cc_012_updated_parsed_report.tsv	Yes	774	774	525	774	0	23	1	14	9	0	0	301	46	111	8	774	376
+S_NS1_Cc_012_v1v9_updated_parsed_report.tsv	No	774	774	525	774	0	23	1	14	9	0	0	301	46	111	8	774	376
+S_NS1_Cp_013_updated_parsed_report.tsv	Yes	702	702	446	702	0	56	0	14	12	0	0	218	45	91	9	702	405
+S_NS1_Cp_013_v1v9_updated_parsed_report.tsv	No	702	702	446	702	0	56	0	14	12	0	0	218	45	91	9	702	405
+S_NS1_Eh_016_updated_parsed_report.tsv	Yes	678	678	430	678	0	50	0	16	9	0	1	230	39	100	7	678	356
+S_NS1_Eh_016_v1v9_updated_parsed_report.tsv	No	678	678	430	678	0	50	0	16	9	0	1	230	39	100	7	678	356
+S_NS1_El_014_updated_parsed_report.tsv	Yes	621	621	391	621	0	48	0	12	7	0	0	169	40	97	8	620	367
+S_NS1_El_014_v1v9_updated_parsed_report.tsv	No	621	621	391	621	0	48	0	12	7	0	0	169	40	97	8	620	367
+S_NS1_Em_017_updated_parsed_report.tsv	Yes	1024	1024	759	1024	0	77	2	16	12	0	1	392	57	134	10	1021	518
+S_NS1_Em_017_v1v9_updated_parsed_report.tsv	No	1024	1024	759	1024	0	77	2	16	12	0	1	392	57	134	10	1021	518
+S_NS1_Em_018_v1v9_updated_parsed_report.tsv	Yes	1026	1026	760	1026	0	77	2	16	12	0	1	392	57	134	10	1023	520
+S_NS1_Et_015_updated_parsed_report.tsv	Yes	752	752	511	752	0	22	1	14	11	0	1	272	47	97	8	752	392
+S_NS1_Et_015_v1v9_updated_parsed_report.tsv	No	752	752	511	752	0	22	1	14	11	0	1	272	47	97	8	752	392
+S_NS1_Fp_019_updated_parsed_report.tsv	Yes	680	680	421	680	0	48	0	12	10	0	1	256	41	97	8	680	344
+S_NS1_Fp_019_v1v9_updated_parsed_report.tsv	No	680	680	421	680	0	48	0	12	10	0	1	256	41	97	8	680	344
+S_NS1_Fp_020_updated_parsed_report.tsv	Yes	672	672	426	672	0	48	0	12	10	0	1	256	41	97	8	672	336
+S_NS1_Fp_020_v1v9_updated_parsed_report.tsv	No	672	672	426	672	0	48	0	12	10	0	1	256	41	97	8	672	336
+S_NS1_He_021_updated_parsed_report.tsv	Yes	693	693	494	693	0	20	1	12	9	0	1	263	43	91	7	693	349
+S_NS1_He_021_v1v9_updated_parsed_report.tsv	No	693	693	494	693	0	20	1	12	9	0	1	263	43	91	7	693	349
+S_NS1_Ig_115_updated_parsed_report.tsv	Yes	647	647	403	647	0	47	0	13	10	0	0	234	41	101	8	647	329
+S_NS1_Ig_115_v1v9_updated_parsed_report.tsv	No	647	647	403	647	0	47	0	13	10	0	0	234	41	101	8	647	329
+S_NS1_Pd_022_updated_parsed_report.tsv	Yes	780	780	548	780	0	65	2	11	12	0	1	236	39	110	8	778	451
+S_NS1_Pd_022_v1v9_updated_parsed_report.tsv	No	780	780	548	780	0	65	2	11	12	0	1	236	39	110	8	778	451
+S_NS1_Pm_023_updated_parsed_report.tsv	Yes	752	752	530	752	0	47	2	13	10	0	1	240	38	99	7	750	428
+S_NS1_Pm_023_v1v9_updated_parsed_report.tsv	No	752	752	530	752	0	47	2	13	10	0	1	240	38	99	7	750	428
+S_NS1_Shsn_025_updated_parsed_report.tsv	Yes	704	704	464	704	0	46	2	15	8	0	1	226	39	101	7	703	390
+S_NS1_Shsn_025_v1v9_updated_parsed_report.tsv	No	704	704	464	704	0	46	2	15	8	0	1	226	39	101	7	703	390
+S_NS1_Ss_026_updated_parsed_report.tsv	Yes	603	603	367	603	0	48	0	14	8	0	1	188	32	76	7	603	348
+S_NS1_Ss_026_v1v9_updated_parsed_report.tsv	No	603	603	367	603	0	48	0	14	8	0	1	188	32	76	7	603	348
+S_NS1_Sw_027_updated_parsed_report.tsv	Yes	596	596	392	596	0	35	1	12	9	0	0	192	41	82	8	595	335
+S_NS1_Sw_027_v1v9_updated_parsed_report.tsv	No	596	596	392	596	0	35	1	12	9	0	0	192	41	82	8	595	335
+S_NS6_Af_030_updated_parsed_report.tsv	Yes	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
+S_NS6_Af_030_v1v9_updated_parsed_report.tsv	No	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
+S_NS6_Am_029_updated_parsed_report.tsv	Yes	622	622	417	622	0	37	0	17	9	0	0	152	38	88	7	621	386
+S_NS6_Am_029_v1v9_updated_parsed_report.tsv	No	622	622	417	622	0	37	0	17	9	0	0	152	38	88	7	621	386
+S_NS6_Ao_031_updated_parsed_report.tsv	Yes	612	612	423	612	0	42	1	12	6	0	1	178	33	95	5	611	355
+S_NS6_Ao_031_v1v9_updated_parsed_report.tsv	No	612	612	423	612	0	42	1	12	6	0	1	178	33	95	5	611	355
+S_NS6_Ba_039_updated_parsed_report.tsv	Yes	584	584	337	584	0	47	1	14	3	0	0	166	39	84	6	584	346
+S_NS6_Ba_039_v1v9_updated_parsed_report.tsv	No	584	584	337	584	0	47	1	14	3	0	0	166	39	84	6	584	346
+S_NS6_Blss_040_updated_parsed_report.tsv	Yes	600	600	351	600	0	47	1	14	7	0	0	178	39	84	6	600	346
+S_NS6_Blss_040_v1v9_updated_parsed_report.tsv	No	600	600	351	600	0	47	1	14	7	0	0	178	39	84	6	600	346
+S_NS6_Bs_032_updated_parsed_report.tsv	Yes	710	710	517	710	0	45	2	11	10	0	1	222	39	95	7	709	406
+S_NS6_Bs_032_v1v9_updated_parsed_report.tsv	No	710	710	517	710	0	45	2	11	10	0	1	222	39	95	7	709	406
+S_NS6_Bs_033_v1v9_updated_parsed_report.tsv	Yes	710	710	517	710	0	45	2	11	10	0	1	222	39	95	7	709	406
+S_NS6_Bu_034_updated_parsed_report.tsv	Yes	767	767	535	767	0	82	2	12	9	0	1	223	39	90	7	765	465
+S_NS6_Bu_034_v1v9_updated_parsed_report.tsv	No	767	767	535	767	0	82	2	12	9	0	1	223	39	90	7	765	465
+S_NS6_Bu_036_v1v9_updated_parsed_report.tsv	Yes	767	767	535	767	0	82	2	12	9	0	1	223	39	90	7	765	465
+S_NS6_Bv_037_updated_parsed_report.tsv	Yes	763	763	542	763	0	62	2	12	10	0	1	235	38	95	9	762	443
+S_NS6_Bv_037_v1v9_updated_parsed_report.tsv	No	763	763	542	763	0	62	2	12	10	0	1	235	38	95	9	762	443
+S_NS6_Bx_038_2_updated_parsed_report.tsv	Yes	795	795	554	795	0	82	2	11	9	0	1	241	43	100	8	794	468
+S_NS6_Bx_038_updated_parsed_report.tsv	No	795	795	554	795	0	82	2	11	9	0	1	241	43	100	8	794	468
+S_NS6_Ca_028_updated_parsed_report.tsv	Yes	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
+S_NS6_Ca_028_v1v9_updated_parsed_report.tsv	No	532	532	302	532	0	45	0	12	5	0	0	156	35	76	7	532	314
+S_NS6_Cb_041_updated_parsed_report.tsv	Yes	769	769	540	769	0	21	1	13	9	0	0	298	47	113	8	769	375
+S_NS6_Cb_041_v1v9_updated_parsed_report.tsv	No	769	769	540	769	0	21	1	13	9	0	0	298	47	113	8	769	375
+S_NS6_Cb_042_updated_parsed_report.tsv	Yes	795	795	541	795	0	26	1	13	9	0	0	311	46	114	8	795	386
+S_NS6_Cb_042_v1v9_updated_parsed_report.tsv	No	795	795	541	795	0	26	1	13	9	0	0	311	46	114	8	795	386
+S_NS6_Cp_043_updated_parsed_report.tsv	Yes	673	673	430	673	0	56	0	14	12	0	0	215	45	91	9	673	379
+S_NS6_Cp_043_v1v9_updated_parsed_report.tsv	No	673	673	430	673	0	56	0	14	12	0	0	215	45	91	9	673	379
+S_NS6_Ef_049_updated_parsed_report.tsv	Yes	696	696	433	696	0	49	0	15	8	0	0	247	38	100	7	695	361
+S_NS6_Ef_050_v1v9_updated_parsed_report.tsv	Yes	695	695	432	695	0	49	0	15	8	0	0	247	38	100	7	694	360
+S_NS6_Ef_051_updated_parsed_report.tsv	Yes	1009	1009	755	1009	0	76	2	16	12	0	1	376	56	134	10	1006	517
+S_NS6_Ef_051_v1v9_updated_parsed_report.tsv	No	1009	1009	755	1009	0	76	2	16	12	0	1	376	56	134	10	1006	517
+S_NS6_El_044_updated_parsed_report.tsv	Yes	624	624	381	624	0	48	0	12	8	0	0	173	40	98	8	623	366
+S_NS6_El_044_v1v9_updated_parsed_report.tsv	No	624	624	381	624	0	48	0	12	8	0	0	173	40	98	8	623	366
+S_NS6_El_045_updated_parsed_report.tsv	Yes	614	614	374	614	0	50	0	12	8	0	0	174	41	87	8	612	365
+S_NS6_El_045_v1v9_updated_parsed_report.tsv	No	614	614	374	614	0	50	0	12	8	0	0	174	41	87	8	612	365
+S_NS6_Em_046_updated_parsed_report.tsv	Yes	742	742	480	742	0	59	1	15	11	0	1	240	46	100	8	742	413
+S_NS6_Em_046_v1v9_updated_parsed_report.tsv	Yes	742	742	480	742	0	59	1	15	11	0	1	240	46	100	8	742	413
+S_NS6_Em_047_v1v9_updated_parsed_report.tsv	Yes	737	737	476	737	0	59	1	15	11	0	1	240	46	99	8	737	409
+S_NS6_Et_048_updated_parsed_report.tsv	Yes	753	753	516	753	0	22	1	14	11	0	1	273	48	100	8	753	391
+S_NS6_Fp_052_updated_parsed_report.tsv	Yes	676	676	428	676	0	47	0	12	10	0	1	257	41	97	8	676	339
+S_NS6_He_053_updated_parsed_report.tsv	Yes	708	708	502	708	0	21	1	13	9	0	1	256	44	90	7	708	371
+S_NS6_He_053_v1v9_updated_parsed_report.tsv	No	708	708	502	708	0	21	1	13	9	0	1	256	44	90	7	708	371
+S_NS6_Hh_054_updated_parsed_report.tsv	Yes	691	691	493	691	0	22	1	11	9	0	1	258	43	91	7	691	352
+S_NS6_Hh_054_v1v9_updated_parsed_report.tsv	No	691	691	493	691	0	22	1	11	9	0	1	258	43	91	7	691	352
+S_NS6_Pd_055_updated_parsed_report.tsv	Yes	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_NS6_Pd_055_v1v9_updated_parsed_report.tsv	No	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_NS6_Pm_056_updated_parsed_report.tsv	Yes	751	751	528	751	0	47	2	13	10	0	1	240	38	99	7	749	427
+S_NS6_Pm_056_v1v9_updated_parsed_report.tsv	No	751	751	528	751	0	47	2	13	10	0	1	240	38	99	7	749	427
+S_NS6_Pp_057_updated_parsed_report.tsv	Yes	614	614	378	614	0	47	0	12	8	0	1	197	39	79	7	614	350
+S_NS6_Pp_057_v1v9_updated_parsed_report.tsv	No	614	614	378	614	0	47	0	12	8	0	1	197	39	79	7	614	350
+S_NS6_Sh_058_updated_parsed_report.tsv	Yes	695	695	456	695	0	46	2	15	8	0	1	217	39	101	6	694	390
+S_NS6_Sh_058_v1v9_updated_parsed_report.tsv	No	695	695	456	695	0	46	2	15	8	0	1	217	39	101	6	694	390
+S_NS6_Ss_059_updated_parsed_report.tsv	Yes	605	605	368	605	0	48	0	14	8	0	1	188	34	76	8	605	350
+S_NS6_Ss_059_v1v9_updated_parsed_report.tsv	No	605	605	368	605	0	48	0	14	8	0	1	188	34	76	8	605	350
+S_NS6_Sw_060_updated_parsed_report.tsv	Yes	584	584	383	584	0	35	1	12	9	0	0	179	41	86	8	583	332
+S_S2_Af_119_updated_parsed_report.tsv	Yes	604	604	413	604	0	42	1	12	6	0	1	172	34	92	6	603	354
+S_S2_Af_119_v1v9_updated_parsed_report.tsv	No	604	604	413	604	0	42	1	12	6	0	1	172	34	92	6	603	354
+S_S2_Am_061_updated_parsed_report.tsv	Yes	611	611	411	611	0	34	0	14	9	0	0	142	38	87	7	609	385
+S_S2_Am_061_v1v9_updated_parsed_report.tsv	No	611	611	411	611	0	34	0	14	9	0	0	142	38	87	7	609	385
+S_S2_Bd_064_updated_parsed_report.tsv	Yes	765	765	544	765	0	61	2	13	10	0	1	241	38	95	9	764	439
+S_S2_Bd_064_v1v9_updated_parsed_report.tsv	No	765	765	544	765	0	61	2	13	10	0	1	241	38	95	9	764	439
+S_S2_Bd_066_updated_parsed_report.tsv	Yes	619	619	367	619	0	46	1	14	6	0	0	199	40	84	6	619	349
+S_S2_Bd_066_v1v9_updated_parsed_report.tsv	No	619	619	367	619	0	46	1	14	6	0	0	199	40	84	6	619	349
+S_S2_Blss_067_updated_parsed_report.tsv	Yes	591	591	351	591	0	47	1	14	7	0	0	173	39	84	6	591	342
+S_S2_Blss_067_v1v9_updated_parsed_report.tsv	No	591	591	351	591	0	47	1	14	7	0	0	173	39	84	6	591	342
+S_S2_Bs_063_updated_parsed_report.tsv	Yes	855	855	585	855	0	51	2	16	8	0	1	326	43	111	7	854	435
+S_S2_Bs_063_v1v9_updated_parsed_report.tsv	No	855	855	585	855	0	51	2	16	8	0	1	326	43	111	7	854	435
+S_S2_Bv_065_updated_parsed_report.tsv	Yes	771	771	543	771	0	63	2	12	10	0	1	235	38	96	9	769	450
+S_S2_Bv_065_v1v9_updated_parsed_report.tsv	No	771	771	543	771	0	63	2	12	10	0	1	235	38	96	9	769	450
+S_S2_Ca_088_updated_parsed_report.tsv	Yes	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
+S_S2_Ca_088_v1v9_updated_parsed_report.tsv	No	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
+S_S2_Cb_068_updated_parsed_report.tsv	Yes	760	760	534	760	0	20	1	13	9	0	0	288	45	112	8	760	375
+S_S2_Cc_069_updated_parsed_report.tsv	Yes	614	614	396	614	0	16	0	14	8	0	0	201	41	87	7	614	338
+S_S2_Cc_069_v1v9_updated_parsed_report.tsv	No	614	614	396	614	0	16	0	14	8	0	0	201	41	87	7	614	338
+S_S2_Cc_070_updated_parsed_report.tsv	Yes	693	693	479	693	0	20	1	13	8	0	0	258	44	109	8	693	340
+S_S2_Cc_070_v1v9_updated_parsed_report.tsv	No	693	693	479	693	0	20	1	13	8	0	0	258	44	109	8	693	340
+S_S2_Cs_071_updated_parsed_report.tsv	Yes	713	713	467	713	0	20	0	14	9	0	1	253	42	99	9	712	375
+S_S2_Cs_071_v1v9_updated_parsed_report.tsv	No	713	713	467	713	0	20	0	14	9	0	1	253	42	99	9	712	375
+S_S2_Ea_076_updated_parsed_report.tsv	Yes	740	740	478	740	0	50	0	16	9	0	0	269	42	93	9	739	390
+S_S2_Ea_076_v1v9_updated_parsed_report.tsv	No	740	740	478	740	0	50	0	16	9	0	0	269	42	93	9	739	390
+S_S2_Ea_077_v1v9_updated_parsed_report.tsv	Yes	733	733	471	733	0	50	0	15	9	0	0	265	39	93	8	732	389
+S_S2_Ef_078_updated_parsed_report.tsv	Yes	1002	1002	748	1002	0	78	2	16	13	0	1	360	56	134	10	998	527
+S_S2_Ef_078_v1v9_updated_parsed_report.tsv	No	1002	1002	748	1002	0	78	2	16	13	0	1	360	56	134	10	998	527
+S_S2_El_072_updated_parsed_report.tsv	Yes	617	617	376	617	0	49	0	12	8	0	0	172	40	87	8	615	370
+S_S2_El_072_v1v9_updated_parsed_report.tsv	No	617	617	376	617	0	49	0	12	8	0	0	172	40	87	8	615	370
+S_S2_El_073_v1v9_updated_parsed_report.tsv	Yes	622	622	379	622	0	50	0	12	8	0	0	177	40	87	8	620	370
+S_S2_Et_074_updated_parsed_report.tsv	Yes	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
+S_S2_Et_074_v1v9_updated_parsed_report.tsv	No	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
+S_S2_Et_075_updated_parsed_report.tsv	Yes	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
+S_S2_Et_075_v1v9_updated_parsed_report.tsv	No	757	757	519	757	0	22	1	14	11	0	1	276	47	101	8	757	392
+S_S2_Fp_079_updated_parsed_report.tsv	Yes	601	601	393	601	0	11	1	13	6	0	0	198	41	87	7	601	329
+S_S2_Fp_079_v1v9_updated_parsed_report.tsv	No	601	601	393	601	0	11	1	13	6	0	0	198	41	87	7	601	329
+S_S2_Fp_080_updated_parsed_report.tsv	Yes	694	694	438	694	0	57	0	12	10	0	1	259	41	97	8	694	355
+S_S2_Fp_080_v1v9_updated_parsed_report.tsv	No	694	694	438	694	0	57	0	12	10	0	1	259	41	97	8	694	355
+S_S2_He_082_v1v9_updated_parsed_report.tsv	Yes	708	708	504	708	0	21	1	12	9	0	1	264	44	91	7	708	364
+S_S2_Hf_081_updated_parsed_report.tsv	Yes	345	345	201	345	0	8	0	11	6	0	0	125	23	59	5	344	161
+S_S2_Hf_081_v1v9_updated_parsed_report.tsv	No	345	345	201	345	0	8	0	11	6	0	0	125	23	59	5	344	161
+S_S2_Pd_083_updated_parsed_report.tsv	Yes	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_S2_Pd_083_v1v9_updated_parsed_report.tsv	No	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_S2_Rf_084_updated_parsed_report.tsv	Yes	708	708	504	708	0	21	1	12	9	0	1	264	44	91	7	708	364
+S_S2_Rf_084_v1v9_updated_parsed_report.tsv	No	708	708	504	708	0	21	1	12	9	0	1	264	44	91	7	708	364
+S_S2_Rf_118_updated_parsed_report.tsv	Yes	616	616	407	616	0	13	1	11	8	0	1	204	43	92	7	616	334
+S_S2_Rf_118_v1v9_updated_parsed_report.tsv	No	616	616	407	616	0	13	1	11	8	0	1	204	43	92	7	616	334
+S_S2_Rg_085_updated_parsed_report.tsv	Yes	630	630	440	630	0	17	0	13	11	0	0	204	40	84	8	630	353
+S_S2_Rg_085_v1v9_updated_parsed_report.tsv	No	630	630	440	630	0	17	0	13	11	0	0	204	40	84	8	630	353
+S_S2_Shsn_087_updated_parsed_report.tsv	Yes	695	695	455	695	0	46	2	15	8	0	1	217	40	102	6	694	389
+S_S2_Shsn_087_v1v9_updated_parsed_report.tsv	No	695	695	455	695	0	46	2	15	8	0	1	217	40	102	6	694	389
+S_S5_Af_090_updated_parsed_report.tsv	Yes	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
+S_S5_Af_090_v1v9_updated_parsed_report.tsv	No	614	614	418	614	0	43	1	12	6	0	1	181	32	92	5	613	356
+S_S5_Am_089_updated_parsed_report.tsv	Yes	614	614	412	614	0	33	1	14	9	0	0	147	38	88	7	612	383
+S_S5_Am_089_v1v9_updated_parsed_report.tsv	No	614	614	412	614	0	33	1	14	9	0	0	147	38	88	7	612	383
+S_S5_Bg_092_updated_parsed_report.tsv	Yes	787	787	542	787	0	49	2	15	10	0	1	284	45	118	6	787	407
+S_S5_Blss_094_updated_parsed_report.tsv	Yes	589	589	350	589	0	47	1	14	4	0	0	174	39	84	6	589	342
+S_S5_Blss_094_v1v9_updated_parsed_report.tsv	No	589	589	350	589	0	47	1	14	4	0	0	174	39	84	6	589	342
+S_S5_Bp_095_updated_parsed_report.tsv	Yes	595	595	346	595	0	48	1	14	8	0	0	175	39	84	6	595	344
+S_S5_Bp_095_v1v9_updated_parsed_report.tsv	No	595	595	346	595	0	48	1	14	8	0	0	175	39	84	6	595	344
+S_S5_Bv_093_updated_parsed_report.tsv	Yes	768	768	547	768	0	63	2	13	10	0	1	234	38	96	9	767	448
+S_S5_Bv_093_v1v9_updated_parsed_report.tsv	No	768	768	547	768	0	63	2	13	10	0	1	234	38	96	9	767	448
+S_S5_Ca_088_updated_parsed_report.tsv	Yes	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
+S_S5_Ca_088_v1v9_updated_parsed_report.tsv	No	544	544	313	544	0	45	0	12	6	0	0	166	35	77	7	544	316
+S_S5_Cb_096_updated_parsed_report.tsv	Yes	769	769	528	769	0	24	1	13	9	0	0	288	45	112	8	768	384
+S_S5_Cb_096_v1v9_updated_parsed_report.tsv	No	769	769	528	769	0	24	1	13	9	0	0	288	45	112	8	768	384
+S_S5_Cc_097_updated_parsed_report.tsv	Yes	760	760	523	760	0	20	1	14	9	0	0	292	46	111	8	760	371
+S_S5_Cc_097_v1v9_updated_parsed_report.tsv	No	760	760	523	760	0	20	1	14	9	0	0	292	46	111	8	760	371
+S_S5_Cc_098_updated_parsed_report.tsv	Yes	725	725	500	725	0	23	1	13	8	0	0	270	44	110	8	724	359
+S_S5_Cc_098_v1v9_updated_parsed_report.tsv	No	725	725	500	725	0	23	1	13	8	0	0	270	44	110	8	724	359
+S_S5_Dg_099_updated_parsed_report.tsv	Yes	613	613	433	613	0	21	1	14	8	0	0	204	41	84	8	613	333
+S_S5_Dg_099_v1v9_updated_parsed_report.tsv	No	613	613	433	613	0	21	1	14	8	0	0	204	41	84	8	613	333
+S_S5_Ea_103_updated_parsed_report.tsv	Yes	733	733	474	733	0	49	0	16	9	0	0	266	39	93	8	733	387
+S_S5_Ea_103_v1v9_updated_parsed_report.tsv	No	733	733	474	733	0	49	0	16	9	0	0	266	39	93	8	733	387
+S_S5_Ef_104_updated_parsed_report.tsv	Yes	1003	1003	745	1003	0	78	2	16	14	0	1	365	56	134	10	999	522
+S_S5_Ef_104_v1v9_updated_parsed_report.tsv	No	1003	1003	745	1003	0	78	2	16	14	0	1	365	56	134	10	999	522
+S_S5_El_100_v1v9_updated_parsed_report.tsv	Yes	582	582	363	582	0	48	0	12	8	0	0	168	40	87	8	581	340
+S_S5_Em_101_updated_parsed_report.tsv	Yes	726	726	498	726	0	23	1	15	11	0	1	249	46	111	8	725	378
+S_S5_Em_101_v1v9_updated_parsed_report.tsv	No	726	726	498	726	0	23	1	15	11	0	1	249	46	111	8	725	378
+S_S5_Et_102_updated_parsed_report.tsv	Yes	747	747	505	747	0	22	1	14	11	0	1	273	49	100	7	747	386
+S_S5_Et_102_v1v9_updated_parsed_report.tsv	No	747	747	505	747	0	22	1	14	11	0	1	273	49	100	7	747	386
+S_S5_Fp_105_updated_parsed_report.tsv	Yes	602	602	394	602	0	11	1	13	6	0	0	199	41	87	7	602	329
+S_S5_Fp_105_v1v9_updated_parsed_report.tsv	No	602	602	394	602	0	11	1	13	6	0	0	199	41	87	7	602	329
+S_S5_Fp_106_updated_parsed_report.tsv	Yes	687	687	434	687	0	48	0	12	10	0	1	261	41	97	8	687	346
+S_S5_Fp_106_v1v9_updated_parsed_report.tsv	No	687	687	434	687	0	48	0	12	10	0	1	261	41	97	8	687	346
+S_S5_He_108_updated_parsed_report.tsv	Yes	748	748	510	748	0	28	1	12	9	0	1	275	46	93	7	748	391
+S_S5_He_108_v1v9_updated_parsed_report.tsv	No	748	748	510	748	0	28	1	12	9	0	1	275	46	93	7	748	391
+S_S5_Hf_107_updated_parsed_report.tsv	Yes	345	345	199	345	0	7	0	13	5	0	0	124	22	61	5	344	159
+S_S5_Hf_107_v1v9_updated_parsed_report.tsv	No	345	345	199	345	0	7	0	13	5	0	0	124	22	61	5	344	159
+S_S5_Lp_109_updated_parsed_report.tsv	Yes	728	728	513	728	0	24	1	14	10	0	0	269	47	113	8	728	360
+S_S5_Lp_109_v1v9_updated_parsed_report.tsv	No	728	728	513	728	0	24	1	14	10	0	0	269	47	113	8	728	360
+S_S5_Pd_110_updated_parsed_report.tsv	Yes	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_S5_Pd_110_v1v9_updated_parsed_report.tsv	No	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_S5_Pd_111_updated_parsed_report.tsv	Yes	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_S5_Pd_111_v1v9_updated_parsed_report.tsv	No	788	788	553	788	0	65	2	11	11	0	1	243	39	110	9	786	452
+S_S5_Rf_112_updated_parsed_report.tsv	Yes	647	647	416	647	0	48	1	13	5	0	0	199	42	82	7	647	380
+S_S5_Rf_112_v1v9_updated_parsed_report.tsv	No	647	647	416	647	0	48	1	13	5	0	0	199	42	82	7	647	380
+S_S5_Rg_113_updated_parsed_report.tsv	Yes	628	628	435	628	0	19	0	11	10	0	0	208	39	84	8	628	349
+S_S5_Rg_113_v1v9_updated_parsed_report.tsv	No	628	628	435	628	0	19	0	11	10	0	0	208	39	84	8	628	349
+S_S5_Sc_120_updated_parsed_report.tsv	Yes	715	715	476	715	0	46	2	14	8	0	1	233	37	101	7	714	395
+S_S5_Sc_120_v1v9_updated_parsed_report.tsv	No	715	715	476	715	0	46	2	14	8	0	1	233	37	101	7	714	395

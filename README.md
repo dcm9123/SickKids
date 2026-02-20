@@ -243,3 +243,89 @@ Output
 One parsed .tsv file per genome with pathway predictions and metadata
 Summary classification count files per method and database combination
 ```
+
+### February 20th, 2026
+
+I had a meeeting with Laura, and I am working on the next set of results and finalized version of figures for the T1D manuscript. I am first re-doing the PICRUSt2 results with some modified parameters for me to get the contribution of ASV, mouse, per pathway per community. I am running this in ARC in `/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/MASTER/Mice/PICRUSt2.3`. Here is the first command:
+
+`for community in {"ns1","ns6","s2","s5"}; do place_seqs.py -s ../Phyloseq/ps_${community}_asv_sequences.fasta -r ${community}_local_files -o ${community}_output/${community}_placed_seqs.tre -p 10 --intermediate ${community}_output/asv_intermediate_seqs_${community} --verbose; done;`
+
+This command produced the following output text per community (showing just NS1):
+
+```
+Raw input sequences ranged in length from 279 to 427
+
+epa-ng --tree ns1_local_files/ns1_local_files.tre --ref-msa ns1_output/asv_intermediate_seqs_ns1/ref_seqs_hmmalign.fasta --query ns1_output/asv_intermediate_seqs_ns1/study_seqs_hmmalign.fasta --chunk-size 5000 -T 10 -m ns1_local_files/ns1_local_files.model -w ns1_output/asv_intermediate_seqs_ns1/epa_out --filter-acc-lwr 0.99 --filter-max 100
+INFO Selected: Output dir: ns1_output/asv_intermediate_seqs_ns1/epa_out/
+INFO Selected: Query file: ns1_output/asv_intermediate_seqs_ns1/study_seqs_hmmalign.fasta
+INFO Selected: Tree file: ns1_local_files/ns1_local_files.tre
+INFO Selected: Reference MSA: ns1_output/asv_intermediate_seqs_ns1/ref_seqs_hmmalign.fasta
+INFO Selected: Filtering by accumulated threshold: 0.99
+INFO Selected: Maximum number of placements per query: 100
+INFO Selected: Automatic switching of use of per rate scalers
+INFO Selected: Preserving the root of the input tree
+INFO Selected: Specified model file: ns1_local_files/ns1_local_files.model
+INFO Selected: Reading queries in chunks of: 5000
+INFO Selected: Using threads: 10
+INFO     ______ ____   ___           _   __ ______
+        / ____// __ \ /   |         / | / // ____/
+       / __/  / /_/ // /| | ______ /  |/ // / __  
+      / /___ / ____// ___ |/_____// /|  // /_/ /  
+     /_____//_/    /_/  |_|      /_/ |_/ \____/ (v0.3.8)
+INFO Using model parameters:
+INFO    Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.369665 (user),  weights&rates: (0.25,0.0125923) (0.25,0.158759) (0.25,0.696251) (0.25,3.1324) 
+        Base frequencies (user): 0.233019 0.241872 0.327604 0.197505 
+        Substitution rates (user): 0.758281 1.92043 1.4526 0.755943 3.18076 1
+INFO Output file: ns1_output/asv_intermediate_seqs_ns1/epa_out/epa_result.jplace
+INFO 179 Sequences done!
+INFO Time spent placing: 0s
+INFO Elapsed Time: 0s
+
+
+gappa examine graft --jplace-path ns1_output/asv_intermediate_seqs_ns1/epa_out/epa_result_parsed.jplace --fully-resolve --out-dir ns1_output/asv_intermediate_seqs_ns1/epa_out
+                                              ....      ....  
+                                             '' '||.   .||'   
+                                                  ||  ||      
+                                                  '|.|'       
+     ...'   ....   ... ...  ... ...   ....        .|'|.       
+    |  ||  '' .||   ||'  ||  ||'  || '' .||      .|'  ||      
+     |''   .|' ||   ||    |  ||    | .|' ||     .|'|.  ||     
+    '....  '|..'|'. ||...'   ||...'  '|..'|.    '||'    ||:.  
+    '....'          ||       ||                               
+                   ''''     ''''   v0.8.5 (c) 2017-2024
+                                   by Lucas Czech and Pierre Barbera
+
+Invocation:                        gappa examine graft --jplace-path ns1_output/asv_intermediate_seqs_ns1/epa_out/epa_result_parsed.jplace --fully-resolve --out-dir ns1_output/asv_intermediate_seqs_ns1/epa_out
+Command:                           gappa examine graft
+
+Input:
+  --jplace-path                    ns1_output/asv_intermediate_seqs_ns1/epa_out/epa_result_parsed.jplace
+
+Settings:
+  --fully-resolve                  true
+  --name-prefix
+
+Output:
+  --out-dir                        ns1_output/asv_intermediate_seqs_ns1/epa_out
+  --file-prefix                    
+  --file-suffix
+
+Newick Tree Output:
+  --newick-tree-quote-invalid-chars
+                                   false
+
+Global Options:
+  --allow-file-overwriting         false
+  --verbose                        false
+  --threads                        16
+  --log-file
+
+Run the following command to get the references that need to be cited:
+`gappa tools citation Czech2020-genesis-and-gappa`
+
+Started 2026-02-20 16:19:23
+
+Found 1 jplace file
+
+Finished 2026-02-20 16:19:23
+```
