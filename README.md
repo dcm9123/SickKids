@@ -219,3 +219,27 @@ Laura wants to try two primers, dec3 and dec5 on the contrived community from Zy
 
 #### Back to T1D
 
+I carried on with the individual annotation of each genome using three databases. In the end, the script that matters the most is `parsing_minpath_reports.py` because it is the one that adds the categories and summaries to each pathway found in the MinPath output files. It can be explained like this:
+
+```
+This script parses and summarizes MinPath pathway annotation reports generated from genome files using two annotation methods (default and updated) and two MetaCyc databases (metacyc_2026 and picrust2_db).
+
+What it does
+The script is divided into four functions:
+
+sanity_check() — Validates the curated category file by checking for unexpected duplicates across all ontology levels (Level 1 through Level 2.3).
+
+annotating() — Reads raw MinPath .txt report files, extracts naive and parsimonious (MinPath) pathway predictions, and merges them with a master MetaCyc pathway metadata file. Outputs one parsed .tsv file per genome.
+
+simplifying_categories() — Reads each parsed .tsv file and appends ontology classification columns (Level 1–1.3 and Level 2–2.3) by looking up each pathway's ontology type in a curated category file. Categories are sorted alphabetically with NA values placed last.
+
+counting_classification() — Reads all parsed and categorized files and generates summary statistics per genome, including total pathways predicted, naive counts, MinPath counts, bacterial vs non-bacterial classifications, and counts per ontology category.
+
+Input
+Raw MinPath report .txt files (one per genome)
+Master MetaCyc pathway metadata file (.tsv)
+Curated ontology category file (.txt)
+Output
+One parsed .tsv file per genome with pathway predictions and metadata
+Summary classification count files per method and database combination
+```
