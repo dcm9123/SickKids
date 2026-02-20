@@ -343,6 +343,9 @@ Warning messages:
 2: package ‘Rcpp’ was built under R version 4.4.1 
 ```
 
-I repeated the same command across the KOs and ECs trait tables, and I got the predicted tables for each community. The next step is to run the metagenome prediction:
+I repeated the same command across the KOs and ECs trait tables, and I got the predicted tables for each community using this command:
 
 `for community in {"ns1","ns6","s2","s5"}; do for function in {"KO","EC"}; do hsp.py -t ${community}_output/${community}_placed_seqs.tre --observed_trait_table trait_tables/${function}_for_picrust2_renamed.tsv --calculate_NSTI -p 10 --seed 23 --verbose -o ${community}_output/${community}_${function}_nsti.predicted.tsv; done; done;`
+
+ The next step is to run the metagenome prediction:
+
