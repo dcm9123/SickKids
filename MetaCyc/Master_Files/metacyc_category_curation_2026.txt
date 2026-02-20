@@ -89,8 +89,8 @@ Glycan-Pathways	Glycan pathways	NA	NA	NA	NA	NA	NA	NA
 Glycan-Pathways // Carbohydrates-Biosynthesis	Glycan pathways	NA	Biosynthesis	Carboxylic acid biosynthesis	NA	NA	NA	NA
 Glycan-Pathways // Cell-Structure-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	NA	NA	NA	NA
 Glycan-Pathways // Cell-Structure-Biosynthesis // Carbohydrates-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Carbohydrate biosynthesis	NA	NA
-Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Lipid biosynthesis	NA	NA
-Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis // Carbohydrates-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Lipid biosynthesis	Biosynthesis	Carbohydrate biosynthesis
+Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA
+Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis // Carbohydrates-Biosynthesis	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	Biosynthesis	Carbohydrate biosynthesis
 HORMONE-DEG // Inactivation // Metabolic-Clusters	Degradation/utilization/assimilation	"Hormone, neurotransmitter, and signaling molecule degradation"	NA	NA	NA	NA	NA	NA
 HORMONE-SYN	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	NA	NA	NA	NA	NA	NA
 Hydrocarbon-Biosynthesis	Biosynthesis	Hydrocarbon biosynthesis	NA	NA	NA	NA	NA	NA
@@ -98,10 +98,10 @@ Hydrocarbon-Degradation	Degradation/utilization/assimilation	Hydrocarbon degrada
 Inactivation	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA	NA	NA
 Interconversion	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA	NA	NA
 Interconversion // SECONDARY-METABOLITE-BIOSYNTHESIS	Metabolite activation/inactivation/interconversion	NA	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
-Lipid-Biosynthesis	Biosynthesis	Lipid biosynthesis	NA	NA	NA	NA	NA	NA
+Lipid-Biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA	NA	NA
 Mercury-Detoxification	Detoxification	Mercury detoxification	NA	NA	NA	NA	NA	NA
 Metabolic-Clusters // Energy-Metabolism	Metabolic clusters	NA	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
-Metabolic-Clusters // Nucleotide-Biosynthesis	Metabolic clusters	NA	Biosynthesis	Nucleotide biosynthesis	NA	NA	NA	NA
+Metabolic-Clusters // Nucleotide-Biosynthesis	Metabolic clusters	NA	Biosynthesis	Nucleoside and nucleotide biosynthesis	NA	NA	NA	NA
 Metabolic-Clusters // SECONDARY-METABOLITE-BIOSYNTHESIS	Metabolic clusters	NA	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
 Metabolic-Regulators	Biosynthesis	Metabolic regulators	NA	NA	NA	NA	NA	NA
 Methylglyoxal-Detoxification // Aldehyde-Degradation	Detoxification	Methylglyoxal detoxification	Degradation/utilization/assimilation	Aldehyde degradation	NA	NA	NA	NA
@@ -135,14 +135,14 @@ Polymer-Degradation // Carbohydrates-Degradation // Glycan-Pathways	Degradation/
 Polymer-Degradation // Carbohydrates-Degradation // Metabolic-Clusters	Degradation/utilization/assimilation	Polymeric compound degradation	Degradation/utilization/assimilation	Carbohydrate degradation	Metabolic clusters	NA	NA	NA
 Polyprenyl-Biosynthesis	Biosynthesis	Polyprenyl biosynthesis	NA	NA	NA	NA	NA	NA
 Protein-Modification	Macromolecule modification	Protein modification	NA	NA	NA	NA	NA	NA
-Protein-Modification // Cofactor-Biosynthesis	Macromolecule modification	Protein modification	Biosynthesis	"Cofactor, carrier, and vitamine biosynthesis"	NA	NA	NA	NA
-Protein-Modification // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	Macromolecule modification	Protein modification	Biosynthesis	"Cofactor, carrier, and vitamine biosynthesis"	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA
+Protein-Modification // Cofactor-Biosynthesis	Macromolecule modification	Protein modification	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	NA	NA	NA	NA
+Protein-Modification // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	Macromolecule modification	Protein modification	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA
 Protein-Modification // Glycan-Pathways // Carbohydrates-Biosynthesis	Macromolecule modification	Protein modification	Glycan pathways	NA	Biosynthesis	Carbohydrate biosynthesis	NA	NA
 Protein-Modification // Metabolic-Clusters	Macromolecule modification	Protein modification	Metabolic clusters	NA	NA	NA	NA	NA
 REACTIVE-OXYGEN-SPECIES-DEGRADATION	Superpathways	Reactive oxygen species degradation	NA	NA	NA	NA	NA	NA
 REACTIVE-OXYGEN-SPECIES-DEGRADATION // Super-Pathways	Superpathways	Reactive oxygen species degradation	NA	NA	NA	NA	NA	NA
 SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA	NA	NA
-SECONDARY-METABOLITE-BIOSYNTHESIS // Lipid-Biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	Biosynthesis	Lipid biosynthesis	NA	NA	NA	NA
+SECONDARY-METABOLITE-BIOSYNTHESIS // Lipid-Biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA
 SECONDARY-METABOLITE-DEGRADATION	Degradation/utilization/assimilation	Secondary metabolite degradation	NA	NA	NA	NA	NA	NA
 SECONDARY-METABOLITE-DEGRADATION // Activation	Degradation/utilization/assimilation	Secondary metabolite degradation	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA
 SECONDARY-METABOLITE-DEGRADATION // Activation // Metabolic-Clusters	Degradation/utilization/assimilation	Secondary metabolite degradation	Metabolite activation/inactivation/interconversion	NA	Metabolic clusters	NA	NA	NA
@@ -150,30 +150,90 @@ SECONDARY-METABOLITE-DEGRADATION // Metabolic-Clusters	Degradation/utilization/a
 SECONDARY-METABOLITE-DEGRADATION // Super-Pathways	Degradation/utilization/assimilation	Secondary metabolite degradation	Superpathways	NA	NA	NA	NA	NA
 Seleno-Amino-Acid-Detoxification // Noncarbon-Nutrients // Super-Pathways // Amino-Acid-Biosynthesis	Degradation/utilization/assimilation	Secondary metabolite degradation	Metabolite activation/inactivation/interconversion	NA	Metabolic clusters	NA	NA	NA
 Storage-Compounds-Biosynthesis	Biosynthesis	Storage compound biosynthesis	NA	NA	NA	NA	NA	NA
-Super-Pathways	Super pathways	NA	NA	NA	NA	NA	NA	NA
-Super-Pathways // Amino-Acid-Biosynthesis	Super pathways	NA	Biosynthesis	Amino acid biosynthesis	NA	NA	NA	NA
+Super-Pathways	Superpathways	NA	NA	NA	NA	NA	NA	NA
+Super-Pathways // Amino-Acid-Biosynthesis	Superpathways	NA	Biosynthesis	Amino acid biosynthesis	NA	NA	NA	NA
 Super-Pathways // AROMATIC-COMPOUNDS-BIOSYN	Superpathways	NA	Biosynthesis	Aromatic compound biosynthesis	NA	NA	NA	NA
-Super-Pathways // Carbohydrates-Biosynthesis	Super pathways	NA	Biosynthesis	Carbohydrate biosynthesis	NA	NA	NA	NA
+Super-Pathways // Carbohydrates-Biosynthesis	Superpathways	NA	Biosynthesis	Carbohydrate biosynthesis	NA	NA	NA	NA
 Super-Pathways // Carboxylate-Biosynthesis	Superpathways	NA	Biosynthesis	Carboxylic acid biosynthesis	NA	NA	NA	NA
 Super-Pathways // Cell-Structure-Biosynthesis	Superpathways	NA	Biosynthesis	Cell structure biosynthesis	NA	NA	NA	NA
-Super-Pathways // Cofactor-Biosynthesis	Super pathways	NA	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	NA	NA	NA	NA
-Super-Pathways // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	Super pathways	NA	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA
-Super-Pathways // Energy-Metabolism	Super pathways	NA	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+Super-Pathways // Cofactor-Biosynthesis	Superpathways	NA	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	NA	NA	NA	NA
+Super-Pathways // Cofactor-Biosynthesis // Tetrapyrrole-Biosynthesis	Superpathways	NA	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA
+Super-Pathways // Energy-Metabolism	Superpathways	NA	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
 Super-Pathways // Glycan-Pathways // Carbohydrates-Biosynthesis	Superpathways	NA	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	NA
 Super-Pathways // Glycan-Pathways // Cell-Structure-Biosynthesis // Carbohydrates-Biosynthesis	Superpathways	NA	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Carbohydrate biosynthesis
 Super-Pathways // Glycan-Pathways // Cell-Structure-Biosynthesis // Lipid-Biosynthesis	Superpathways	NA	Glycan pathways	NA	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis
 Super-Pathways // HORMONE-SYN	Superpathways	NA	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	NA	NA	NA	NA
 Super-Pathways // HORMONE-SYN // SECONDARY-METABOLITE-BIOSYNTHESIS	Superpathways	NA	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
-Super-Pathways // Lipid-Biosynthesis	Super pathways	NA	Biosynthesis	Lipid biosynthesis	NA	NA	NA	NA
+Super-Pathways // Lipid-Biosynthesis	Superpathways	NA	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA
 Super-Pathways // Metabolic-Clusters // Amino-Acid-Biosynthesis	Superpathways	NA	Metabolic clusters	NA	Biosynthesis	Amino acid biosynthesis	NA	NA
-Super-Pathways // Metabolic-Clusters // Carbohydrates-Biosynthesis	Superpathways	NA	Metabolic clusters	Biosynthesis	Carbohydrate biosynthesis	NA	NA	NA
-Super-Pathways // Nucleotide-Biosynthesis	Super pathways	NA	Biosynthesis	Nucleotide biosynthesis	NA	NA	NA	NA
+Super-Pathways // Metabolic-Clusters // Carbohydrates-Biosynthesis	Superpathways	NA	Metabolic clusters	NA	Biosynthesis	Carbohydrate biosynthesis	NA	NA
+Super-Pathways // Nucleotide-Biosynthesis	Superpathways	NA	Biosynthesis	Nucleoside and nucleotide biosynthesis	NA	NA	NA	NA
 Super-Pathways // Other-biosynthesis	Superpathways	NA	Biosynthesis	Other biosynthesis	NA	NA	NA	NA
 Super-Pathways // Polyamine-Biosynthesis	Superpathways	NA	Biosynthesis	"Amide, amidine, amine, and polyamine biosynthesis"	NA	NA	NA	NA
-Super-Pathways // Polyprenyl-Biosynthesis	Super pathways	NA	Biosynthesis	Polyprenyl biosynthesis	NA	NA	NA	NA
+Super-Pathways // Polyprenyl-Biosynthesis	Superpathways	NA	Biosynthesis	Polyprenyl biosynthesis	NA	NA	NA	NA
 Super-Pathways // Polyprenyl-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Superpathways	NA	Biosynthesis	Polyprenyl biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
-Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	Super pathways	NA	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
-Super-Pathways // Storage-Compounds-Biosynthesis	Super pathways	NA	Biosynthesis	Storage compound biosynthesis	NA	NA	NA	NA
+Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS	Superpathways	NA	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+Super-Pathways // Storage-Compounds-Biosynthesis	Superpathways	NA	Biosynthesis	Storage compound biosynthesis	NA	NA	NA	NA
 Super-Pathways // Tetrapyrrole-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Superpathways	NA	Biosynthesis	Tetrapyrrole biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
 Tetrapyrrole-Biosynthesis	Biosynthesis	Tetrapyrrole biosynthesis	NA	NA	NA	NA	NA	NA
 Tetrapyrrole-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	Tetrapyrrole biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+Acetate-Degradation // Energy-Metabolism	Degradation/utilization/assimilation	Acetate degradation	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+Activation // Inactivation // Metabolic-Clusters	Metabolite activation/inactivation/interconversion	NA	Metabolite activation/inactivation/interconversion	NA	Metabolic clusters	NA	NA	NA
+Amino-Acid-Biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	Amino acid biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+Amino-Acid-Degradation // Other-biosynthesis	Degradation/utilization/assimilation	Amino acid degradation	Biosynthesis	Other biosynthesis	NA	NA	NA	NA
+Amino-Acid-Degradation // Polyamine-Biosynthesis // Metabolic-Regulators	Degradation/utilization/assimilation	Amino acid degradation	Biosynthesis	"Amide, amidine, amine, and polyamine biosynthesis"	Biosynthesis	Metabolic regulators	NA	NA
+AROMATIC-COMPOUNDS-BIOSYN // Cell-Structure-Biosynthesis	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Cell structure biosynthesis	NA	NA	NA	NA
+AROMATIC-COMPOUNDS-BIOSYN // Other-biosynthesis	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Other biosynthesis	NA	NA	NA	NA
+AROMATIC-COMPOUNDS-BIOSYN // Other-biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Other biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
+Cell-Structure-Biosynthesis // Lipid-Biosynthesis	Biosynthesis	Cell structure biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA
+Chromoprotein-Biosynthesis	Bioluminescence/fluorescence/chromoprotein biosynthesis	Chromoprotein biosynthesis	NA	NA	NA	NA	NA	NA
+Cofactor-Biosynthesis // HORMONE-SYN	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	NA	NA	NA	NA	NA	NA
+Cyanide-Detoxification	Detoxification	Cyanide detoxification	NA	NA	NA	NA	NA	NA
+CYCLITOLS-DEG // Carbohydrates-Biosynthesis	Degradation/utilization/assimilation	Cyclitol degradation	Biosynthesis	Carbohydrate biosynthesis	NA	NA	NA	NA
+CYCLITOLS-DEG // SECONDARY-METABOLITE-BIOSYNTHESIS	Degradation/utilization/assimilation	Cyclitol degradation	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+Fluorescence	Bioluminescence/fluorescence/chromoprotein biosynthesis	Fluorescence protein biosynthesis	NA	NA	NA	NA	NA	NA
+Glycan-Pathways // Lipid-Biosynthesis	Glycan pathways	NA	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA
+HORMONE-DEG	Degradation/utilization/assimilation	"Hormone, neurotransmitter, and signaling molecule degradation"	NA	NA	NA	NA	NA	NA
+HORMONE-DEG // Metabolic-Clusters	Degradation/utilization/assimilation	"Hormone, neurotransmitter, and signaling molecule degradation"	Metabolic clusters	NA	NA	NA	NA	NA
+HORMONE-DEG // Super-Pathways	Degradation/utilization/assimilation	"Hormone, neurotransmitter, and signaling molecule degradation"	Superpathways	NA	NA	NA	NA	NA
+HORMONE-SYN // Lipid-Biosynthesis	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA
+HORMONE-SYN // SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+Inactivation // Other-biosynthesis	Metabolite activation/inactivation/interconversion	NA	Biosynthesis	Other biosynthesis	NA	NA	NA	NA
+Interconversion // AROMATIC-COMPOUNDS-BIOSYN	Metabolite activation/inactivation/interconversion	NA	Biosynthesis	Aromatic compound biosynthesis	NA	NA	NA	NA
+Interconversion // AROMATIC-COMPOUNDS-BIOSYN // SECONDARY-METABOLITE-BIOSYNTHESIS	Metabolite activation/inactivation/interconversion	NA	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
+Interconversion // Cofactor-Biosynthesis	Metabolite activation/inactivation/interconversion	NA	Biosynthesis	"Cofactor, carrier, and vitamin biosynthesis"	NA	NA	NA	NA
+Interconversion // HORMONE-SYN	Metabolite activation/inactivation/interconversion	NA	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	NA	NA	NA	NA
+Lipid-Biosynthesis // Cyclitols-Biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	Biosynthesis	Cyclitol biosynthesis	NA	NA	NA	NA
+Metabolic-Clusters	Metabolic clusters	NA	Biosynthesis	Aromatic compound biosynthesis	NA	NA	NA	NA
+Metabolic-Clusters // AROMATIC-COMPOUNDS-BIOSYN	Metabolic clusters	NA	Biosynthesis	Aromatic compound biosynthesis	NA	NA	NA	NA
+Metabolic-Clusters // AROMATIC-COMPOUNDS-BIOSYN // Other-biosynthesis	Metabolic clusters	NA	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Other biosynthesis	NA	NA
+Metabolic-Clusters // AROMATIC-COMPOUNDS-BIOSYN // Other-biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Metabolic clusters	NA	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Other biosynthesis	Biosynthesis	Secondary metabolite biosynthesis
+Metabolic-Clusters // AROMATIC-COMPOUNDS-BIOSYN // SECONDARY-METABOLITE-BIOSYNTHESIS	Metabolic clusters	NA	Biosynthesis	Aromatic compound biosynthesis	NA	NA	NA	NA
+Metabolic-Clusters // Cell-Structure-Biosynthesis	Metabolic clusters	NA	Biosynthesis	Cell structure biosynthesis	NA	NA	NA	NA
+Metabolic-Clusters // HORMONE-SYN	Metabolic clusters	NA	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	NA	NA	NA	NA
+Metabolic-Clusters // HORMONE-SYN // Other-biosynthesis	Metabolic clusters	NA	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	NA	NA	NA	NA
+Metabolic-Clusters // HORMONE-SYN // SECONDARY-METABOLITE-BIOSYNTHESIS	Metabolic clusters	NA	Biosynthesis	"Hormone, neurotransmitter, and signaling molecule biosynthesis"	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
+Metabolic-Clusters // Lipid-Biosynthesis	Metabolic clusters	NA	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA
+Noncarbon-Nutrients // Metabolic-Clusters	Degradation/utilization/assimilation	Inorganic nutrient metabolism	Metabolic clusters	NA	NA	NA	NA	NA
+Nucleic-Acid-Processing // Metabolic-Clusters	Macromolecule modification	Nucleic acid processing	Metabolic clusters	NA	NA	NA	NA	NA
+Other-biosynthesis // Lipid-Biosynthesis	Biosynthesis	Other biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA	NA	NA
+Other-biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Biosynthesis	Other biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA	NA	NA
+Protein-Degradation	Degradation/utilization/assimilation	Protein degradation	NA	NA	NA	NA	NA	NA
+REACTIVE-OXYGEN-SPECIES-DEGRADATION // AROMATIC-COMPOUNDS-DEGRADATION	Superpathways	Reactive oxygen species degradation	Degradation/utilization/assimilation	Secondary metabolite degradation	NA	NA	NA	NA
+SECONDARY-METABOLITE-BIOSYNTHESIS // Energy-Metabolism	Biosynthesis	Secondary metabolite biosynthesis	Generation of precursor metabolites and energy	NA	NA	NA	NA	NA
+SECONDARY-METABOLITE-BIOSYNTHESIS // Hydrocarbon-Biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	Biosynthesis	Hydrocarbon biosynthesis	NA	NA	NA	NA
+SECONDARY-METABOLITE-DEGRADATION // HORMONE-DEG	Degradation/utilization/assimilation	Secondary metabolite degradation	Degradation/utilization/assimilation	"Hormone, neurotransmitter, and signaling molecule degradation"	NA	NA	NA	NA
+SECONDARY-METABOLITE-DEGRADATION // HORMONE-DEG // Interconversion	Degradation/utilization/assimilation	Secondary metabolite degradation	Degradation/utilization/assimilation	"Hormone, neurotransmitter, and signaling molecule degradation"	Metabolite activation/inactivation/interconversion	NA	NA	NA
+Seleno-Amino-Acid-Detoxification // Noncarbon-Nutrients	Detoxification	Seleno amino acid detoxification	Degradation/utilization/assimilation	Inorganic nutrient metabolism	NA	NA	NA	NA
+Super-Pathways // AROMATIC-COMPOUNDS-BIOSYN // Other-biosynthesis // SECONDARY-METABOLITE-BIOSYNTHESIS	Superpathways	NA	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Other biosynthesis	Biosynthesis	Secondary metabolite biosynthesis
+Super-Pathways // AROMATIC-COMPOUNDS-BIOSYN // SECONDARY-METABOLITE-BIOSYNTHESIS	Superpathways	NA	Biosynthesis	Aromatic compound biosynthesis	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
+Super-Pathways // Cyclitols-Biosynthesis	Superpathways	NA	Biosynthesis	Cyclitol biosynthesis	NA	NA	NA	NA
+Super-Pathways // Glycan-Pathways // Lipid-Biosynthesis	Superpathways	NA	Glycan pathways	NA	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA
+Super-Pathways // Inactivation	Superpathways	NA	Metabolite activation/inactivation/interconversion	NA	NA	NA	NA	NA
+Super-Pathways // Interconversion // Carbohydrates-Biosynthesis	Superpathways	NA	Metabolite activation/inactivation/interconversion	NA	Biosynthesis	Carbohydrate biosynthesis	NA	NA
+Super-Pathways // Lipid-Biosynthesis // Cyclitols-Biosynthesis	Superpathways	NA	Biosynthesis	Fatty acid and lipid biosynthesis	Biosynthesis	Cyclitol biosynthesis	NA	NA
+Super-Pathways // Metabolic-Clusters // SECONDARY-METABOLITE-BIOSYNTHESIS	Superpathways	NA	Metabolic clusters	NA	Biosynthesis	Secondary metabolite biosynthesis	NA	NA
+Super-Pathways // Nucleic-Acid-Processing	Superpathways	NA	Macromolecule modification	Nucleic acid processing	NA	NA	NA	NA
+Super-Pathways // Protein-Modification // Glycan-Pathways // Carbohydrates-Biosynthesis	Superpathways	NA	Macromolecule modification	Protein modification	Glycan pathways	NA	Biosynthesis	Carbohydrate biosynthesis
+Super-Pathways // SECONDARY-METABOLITE-BIOSYNTHESIS // Lipid-Biosynthesis	Superpathways	NA	Biosynthesis	Secondary metabolite biosynthesis	Biosynthesis	Fatty acid and lipid biosynthesis	NA	NA
+Transport-Pathways	Transport	Nitrogen remobilization from senescing leaves	NA	NA	NA	NA	NA	NA
