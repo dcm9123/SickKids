@@ -349,3 +349,14 @@ I repeated the same command across the KOs and ECs trait tables, and I got the p
 
  The next step is to run the metagenome prediction:
 
+`for community in {ns1,ns6,s2,s5}; do for function in {KO,EC}; do metagenome_pipeline.py -i ${community}_input/ps_${community}_final.biom -m ${community}_output/${community}_16S_nsti.predicted.tsv -f ${community}_output/${community}_${function}_nsti.predicted.tsv --strat_out --wide_table -o ${community}_output/${community}_${function}_metagenome_out; done; done;`
+
+This time, I am including the `--wide_out` and `--strat_out` parameters to get the output in a wide format and to get the stratified output as well. The wide output will be easier to work with for me, and the stratified output will allow me to see the contribution of each ASV to each pathway.
+
+and I got all the results under a 2.0 of NSTI, which is the recommended threshold for PICRUSt2. This is expected, the lowest NSTI is tiny.
+
+```
+All ASVs were below the max NSTI cut-off of 2.0 and so all were retained for downstream analyses.
+All ASVs were below the max NSTI cut-off of 2.0 and so all were retained for downstream analyses.
+```
+
