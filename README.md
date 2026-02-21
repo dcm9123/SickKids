@@ -400,3 +400,7 @@ Predicts if a pathway is encoded per ASV. Each number here is between 0 - 1. Tha
 - `path_cov_strat.tsv` Same idea, but in here it is per ASV per sample.
 
 - `path_cov_unstrat.tsv` Same idea, but in here it is only pathway core per sample.
+
+### February 21st, 2026
+
+Today I will use the picrust2 files as input and crossmap each ASV to their taxa using the Phyloseq file I have. For that, I created the script `asv_to_taxa_for_picrust2.3.py` that takes the ASV IDs from the PICRUSt2 output files and matches them to the corresponding taxa in the Phyloseq files. I have uploaded the new files into the PICRUSt2 folder of my SickKids repository and the One Drive too.
