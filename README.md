@@ -369,3 +369,34 @@ EC:1.6.5.3	ASVp1_104	120.60000000000001
 EC:1.6.5.3	ASVp1_12	3196.0
 ```
 
+Where I have the normalized abundance and contribution of each ASV to each pathway. The unstratified output file does not provide contribution of each ASV, and it only goes from EC to EC.
+
+Finally, I am running the `pathway_pipeline.py` to get the pathway abundance predictions from the ECs. This is the command I am running:
+
+`for community in {ns1,ns6,s2,s5}; do pathway_pipeline.py -i ${community}_output/${community}_EC_metagenome_out/pred_metagenome_strat.tsv -o ${community}_output/${community}_pathway_inference/ --intermediate ${community}_output/${community}_pathway_intermediate_files/ -p 32 --coverage --per_sequence_contrib --per_sequence_abun ${community}_output/${community}_EC_metagenome_out/seqtab_norm.tsv --per_sequence_function ${community}_output/${community}_EC_nsti.predicted.tsv --wide_table --verbose; done;`
+
+It produces a bunch of output files:
+
+- `path_abun_strat.tsv.gz`
+   Option to specify that stratified abundances should be reported in terms of the contribution by each predicted genome rather than how much each genome is contributing to the overall community. In other words, pathway abundances will be calculated for each individual predicted genome. Both --per_sequence_abun and --per_sequence_function need to be specified when this option is set. Stratified coverages will only be reported when this option is used (and --coverage is set). As of v2.2.0-b, unstratified pathway abundances based on the community-wide pathway abundances and also based on the per-sequence pathway abundances will be output when this option is used.
+
+- `path_abun_predictions.tsv`
+ASV contribution to the overall community pathway abundance (community, not mouse or sample). 
+
+- `path_abun_strat.tsv`
+Pathway abundance per ASV per sample.
+
+- `path_abun_unstrat.tsv`
+Pathway abundance per sample, all ASVs contributions per sample are summed, no ASV breakdown.
+
+- `path_abun_unstrat_per_seq.tsv`
+
+- `path_abun_unstrat_per_seq.tsv`
+ASV contribution to total pathway abundance across samples. This file is different from path_abun_unstrat.tsv in how the pathway abundances were calculated. This filecomputes pathway abundance by considering individual ASV contribution, whereas the 'path_abun_unstrat.tsv' only collapses to ECs first without considering ASVs at all.
+
+`path_cov_predictions.tsv` 
+Predicts if a pathway is encoded per ASV. Each number here is between 0 - 1. That score assesses how likely a pathway is present, the closer to 1, the more likely it is produced by that ASV.
+
+- `path_cov_strat.tsv` Same idea, but in here it is per ASV per sample.
+
+- `path_cov_unstrat.tsv` Same idea, but in here it is only pathway core per sample.
