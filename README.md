@@ -360,3 +360,12 @@ All ASVs were below the max NSTI cut-off of 2.0 and so all were retained for dow
 All ASVs were below the max NSTI cut-off of 2.0 and so all were retained for downstream analyses.
 ```
 
+The stratified output looks like this:
+```
+function	sequence	Plate1_1030R_0_M_NS1_week10_S77_L001
+EC:1.6.5.3	ASVp1_1	97295.38
+EC:1.6.5.3	ASVp1_10	3648.75
+EC:1.6.5.3	ASVp1_104	120.60000000000001
+EC:1.6.5.3	ASVp1_12	3196.0
+```
+
