@@ -198,10 +198,9 @@ def simplifying_categories():
                                     sorted_level1 = [element_level1, element_level1_1, element_level1_2, element_level1_3]
                                     sorted_level2 = [element_level2, element_level2_1, element_level2_2, element_level2_3]
                                 else:
-                                    # Element not in curated file — fill with empty strings and warn
-                                    print(f"WARNING: element '{element}' is not in the curated category file. Filling with empty strings.")
-                                    sorted_level1 = ["", "", "", ""]
-                                    sorted_level2 = ["", "", "", ""]
+                                    # Unexpected element not in curated file — stop and report
+                                    print(f"ERROR: element {element} is not in the curated category file. Exiting now.")
+                                    sys.exit()
                             # Append the sorted category values as one row dict per pathway
                             rows.append({"Level 1":sorted_level1[0], "Level 1.1":sorted_level1[1], "Level 1.2":sorted_level1[2], "Level 1.3":sorted_level1[3],
                                                    "Level 2":sorted_level2[0], "Level 2.1":sorted_level2[1], "Level 2.2":sorted_level2[2], "Level 2.3":sorted_level2[3]})
@@ -211,7 +210,7 @@ def simplifying_categories():
                         # Write output back to the same filename in the parsed directory
                         f_out_name = file.split('/')[-1]
                         print(f_out_name)    
-                        df_final.to_csv(f_out_name, sep = "\t", index = False)
+                        df_final.to_csv(f_out_name, sep = "\t")
                         
 def counting_classification():
     # Define methods and databases to iterate over
@@ -239,69 +238,75 @@ def counting_classification():
     #    print(thing)
     
     os.chdir(input_path)
-    name = []
-    pwy_count = []
-    naive = []
-    minpath = []
-    bacteria = []
-    non_bacteria = []
     for mthd in method:     
         for database in db:
-                # Set input directory based on method and database
-                if mthd == "default" and database == db[1]:   #Makes sure that it only runs once, as I don't have two databases for the default method
-                    break
-                elif mthd == "default" and database == db[0]:   #Makes sure the directory is correct for the default method
-                    dir1 = f"/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/{mthd}/parsed"
-                elif mthd == "updated":
-                    dir1 = f"/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/{mthd}/{database}/parsed"
-                os.chdir(dir1)
+            name = []
+            pwy_count = []
+            naive = []
+            minpath = []
+            bacteria = []
+            non_bacteria = []
+            
+            # Set input directory based on method and database
+            if mthd == "default" and database == db[1]:   #Makes sure that it only runs once, as I don't have two databases for the default method
+                break
+            elif mthd == "default" and database == db[0]:   #Makes sure the directory is correct for the default method
+                dir1 = f"/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/{mthd}/parsed"
+            elif mthd == "updated":
+                dir1 = f"/Users/danielcm/Desktop/SickKids/MetaCyc/MetaCyc_Minpath_output/annotated_pathways_genomes/reports/{mthd}/{database}/parsed"
+            os.chdir(dir1)
+            
+            all_pwy_dict_1 = []  # list of dicts, one per file
+            all_pwy_dict_2 = []  # list of dicts, one per file
+            
+            for file in glob.glob(os.path.join(dir1,"*.tsv")):
+                pwy_dict_1 = {cat: 0 for cat in categories_set1}  # fresh count per file
+                pwy_dict_2 = {cat: 0 for cat in categories_set2}  # fresh count per file
+                print(f"Counting classifications for file: {file}")
+                file_in = pd.read_csv(file, sep = "\t")
+                name.append(file.split('/')[-1])
+                pwy_count.append(len(file_in["Pathways"]))
+                naive.append(len(file_in[file_in["Naive"]=="Yes"]))
+                minpath.append(len(file_in[file_in["MinPath"]=="Yes"]))
+                bacteria.append(len(file_in[file_in["Classification"]=="Bacteria"]))
+                non_bacteria.append(len(file_in[file_in["Classification"]!="Bacteria"]))
                 
-                pwy_dict_1 = {}
-                pwy_dict_2 = {}
-                # Load each parsed TSV file for classification counting
-                for file in glob.glob(os.path.join(dir1,"*.tsv")):
-                        print(f"Counting classifications for file: {file}")
-                        file_in = pd.read_csv(file, sep = "\t")
-                        name.append(file.split('/')[-1])
-                        pwy_count.append(len(file_in["Pathways"]))
-                        naive.append(len(file_in[file_in["Naive"]=="Yes"]))
-                        minpath.append(len(file_in[file_in["MinPath"]=="Yes"]))
-                        bacteria.append(len(file_in[file_in["Classification"]=="Bacteria"]))
-                        non_bacteria.append(len(file_in[file_in["Classification"]!="Bacteria"]))
-                        
-                        for category in categories_set1:
-                            #print(category)
-                            pwy_dict_1[category] = 0
-                            for rows in file_in.itertuples(index = False, name = None):
-                                values = rows[10:13]
-                                if category in values:
-                                    pwy_dict_1[category] = pwy_dict_1.get(category, 0) + 1
-                        for category in categories_set2:
-                            pwy_dict_2[category] = 0
-                            for rows in file_in.itertuples(index = False, name = None):
-                                values2 = rows[14:18]
-                                if category in values2:
-                                    pwy_dict_2[category] = pwy_dict_2.get(category, 0) + 1
-                        print(sorted(pwy_dict_1.items()))
-                        print(sorted(pwy_dict_2.items()))
-                        pwy_dict_1 = {}
-                        pwy_dict_2 = {}
-                df_out_part1 = pd.DataFrame({"ID":name, "Total pathways":pwy_count, "Naive":naive, "MinPath":minpath, "Bacteria":bacteria, "Non-Bacteria":non_bacteria})
-                df_out_part1_1 = pd.DataFrame({sorted(categories_set1):sorted(pwy_dict_1.values())})
-                df_out_part2_1 = pd.DataFrame({sorted(categories_set2):sorted(pwy_dict_2.values())})
+                # Count level1 categories per file using column names (not fragile indices)
+                for _, row in file_in.iterrows():
+                    values1 = [str(row["Level 1"]), str(row["Level 1.1"]),
+                                str(row["Level 1.2"]), str(row["Level 1.3"])]
+                    values2 = [str(row["Level 2"]), str(row["Level 2.1"]),
+                                str(row["Level 2.2"]), str(row["Level 2.3"])]
+                    for category in categories_set1:
+                        if category in values1:
+                            pwy_dict_1[category] += 1
+                    for category in categories_set2:
+                        if category in values2:
+                            pwy_dict_2[category] += 1
                 
-                df_final1 = pd.concat([df_out_part1, df_out_part1_1], axis = 1)
-                df_final2 = pd.concat([df_out_part1, df_out_part2_1], axis = 1)
-                df_final1.to_csv(f"Summary_classification_counting_{mthd}_{database}_level1.tsv", sep = "\t", index = False)
-                df_final2.to_csv(f"Summary_classification_counting_{mthd}_{database}_level2.tsv", sep = "\t", index = False)
-                            
-                            
-                        
+                # Append this file's counts to the accumulator lists
+                all_pwy_dict_1.append(pwy_dict_1)
+                all_pwy_dict_2.append(pwy_dict_2)
+            
+            # Build output AFTER all files processed — one row per file
+            df_out_part1 = pd.DataFrame({"ID":name, "Total pathways":pwy_count, "Naive":naive, 
+                                            "MinPath":minpath, "Bacteria":bacteria, "Non-Bacteria":non_bacteria})
+            df_out_part2 = df_out_part1.copy()
+            
+            # Convert list of per-file dicts into DataFrames and concatenate
+            df_cats1 = pd.DataFrame(all_pwy_dict_1)  # rows = files, cols = categories
+            df_cats2 = pd.DataFrame(all_pwy_dict_2)
+            df_out_part1 = pd.concat([df_out_part1.reset_index(drop=True), df_cats1.reset_index(drop=True)], axis=1)
+            df_out_part2 = pd.concat([df_out_part2.reset_index(drop=True), df_cats2.reset_index(drop=True)], axis=1)
+            
+            df_out_part1.to_csv(f"Summary_classification_counting_{mthd}_{database}_level1.tsv", sep="\t", index=False)
+            df_out_part2.to_csv(f"Summary_classification_counting_{mthd}_{database}_level2.tsv", sep="\t", index=False)                         
+                    
 # %%
 def main():
-    sanity_check()             # Verify curated category file has no unexpected duplicates
-    annotating()               # Parse raw MinPath reports and merge with master pathway metadata
-    simplifying_categories()   # Add Level 1/2 category columns to each parsed file
+    #sanity_check()             # Verify curated category file has no unexpected duplicates
+    #annotating()               # Parse raw MinPath reports and merge with master pathway metadata
+    #simplifying_categories()   # Add Level 1/2 category columns to each parsed file
     counting_classification()
 main()
 
