@@ -421,3 +421,5 @@ Plate4_036R_RR_M_NS1_S65_L001,
 which are found in `/Users/danielcm/Desktop/diammatics/T1D`. I will be re-labeling these four samples in the plate 4 of the `/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/t1d_db_fixed_discussed/FemMicro_Daniel/` folders for plate1.1, plate2.1, plate3.1, plate4.1, and plate5.1. 
 
 It looks like I found the culprit in my phyloseq_code, which was in the 'writing_ps_objects' (or something along those lines). I removed it and simplify my code even further. Its name will remain the same: `phyloseq_t1d_db2_2.1.R`. I will be running this code across all the plates to generate new phyloseq objects with the correct sample names. 
+
+I was able to run the first two steps of PICRUSt2: place_seqs and hsp.py. Tomorrow I will resume with the metagenome_pipeline.py.
