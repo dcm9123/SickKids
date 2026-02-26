@@ -404,3 +404,20 @@ Predicts if a pathway is encoded per ASV. Each number here is between 0 - 1. Tha
 ### February 21st, 2026
 
 Today I will use the picrust2 files as input and crossmap each ASV to their taxa using the Phyloseq file I have. For that, I created the script `asv_to_taxa_for_picrust2.3.py` that takes the ASV IDs from the PICRUSt2 output files and matches them to the corresponding taxa in the Phyloseq files. I have uploaded the new files into the PICRUSt2 folder of my SickKids repository and the One Drive too.
+
+I managed to make another script that makes a boxplot figure of the averages of a level 2 categories that are enriched in maaslin2 for either side of the Log2(FC). This script is called `enriched_maaslin2_category_average.R`. I will make a new script called `bubble_plot_taxa_pathways_mice.R` that will attempt to plot a bubble plot with many variables. 
+
+### February 26th, 2026
+
+We realized there's a bug in 'Have-some-pie', where the merging of the ASVs start pointing at different taxa. I will be fixing that today by looking at `phyloseq_t1d_db2.1`. First, I need to remember that 4 samples are not labeled with their week, and those are:
+
+```
+Plate4_036R_0_M_NS1_S62_L001,
+Plate4_036R_L_M_NS1_S63_L001,
+Plate4_036R_RL_M_NS1_S64_L001,
+Plate4_036R_RR_M_NS1_S65_L001,
+```
+
+which are found in `/Users/danielcm/Desktop/diammatics/T1D`. I will be re-labeling these four samples in the plate 4 of the `/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/t1d_db_fixed_discussed/FemMicro_Daniel/` folders for plate1.1, plate2.1, plate3.1, plate4.1, and plate5.1. 
+
+It looks like I found the culprit in my phyloseq_code, which was in the 'writing_ps_objects' (or something along those lines). I removed it and simplify my code even further. Its name will remain the same: `phyloseq_t1d_db2_2.1.R`. I will be running this code across all the plates to generate new phyloseq objects with the correct sample names. 
