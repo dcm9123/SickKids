@@ -21,13 +21,13 @@ picrust_to_maaslin2<-function(path_picrust2, file_to_use, variable, normalizatio
     Maaslin2(input_data = maaslin_input, input_metadata = metadata, output=output_file,
     fixed_effects = fixed_effects_to_use, transform = transformation_method,
     normalization = normalization_to_use, random_effects = random_to_use, reference = reference_value,
-    cores = 4)
+    cores = 8, plot_scatter = FALSE)
   } else {
     output_file = paste0(maaslin_path,"maaslin2_",variable,"_",feature_to_use,"_",reference_value)
     Maaslin2(input_data = maaslin_input, input_metadata = metadata_input, output=output_file, # nolint
     fixed_effects = fixed_effects_to_use, transform = transformation_method, 
     normalization = normalization_to_use, random_effects = random_to_use, reference = reference_value,
-    cores = 4)
+    cores = 6, plot_scatter = FALSE)
   }
   cat("The results were generated based on the following information: \n")
   cat(paste0("Input file: ",path_picrust2,file_to_use,"\n"))
@@ -44,7 +44,7 @@ picrust_to_maaslin2<-function(path_picrust2, file_to_use, variable, normalizatio
 }
 
 
-#Comparing week and consortia (NS1, NS6, S2, S5) and w5w6, w9w10. Reference NS1_w5w6 # nolint
+#Comparing week and consortia (NS1, NS6, S2, S5) and w5, w9w10. Reference NS1_w5 # nolint
 
 #Metadata variables: ID,Sex,Community,Subcommunity,Timepoint,Merged_weeks,Week_and_consortia,Sex_and_consortia,
 #Features: EC_merged_metagenome.tsv, KO_merged_metagenome.tsv
@@ -56,7 +56,7 @@ picrust_to_maaslin2<-function(path_picrust2, file_to_use, variable, normalizatio
 ### SAME SUBCOMMUNITY AND DIFFERENT TIMEPOINTS ANALYSIS### - DONE
 cons1 = c("NS1","NS6","S2","S5")
 cons2 = c("NS1","NS6","S2","S5")
-picrust2_path_current = "/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/"
+picrust2_path_current = "/Users/danielcm/Desktop/Sickkids/PICRUSt2.3/"
 
 for (i in cons1[1:4]) # DONE
 {
@@ -73,14 +73,14 @@ for (i in cons1[1:4]) # DONE
                         feature_to_use = feature,
                         random_input = "Sex",
                         reference_val = paste0("Week_and_consortia,",i,"_w9w10"),
-                        maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
                         subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(i,"_w9w10"))
     beepr::beep(3)
     print(paste0("Finished ", subs, " ", feature))
   }
 }
 
-### DIFFERENT SUBCOMMUNITIES AT THE SAME TIMEPOINT W5W6### - DONE
+### DIFFERENT SUBCOMMUNITIES AT THE SAME TIMEPOINT W5### - DONE
 func = c("EC","KO")
 for (i in cons1[1:4])
 {
@@ -104,7 +104,7 @@ for (i in cons1[1:4])
                             feature_to_use = feature,
                             random_input = "Sex",
                             reference_val = paste0("Week_and_consortia,",j,"_w5w6"),
-                            maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                            maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/",# nolint
                             subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(j,"_w5w6"))
         beepr::beep(3)
         print(paste0("Finished ", subs, " ", feature))
@@ -139,7 +139,7 @@ for (i in cons1[1:4])
                             feature_to_use = feature,
                             random_input = "Sex",
                             reference_val = paste0("Week_and_consortia,",j,"_w9w10"),
-                            maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                            maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/",# nolint
                             subset = TRUE, subset1 = paste0(i,"_w9w10"), subset2 = paste0(j,"_w9w10"))
         beepr::beep(3)
         print(paste0("Finished ", subs, " ", feature))
@@ -162,7 +162,7 @@ for (subs in c("NS1", "NS6", "S2", "S5"))
                         feature_to_use = feature,
                         random_input = NULL,
                         reference_val = paste0("Sex_and_consortia,Male", "_", subs),
-                        maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
                         subset = TRUE, subset1 = paste0("Male", "_", subs), subset2 = paste0("Female", "_", subs))
     beepr::beep(3)
     print(paste0("Finished ", subs, " ", feature))
@@ -183,7 +183,7 @@ for (subs in c("NS1", "NS6", "S2", "S5"))
                         feature_to_use = "pathway", # Change to pathway when doing metacyc
                         random_input = "Sex",
                         reference_val = paste0("Week_and_consortia,",i,"_w9w10"),
-                        maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
                         subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(i,"_w9w10"))
     beepr::beep(3)
     print(paste0("Finished ", i, " ", feature))
@@ -200,7 +200,7 @@ for (i in cons1[1:4])
     }
     else{
       feature = k
-      subs = paste0(i,"_w5w6_vs_",j,"_w5w6")
+      subs = paste0(i,"_w5w6_vs_",j,"_w5")
       picrust_to_maaslin2(path_picrust2 = picrust2_path_current, # nolint
                           variable = "Week_and_consortia",
                           normalization_method = "TSS",
@@ -210,7 +210,7 @@ for (i in cons1[1:4])
                           feature_to_use = "pathway", # Change to pathway when doing metacyc
                           random_input = "Sex",
                           reference_val = paste0("Week_and_consortia,",j,"_w5w6"),
-                          maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                          maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
                           subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(j,"_w5w6"))
       beepr::beep(3)
       print(paste0("Finished ", i," vs ",j, " ", feature))
@@ -239,7 +239,7 @@ for (i in cons1[1:4])
                           feature_to_use = "pathway", # Change to pathway when doing metacyc
                           random_input = "Sex",
                           reference_val = paste0("Week_and_consortia,",j,"_w9w10"),
-                          maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                          maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
                           subset = TRUE, subset1 = paste0(i,"_w9w10"), subset2 = paste0(j,"_w9w10"))
       beepr::beep(3)
       print(paste0("Finished ", i," vs ",j," ", feature))
@@ -260,7 +260,7 @@ for (i in cons1[1:4]){
                         feature_to_use = feature,
                         random_input = NULL,
                         reference_val = paste0("Sex_and_consortia,Male", "_", subs),
-                        maaslin_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.2/", # nolint
+                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
                         subset = TRUE, subset1 = paste0("Male", "_", subs), subset2 = paste0("Female", "_", subs))
     beepr::beep(3)
     print(paste0("Finished ", subs, " ", feature))

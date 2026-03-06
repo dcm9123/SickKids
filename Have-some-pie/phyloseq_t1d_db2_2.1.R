@@ -53,6 +53,7 @@ reshaping_rds_objects = function(){
   
   obj4 = readRDS("plate4.1/seqtab_nochimeras_p4.rds")
   rownames(obj4) = paste0("Plate4_",rownames(obj4))
+  print(rownames(obj4))
   saveRDS(obj4,"plate4/seqtab_nochimeras_m_p4.rds")
   
   obj5 = readRDS("plate5.1/seqtab_nochimeras_p5.rds")
@@ -145,6 +146,9 @@ initializing = function(variable){
     else if(grepl("diabetes", names_of_files[i])){
       timepoint[i]="week_endpoint"
     }
+    else if(grepl("Plate4_036R_", names_of_files[i])){ #Fixing the labeling ........
+      timepoint[i]="week_9"
+    }
     else{
       timepoint[i]="NA"
     }
@@ -161,6 +165,7 @@ initializing = function(variable){
 #the samdf file created by the previous function, a prefix for naming it (my case I decided to do p1_, p2_ ...p5_), and
 #ASV_sequences = TRUE, so that the sequences become the ID and not the taxa names.
 #Returns: The new ps object generated
+
 taxonomy_and_ps = function(file_taxa, seqtab_nochim, samdf,plate_string,asv_sequences){
   taxa_table<-read.table(file_taxa, header=TRUE)                             #This reads the taxonomy table from GTDB by the femmicro pipeline
   taxa_table = taxa_table[,c(2,4,5,6,7,8,9,10)]
@@ -174,6 +179,7 @@ taxonomy_and_ps = function(file_taxa, seqtab_nochim, samdf,plate_string,asv_sequ
     
   }
   taxa_table_with_ids = cbind(ASV_ID = asv_ids, taxa_table)
+  print(paste0(plate_number,"/",plate_number,"_taxa_table.csv"))
   write.csv(taxa_table_with_ids,file = paste0(plate_number,"/",plate_number,"_taxa_table.csv"))        #This ensures that the ASV_ID are the same between seqtab and taxa_table after taking the 2nd column                                     #Reading it as a matrix instead of a df
   rownames(taxa_table) = taxa_table[,1]
   taxa_table = taxa_table[,-1]
@@ -185,9 +191,6 @@ taxonomy_and_ps = function(file_taxa, seqtab_nochim, samdf,plate_string,asv_sequ
   dna<-Biostrings::DNAStringSet(taxa_names(ps))
   names(dna)<-taxa_names(ps)
   ps<-merge_phyloseq(ps,dna)
-  #taxa_names(ps)<-paste0("ASV",plate_string,seq(ntaxa(ps)))
-  #print(names(dna))
-  #print(ps)
   return(ps)
 } #Creates a phyloseq object and ensures the IDs are the same between files when generating one 
 
@@ -233,23 +236,24 @@ merging_runs = function(ps_list){
 #Purpose: Writes an ASV count table and a Taxa table to be used for more downstream analyses
 #Input: It requires a ps object and a prefix for the file to be written
 #Returns: Nothing
-writing_tables_ps = function(ps_merged,string){
-  merged_asv_table = as.data.frame(t(otu_table(ps_merged))) #transposes the otu table, and transforms it into a data frame
+
+#DO NOT USE!
+writing_tables_ps = function(ps_to_work_on,string){
+  merged_asv_table = as.data.frame(t(otu_table(ps_to_work_on))) #transposes the otu table, and transforms it into a data frame
   merged_asv_table$ASV_ID = rownames(merged_asv_table) #Makes a column titled 'ASV_ID'
   merged_asv_table = merged_asv_table[,c(ncol(merged_asv_table), 1:(ncol(merged_asv_table)-1))] #Moves the new ASVID at the beginning
-  merged_taxa_table = as.data.frame(tax_table(ps_merged))
-  merged_taxa_table$joined = apply(merged_taxa_table, 1, function(x) paste(x, collapse=";")) #Merges all taxonomic ranks and separates them into ';' into one new column 
-  sequences = as.character(refseq(ps_merged))
-  asv_ids = taxa_names(ps_merged)
-  df_sequences = data.frame(ASV_ID = asv_ids,Sequence = sequences, stringsAsFactors = FALSE)
+  merged_taxa_table = as.data.frame(tax_table(ps_to_work_on))
+  asv_ids = taxa_names(ps_to_work_on)
+  df_sequences = data.frame(ASV_ID = asv_ids, stringsAsFactors = FALSE)
+  #View(df_sequences)
+
   
-  merged_asv_table = merge(merged_asv_table, merged_taxa_table["joined"], by.x="ASV_ID", by.y="row.names")
-  merged_asv_table = merge(merged_asv_table, df_sequences, by = "ASV_ID")
-  
-  merged_taxa_table$Sequence = merged_asv_table$Sequence
-  merged_taxa_table$ASV_ID = rownames(merged_taxa_table)
-  
+
   merged_taxa_table <- merged_taxa_table[, c(ncol(merged_taxa_table), 1:(ncol(merged_taxa_table)-1))]  # Move ASV_ID to the front
+  
+  View(merged_taxa_table)
+  View(merged_asv_table)
+  
   write.table(merged_asv_table,paste0(string,"_asv_table.tsv"),sep="\t",row.names = FALSE)
   write.table(merged_taxa_table,paste0(string,"_taxa_table.tsv"), sep="\t",row.names = FALSE)
 }
@@ -258,23 +262,23 @@ writing_tables_ps = function(ps_merged,string){
 #Purpose: Creates 4 ps objects. One for the mice samples, positive ctrl, inocula, and negative ctrl. It also counts the total ASVs per sample per subset. # nolint
 #Input: Takes a merged ps object. In this case, I chose ps_merged_glom (at the taxa level). It will not work unless the actual variable name is passed to the function
 #Returns: A list containing the 4 ps objects without any ASVs with a count of zero
-subsetting_merged_plate = function(ps_clustered){ #I am not sure why the 'ps_object' is not read properly, and I need to pass the 'ps_merged_glom' variable
-  ps_merged_weeks = subset_samples(ps_clustered, grepl("week",sample_data(ps_clustered)$Timepoint, ignore.case=TRUE))
+subsetting_merged_plate = function(ps_merged){ #I am not sure why the 'ps_object' is not read properly, and I need to pass the 'ps_merged_glom' variable
+  ps_merged_weeks = subset_samples(ps_merged, grepl("week",sample_data(ps_merged)$Timepoint, ignore.case=TRUE))
   ps_merged_weeks = prune_taxa(taxa_sums(ps_merged_weeks)>0,ps_merged_weeks)
   weeks_sample_total = sample_sums(ps_merged_weeks)
   write.csv(weeks_sample_total, "sample_total_count_weeks.csv")
   
-  ps_merged_positive = subset_samples(ps_clustered, grepl("positive|postive", sample_data(ps_clustered)$ID, ignore.case=TRUE))
+  ps_merged_positive = subset_samples(ps_merged, grepl("positive|postive", sample_data(ps_merged)$ID, ignore.case=TRUE))
   ps_merged_positive = prune_taxa(taxa_sums(ps_merged_positive)>0,ps_merged_positive)
   positive_sample_total = sample_sums(ps_merged_positive)
   write.csv(positive_sample_total,"sample_total_count_positives.csv")
   
-  ps_merged_inocula = subset_samples(ps_clustered, grepl("inocul", sample_data(ps_clustered)$ID, ignore.case=TRUE))
+  ps_merged_inocula = subset_samples(ps_merged, grepl("inocul", sample_data(ps_merged)$ID, ignore.case=TRUE))
   ps_merged_inocula = prune_taxa(taxa_sums(ps_merged_inocula)>0, ps_merged_inocula)
   inocula_sample_total = sample_sums(ps_merged_inocula)
   write.csv(inocula_sample_total,"inocula_total_count.csv")
   
-  ps_merged_negative = subset_samples(ps_clustered, grepl("negative|neg", sample_data(ps_clustered)$ID, ignore.case=TRUE))
+  ps_merged_negative = subset_samples(ps_merged, grepl("negative|neg", sample_data(ps_merged)$ID, ignore.case=TRUE))
   ps_merged_negative = prune_taxa(taxa_sums(ps_merged_negative)>0,ps_merged_negative)
   negative_sample_total = sample_sums(ps_merged_negative)
   write.csv(negative_sample_total,"sample_total_count_negatives.csv")
@@ -429,6 +433,12 @@ otu_writing = function(ps_obj,name_out){
   write.csv(otu_t,file = paste0(name_out))
 }
 
+
+
+
+
+
+
 #################################################################################
 #                                                                               #
 #                               MOTHER BOARD                                    #
@@ -454,6 +464,8 @@ ps2 = taxonomy_and_ps("plate2.1/final_merged_tables/p2_vsearch_dada2_merged.tsv"
 ps3 = taxonomy_and_ps("plate3.1/final_merged_tables/p3_vsearch_dada2_merged.tsv",seqtab_nochim_p3,samdf3,"p3_",asv_sequences = TRUE)
 ps4 = taxonomy_and_ps("plate4.1/final_merged_tables/p4_vsearch_dada2_merged.tsv",seqtab_nochim_p4,samdf4,"p4_",asv_sequences = TRUE)
 ps5 = taxonomy_and_ps("plate5.1/final_merged_tables/p5_vsearch_dada2_merged.tsv",seqtab_nochim_p5,samdf5,"p5_",asv_sequences = TRUE)
+#ps1_1 leaving obsolete function and asvs as IDs, not sequences.
+#ps1 leaving the potentially fixed functions
 
 #Counting reads by plate
 #counting_reads("plate1.1/Nreads_plate1.tsv")
@@ -481,23 +493,17 @@ ps_list1 = list(ps1,ps2,ps3,ps4,ps5)
 ps_merged = merging_runs(ps_list1)
 printing_ps(ps_merged) #535 ASVs and 364 samples (535 after removing identical sequences, 901 if counted separately by ps object)
 
-#Clustering ASVs to species level and not removing the NAs
-ps_clustered = clustering_asvs(ps_merged,"species")
-printing_ps(ps_clustered) #99 species (or taxa) and 364 samples
-
 
 #Subsetting the merged plate into sample weeks, inocula, positives, and negatives and renaming the OTU IDs by taxonomy, not by sequence
-ps_clustered_list = subsetting_merged_plate(ps_clustered) #1: weeks, #2: inocula, #3: positive, #4: negative
-ps_clustered_renamed = list()
-for(i in 1:4){
-  ps_clustered_renamed[[i]] = otu_ID_renaming(ps_clustered_list[[i]]) #Calling the renaming function
-  printing_ps(ps_clustered_renamed[[i]])
-}
-
+ps_clustered_list = subsetting_merged_plate(ps_merged) #1: weeks, #2: inocula, #3: positive, #4: negative
 
 #Dividing ps object by week and consortia
-ps_weeks = ps_clustered_renamed[[1]] #ps dividing by mice samples only
+ps_weeks = ps_clustered_list[[1]] #ps dividing by mice samples only
+ps_inocula = ps_clustered_list[[2]] #ps dividing by inocula only
+ps_positives = ps_clustered_list[[3]] #ps dividing by positive controls only
+ps_negatives = ps_clustered_list[[4]] #ps dividing by negative controls only
 ps_weeks_and_consortia_double_list = subsetting_weeks_and_consortia(ps_weeks)
+
 
 #Assigning cleaned ps corresponsing variable
 ps_w5 = ps_weeks_and_consortia_double_list$weeks$week_5 #week 5 55 species and 115 samples
@@ -510,66 +516,61 @@ ps_ns6 = ps_weeks_and_consortia_double_list$consortia$NS6 #ns6 31 species and 32
 ps_s2 = ps_weeks_and_consortia_double_list$consortia$S2 #s2 46 species and 148 samples
 ps_s5 = ps_weeks_and_consortia_double_list$consortia$S5 #s5 38 species and 32 samples
 
+#w5,w9,w10 add up to 263 samples!
 
+ps_subweeks_and_inocula = merging_runs(list(ps_w5,ps_w6,ps_w7,ps_w9,ps_w10, ps_inocula))
+ps_subweeks_and_inocula #311 taxa and 307 samples
 
-#There are a total of 295 mice with week identifiers in them, the rest belong into the cage and diabetes endpoint analysis
-for(item in ps_weeks_and_consortia_double_list){
-  printing_ps(item)
+ps_w5w9w10 = merging_runs(list(ps_w5,ps_w9,ps_w10))
+ps_ns1_filt = subset_samples(ps_w5w9w10, Subcommunity=="NS1") 
+ps_ns1_filt = removing_empty_asvs(ps_ns1_filt)
+ps_ns6_filt = subset_samples(ps_w5w9w10, Subcommunity=="NS6")
+ps_ns6_filt = removing_empty_asvs(ps_ns6_filt) 
+ps_s2_filt = subset_samples(ps_w5w9w10, Subcommunity=="S2") 
+ps_s2_filt = removing_empty_asvs(ps_s2_filt)
+ps_s5_filt = subset_samples(ps_w5w9w10, Subcommunity=="S5") 
+ps_s5_filt = removing_empty_asvs(ps_s5_filt)
+
+ps_ns1_filt #85 ASVs, 93 samples
+ps_ns6_filt #90 ASVs, 32 samples
+ps_s2_filt #120 ASVs, 106 samples
+ps_s5_filt #79 ASVs, 32 samples
+
+ps_inocula = removing_empty_asvs(ps_inocula) 
+ps_positives = removing_empty_asvs(ps_positives) 
+ps_negatives = removing_empty_asvs(ps_negatives)
+ps_subweeks_and_inocula = removing_empty_asvs(ps_subweeks_and_inocula)
+
+ps_subweeks_and_inocula #311 taxa and 307 samples
+ps_inocula #174 taxa and 12 samples
+ps_positives #42 taxa and 5 samples
+ps_negatives #149 taxa and 7 samples
+
+ps_list_final = list(ps_w5w9w10,ps_ns1_filt, ps_ns6_filt, ps_s2_filt, ps_s5_filt, ps_inocula, ps_positives, ps_negatives, ps_subweeks_and_inocula)
+ps_list_final_names = c("ps_mice", "ps_ns1_final", "ps_ns6_final", "ps_s2_final", "ps_s5_final", "ps_inocula", "ps_positives", "ps_negatives", "ps_w5-w10_and_inocula")
+#Looks good, the samples add up to 263, and the taxa is less than 535, which was the original number of ASVs in all the samples (364)
+
+path = '/Users/danielcm/Desktop/SickKids/Phyloseq2/'
+
+for(i in seq_along(ps_list_final)){
+  ps_final_object = ps_list_final[[i]]
+  ps_final_name = ps_list_final_names[[i]]
+
+  otu_formatted = as.data.frame(t(otu_table(ps_final_object)))
+  otu_formatted = cbind(ASV_Seq = rownames(otu_formatted), otu_formatted)
+  
+  taxa_formatted = as.data.frame(tax_table(ps_final_object))
+  taxa_formatted = cbind(ASV_Seq = rownames(taxa_formatted), taxa_formatted)
+  
+  rownames(otu_formatted) = NULL  # Remove rownames to avoid duplication
+  rownames(taxa_formatted) = NULL  # Remove rownames to avoid duplication
+
+  Biostrings::writeXStringSet(refseq(ps_final_object), filepath = paste0(path, ps_final_name, ".fasta"), format = "fasta")
+  
+  write.table(otu_formatted, paste0(path, "asv_", ps_final_name, "_samples.tsv"), sep="\t", row.names = FALSE)
+  write.table(taxa_formatted, paste0(path, "taxa_", ps_final_name, "_samples.tsv"), sep="\t", row.names = FALSE)
 }
 
-#This section here will identify the repeated samples:
-overlapping_samples_by_weeks = finding_overlap(ps_weeks_and_consortia_double_list[[1]], "weeks") #[[1]] is the mice samples divided by week
-overlapping_samples_by_consortia = finding_overlap(ps_weeks_and_consortia_double_list[[2]], "consortia") #[[2]] is the mice samples divided by consortia
-overlapping_samples_by_weeks
-
-### This part allows me to remove the repeated samples from week 5, as they are all present in week 6, and creates one ps for all weeks.
-# Get the core IDs for all samples
-core_ids <- sapply(strsplit(as.character(sample_data(ps_weeks)$ID), "_"), function(x) paste(x[2:4], collapse = "_"))
-# Logical vector: TRUE if sample is in overlap list AND is week_5
-to_remove <- core_ids %in% overlapping_samples_by_weeks[[1]] & sample_data(ps_weeks)$Timepoint == "week_5"
-# Keep all samples except those to remove
-ps_clustered_all_weeks_together <- prune_samples(!to_remove, ps_weeks)
-ps_clustered_all_weeks_together
-
-overlapping_samples_by_weeks[[1]] #There are 16 samples that are repeated between week 5 and week 6
-ps_clustered_all_weeks_together = subset_samples(ps_weeks, Timepoint=="week_5"|Timepoint=="week_6"|Timepoint=="week_9"|Timepoint=="week_10")
-
-ps_clustered_all_weeks_together = removing_empty_asvs(ps_clustered_all_weeks_together)
-ps_clustered_all_weeks_together #Should have 263 samples, which is 295 - 16 from week 6 in week 5
-sample_data(ps_clustered_all_weeks_together) #It works!
+getwd()
 
 
-for(item in sample_data(ps_s2)$ID){ #16 Samples, all week 6 are present in week 5, but no repetitions are found between week 9 and week 10
-  cat(item)
-  cat("\n")
-}
-
-#Filtering samples by repetitions in consortia
-ps_w5_f = filtering_samples(overlapping_samples_by_weeks[[1]],ps_w5) #This command removes the duplicates of the same mice across w5 and w6
-                                                                     #There was no point in running the rest, as there were no other repetitions found
-ps_w5_f
-ps_list2 = list(ps_w5_f,ps_w6,ps_w7,ps_w9,ps_w10)
-ps_merged2 = merging_runs(ps_list2) #This has a total of 279 samples, which is the original 295 - 16 repetitions from w6 in w5
-ps_merged2_divided = subsetting_weeks_and_consortia(ps_merged2) #This divides the ps into weeks [[1]] and consortia [[2]]
-ps_merged2_divided #Should add up to 263 samples, which is 279 - 16 from week 7!
-ps_merged2_divided 
-ps_consortia_filtered = ps_merged2_divided[[2]] #109 to 101 from NS1, 122 to 114 in S2 reduction, the 16 repeated samples are here
-ps_ns1_final = ps_consortia_filtered[[1]]
-ps_ns6_final = ps_consortia_filtered[[2]]
-ps_s2_final = ps_consortia_filtered[[3]]
-ps_s5_final = ps_consortia_filtered[[4]]
-ps_merged2_divided
-
-ps_ns1_final #39 species and 93 samples
-ps_ns6_final #31 species and 32 samples
-ps_s2_final #46 species and 106 samples
-ps_s5_final #38 species and 32 samples
-ps_weeks_final = ps_weeks_no_reps_clean
-View(otu_table(ps_weeks_final))
-
-#Writing out the otu table for week 5, week 9, and week 10
-write.csv(t(otu_table(ps_ns1_final)),"ps_ns1_final.csv")
-write.csv(t(otu_table(ps_ns6_final)),"ps_ns6_final.csv")
-write.csv(t(otu_table(ps_s2_final)),"ps_s2_final.csv")
-write.csv(t(otu_table(ps_s5_final)),"ps_s5_final.csv")
-write.csv(t(otu_table(ps_clustered_all_weeks_together)),"ps_weeks_final.csv")

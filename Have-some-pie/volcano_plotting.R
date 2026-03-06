@@ -14,6 +14,7 @@ library(RColorBrewer)
 library(ggpubr)
 library(beepr)
 
+
 fetching_files = function(){
     df_maaslin2 = readline(prompt = "Enter the full path to the Maaslin2 output file. Must be a .tsv file e.g., /path/to/maaslin2_output/all_results.tsv: ")
     if(!file.exists(df_maaslin2)){
@@ -34,6 +35,7 @@ fetching_files = function(){
     }
     return(list(df_maaslin2, pathway_classification, output_path, category_left, category_right))
 }
+
 
 enrichment_and_filtering = function(df_name, df_classification_name){
 
@@ -225,29 +227,44 @@ donut_chart = function(df_volcano, output_path, category_left, category_right){
 }
 
 global = function(){
-    set_of_data = fetching_files()
+    path = "/Users/danielcm/Desktop/SickKids/Maaslin2.4/"
+    group = c("consortium","w5","w9w10","sex")
+    for(g in group){
+    files_to_process = list.files(path = paste0(path,g), pattern = "all_results.tsv", full.names = TRUE, recursive = TRUE)
+        for(f in files_to_process){
+            print(paste0("Processing file ",f))
+            cat1 = strsplit(f,"/", fixed = TRUE)[[1]][8]
+            cat1 = strsplit(cat1,"_",fixed = TRUE)[[1]][6:7]
+            cat1 = paste(cat1[1],cat1[2],sep=' ')
+            cat2 = strsplit(f,"/", fixed = TRUE)[[1]][8]
+            cat2 = strsplit(cat2,"_",fixed = TRUE)[[1]][9:10]
+            cat2 = paste(cat2[1],cat2[2],sep=" ")
+            output_path = dirname(f)
+            set_of_data = list(f,"/Users/danielcm/Desktop/diammatics/T1D/metacyc_pathway_details2.tsv",output_path,cat2,cat1)
+            result = enrichment_and_filtering(df_name = set_of_data[[1]],
+                                        df_classification = set_of_data[[2]])
+            df_volcano_to_use = result[[1]]
+            total_significant_points = result[[2]]
 
-    result = enrichment_and_filtering(df_name = set_of_data[[1]],
-                                 df_classification = set_of_data[[2]])
-    df_volcano_to_use = result[[1]]
-    total_significant_points = result[[2]]
-
-    volcano(df_volcano = df_volcano_to_use,
-            category_left = set_of_data[[4]],
-            category_right = set_of_data[[5]],
-            output_path = set_of_data[[3]])
-
-    vertical_barplot(df_volcano = df_volcano_to_use,
-                    output_path = set_of_data[[3]],
+            volcano(df_volcano = df_volcano_to_use,
                     category_left = set_of_data[[4]],
-                    category_right = set_of_data[[5]])
+                    category_right = set_of_data[[5]],
+                    output_path = set_of_data[[3]])
 
-    donut_chart(df_volcano = df_volcano_to_use,
-                output_path = set_of_data[[3]],
-                category_left = set_of_data[[4]],
-                category_right = set_of_data[[5]])
+            #vertical_barplot(df_volcano = df_volcano_to_use,
+            #                output_path = set_of_data[[3]],
+            #                category_left = set_of_data[[4]],
+            #                category_right = set_of_data[[5]])
 
-    beep(sound = 3)
+            donut_chart(df_volcano = df_volcano_to_use,
+                        output_path = set_of_data[[3]],
+                        category_left = set_of_data[[4]],
+                        category_right = set_of_data[[5]])
+
+            beep(sound = 3)
+        }
+    }
 }
 
 global()
+

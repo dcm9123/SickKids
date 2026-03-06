@@ -4,28 +4,31 @@
 # Purpose: This script was generated to merge the results of the EC and KO functional prediction files from
 # the 4 consortia (NS1, NS6, S2, S5) into one.
 
+#%%
 import os
 import pandas as pd
 
-
+#%%
 #This allows me to print the entire df without any issues or constraints from python
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 0)  # Let pandas auto-detect width
 
-path = "/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/"
+path = "/Users/danielcm/Desktop/SickKids/PICRUSt2.3/"
 os.chdir(path)
-consortia_list = ["ns1","s2"] #Change this if needed
+consortia_list = ["ns1","s2","ns6","s5"] #Change this if needed
 function_list = ["KO","EC","pathway"]
 df_list_ko = []
 df_list_ec = []
 df_list_pathway = []
 i = 0
 
-inocula = True # Change this to False if you want to merge the sample files instead of the inocula files
+inocula = False # Change this to False if you want to merge the sample files instead of the inoculum 12 sample files
 
+#%%
 for consortia in consortia_list:
     for function in function_list:
+        print(f"Working with: {consortia}-{function}")
         if function == "KO" or function == "EC":
             if inocula == True:
                 df = pd.read_csv(f"{consortia}_inocula_output/{consortia}_{function}_metagenome_out/pred_metagenome_unstrat.tsv",sep='\t',header=0) # Change this for inocula or samples
@@ -42,9 +45,9 @@ for consortia in consortia_list:
                 print("This should never happen. Invalid function type.")
         else:
             if inocula == True:
-                df =pd.read_csv(f"{consortia}_inocula_output/{consortia}_pathway_out/path_abun_unstrat.tsv",sep='\t',header=0) # Change this for inocula or samples
+                df =pd.read_csv(f"{consortia}_inocula_output/{consortia}_pathway_inference/path_abun_unstrat.tsv",sep='\t',header=0) # Change this for inocula or samples
             else:
-                df =pd.read_csv(f"{consortia}_output/{consortia}_pathway_out/path_abun_unstrat.tsv",sep='\t',header=0) # Change this for inocula or samples
+                df =pd.read_csv(f"{consortia}_output/{consortia}_pathway_inference/path_abun_unstrat.tsv",sep='\t',header=0) # Change this for inocula or samples
             df = df.set_index('pathway')
             df_list_pathway.append(df)
             i = i+1
@@ -69,7 +72,7 @@ else:
 
 for list_in in df_list_ko,df_list_ec,df_list_pathway:
     for dframe in list_in:
-        print(f"The dimension of each df are: {dframe.shape}")
+        print(f"The dimension of the df are: {dframe.shape}")
 
 print(f"The dimensions of the merged KO df are {df_ko_merged_t.shape}")
 print(f"The dimensions of the merged EC df are {df_ec_merged_t.shape}")
@@ -106,3 +109,5 @@ for dframe in df_list_pathway:
         if value not in df_pathway_merged.index:
             print(f"{value} not found in the merged pathway df (unexpected)") # This should never happen
 
+
+# %%

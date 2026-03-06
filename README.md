@@ -423,3 +423,8 @@ which are found in `/Users/danielcm/Desktop/diammatics/T1D`. I will be re-labeli
 It looks like I found the culprit in my phyloseq_code, which was in the 'writing_ps_objects' (or something along those lines). I removed it and simplify my code even further. Its name will remain the same: `phyloseq_t1d_db2_2.1.R`. I will be running this code across all the plates to generate new phyloseq objects with the correct sample names. 
 
 I was able to run the first two steps of PICRUSt2: place_seqs and hsp.py. Tomorrow I will resume with the metagenome_pipeline.py.
+
+
+### March 1st 2026
+
+Laura found an error in taxonomy assignment in the latest files she had access to. Luckily, we realized that our collaborators had the right files all along, so it didn't mess up any important analysis. Regardless of that, I decided to find out why were we short by ~550 ASV counts out of 23 Million. Turns out I used the wrong non_chimeric_object.rds from plate1 instead of plate1.1. I decided to run the rest of PICRUSt2, Maaslin2, and others just to make sure we have the proper results.
