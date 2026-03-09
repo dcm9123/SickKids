@@ -428,3 +428,13 @@ I was able to run the first two steps of PICRUSt2: place_seqs and hsp.py. Tomorr
 ### March 1st 2026
 
 Laura found an error in taxonomy assignment in the latest files she had access to. Luckily, we realized that our collaborators had the right files all along, so it didn't mess up any important analysis. Regardless of that, I decided to find out why were we short by ~550 ASV counts out of 23 Million. Turns out I used the wrong non_chimeric_object.rds from plate1 instead of plate1.1. I decided to run the rest of PICRUSt2, Maaslin2, and others just to make sure we have the proper results.
+
+### March 6th, 2026
+
+I had a discussion with the team after we had to review a table that 'had contaminants'. Regardless of those contaminants not being present at the prevalence that were shown to us, a filtering step was requested to remove ASVs that are in low abundance and are contaminants. I will be doing this on the mice table and the consortium table. I will be calculating the sensitivity (TP/TP+FN) and the specificity (TN/TN+FP).
+
+### March 9th, 2026
+
+Today I will focus on the filtering approaches across the inocula samples as my gold standard, and the mice samples after finding the best threshold for filtering.
+
+
