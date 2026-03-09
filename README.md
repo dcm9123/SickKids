@@ -438,3 +438,5 @@ I had a discussion with the team after we had to review a table that 'had contam
 Today I will focus on the filtering approaches across the inocula samples as my gold standard, and the mice samples after finding the best threshold for filtering.
 
 
+Using the consortia as our reference, I realized that we need a minimum of 231 ASV count in order to keep
+all the ASVs that belong to the expected controls. We can safely apply the rule of present in more than 2 samples, and all the true positives are kept.
