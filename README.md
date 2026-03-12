@@ -437,6 +437,30 @@ I had a discussion with the team after we had to review a table that 'had contam
 
 Today I will focus on the filtering approaches across the inocula samples as my gold standard, and the mice samples after finding the best threshold for filtering.
 
+NS1:
+Using the consortia NS1 as our reference, I realized that we need a minimum of 173 ASV counts to remove the contaminant and without loosing any true positives. It's equivalent proportion is 0.1237%, and it is present in all 3 samples. If I apply a filter of 175 ASV count, then it is removed, and the rest of the true taxa are kept. False positive 1 to 0
 
-Using the consortia as our reference, I realized that we need a minimum of 231 ASV count in order to keep
-all the ASVs that belong to the expected controls. We can safely apply the rule of present in more than 2 samples, and all the true positives are kept.
+S2:
+There are three contaminants or rare ASVs (Enterococcus faecalis, NA NA, NA NA), where the max sum for each is 3,4, and 11. By simply applying the previous filter of 175, we remove those contaminants, but we also remove a true positive for the only ASV pointing at Collinsella sp902362275. Collinsella is present in all 3 samples. False negative = 1, false positive 3 to 0
+
+NS6:
+In NS6, there are plenty ASVs pointing at taxa that are not supposed to be part of that consortium. Most of them are linked to the new Cytobacillus bacterium. The highest ASV count for a contaminant is 653 for A. muciniphila, followed by 231 for B. thetaiotaomicron, and the 3rd one is a contaminant from Flavobacterium ammonificans with 164. If we apply the 175 ASV count rule, we fail to remove A. muciniphila, and B. thetaiotaomicron, but we remove A. faecis, CHH4-2, Cloacibacterium sp902362275, Cytobacillus spp. E. alcoholdehydrogenati, adding up to 14 taxa that are removed. 
+
+False positives from 18 to 4
+False negatives from 0 to 2
+
+S5:
+When applying the 175 ASV filter, we remove 4 false positives (B. stercoris, B. uniformis, P. merdae, S. wadsworthensis), we do not lose any true positives this case)
+
+
+PICRUSt2 workflow:
+1. Gene content inference is calculated for each organism based on the phylogeny tree.
+2. PICRUSt2 may predict gene presence on organisms that have not been sequenced yet based in their sequenced evolutionary relatives.
+3. PICRUSt2 requires the 16S copy number for each organism being analyzed, and to do that, it looks up its value in the reference database.
+4. The user's ASV abundance table is normalized by its predicted 16S copy number.
+5. Normalized ASV abundances are then multiplied by the set of gene family abundances pre-calculated in the hidden state prediction step (ancestral state reconstruction) to yield the final metagenome prediction.
+
+### March 12th, 2026
+
+Now I will apply the 175 ASV rule to the rest of the mice groups to see how 'good' this is for removing FPs while keeping TPs.
+
