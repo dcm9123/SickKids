@@ -240,11 +240,11 @@ new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, ru
     ignore_cols = c(ignore_cols, "sum")
     #Rule # 1: ASV count > 300
     df_1 = subset_file[subset_file$sum>ASV_count,]
-    print(paste0("Number of ASVs after applying count filter: ", nrow(df_1)))
+    #print(paste0("Number of ASVs after applying count filter: ", nrow(df_1)))
 
     #Rule # 2: ASV length > 250
     df_2 = df_1[df_1$asv_len > ASV_length,]
-    print(paste0("Number of ASVs after applying length filter: ", nrow(df_2)))
+    #print(paste0("Number of ASVs after applying length filter: ", nrow(df_2)))
 
     #Rule # 3: ASV present in at least 2 samples
     num_of_samples = ncol(df_2) - length(ignore_cols)
@@ -253,19 +253,51 @@ new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, ru
 
     df_3 = df_2[df_2$nonzero_count >= (min_samples),]
 
-    print(paste0("There are a total of ",sum(df_2$nonzero_count >= (min_samples)), " ASVs that are present in at least ", min_samples, " samples"))
-    print(paste0("Number of ASVs after applying sample presence filter: ", nrow(df_3)))
+    #print(paste0("There are a total of ",sum(df_2$nonzero_count >= (min_samples)), " ASVs that are present in at least ", min_samples, " samples"))
+    #print(paste0("Number of ASVs after applying sample presence filter: ", nrow(df_3)))
 
-    df_3$false_positive = ifelse(grepl(community, df_3$expected_communities), "No", "Yes")
+    df_3$false_positive = ifelse(grepl(paste0(community, "(?!\\d)"), df_3$expected_communities, perl = TRUE), "No", "Yes")    
+    sum_FP = sum(df_3$false_positive == "Yes")
+    sum_TP = sum(df_3$false_positive == "No")
+    PPV = (sum_TP/(sum_TP + sum_FP))*100
+    asv_num = nrow(df_3)
 
-    return(df_3)
+
+
+    cat(paste0("Filter criteria: ASV count > ", ASV_count, ", ASV length > ", ASV_length, " ,ASV prevalence ", prevalence_threshold*100, 
+    "%, we get PPV:", PPV, "% TP:", sum_TP, " FP:", sum_FP, " Total ASVs: ", nrow(df_3), "\n"))
+
+    return(list(df_3, PPV, sum_TP, sum_FP, asv_num))
     #Rule # 4: ASV relative abundance must be at least 10%
 }
     
 #apply_the_filter("NS1","inocula")
-x = new_filtering_parameter("NS1", 300, 250, 0.10)
 
-colnames(x)
-sub_x = x[,colnames(x) %in% c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len", "sum", "nonzero_count")]
+tunning_parameters = function(){
 
-write.csv(x, "NS1_ASV_filtering_results.csv", row.names = FALSE)
+    #This function will be used to tune the parameters of the filtering, i.e. the ASV count, ASV length, and prevalence threshold
+    #It will return the PPV, TP, FP, and total ASVs for each combination of parameters
+    df1 = data.frame()
+    for(count in c(100,200,300,400,500,600)){
+        for(min_len in c(250, 300, 350, 400)){
+            for(prevalence in c(0.05, 0.10, 0.15, 0.20)){
+            tunning = new_filtering_parameter("NS1", count, min_len, prevalence)
+            df1 = rbind(df1, c(count, min_len, prevalence, unlist(tunning[2:5])))
+
+            }
+            cat("\n")
+        }
+        cat("\n")
+    }
+    colnames(df1) = c("ASV_count", "ASV_length", "Prevalence_threshold", "PPV", "TP", "FP", "Total_ASVs")
+    write.csv(df1, "NS1_filtering_tunning_results.csv", row.names = FALSE)
+    return(df1)
+}
+
+
+tunning_parameters()
+
+colnames(x[[1]])
+sub_x = x[[1]][,colnames(x[[1]]) %in% c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len", "sum", "nonzero_count")]
+
+write.csv(sub_x, "NS1_ASV_filtering_results.csv", row.names = FALSE)
