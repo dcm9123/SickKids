@@ -504,3 +504,5 @@ When looking at the KO and EC tree from this ASV vs from the annotation profile 
 Total ECs across all genomes: 1,886
 ECs with no difference in count between ASV and E.faecalis: 1,230 (65.2%)
 ECs with no difference in count between ASV and S. wadsworthensis: 1,665 (88.3%)
+
+This decides it. It is clear that the profile is not identical and even after playing with penalization numbers the annotation numbers do not identically overlap. I will be working on bypassing this step from PICRUSt2 and just using the ECs that I have annotated for each genome. This way, I can be sure that the profiles are identical and that the differences in pathway predictions are due to the differences in the databases and not due to the hidden state prediction step from Castor, the name of the script will be `hsp_modified_castor.py`
