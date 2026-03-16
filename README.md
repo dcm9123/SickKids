@@ -493,15 +493,14 @@ Best parameters for S5:
 - ASV length of at least 200 or more (can be extended to 400)
 - ASV prevalence of at least 20% or more
 
-Now I will test the hsp.py prediction from Castor by taking some ASVs that seem relatively distant from the rest. For instance, taking this one from the tree:
-`TAGGGAATCTTCGGCAATGGACGCAAGTCTGACCGAGCAACGCCGCGTGAGTGAAGAAGGTTTTCGGATCGTAAAACTCTGTTGTTAGAGAAGAACAAGGATGAGAGTAGAACGTTCATCCCTTGACGGTATCTAACCAGAAAGCCACGGCTAACTACGTGCCAGCAGCCGCGGTAATACGTAGGTGGCAAGCGTTGTCCGGATTTATTGGGCGTAAAGCGAGCGCAGGCGGTTTCTTAAGTCTGATGTGAAAGCCCCCGGCTCAACCGGGGAGGGTCATTGGAAACTGGGAGACTTGAGTGCAGAAGAGGAGAGTGGAATTCCATGTGTAGCGGTGAAATGCGTAGATATATGGAGGAACACCAGTGGCGAAGGCGGCTCTCTGGTCTGTAACTGACGCTGAGGCTCGAAAGCGTGGGGAGCAAACA`
-
-is predicted to be E. avium by FemMicro in NS6 (which is not supposed to be there).
+Now I will test the hsp.py prediction from Castor by taking some ASVs that seem relatively distant from the rest. For instance, taking this one from the engrafted tree produced by epa-ng and gappa:
 
 or taking this one `TGGGGAATTTTGGACAATGGGGGCAACCCTGATCCAGCCATGCCGCGTGCAGGATGAAGGTCTTCGGATTGTAAACTGCTTTTGTCAGGGACGAAAAGGGATGCGATAACACCGTATTCCGCTGACGGTACCTGAAGAATAAGCACCGGCTAACTACGTGCCAGCAGCCGCGGTAATACGTAGGGTGCAAGCGTTAATCGGAATTACTGGGCGTAAAGCGTGCGCAGGCGGTTCTGTAAGATAGATGTGAAATCCCCGGGCTCAACCTGGGAATTGCATATATGACTGCAGGACTTGAGTTTGTCAGAGGAGGGTGGAATTCCACGTGTAGCAGTGAAATGCGTAGATATGTGGAAGAACACCGATGGCGAAGGCAGCCCTCTGGGACATGACTGACGCTCATGCACGAAAGCGTGGGGAGCAAACA`
 
-both FemMicro and BLAST agree that this is S. wadsworthensis, which is supposed to be in NS6 (and in NS1 too).
+both FemMicro and BLAST agree that this is S. wadsworthensis, which is supposed to be in NS6 (and in NS1 too). In the tree (see below if I succeeded at copying the screenshot), this ASV is closest to Sw 061, and its next 'known' parent would be Ef 
 
 When looking at the KO and EC tree from this ASV vs from the annotation profile I did on the genome for S. wadsworthensis, I get these metrics:
 
-
+Total ECs across all genomes: 1,886
+ECs with no difference in count between ASV and E.faecalis: 1,230 (65.2%)
+ECs with no difference in count between ASV and S. wadsworthensis: 1,665 (88.3%)
