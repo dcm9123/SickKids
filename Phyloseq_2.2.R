@@ -226,6 +226,7 @@ new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, ru
     ASV_count = rule_asv_count
     ASV_length = rule_asv_length
     prevalence_threshold = rule_min_prevalence
+    num_of_samples = 0
 
     keep = c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len")
     grepping = grepl(paste0(community, "(?!\\d)"),colnames(master_ps), perl = TRUE)
@@ -236,18 +237,37 @@ new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, ru
     ignore_cols = c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len")
     subset_file$sum = rowSums(subset_file[, !colnames(subset_file) %in% ignore_cols])
     
+    invalid_species_vector = c()
+    genus_and_species = paste0(subset_file$genus_final," ", subset_file$curated_species_femmicro)
+    unique_genus_and_species = unique(genus_and_species)
+
+    for(taxon in unique_genus_and_species){
+        taxon_parts = strsplit(taxon, " ")[[1]]
+        if(length(taxon_parts) < 2 || taxon_parts[length(taxon_parts)] == "NA"){
+            invalid_species_vector = c(invalid_species_vector, taxon)
+        }
+    }
+
+    some_taxa_with_no_species = head(unique(invalid_species_vector), 10)
+
+    #print(paste0("Before filtering, there are a total of ", length(unique(invalid_species_vector)), " taxa with no species resolution"))
+    #print(paste0("For example:" , paste(some_taxa_with_no_species, collapse = ", ")))
+
     #Applying rules
     ignore_cols = c(ignore_cols, "sum")
     #Rule # 1: ASV count > 300
-    df_1 = subset_file[subset_file$sum>ASV_count,]
+
+    df_1 = subset_file[subset_file$sum>=ASV_count,]
     #print(paste0("Number of ASVs after applying count filter: ", nrow(df_1)))
 
     #Rule # 2: ASV length > 250
-    df_2 = df_1[df_1$asv_len > ASV_length,]
+    df_2 = df_1[df_1$asv_len >= ASV_length,]
     #print(paste0("Number of ASVs after applying length filter: ", nrow(df_2)))
 
     #Rule # 3: ASV present in at least 2 samples
     num_of_samples = ncol(df_2) - length(ignore_cols)
+    sample_cols = colnames(df_2)[!colnames(df_2) %in% ignore_cols]
+    #print(sample_cols)
     df_2$nonzero_count = rowSums(df_2[, !colnames(df_2) %in% ignore_cols] != 0) #matches Laura's
     min_samples = ceiling(num_of_samples*prevalence_threshold)
 
@@ -262,42 +282,70 @@ new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, ru
     PPV = (sum_TP/(sum_TP + sum_FP))*100
     asv_num = nrow(df_3)
 
+    unique_taxa = unique(paste0(df_3$genus_final," ", df_3$curated_species_femmicro))
+    num_unique_taxa = length(unique_taxa)
 
+    genus_and_species_after_filtering = paste0(df_3$genus_final," ", df_3$curated_species_femmicro)
+    invalid_species_vector_after_filtering = c()
+    for(taxon in unique(genus_and_species_after_filtering)){
+        taxon_parts = strsplit(taxon, " ")[[1]]
+        if(length(taxon_parts) < 2 || taxon_parts[length(taxon_parts)]=="NA"){
+            invalid_species_vector_after_filtering = c(invalid_species_vector_after_filtering, taxon)
+        }
+    }
 
-    cat(paste0("Filter criteria: ASV count > ", ASV_count, ", ASV length > ", ASV_length, " ,ASV prevalence ", prevalence_threshold*100, 
-    "%, we get PPV:", PPV, "% TP:", sum_TP, " FP:", sum_FP, " Total ASVs: ", nrow(df_3), "\n"))
+    num_taxa_with_no_species_before_filter = length((invalid_species_vector))
+    num_taxa_with_no_species = length(invalid_species_vector_after_filtering)
 
-    return(list(df_3, PPV, sum_TP, sum_FP, asv_num))
+    #cat(paste0("Filter criteria: ASV count > ", ASV_count, ", ASV length > ", ASV_length, " ,ASV prevalence ", prevalence_threshold*100, 
+    #"%, we get PPV:", PPV, "% TP:", sum_TP, " FP:", sum_FP, " Total ASVs: ", nrow(df_3), " Unique Taxa: ", num_unique_taxa, " Taxa with no species: ", num_taxa_with_no_species, "\n"))
+
+    return(list(df_3, num_of_samples,min_samples,PPV, sum_TP, sum_FP, asv_num, num_unique_taxa, 
+                num_taxa_with_no_species_before_filter,num_taxa_with_no_species))
     #Rule # 4: ASV relative abundance must be at least 10%
 }
     
-#apply_the_filter("NS1","inocula")
 
-tunning_parameters = function(){
-
+tunning_parameters = function(community){
     #This function will be used to tune the parameters of the filtering, i.e. the ASV count, ASV length, and prevalence threshold
     #It will return the PPV, TP, FP, and total ASVs for each combination of parameters
     df1 = data.frame()
-    for(count in c(100,200,300,400,500,600)){
-        for(min_len in c(250, 300, 350, 400)){
-            for(prevalence in c(0.05, 0.10, 0.15, 0.20)){
-            tunning = new_filtering_parameter("NS1", count, min_len, prevalence)
-            df1 = rbind(df1, c(count, min_len, prevalence, unlist(tunning[2:5])))
-
+    i = 1
+    for(count in c(0,100,150,200,250,300,350,400,450,500,550,600)){ #12
+        for(min_len in c(0,200,250, 300, 350, 400)){ #6
+            for(prevalence in c(0,0.001,0.005,0.01,0.05, 0.10, 0.15, 0.20)){ # 8
+                if(count == 0 && min_len == 0 && prevalence == 0 && i == 1){
+                    tunning = new_filtering_parameter(community, 0, 0, 0) #Running just once with no filtering criteria
+                    i = i + 1
+                    df1 = rbind(df1, c(0, 0, 0, unlist(tunning[2:10])))
+                }
+                else if(count == 0 | min_len == 0 | prevalence == 0){
+                    next
+                }
+                else {
+                    tunning = new_filtering_parameter(community, count, min_len, prevalence)
+                    df1 = rbind(df1, c(count, min_len, prevalence, unlist(tunning[2:10])))
+                }
             }
-            cat("\n")
         }
-        cat("\n")
     }
-    colnames(df1) = c("ASV_count", "ASV_length", "Prevalence_threshold", "PPV", "TP", "FP", "Total_ASVs")
-    write.csv(df1, "NS1_filtering_tunning_results.csv", row.names = FALSE)
+
+
+
+    colnames(df1) = c("ASV_count", "ASV_length", "Prevalence_threshold", "Num_of_samples", "Min_samples_for_prevalence", "PPV", "TP", "FP", "Total_ASVs", 
+                    "Unique_taxa","Taxa with no species before filtering", "Taxa_with_no_species_after_filtering")
+                    
+    write.csv(df1, paste0(community,"_filtering_tunning_results.csv"), row.names = FALSE)
+    View(tunning[[1]])
     return(df1)
 }
 
+save_file_with_specific_filtering_creiteria = function(community, count, min_len, prevalence){
+    #This function will save the file with the filtered ASVs based on the specific criteria
+    filtered_data = new_filtering_parameter(community, count, min_len, prevalence)[1][[1]]
+    write.csv(filtered_data, paste0(community,"_filtered_ASVs_count", count, "_len", min_len, "_prev", prevalence*100,".csv"), row.names = FALSE)
+}
 
-tunning_parameters()
+results_NS1 = tunning_parameters("NS1")
+save_file_with_specific_filtering_creiteria()
 
-colnames(x[[1]])
-sub_x = x[[1]][,colnames(x[[1]]) %in% c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len", "sum", "nonzero_count")]
-
-write.csv(sub_x, "NS1_ASV_filtering_results.csv", row.names = FALSE)
