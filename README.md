@@ -464,3 +464,18 @@ PICRUSt2 workflow:
 
 Now I will apply the 175 ASV rule to the rest of the mice groups to see how 'good' this is for removing FPs while keeping TPs.
 
+As a reminder for later: NS1 mice = 93, NS6 mice = 32, S2 mice = 106, S5 mice = 32.
+
+
+### March 13th, 2026
+I've been tunning new parameters to minimize the number of false positives as much as I can. I have generated a new code called `phyloseq_2.2.R` that tunes and iterates parameters to find the best filter values across each consortia. I will do a sanity check and debug if needed, but so far it looks promising.
+
+### March 16th, 2026
+I have generated a new code called `phyloseq_2.2.R` that tunes and iterates parameters to find the best filter values across each consortia. I will do a sanity check and debug if needed, but so far it looks promising. The results I have so far are the following:
+
+Best parameters for NS1:
+- ASV count of at least 600 or more
+- ASV length of 200 or more
+- ASV prevalence across samples of 0.10% or more
+
+Best parameters for NS6:
