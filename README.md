@@ -475,7 +475,33 @@ I have generated a new code called `phyloseq_2.2.R` that tunes and iterates para
 
 Best parameters for NS1:
 - ASV count of at least 600 or more
-- ASV length of 200 or more
+- ASV length of 200 or more (can be extended to 400)
 - ASV prevalence across samples of 0.10% or more
 
 Best parameters for NS6:
+- ASV count of at least 200 or more (can be extended to 300)
+- ASV length of 200 or more (can be extended to 400)
+- ASV prevalence across samples of 5% or more
+
+Best parameters for S2: 
+- ASV count of at least 100 or more (can be extended to 600)
+- ASV length of 200 or more (can be extended to 400)
+- ASV prevalence of 15% or more
+
+Best parameters for S5:
+- ASV count of at least 300 or more (can be extended to 400)
+- ASV length of at least 200 or more (can be extended to 400)
+- ASV prevalence of at least 20% or more
+
+Now I will test the hsp.py prediction from Castor by taking some ASVs that seem relatively distant from the rest. For instance, taking this one from the tree:
+`TAGGGAATCTTCGGCAATGGACGCAAGTCTGACCGAGCAACGCCGCGTGAGTGAAGAAGGTTTTCGGATCGTAAAACTCTGTTGTTAGAGAAGAACAAGGATGAGAGTAGAACGTTCATCCCTTGACGGTATCTAACCAGAAAGCCACGGCTAACTACGTGCCAGCAGCCGCGGTAATACGTAGGTGGCAAGCGTTGTCCGGATTTATTGGGCGTAAAGCGAGCGCAGGCGGTTTCTTAAGTCTGATGTGAAAGCCCCCGGCTCAACCGGGGAGGGTCATTGGAAACTGGGAGACTTGAGTGCAGAAGAGGAGAGTGGAATTCCATGTGTAGCGGTGAAATGCGTAGATATATGGAGGAACACCAGTGGCGAAGGCGGCTCTCTGGTCTGTAACTGACGCTGAGGCTCGAAAGCGTGGGGAGCAAACA`
+
+is predicted to be E. avium by FemMicro in NS6 (which is not supposed to be there).
+
+or taking this one `TGGGGAATTTTGGACAATGGGGGCAACCCTGATCCAGCCATGCCGCGTGCAGGATGAAGGTCTTCGGATTGTAAACTGCTTTTGTCAGGGACGAAAAGGGATGCGATAACACCGTATTCCGCTGACGGTACCTGAAGAATAAGCACCGGCTAACTACGTGCCAGCAGCCGCGGTAATACGTAGGGTGCAAGCGTTAATCGGAATTACTGGGCGTAAAGCGTGCGCAGGCGGTTCTGTAAGATAGATGTGAAATCCCCGGGCTCAACCTGGGAATTGCATATATGACTGCAGGACTTGAGTTTGTCAGAGGAGGGTGGAATTCCACGTGTAGCAGTGAAATGCGTAGATATGTGGAAGAACACCGATGGCGAAGGCAGCCCTCTGGGACATGACTGACGCTCATGCACGAAAGCGTGGGGAGCAAACA`
+
+both FemMicro and BLAST agree that this is S. wadsworthensis, which is supposed to be in NS6 (and in NS1 too).
+
+When looking at the KO and EC tree from this ASV vs from the annotation profile I did on the genome for S. wadsworthensis, I get these metrics:
+
+
