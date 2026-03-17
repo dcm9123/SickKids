@@ -222,7 +222,8 @@ apply_the_filter = function(community,type){ #Community = "NS1", "NS6", "S2", or
     analysis_inocula = true_positive_analysis(community, taxa_kept_inocula)
 }
 
-new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, rule_min_prevalence){
+
+new_filtering_parameter = function(community, rule_asv_count, rule_asv_length, rule_min_prevalence){
     ASV_count = rule_asv_count
     ASV_length = rule_asv_length
     prevalence_threshold = rule_min_prevalence
@@ -232,6 +233,9 @@ new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, ru
     grepping = grepl(paste0(community, "(?!\\d)"),colnames(master_ps), perl = TRUE)
     keep = c(keep, colnames(master_ps)[grepping])
     subset_file = master_ps[, keep]
+    if(community == "S5"){
+        subset_file = subset(subset_file, select = -plate4_1186R_0_M_NS6_week5_S5_L0)
+    }
     #print(ncol(subset_file)) #135 columns for NS1, or 130 if removing metadata and keep only samples and inocula
     #View(subset_file)
     ignore_cols = c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len")
@@ -305,26 +309,26 @@ new_filtering_parameter = function(community,rule_asv_count, rule_asv_length, ru
     #Rule # 4: ASV relative abundance must be at least 10%
 }
     
-
+### This section onwards was done across the mouse data set (across all weeks and endpoints) with the inoculum samples as well (but no controls)
 tunning_parameters = function(community){
     #This function will be used to tune the parameters of the filtering, i.e. the ASV count, ASV length, and prevalence threshold
     #It will return the PPV, TP, FP, and total ASVs for each combination of parameters
     df1 = data.frame()
     i = 1
-    for(count in c(0,100,150,200,250,300,350,400,450,500,550,600)){ #12
-        for(min_len in c(0,200,250, 300, 350, 400)){ #6
-            for(prevalence in c(0,0.001,0.005,0.01,0.05, 0.10, 0.15, 0.20)){ # 8
+    for(count in c(0,100,150,200,250,300,350,400,450,500,550,600)){ # 12 iterations
+        for(min_len in c(0,200,250, 300, 350, 400)){ # 6 iterations
+            for(prevalence in c(0,0.001,0.005,0.01,0.05, 0.10, 0.15, 0.20)){ # 8 iterations
                 if(count == 0 && min_len == 0 && prevalence == 0 && i == 1){
-                    tunning = new_filtering_parameter(community, 0, 0, 0) #Running just once with no filtering criteria
+                    tunning = new_filtering_parameter(community, 0, 0, 0) #Running just once with no filtering criteria, just to see how the raw processing looks like
                     i = i + 1
                     df1 = rbind(df1, c(0, 0, 0, unlist(tunning[2:10])))
                 }
-                else if(count == 0 | min_len == 0 | prevalence == 0){
+                else if(count == 0 | min_len == 0 | prevalence == 0){ #If the raw data has been calculated, then just jump to the next iteration set with new rules
                     next
                 }
                 else {
                     tunning = new_filtering_parameter(community, count, min_len, prevalence)
-                    df1 = rbind(df1, c(count, min_len, prevalence, unlist(tunning[2:10])))
+                    df1 = rbind(df1, c(count, min_len, prevalence, unlist(tunning[2:10]))) # Adding results as the iteration goes ...
                 }
             }
         }
@@ -332,20 +336,62 @@ tunning_parameters = function(community){
 
 
 
-    colnames(df1) = c("ASV_count", "ASV_length", "Prevalence_threshold", "Num_of_samples", "Min_samples_for_prevalence", "PPV", "TP", "FP", "Total_ASVs", 
-                    "Unique_taxa","Taxa with no species before filtering", "Taxa_with_no_species_after_filtering")
+    colnames(df1) = c("ASV_count", "ASV_length", "Prevalence_threshold", "Num_of_samples", "Min_samples_for_prevalence", paste0(community, "_PPV"), paste0(community, "_TP"), paste0(community, "_FP"), paste0(community, "_Total_ASVs"), 
+                    paste0(community, "_Unique_taxa"), paste0(community, "_Taxa_with_no_species_before_filtering"), paste0(community, "_Taxa_with_no_species_after_filtering")) #Adding column names to the results data frame
                     
-    write.csv(df1, paste0(community,"_filtering_tunning_results.csv"), row.names = FALSE)
-    View(tunning[[1]])
+    write.csv(df1, paste0(community,"_filtering_tunning_results.csv"), row.names = FALSE) #Writing out the results across the community selected by the user
     return(df1)
 }
 
-save_file_with_specific_filtering_creiteria = function(community, count, min_len, prevalence){
-    #This function will save the file with the filtered ASVs based on the specific criteria
-    filtered_data = new_filtering_parameter(community, count, min_len, prevalence)[1][[1]]
-    write.csv(filtered_data, paste0(community,"_filtered_ASVs_count", count, "_len", min_len, "_prev", prevalence*100,".csv"), row.names = FALSE)
+merging_files_for_optimum_parameters = function(){ #Simply merges the files across all the iterations in each community, where the three parameters are acting as the key for merging the files
+    file1 = read.csv("/Users/danielcm/Desktop/SickKids/Phyloseq2/NS1_filtering_tunning_results.csv")
+    file2 = read.csv("/Users/danielcm/Desktop/SickKids/Phyloseq2/NS6_filtering_tunning_results.csv")
+    file3 = read.csv("/Users/danielcm/Desktop/SickKids/Phyloseq2/S2_filtering_tunning_results.csv")
+    file4 = read.csv("/Users/danielcm/Desktop/SickKids/Phyloseq2/S5_filtering_tunning_results.csv")
+
+    file_f = merge(file1, file2, by = c("ASV_count", "ASV_length", "Prevalence_threshold"))
+    file_f = merge(file_f, file3, by = c("ASV_count", "ASV_length", "Prevalence_threshold"))
+    file_f = merge(file_f, file4, by = c("ASV_count", "ASV_length", "Prevalence_threshold"))
+    write.csv(file_f, "NS1_S2_NS6_S5_filtering_tunning_results.csv", row.names = FALSE)
+    return(file_f)
 }
 
-results_NS1 = tunning_parameters("NS1")
-save_file_with_specific_filtering_creiteria()
+applying_best_filters_across_all = function(community,merged_file_tunning){
+    ASV_count = 600
+    ASV_length = 400
+    prevalence_threshold = 0.20
+    special_cols = c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len","asv_seq")
+    grepping = grepl(paste0(community, "(?!\\d)"),colnames(master_ps), perl = TRUE)
+    keep = c(special_cols, colnames(master_ps)[grepping])
+    subset_file = master_ps[, keep]
+    if(community == "S5"){
+        subset_file = subset(subset_file, select = -plate4_1186R_0_M_NS6_week5_S5_L0)
+    }
 
+    num_of_samples = ncol(subset_file) - length(special_cols)
+    sample_cols = colnames(subset_file)[!colnames(subset_file) %in% special_cols]
+
+    subset_file$sum = rowSums(subset_file[, !colnames(subset_file) %in% special_cols])
+    
+    subset_file$nonzero_count = rowSums(subset_file[, !colnames(subset_file) %in% special_cols] != 0) #matches Laura's
+    min_samples = ceiling(num_of_samples*prevalence_threshold)
+    final_file = subset_file[subset_file$sum>=ASV_count,]
+    final_file = final_file[final_file$asv_len >= ASV_length,]
+    final_file = final_file[final_file$nonzero_count >= (min_samples),]
+    write.csv(final_file, paste0(community,"_filtered_ASVs_count", ASV_count, "_len", ASV_length, "_prev", prevalence_threshold*100,".csv"), row.names = FALSE)
+}
+
+# Getting the results in each variable
+results_NS1 = tunning_parameters("NS1")
+results_S2 = tunning_parameters("S2")
+results_S5 = tunning_parameters("S5")
+results_NS6 = tunning_parameters("NS6")
+
+
+merging_files_for_optimum_parameters()
+
+# Applying the best filters selected by the user, the actual numbers are in the function, so they needed to be changed in there
+applying_best_filters_across_all("NS1", merged_file_tunning)
+applying_best_filters_across_all("NS6", merged_file_tunning)
+applying_best_filters_across_all("S2", merged_file_tunning)
+applying_best_filters_across_all("S5", merged_file_tunning)
