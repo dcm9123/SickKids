@@ -473,25 +473,47 @@ I've been tunning new parameters to minimize the number of false positives as mu
 ### March 16th, 2026
 I have generated a new code called `phyloseq_2.2.R` that tunes and iterates parameters to find the best filter values across each consortia. I will do a sanity check and debug if needed, but so far it looks promising. The results I have so far are the following:
 
-Best parameters for NS1:
+Best parameters for NS1 (FP = 0, Not losing any ASVs pointing at the true positives):
 - ASV count of at least 600 or more
 - ASV length of 200 or more (can be extended to 400)
-- ASV prevalence across samples of 0.10% or more
+- ASV prevalence across samples of 0.10% or more (can be extended to 1%)
 
-Best parameters for NS6:
+with 1 FP, this can be modified to:
+- ASV count: 200 or more (can be extendedto 550 bp)
+- ASV length: 200 or more (can be extended to 400)
+- ASV prevalence across samples of 0.1% or more (can be extended to 1%)
+
+
+
+Best parameters for NS6 (FP = 0, Not losing any taxon pointing at the true positives):
 - ASV count of at least 200 or more (can be extended to 300)
 - ASV length of 200 or more (can be extended to 400)
 - ASV prevalence across samples of 5% or more
 
-Best parameters for S2: 
-- ASV count of at least 100 or more (can be extended to 600)
-- ASV length of 200 or more (can be extended to 400)
-- ASV prevalence of 15% or more
+With 1 FP, this can be modified to:
+- ASV count: 100 or more (can be extended to 500)
+- ASV length: 200 or more (can be extended to 400)
+- ASV prevalence across samples of 0.1% (can be extended to 1%)
 
-Best parameters for S5:
-- ASV count of at least 300 or more (can be extended to 400)
+
+
+Best parameters for S2 (FP = 0, not losing any taxon) 
+- ASV count of at least 300 or more (can be extended to 600)
+- ASV length of 200 or more (can be extended to 400)
+- ASV prevalence of 15% or more (can be extended to 20%)
+
+With 2 FP, this can be modified to (it jumps from 0 to 2):
+- ASV count of at least 350 or more (can be extended to 600)
+- ASV length of 200 or more (can be extended to 400)
+- ASV prevalence of at least 10% or more (cannot be changed)
+
+
+Best parameters for S5 (FP = 2, this is the lowest):
+- ASV count of at least 300 or more (can be extended to 600)
 - ASV length of at least 200 or more (can be extended to 400)
 - ASV prevalence of at least 20% or more
+
+Because its FP is already too high, I don't recommend changing these parameters at all.
 
 Now I will test the hsp.py prediction from Castor by taking some ASVs that seem relatively distant from the rest. For instance, taking this one from the engrafted tree produced by epa-ng and gappa:
 
@@ -506,3 +528,8 @@ ECs with no difference in count between ASV and E.faecalis: 1,230 (65.2%)
 ECs with no difference in count between ASV and S. wadsworthensis: 1,665 (88.3%)
 
 This decides it. It is clear that the profile is not identical and even after playing with penalization numbers the annotation numbers do not identically overlap. I will be working on bypassing this step from PICRUSt2 and just using the ECs that I have annotated for each genome. This way, I can be sure that the profiles are identical and that the differences in pathway predictions are due to the differences in the databases and not due to the hidden state prediction step from Castor, the name of the script will be `hsp_modified_castor.py`
+
+
+### March 17th, 2026
+
+I will be including now the False Negative data as part of the analysis.
