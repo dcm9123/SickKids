@@ -362,19 +362,23 @@ applying_best_filters_across_all = function(community,merged_file_tunning){
     prevalence_threshold = 0.20
     special_cols = c("asv_id", "genus_final", "curated_species_femmicro","expected_communities", "asv_len","asv_seq")
     grepping = grepl(paste0(community, "(?!\\d)"),colnames(master_ps), perl = TRUE)
+    
     keep = c(special_cols, colnames(master_ps)[grepping])
     subset_file = master_ps[, keep]
+    num_of_samples = ncol(subset_file) - length(special_cols)
     if(community == "S5"){
         subset_file = subset(subset_file, select = -plate4_1186R_0_M_NS6_week5_S5_L0)
     }
 
-    num_of_samples = ncol(subset_file) - length(special_cols)
+    #num_of_samples = ncol(subset_file) - length(special_cols)
+    print(num_of_samples)
     sample_cols = colnames(subset_file)[!colnames(subset_file) %in% special_cols]
 
     subset_file$sum = rowSums(subset_file[, !colnames(subset_file) %in% special_cols])
     
     subset_file$nonzero_count = rowSums(subset_file[, !colnames(subset_file) %in% special_cols] != 0) #matches Laura's
     min_samples = ceiling(num_of_samples*prevalence_threshold)
+    print(min_samples)
     final_file = subset_file[subset_file$sum>=ASV_count,]
     final_file = final_file[final_file$asv_len >= ASV_length,]
     final_file = final_file[final_file$nonzero_count >= (min_samples),]

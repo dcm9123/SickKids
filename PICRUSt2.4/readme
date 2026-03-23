@@ -1,0 +1,9 @@
+March 23, 2026
+
+This PICRUSt2 version will have the results of new parameters and criteria, which are different from the other PICRUSt2 versions.
+
+1) Filter ASVs across Mice and Inocula (not just mice) that have less than (not inclusive) 600 ASV total count or less.
+2) Filter ASVs across Mice and Inocula (not just mice) that have an ASV length of less than 250 bp (not inclusive) or less.
+3) Filter ASVs that are present in less than 20% of the samples (not inclusive).
+
+Then run the placement tree with all the reference 16S across all inocula. Repeat for each consortium. So, the input data from biom files will be different, but the reference tree will always be the same across all 4 runs.
