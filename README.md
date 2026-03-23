@@ -533,3 +533,13 @@ This decides it. It is clear that the profile is not identical and even after pl
 ### March 17th, 2026
 
 I will be including now the False Negative data as part of the analysis. And prepare my data update for tomorrow, my last one, probably.
+
+### March 23rd, 2026
+
+Last week we had a meeting, and in there we evaluated the results of the filtering step, and we decided to apply the following filters to the mice and inocula samples, across each inoculum group, keeping the ASVs that fall in these criteria:
+
+- ASV length of 250 bp or more (inclusive)
+- ASV total count of 600 or more (inclusive)
+- ASV prevalence across samples of 0.20 (20%) or more (inclusive)
+
+I tested these new parameters to see how the EC count profile difer from the genomes (the script I made for this is called `castor_testing.py`), and I noticed that the biggest factor decreasing dissimilarities in EC profile is not the edge_cost of castor itself (set to 0, 0.5, 2, 5, and 10), but applying the ASV filter. When setting the penalty to zero in the `hsp.py` script from PICRUSt2, we get a higher similarity in EC profile count bewteen ASVs and ECs from the genome. This is expected, as the cost formula between EC transitions is: `cost = 1/(edge_length^edge_cost)`, so when edge_cost is set to zero, the cost of transition between ECs is 1, which means we are ignoring the length of the branch in the tree and going for the nearest neighbour common ancestor.
