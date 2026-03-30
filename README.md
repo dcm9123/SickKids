@@ -591,6 +591,28 @@ I knew I had to add it to this particular section of the script because NN retur
    .
    . }
 ```
-9. 
+9. In the `bin/hsp.py` script, I modified the `HSP_METHODS` so it can include the one I just added, along with a description of what it does:
 
-                            
+
+```
+HSP_METHODS = ['mp', 'emp_prob', 'pic', 'scp', 'subtree_average', 'nearest_neighbor']
+```
+
+and this:
+
+```
+parser.add_argument('-m', '--hsp_method', default='mp',
+                    choices=HSP_METHODS,
+                    help='HSP method to use.' +
+                    '"mp": predict discrete traits using max parsimony. '
+                    '"emp_prob": predict discrete traits based on empirical '
+                    'state probabilities across tips. "subtree_average": '
+                    'predict continuous traits using subtree averaging. '
+                    '"pic": predict continuous traits with phylogentic '
+                    'independent contrast. "scp": reconstruct continuous '
+                    'traits using squared-change parsimony (default: '
+                    '%(default)s). '
+                    '"nearest_neighbor": method introduced by Daniel CM for '
+                    'discrete trait prediction by using nearest neighbor')
+```
+                        
