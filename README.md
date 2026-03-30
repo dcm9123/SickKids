@@ -560,3 +560,27 @@ I tried a new approach by modifying the code from PICRUSt2, so it would accept C
    `cd /home/daniel.castanedamogo/anaconda3/envs/picrust2_mod/lib/python3.6/site-packages/picrust2`
    `cp wrap_hsp.py wrap_hsp.py.bak`
    `cp Rscripts/castor_hsp.R Rscripts/castor_hsp.R.bak`
+7. I modified the `Rscripts/castor_hsp.R` to include a new alternative that has the nearest neighbour, so after this part from the original script:
+```
+ else if (hsp_method == "subtree_average") {
+
+    predict_out <- lapply(trait_values,
+                            hsp_subtree_averaging,
+                            tree = full_tree,
+                            check_input = check_input_set) }
+```
+
+I added this:
+
+```
+else if (hsp_method == "nearest_neighbor") {
+
+    predict_out <- lapply(trait_values,
+                            hsp_nearest_neighbor,
+                            tree = full_tree,
+                            check_input = check_input_set)
+  }
+```
+
+
+                            
