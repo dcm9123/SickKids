@@ -581,6 +581,9 @@ else if (hsp_method == "nearest_neighbor") {
                             check_input = check_input_set)
   }
 ```
+
+I knew I had to add it to this particular section of the script because NN returns predicted states directly, and not likelihoods like `mp` does or `emp-prob` (which have a few variables after calling it). It made sense to put it into the if-else block of `subtree-average` that gives the states directly.
+
 8. I also needed to modify that same script so if the user adds the argument 'nearest_neighbor' it would be recognized. So I looked for the args part of the script and I modified it like this:
 
 ```if (hsp_method == "pic" || hsp_method == "scp" || hsp_method == "subtree_average" || hsp_method == "nearest_neighbor") {
@@ -588,6 +591,6 @@ else if (hsp_method == "nearest_neighbor") {
    .
    . }
 ```
-
+9. 
 
                             
