@@ -581,6 +581,13 @@ else if (hsp_method == "nearest_neighbor") {
                             check_input = check_input_set)
   }
 ```
+8. I also needed to modify that same script so if the user adds the argument 'nearest_neighbor' it would be recognized. So I looked for the args part of the script and I modified it like this:
+
+```if (hsp_method == "pic" || hsp_method == "scp" || hsp_method == "subtree_average" || hsp_method == "nearest_neighbor") {
+   .
+   .
+   . }
+```
 
 
                             
