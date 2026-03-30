@@ -4,29 +4,32 @@
 
 
 #%%
+from ast import Global
+
 import pandas as pd
 import os
 
 #%%
 
-path = "/Users/danielcm/Desktop/SickKids/PICRUSt2.3/ns6_output/castor_testing/"
+path = "/Users/danielcm/Desktop/SickKids/PICRUSt2.4/ns6_test"
 os.chdir(path)
 
 #%%
 # Reading files and storing them as data frames
-df_no_penalty = pd.read_csv("ns6_EC_nsti.predicted.tsv", sep='\t', header=0)
-df_pen_2 = pd.read_csv("ns6_EC_nsti_predicted_penalty2.tsv", sep='\t', header=0)
-df_pen_5 = pd.read_csv("ns6_EC_nsti_predicted_penalty5.tsv", sep='\t', header=0)
-df_pen_10 = pd.read_csv("ns6_EC_nsti_predicted_penalty10.tsv", sep='\t', header=0)
+df_no_penalty = pd.read_csv("ns6_test_EC_nsti_predicted.tsv", sep='\t', header=0)
+#df_pen_2 = pd.read_csv("ns6_EC_nsti_predicted_penalty2.tsv", sep='\t', header=0)
+#df_pen_5 = pd.read_csv("ns6_EC_nsti_predicted_penalty5.tsv", sep='\t', header=0)
+#df_pen_10 = pd.read_csv("ns6_EC_nsti_predicted_penalty10.tsv", sep='\t', header=0)
 
 # Reading Anthony's file with sample ID and its corresponding genome ID
-df_community_list = pd.read_csv("../../../Final_community_list_for_Daniel.csv", sep=',', header=0)
+df_community_list = pd.read_csv("../../Final_community_list_for_Daniel.csv", sep=',', header=0)
 
 # Reading the metagenome file with EC counts for each genome ID that I made after annotating with Prokka and EggNOG-mapper
-df_metagenome = pd.read_csv("../../trait_tables/EC_for_picrust2_renamed.tsv", sep='\t', header=0)
+df_metagenome = pd.read_csv("../trait_tables/EC_for_picrust2_renamed.tsv", sep='\t', header=0)
 
 # Laura's file
-master_file = "../../../Phyloseq2/FemMicro_final_364_collapsed_all_JULY_TO_SHARE_20260306.csv"
+#master_file = "../../../Phyloseq2/FemMicro_final_364_collapsed_all_JULY_TO_SHARE_20260306.csv"
+master_file = "../ns6_input_files/NS6_filtered_ASVs_count600_len400_prev20.csv"
 df_master = pd.read_csv(master_file, sep=',', header=0)
 
 
@@ -45,26 +48,29 @@ def subsetting_master_file(community):
     return df_master_subset
 
 df_master_subset = subsetting_master_file("NS6")
+print(df_master_subset["Taxa_concatenated"].head())
 
 # The master file now has a subset of the columns of interest plus the concatenated taxa
 
 
-def subsetting_rest_of_files(community, df_penalty):
+def subsetting_rest_of_files(df_penalty):
     df_EC_calculation = df_penalty
     # Removing any unwanted tips of the tree that are not in the community of interest, careful with S5 though...
-    df_EC_calculation = df_EC_calculation[~df_EC_calculation["sequence"].str.startswith(f"S_{community}_")]
+    #df_EC_calculation = df_EC_calculation[~df_EC_calculation["sequence"].str.startswith(f"S_{community}_")]
 
     # Subsetting Anthony's file to genome and sample ID
     df_community = df_community_list[df_community_list[["Internal sample name", "Taxonomy (GTDB-tk)"]].notna().all(axis=1)]
     df_community = df_community[["Internal sample name", "Taxonomy (GTDB-tk)"]]
-    #ncol = df_EC_calculation.shape[1]
-    #print(f"There are {len(df_EC_calculation)} ASVs and {ncol} ECs in the prediction data frame.")
+    ncol = df_EC_calculation.shape[1]
+    print(f"There are {len(df_EC_calculation)} ASVs and {ncol} ECs in the prediction data frame.")
     
     df_EC_calculation = df_EC_calculation.rename(columns = lambda col: col.replace("EC:", "ASV_EC:") if col.startswith("EC:") else col)
     return(df_EC_calculation, df_community)
 
 #df_ec_calculation, df_community = subsetting_rest_of_files("NS6", df_no_penalty)
-df_ec_calculation, df_community = subsetting_rest_of_files("NS6", df_pen_5)
+#df_ec_calculation, df_community = subsetting_rest_of_files("NS6", df_pen_2)
+#df_ec_calculation, df_community = subsetting_rest_of_files("NS6", df_pen_5)
+df_ec_calculation, df_community = subsetting_rest_of_files(df_no_penalty)
 
 df_ec_calculation.head()
 
@@ -82,12 +88,17 @@ def merging_and_sanity_check(df_EC_calculation, df_master_subset, df_community):
     
     # Removing duplicates from v1v9 (which have the same profile), and renaming EC columns to Genome EC prediction 
     df_metagenome["assembly"] = df_metagenome["assembly"].apply(lambda x: x.replace("_v1v9",""))
+    df_metagenome["assembly"] = df_metagenome["assembly"].apply(lambda x: "_".join(x.split("_")[0:4]))
     df_metagenome = df_metagenome.rename(columns = lambda col: col.replace("EC:","Genome_EC:") if col.startswith("EC:") else col)
     df_metagenome_f = df_metagenome.drop_duplicates(subset=["assembly"])
+    
+    print(df_metagenome_f.head())
     
     # Merging df_metagenome with df_community
     df_assembly_and_taxa = df_metagenome_f.merge(df_community, left_on = "assembly", right_on = "Internal sample name", how = "left")
     df_final = df_assembly_and_taxa.merge(df_master_and_ec_prediction, left_on = "Taxonomy (GTDB-tk)", right_on = "Taxa_concatenated", how = "inner")
+    #print(df_assembly_and_taxa.head())
+    
     df_final["Taxonomy_Match?"] = df_final.apply(lambda row: "Yes" if row["Taxonomy (GTDB-tk)"] == row["Taxa_concatenated"] else "No", axis=1)
     df_final = df_final.dropna(subset = ["asv_seq"])
     asv_seq = df_final.pop("asv_seq")
@@ -102,7 +113,6 @@ def merging_and_sanity_check(df_EC_calculation, df_master_subset, df_community):
     taxonomy_match = df_final.pop("Taxonomy_Match?")
     metadata_NSTI = df_final.pop("metadata_NSTI")
     sequence_match = df_final.pop("ASV_sequence_match?")
-    
     df_final.insert(1, "Internal sample name", internal_sample_name)
     df_final.insert(0, "asv_id", asv_id)
     df_final.insert(2, "Taxonomy (GTDB-tk)", taxonomy_gtbtk)
@@ -132,13 +142,15 @@ def merging_and_sanity_check(df_EC_calculation, df_master_subset, df_community):
     min_values = df_final.groupby("asv_seq")["EC_count_difference"].min().reset_index()
     df_final_ties = df_final.merge(min_values, on=["asv_seq", "EC_count_difference"])
     
+    df_final_ties = df_final_ties.sort_values(["asv_seq", "Internal sample name"])
+    df_final_no_ties = df_final_ties.drop_duplicates(subset=["asv_seq"], keep="first")
     
     #print(f"There were a total of {df_metagenome.shape[0]} assemblies ID, and after removing duplicates, there are {df_metagenome_f.shape[0]} unique assembly IDs in the metagenome data frame.")
     
-    return(df_final_ties)
+    return(df_final_no_ties)
 
 x =merging_and_sanity_check(df_ec_calculation, df_master_subset, df_community)  
-x.to_csv("test_merge_penalty5.csv", index=False)    
+x.to_csv("test_merge_penalty0_local_f.csv", index=False)    
     
 
 # %%

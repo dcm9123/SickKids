@@ -543,3 +543,10 @@ Last week we had a meeting, and in there we evaluated the results of the filteri
 - ASV prevalence across samples of 0.20 (20%) or more (inclusive)
 
 I tested these new parameters to see how the EC count profile difer from the genomes (the script I made for this is called `castor_testing.py`), and I noticed that the biggest factor decreasing dissimilarities in EC profile is not the edge_cost of castor itself (set to 0, 0.5, 2, 5, and 10), but applying the ASV filter. When setting the penalty to zero in the `hsp.py` script from PICRUSt2, we get a higher similarity in EC profile count bewteen ASVs and ECs from the genome. This is expected, as the cost formula between EC transitions is: `cost = 1/(edge_length^edge_cost)`, so when edge_cost is set to zero, the cost of transition between ECs is 1, which means we are ignoring the length of the branch in the tree and going for the nearest neighbour common ancestor.
+
+I took the 220 16S sequences (barrnap + sanger) that have some duplicates, and using `seqkit rmdup`, I figured out which sequences are duplicated. After that, I modified these repeated sequences by modifying the first or 2nd nucleotide in the sequence. Then I ran a `mafft` alignment on those, `hmmbuild` and put them in the `all_consortia_reference_files` folder, located in the `MASTER/PICRUSt2.4` directory.
+
+
+### March 30th, 2026
+
+I tried a new approach by modifying the code from PICRUSt2, so it would accept Castor's method of Nearest Neighbour Joining. In a nutshell, this is what I modified:

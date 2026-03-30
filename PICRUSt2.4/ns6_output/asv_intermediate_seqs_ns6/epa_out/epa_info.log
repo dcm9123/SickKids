@@ -1,0 +1,24 @@
+INFO Selected: Output dir: ns6_output/asv_intermediate_seqs_ns6/epa_out/
+INFO Selected: Query file: ns6_output/asv_intermediate_seqs_ns6/study_seqs_hmmalign.fasta
+INFO Selected: Tree file: ns6_local_files/ns6_local_files.tre
+INFO Selected: Reference MSA: ns6_output/asv_intermediate_seqs_ns6/ref_seqs_hmmalign.fasta
+INFO Selected: Filtering by accumulated threshold: 0.99
+INFO Selected: Maximum number of placements per query: 100
+INFO Selected: Automatic switching of use of per rate scalers
+INFO Selected: Preserving the root of the input tree
+INFO Selected: Specified model file: ns6_local_files/ns6_local_files.model
+INFO Selected: Reading queries in chunks of: 5000
+INFO Selected: Using threads: 16
+INFO     ______ ____   ___           _   __ ______
+        / ____// __ \ /   |         / | / // ____/
+       / __/  / /_/ // /| | ______ /  |/ // / __  
+      / /___ / ____// ___ |/_____// /|  // /_/ /  
+     /_____//_/    /_/  |_|      /_/ |_/ \____/ (v0.3.8)
+INFO Using model parameters:
+INFO    Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.39679 (user),  weights&rates: (0.25,0.016254) (0.25,0.179354) (0.25,0.727784) (0.25,3.07661) 
+        Base frequencies (user): 0.22916 0.240976 0.317544 0.21232 
+        Substitution rates (user): 0.876653 2.25793 1.3844 0.818171 3.41881 1
+INFO Output file: ns6_output/asv_intermediate_seqs_ns6/epa_out/epa_result.jplace
+INFO 52 Sequences done!
+INFO Time spent placing: 0s
+INFO Elapsed Time: 0s

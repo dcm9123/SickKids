@@ -4,12 +4,13 @@
 # Purpose: This script was made to format the output from emapper to something picrust2 can understand.
 # It is inteded to format EC and KOs.
 
+#%%
 import pandas as pd
 import os
 import sys
 from tqdm import tqdm
 
-
+#%%
 def setting_up():
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_columns', None)
@@ -45,6 +46,7 @@ def welcome():
     os.makedirs(answer_output, exist_ok=True) #Creating a dir in case it isn't there
     return(list_paths,answer_output) #This returns the input path(s) and the output path
 
+#%%
 #Calling the first function to format the original eggnog file to something pandas-readable
 def formatting_original_file(path,answer_output): #This function formats the eggnog file by removing unnecessary lines and adding columns
     os.chdir(path)
@@ -80,6 +82,7 @@ def formatting_original_file(path,answer_output): #This function formats the egg
     pbar.close()
     return(answer_output)
 
+#%%
 def formatting_picrust2_annotations(path):
     #This function is the meat of the code. It takes the ECs and KOs out of the previously generated file
     #to extract the ECs and KOs, count them (also removes duplicates), and write them in a new .tsv file for PICRUSt2
@@ -119,6 +122,7 @@ def formatting_picrust2_annotations(path):
                 pbar.update(1)
     pbar.close()
 
+#%%
 def merging(path):
     df_list_ko=[]
     df_list_ec=[]
@@ -149,7 +153,7 @@ def merging(path):
     df_final_ec.to_csv(path+"/Final_EC_file.tsv",sep='\t',index=False)
     pbar.close()
 
-
+#%%
 def main():
     list_of_paths,output_path = welcome() #We get a tupple here, so I call these two separately
     for path in list_of_paths:
@@ -157,5 +161,8 @@ def main():
     formatting_picrust2_annotations(output_path)
     merging(output_path)
     print("Done!")
+#%%
 if __name__ == "__main__":
     main()
+
+# %%
