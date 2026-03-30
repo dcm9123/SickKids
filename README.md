@@ -615,4 +615,4 @@ parser.add_argument('-m', '--hsp_method', default='mp',
                     '"nearest_neighbor": method introduced by Daniel CM for '
                     'discrete trait prediction by using nearest neighbor')
 ```
-                        
+10. Finally, I ran the new modified scripts with the new method, and it worked! I got the predicted EC table for each ASV. I took that table to my local computer to run it with my script `castor_testing.py` to see how similar the predicted EC profile, and turns out that the EC count profile for the filtered `ns6` table had 0 differences from the genome we expect it is coming from! This worked! Now I need to repeat the same across the rest of the communities, and do it with the unfiltered data and filtered as a sanity check.              
