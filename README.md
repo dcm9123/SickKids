@@ -538,7 +538,7 @@ I will be including now the False Negative data as part of the analysis. And pre
 
 Last week we had a meeting, and in there we evaluated the results of the filtering step, and we decided to apply the following filters to the mice and inocula samples, across each inoculum group, keeping the ASVs that fall in these criteria:
 
-- ASV length of 250 bp or more (inclusive)
+- ASV length of 400 bp or more (inclusive) (400 bp was recently changed from 250 bp)
 - ASV total count of 600 or more (inclusive)
 - ASV prevalence across samples of 0.20 (20%) or more (inclusive)
 
@@ -549,4 +549,14 @@ I took the 220 16S sequences (barrnap + sanger) that have some duplicates, and u
 
 ### March 30th, 2026
 
-I tried a new approach by modifying the code from PICRUSt2, so it would accept Castor's method of Nearest Neighbour Joining. In a nutshell, this is what I modified:
+I tried a new approach by modifying the code from PICRUSt2, so it would accept Castor's method of Nearest Neighbour Joining. In a nutshell, this is what I did:
+
+1. Created a new conda environment by clonning my existing one: `conda create --name picrust2_mod --clone picrust2.2`
+2. I activated the new environment: `conda activate picrust2_mod`
+3. I wanted to see where the `hsp.py` script is located, so I ran `which hsp.py`, and it showed me the path: `~/anaconda3/envs/picrust2_mod/bin/hsp.py`, this is telling me that this code is in the bin folder of the conda environment, but it should be called by a wrap script
+4. I wanted to be extra safe and I made a PICRUSt2 backup: `conda env export > picrust2_backup.yml`
+5. I wanted to see where the picrust2 scripts are located, so I ran `python -c "import picrust2, os; print(os.path.dirname(picrust2.__file__))"`, and it showed me the path: `/home/daniel.castanedamogo/anaconda3/envs/picrust2_mod/lib/python3.6/site-packages/picrust2` so now I don't need to be looking for the picrust2 files all over my Anaconda folder
+6. I also made new backups of the scripts I am planning on modifying: 
+   `cd /home/daniel.castanedamogo/anaconda3/envs/picrust2_mod/lib/python3.6/site-packages/picrust2`
+   `cp wrap_hsp.py wrap_hsp.py.bak`
+   `cp Rscripts/castor_hsp.R Rscripts/castor_hsp.R.bak`
