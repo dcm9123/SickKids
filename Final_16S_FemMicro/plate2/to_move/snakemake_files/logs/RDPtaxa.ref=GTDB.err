@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Wed Jun  4 14:16:54 2025]
+rule RDPtaxa:
+    input: plate2/dada2/seqtab_nochimeras.rds, /bulk/IMCshared_bulk/shared/dbs/T1D_db_updated/t1d_db2_withIDs_andDups_genus.fasta.gz, /bulk/IMCshared_bulk/shared/dbs/T1D_db_updated/t1d_db2_withIDs_andDups_species.fasta.gz
+    output: plate2/taxonomy/dada2_tables/GTDB_RDP.tsv, plate2/taxonomy/dada2_tables/GTDB_RDP_boostrap.rds
+    jobid: 0
+    reason: Forced execution
+    wildcards: ref=GTDB
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: dada2
+Not cleaning up /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/.snakemake/scripts/tmp_zqccsy8.RDPtaxa.R
+[Wed Jun  4 14:17:17 2025]
+Finished job 0.
+1 of 1 steps (100%) done

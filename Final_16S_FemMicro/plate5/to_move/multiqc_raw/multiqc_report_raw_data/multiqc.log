@@ -1,0 +1,3 @@
+[2025-06-26 00:27:08,744] multiqc.core.version_check                         [WARNING]  MultiQC Version v1.29 now available!
+[2025-06-26 00:27:08,744] multiqc.core.file_search                           [INFO   ]  Search path: /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate5/plate5.1/fastqc_raw
+[2025-06-26 00:27:28,521] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 112 reports

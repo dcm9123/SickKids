@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Wed Jun  4 14:16:55 2025]
+rule plotASVLength:
+    input: plate2/dada2/seqtab_nochimeras.rds
+    output: plate2/figures/length_distribution/Sequence_Length_distribution.png
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: dada2
+Warning message:
+Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead. 
+Not cleaning up /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/.snakemake/scripts/tmpcf0n3lmv.asv_length_distribution_plotting.R
+[Wed Jun  4 14:17:26 2025]
+Finished job 0.
+1 of 1 steps (100%) done

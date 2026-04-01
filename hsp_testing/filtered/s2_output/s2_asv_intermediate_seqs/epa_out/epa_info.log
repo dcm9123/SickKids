@@ -1,0 +1,24 @@
+INFO Selected: Output dir: s2_output/s2_asv_intermediate_seqs/epa_out/
+INFO Selected: Query file: s2_output/s2_asv_intermediate_seqs/study_seqs_hmmalign.fasta
+INFO Selected: Tree file: s2_local_files/s2_local_files.tre
+INFO Selected: Reference MSA: s2_output/s2_asv_intermediate_seqs/ref_seqs_hmmalign.fasta
+INFO Selected: Filtering by accumulated threshold: 0.99
+INFO Selected: Maximum number of placements per query: 100
+INFO Selected: Automatic switching of use of per rate scalers
+INFO Selected: Preserving the root of the input tree
+INFO Selected: Specified model file: s2_local_files/s2_local_files.model
+INFO Selected: Reading queries in chunks of: 5000
+INFO Selected: Using threads: 32
+INFO     ______ ____   ___           _   __ ______
+        / ____// __ \ /   |         / | / // ____/
+       / __/  / /_/ // /| | ______ /  |/ // / __  
+      / /___ / ____// ___ |/_____// /|  // /_/ /  
+     /_____//_/    /_/  |_|      /_/ |_/ \____/ (v0.3.8)
+INFO Using model parameters:
+INFO    Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.356019 (user),  weights&rates: (0.25,0.010914) (0.25,0.148228) (0.25,0.67894) (0.25,3.16192) 
+        Base frequencies (user): 0.238282 0.239615 0.323256 0.198847 
+        Substitution rates (user): 0.820788 1.96097 1.26883 0.795154 3.84304 1
+INFO Output file: s2_output/s2_asv_intermediate_seqs/epa_out/epa_result.jplace
+INFO 40 Sequences done!
+INFO Time spent placing: 0s
+INFO Elapsed Time: 0s

@@ -1,0 +1,20 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 00:21:21 2025]
+rule cutAdapt:
+    input: plate3.1/filtN/3980R_R_F_S2_week5_S60_L001_R1_001.fastq.gz, plate3.1/filtN/3980R_R_F_S2_week5_S60_L001_R2_001.fastq.gz
+    output: plate3.1/cutadapt/3980R_R_F_S2_week5_S60_L001_R1_001.fastq.gz, plate3.1/cutadapt/3980R_R_F_S2_week5_S60_L001_R2_001.fastq.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=3980R_R_F_S2_week5_S60_L001
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: QC
+[Thu Jun 26 00:21:41 2025]
+Finished job 0.
+1 of 1 steps (100%) done

@@ -1,0 +1,26 @@
+This is cutadapt 5.0 with Python 3.13.1
+Command line parameters: -A XXX -q 20,20 -m 50 -o plate1.1/cutadapt_qc/3893R_R_M_S5_week10_S63_L001_R1_001.fastq.gz -p plate1.1/cutadapt_qc/3893R_R_M_S5_week10_S63_L001_R2_001.fastq.gz plate1.1/cutadapt/3893R_R_M_S5_week10_S63_L001_R1_001.fastq.gz plate1.1/cutadapt/3893R_R_M_S5_week10_S63_L001_R2_001.fastq.gz
+Processing paired-end reads on 1 core ...
+
+=== Summary ===
+
+Total read pairs processed:            112,905
+  Read 2 with adapter:                       0 (0.0%)
+
+== Read fate breakdown ==
+Pairs that were too short:                 662 (0.6%)
+Pairs written (passing filters):       112,243 (99.4%)
+
+Total basepairs processed:    63,695,738 bp
+  Read 1:    32,069,142 bp
+  Read 2:    31,626,596 bp
+Quality-trimmed:               3,267,062 bp (5.1%)
+  Read 1:       624,521 bp
+  Read 2:     2,642,541 bp
+Total written (filtered):     60,251,120 bp (94.6%)
+  Read 1:    31,297,066 bp
+  Read 2:    28,954,054 bp
+
+=== Second read: Adapter 1 ===
+
+Sequence: XXX; Type: regular 3'; Length: 3; Trimmed: 0 times

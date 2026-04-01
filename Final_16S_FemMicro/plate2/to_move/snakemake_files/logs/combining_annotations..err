@@ -1,0 +1,20 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Wed Jun  4 14:24:10 2025]
+rule combining_annotations:
+    input: plate2/taxonomy/dada2_tables/GTDB_RDP.tsv, plate2/taxonomy/dada2_tables/URE_RDP.tsv, plate2/dada2/seqtab_nochimeras.rds
+    output: plate2/taxonomy/dada2_tables/dada2_all_databases_merged.csv
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: dada2
+Not cleaning up /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/.snakemake/scripts/tmprqk7fa_o.annotation_output_dada2.R
+[Wed Jun  4 14:24:17 2025]
+Finished job 0.
+1 of 1 steps (100%) done

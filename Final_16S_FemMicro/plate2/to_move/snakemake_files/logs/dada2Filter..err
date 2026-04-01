@@ -1,0 +1,380 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=4997, mem_mib=4766, disk_mb=4997, disk_mib=4766
+Select jobs to execute...
+
+[Wed Jun  4 12:57:19 2025]
+rule dada2Filter:
+    input: plate2/cutadapt_qc/016R_0_F_NS6_week9_S79_L001_R1_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week5_S18_L001_R1_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week6_S19_L001_R1_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week7_S20_L001_R1_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week9_S21_L001_R1_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week5_S52_L001_R1_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week6_S53_L001_R1_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week7_S54_L001_R1_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week9_S55_L001_R1_001.fastq.gz, plate2/cutadapt_qc/096R_0_M_S5_week9_S74_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week5_S22_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week6_S23_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week7_S24_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week9_S25_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1060R_L_M_S5_week9_S75_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week5_S56_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week6_S57_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week7_S58_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week9_S59_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1075R_L_M_NS6_week9_S84_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1076R_0_M_S5_week9_S76_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week5_S26_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week6_S27_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week7_S28_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week9_S29_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1136R_0_F_S5_week9_S69_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week5_S30_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week6_S31_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week7_S32_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week9_S33_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1152R_0_M_S2_week9_S60_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1184R_0_M_NS6_week9_S85_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1186R_0_M_NS6_week9_S86_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1186R_RR_M_NS6_week9_S87_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week5_S1_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week6_S2_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week7_S3_L001_R1_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week9_S4_L001_R1_001.fastq.gz, plate2/cutadapt_qc/184R_0_M_NS6_week9_S88_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2402R_0_F_S5_week9_S70_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2403R_0_F_NS6_week9_S80_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week5_S35_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week6_S36_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week7_S37_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week9_S38_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2433R_0_F_S5_week9_S71_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week5_S39_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week6_S40_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week7_S41_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week9_S42_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2475R_0_M_S5_week9_S77_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2476R_R_F_NS6_week9_S81_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2518R_0_M_S5_week9_S78_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week5_S5_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week6_S6_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week7_S7_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week9_S8_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2562R_0_F_NS6_week9_S82_L001_R1_001.fastq.gz, plate2/cutadapt_qc/2562R_RL_F_NS6_week9_S83_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week5_S43_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week6_S44_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week7_S45_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week9_S46_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3861R_R_M_NS1_week9_S34_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week5_S61_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week6_S62_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week7_S63_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week9_S64_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week5_S65_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week6_S66_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week7_S67_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week9_S68_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3924R_L_F_S5_week9_S72_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3929R_0_F_S5_week9_S73_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week5_S47_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week6_S48_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week7_S49_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week9_S50_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week5_S9_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week6_S10_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week7_S11_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week9_S12_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3975R_0_F_NS1_week9_S13_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week5_S14_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week6_S15_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week7_S16_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week9_S17_L001_R1_001.fastq.gz, plate2/cutadapt_qc/3980R_0_F_S2_week9_S51_L001_R1_001.fastq.gz, plate2/cutadapt_qc/Positive_control_S89_L001_R1_001.fastq.gz, plate2/cutadapt_qc/negative_control_S90_L001_R1_001.fastq.gz, plate2/cutadapt_qc/016R_0_F_NS6_week9_S79_L001_R2_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week5_S18_L001_R2_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week6_S19_L001_R2_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week7_S20_L001_R2_001.fastq.gz, plate2/cutadapt_qc/036R_R_M_NS1_week9_S21_L001_R2_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week5_S52_L001_R2_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week6_S53_L001_R2_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week7_S54_L001_R2_001.fastq.gz, plate2/cutadapt_qc/073R_0_M_S2_week9_S55_L001_R2_001.fastq.gz, plate2/cutadapt_qc/096R_0_M_S5_week9_S74_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week5_S22_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week6_S23_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week7_S24_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1030R_L_M_NS1_week9_S25_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1060R_L_M_S5_week9_S75_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week5_S56_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week6_S57_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week7_S58_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1067R_R_M_S2_week9_S59_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1075R_L_M_NS6_week9_S84_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1076R_0_M_S5_week9_S76_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week5_S26_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week6_S27_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week7_S28_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1121R_0_M_NS1_week9_S29_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1136R_0_F_S5_week9_S69_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week5_S30_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week6_S31_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week7_S32_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1151R_R_M_NS1_week9_S33_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1152R_0_M_S2_week9_S60_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1184R_0_M_NS6_week9_S85_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1186R_0_M_NS6_week9_S86_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1186R_RR_M_NS6_week9_S87_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week5_S1_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week6_S2_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week7_S3_L001_R2_001.fastq.gz, plate2/cutadapt_qc/1193R_R_F_NS1_week9_S4_L001_R2_001.fastq.gz, plate2/cutadapt_qc/184R_0_M_NS6_week9_S88_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2402R_0_F_S5_week9_S70_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2403R_0_F_NS6_week9_S80_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week5_S35_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week6_S36_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week7_S37_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2404R_R_F_S2_week9_S38_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2433R_0_F_S5_week9_S71_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week5_S39_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week6_S40_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week7_S41_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2446R_L_F_S2_week9_S42_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2475R_0_M_S5_week9_S77_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2476R_R_F_NS6_week9_S81_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2518R_0_M_S5_week9_S78_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week5_S5_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week6_S6_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week7_S7_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2529R_R_F_NS1_week9_S8_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2562R_0_F_NS6_week9_S82_L001_R2_001.fastq.gz, plate2/cutadapt_qc/2562R_RL_F_NS6_week9_S83_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week5_S43_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week6_S44_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week7_S45_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3795R_0_F_S2_week9_S46_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3861R_R_M_NS1_week9_S34_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week5_S61_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week6_S62_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week7_S63_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3909R_0_M_S2_week9_S64_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week5_S65_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week6_S66_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week7_S67_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3918R_R_M_S2_week9_S68_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3924R_L_F_S5_week9_S72_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3929R_0_F_S5_week9_S73_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week5_S47_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week6_S48_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week7_S49_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3969R_0_F_S2_week9_S50_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week5_S9_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week6_S10_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week7_S11_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3971R_L_F_NS1_week9_S12_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3975R_0_F_NS1_week9_S13_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week5_S14_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week6_S15_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week7_S16_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3975R_R_F_NS1_week9_S17_L001_R2_001.fastq.gz, plate2/cutadapt_qc/3980R_0_F_S2_week9_S51_L001_R2_001.fastq.gz, plate2/cutadapt_qc/Positive_control_S89_L001_R2_001.fastq.gz, plate2/cutadapt_qc/negative_control_S90_L001_R2_001.fastq.gz
+    output: plate2/dada2/dada2_filter/016R_0_F_NS6_week9_S79_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week5_S18_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week6_S19_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week7_S20_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week9_S21_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week5_S52_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week6_S53_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week7_S54_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week9_S55_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/096R_0_M_S5_week9_S74_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week5_S22_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week6_S23_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week7_S24_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week9_S25_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1060R_L_M_S5_week9_S75_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week5_S56_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week6_S57_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week7_S58_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week9_S59_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1075R_L_M_NS6_week9_S84_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1076R_0_M_S5_week9_S76_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week5_S26_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week6_S27_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week7_S28_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week9_S29_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1136R_0_F_S5_week9_S69_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week5_S30_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week6_S31_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week7_S32_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week9_S33_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1152R_0_M_S2_week9_S60_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1184R_0_M_NS6_week9_S85_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1186R_0_M_NS6_week9_S86_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1186R_RR_M_NS6_week9_S87_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week5_S1_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week6_S2_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week7_S3_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week9_S4_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/184R_0_M_NS6_week9_S88_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2402R_0_F_S5_week9_S70_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2403R_0_F_NS6_week9_S80_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week5_S35_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week6_S36_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week7_S37_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week9_S38_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2433R_0_F_S5_week9_S71_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week5_S39_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week6_S40_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week7_S41_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week9_S42_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2475R_0_M_S5_week9_S77_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2476R_R_F_NS6_week9_S81_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2518R_0_M_S5_week9_S78_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week5_S5_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week6_S6_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week7_S7_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week9_S8_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2562R_0_F_NS6_week9_S82_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/2562R_RL_F_NS6_week9_S83_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week5_S43_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week6_S44_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week7_S45_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week9_S46_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3861R_R_M_NS1_week9_S34_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week5_S61_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week6_S62_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week7_S63_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week9_S64_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week5_S65_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week6_S66_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week7_S67_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week9_S68_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3924R_L_F_S5_week9_S72_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3929R_0_F_S5_week9_S73_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week5_S47_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week6_S48_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week7_S49_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week9_S50_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week5_S9_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week6_S10_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week7_S11_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week9_S12_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3975R_0_F_NS1_week9_S13_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week5_S14_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week6_S15_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week7_S16_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week9_S17_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/3980R_0_F_S2_week9_S51_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/Positive_control_S89_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/negative_control_S90_L001_R1_001.fastq.gz, plate2/dada2/dada2_filter/016R_0_F_NS6_week9_S79_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week5_S18_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week6_S19_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week7_S20_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/036R_R_M_NS1_week9_S21_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week5_S52_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week6_S53_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week7_S54_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/073R_0_M_S2_week9_S55_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/096R_0_M_S5_week9_S74_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week5_S22_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week6_S23_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week7_S24_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1030R_L_M_NS1_week9_S25_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1060R_L_M_S5_week9_S75_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week5_S56_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week6_S57_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week7_S58_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1067R_R_M_S2_week9_S59_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1075R_L_M_NS6_week9_S84_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1076R_0_M_S5_week9_S76_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week5_S26_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week6_S27_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week7_S28_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1121R_0_M_NS1_week9_S29_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1136R_0_F_S5_week9_S69_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week5_S30_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week6_S31_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week7_S32_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1151R_R_M_NS1_week9_S33_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1152R_0_M_S2_week9_S60_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1184R_0_M_NS6_week9_S85_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1186R_0_M_NS6_week9_S86_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1186R_RR_M_NS6_week9_S87_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week5_S1_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week6_S2_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week7_S3_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/1193R_R_F_NS1_week9_S4_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/184R_0_M_NS6_week9_S88_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2402R_0_F_S5_week9_S70_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2403R_0_F_NS6_week9_S80_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week5_S35_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week6_S36_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week7_S37_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2404R_R_F_S2_week9_S38_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2433R_0_F_S5_week9_S71_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week5_S39_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week6_S40_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week7_S41_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2446R_L_F_S2_week9_S42_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2475R_0_M_S5_week9_S77_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2476R_R_F_NS6_week9_S81_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2518R_0_M_S5_week9_S78_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week5_S5_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week6_S6_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week7_S7_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2529R_R_F_NS1_week9_S8_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2562R_0_F_NS6_week9_S82_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/2562R_RL_F_NS6_week9_S83_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week5_S43_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week6_S44_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week7_S45_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3795R_0_F_S2_week9_S46_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3861R_R_M_NS1_week9_S34_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week5_S61_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week6_S62_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week7_S63_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3909R_0_M_S2_week9_S64_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week5_S65_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week6_S66_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week7_S67_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3918R_R_M_S2_week9_S68_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3924R_L_F_S5_week9_S72_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3929R_0_F_S5_week9_S73_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week5_S47_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week6_S48_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week7_S49_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3969R_0_F_S2_week9_S50_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week5_S9_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week6_S10_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week7_S11_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3971R_L_F_NS1_week9_S12_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3975R_0_F_NS1_week9_S13_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week5_S14_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week6_S15_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week7_S16_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3975R_R_F_NS1_week9_S17_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/3980R_0_F_S2_week9_S51_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/Positive_control_S89_L001_R2_001.fastq.gz, plate2/dada2/dada2_filter/negative_control_S90_L001_R2_001.fastq.gz, plate2/dada2/Nreads_filtered.txt, plate2/dada2/percent_phix.txt
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=4997, mem_mib=4766, disk_mb=4997, disk_mib=4766, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: dada2
+Read in 115735 paired-sequences, output 88158 (76.2%) filtered paired-sequences.
+Read in 102343 paired-sequences, output 78910 (77.1%) filtered paired-sequences.
+Read in 107873 paired-sequences, output 87246 (80.9%) filtered paired-sequences.
+Read in 93234 paired-sequences, output 71467 (76.7%) filtered paired-sequences.
+Read in 95788 paired-sequences, output 74178 (77.4%) filtered paired-sequences.
+Read in 118983 paired-sequences, output 90740 (76.3%) filtered paired-sequences.
+Read in 143545 paired-sequences, output 108224 (75.4%) filtered paired-sequences.
+Read in 158048 paired-sequences, output 119113 (75.4%) filtered paired-sequences.
+Read in 141510 paired-sequences, output 105945 (74.9%) filtered paired-sequences.
+Read in 112749 paired-sequences, output 78573 (69.7%) filtered paired-sequences.
+Read in 139286 paired-sequences, output 110120 (79.1%) filtered paired-sequences.
+Read in 126764 paired-sequences, output 100118 (79%) filtered paired-sequences.
+Read in 107102 paired-sequences, output 79339 (74.1%) filtered paired-sequences.
+Read in 106680 paired-sequences, output 78425 (73.5%) filtered paired-sequences.
+Read in 111828 paired-sequences, output 84001 (75.1%) filtered paired-sequences.
+Read in 130865 paired-sequences, output 97621 (74.6%) filtered paired-sequences.
+Read in 129022 paired-sequences, output 94459 (73.2%) filtered paired-sequences.
+Read in 131992 paired-sequences, output 93657 (71%) filtered paired-sequences.
+Read in 109737 paired-sequences, output 84197 (76.7%) filtered paired-sequences.
+Read in 109724 paired-sequences, output 89178 (81.3%) filtered paired-sequences.
+Read in 93722 paired-sequences, output 68516 (73.1%) filtered paired-sequences.
+Read in 99163 paired-sequences, output 72838 (73.5%) filtered paired-sequences.
+Read in 100255 paired-sequences, output 75847 (75.7%) filtered paired-sequences.
+Read in 87117 paired-sequences, output 66462 (76.3%) filtered paired-sequences.
+Read in 98067 paired-sequences, output 74602 (76.1%) filtered paired-sequences.
+Read in 152473 paired-sequences, output 118794 (77.9%) filtered paired-sequences.
+Read in 106887 paired-sequences, output 83139 (77.8%) filtered paired-sequences.
+Read in 114642 paired-sequences, output 87250 (76.1%) filtered paired-sequences.
+Read in 114445 paired-sequences, output 85540 (74.7%) filtered paired-sequences.
+Read in 105201 paired-sequences, output 80166 (76.2%) filtered paired-sequences.
+Read in 135723 paired-sequences, output 104052 (76.7%) filtered paired-sequences.
+Read in 124528 paired-sequences, output 99427 (79.8%) filtered paired-sequences.
+Read in 119159 paired-sequences, output 94101 (79%) filtered paired-sequences.
+Read in 123350 paired-sequences, output 97422 (79%) filtered paired-sequences.
+Read in 104538 paired-sequences, output 81234 (77.7%) filtered paired-sequences.
+Read in 85111 paired-sequences, output 65479 (76.9%) filtered paired-sequences.
+Read in 91027 paired-sequences, output 70512 (77.5%) filtered paired-sequences.
+Read in 98208 paired-sequences, output 73534 (74.9%) filtered paired-sequences.
+Read in 135991 paired-sequences, output 106219 (78.1%) filtered paired-sequences.
+Read in 123105 paired-sequences, output 90704 (73.7%) filtered paired-sequences.
+Read in 134161 paired-sequences, output 99832 (74.4%) filtered paired-sequences.
+Read in 98636 paired-sequences, output 79765 (80.9%) filtered paired-sequences.
+Read in 112292 paired-sequences, output 88214 (78.6%) filtered paired-sequences.
+Read in 119783 paired-sequences, output 91814 (76.7%) filtered paired-sequences.
+Read in 97536 paired-sequences, output 76742 (78.7%) filtered paired-sequences.
+Read in 125962 paired-sequences, output 95723 (76%) filtered paired-sequences.
+Read in 91885 paired-sequences, output 69817 (76%) filtered paired-sequences.
+Read in 117836 paired-sequences, output 88509 (75.1%) filtered paired-sequences.
+Read in 107820 paired-sequences, output 76722 (71.2%) filtered paired-sequences.
+Read in 95028 paired-sequences, output 69254 (72.9%) filtered paired-sequences.
+Read in 122438 paired-sequences, output 88699 (72.4%) filtered paired-sequences.
+Read in 121338 paired-sequences, output 94260 (77.7%) filtered paired-sequences.
+Read in 107273 paired-sequences, output 77675 (72.4%) filtered paired-sequences.
+Read in 91538 paired-sequences, output 71322 (77.9%) filtered paired-sequences.
+Read in 93012 paired-sequences, output 72295 (77.7%) filtered paired-sequences.
+Read in 94989 paired-sequences, output 71189 (74.9%) filtered paired-sequences.
+Read in 89407 paired-sequences, output 65731 (73.5%) filtered paired-sequences.
+Read in 113077 paired-sequences, output 88457 (78.2%) filtered paired-sequences.
+Read in 102159 paired-sequences, output 82886 (81.1%) filtered paired-sequences.
+Read in 117241 paired-sequences, output 89046 (76%) filtered paired-sequences.
+Read in 93669 paired-sequences, output 68657 (73.3%) filtered paired-sequences.
+Read in 99709 paired-sequences, output 73031 (73.2%) filtered paired-sequences.
+Read in 124626 paired-sequences, output 91274 (73.2%) filtered paired-sequences.
+Read in 94548 paired-sequences, output 73062 (77.3%) filtered paired-sequences.
+Read in 143274 paired-sequences, output 105041 (73.3%) filtered paired-sequences.
+Read in 176770 paired-sequences, output 128945 (72.9%) filtered paired-sequences.
+Read in 121357 paired-sequences, output 89180 (73.5%) filtered paired-sequences.
+Read in 126122 paired-sequences, output 91292 (72.4%) filtered paired-sequences.
+Read in 114847 paired-sequences, output 86461 (75.3%) filtered paired-sequences.
+Read in 116860 paired-sequences, output 88115 (75.4%) filtered paired-sequences.
+Read in 125704 paired-sequences, output 98270 (78.2%) filtered paired-sequences.
+Read in 91520 paired-sequences, output 71570 (78.2%) filtered paired-sequences.
+Read in 122110 paired-sequences, output 91078 (74.6%) filtered paired-sequences.
+Read in 119931 paired-sequences, output 81497 (68%) filtered paired-sequences.
+Read in 103981 paired-sequences, output 76029 (73.1%) filtered paired-sequences.
+Read in 104692 paired-sequences, output 75996 (72.6%) filtered paired-sequences.
+Read in 132354 paired-sequences, output 97635 (73.8%) filtered paired-sequences.
+Read in 103791 paired-sequences, output 79417 (76.5%) filtered paired-sequences.
+Read in 114312 paired-sequences, output 83991 (73.5%) filtered paired-sequences.
+Read in 108295 paired-sequences, output 80456 (74.3%) filtered paired-sequences.
+Read in 97625 paired-sequences, output 74961 (76.8%) filtered paired-sequences.
+Read in 104302 paired-sequences, output 80856 (77.5%) filtered paired-sequences.
+Read in 129619 paired-sequences, output 98661 (76.1%) filtered paired-sequences.
+Read in 104377 paired-sequences, output 77576 (74.3%) filtered paired-sequences.
+Read in 106048 paired-sequences, output 78472 (74%) filtered paired-sequences.
+Read in 113495 paired-sequences, output 82265 (72.5%) filtered paired-sequences.
+Read in 131797 paired-sequences, output 100152 (76%) filtered paired-sequences.
+Read in 129149 paired-sequences, output 98654 (76.4%) filtered paired-sequences.
+Read in 135081 paired-sequences, output 91949 (68.1%) filtered paired-sequences.
+Read in 62943 paired-sequences, output 37849 (60.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/016R_0_F_NS6_week9_S79_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/016R_0_F_NS6_week9_S79_L001_R2_001.fastq.gz
+Read in 115735 paired-sequences, output 88158 (76.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week5_S18_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week5_S18_L001_R2_001.fastq.gz
+Read in 102343 paired-sequences, output 78910 (77.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week6_S19_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week6_S19_L001_R2_001.fastq.gz
+Read in 107873 paired-sequences, output 87246 (80.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week7_S20_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week7_S20_L001_R2_001.fastq.gz
+Read in 93234 paired-sequences, output 71467 (76.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week9_S21_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/036R_R_M_NS1_week9_S21_L001_R2_001.fastq.gz
+Read in 95788 paired-sequences, output 74178 (77.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week5_S52_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week5_S52_L001_R2_001.fastq.gz
+Read in 118983 paired-sequences, output 90740 (76.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week6_S53_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week6_S53_L001_R2_001.fastq.gz
+Read in 143545 paired-sequences, output 108224 (75.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week7_S54_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week7_S54_L001_R2_001.fastq.gz
+Read in 158048 paired-sequences, output 119113 (75.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week9_S55_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/073R_0_M_S2_week9_S55_L001_R2_001.fastq.gz
+Read in 141510 paired-sequences, output 105945 (74.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/096R_0_M_S5_week9_S74_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/096R_0_M_S5_week9_S74_L001_R2_001.fastq.gz
+Read in 112749 paired-sequences, output 78573 (69.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week5_S22_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week5_S22_L001_R2_001.fastq.gz
+Read in 139286 paired-sequences, output 110120 (79.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week6_S23_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week6_S23_L001_R2_001.fastq.gz
+Read in 126764 paired-sequences, output 100118 (79%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week7_S24_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week7_S24_L001_R2_001.fastq.gz
+Read in 107102 paired-sequences, output 79339 (74.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week9_S25_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1030R_L_M_NS1_week9_S25_L001_R2_001.fastq.gz
+Read in 106680 paired-sequences, output 78425 (73.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1060R_L_M_S5_week9_S75_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1060R_L_M_S5_week9_S75_L001_R2_001.fastq.gz
+Read in 111828 paired-sequences, output 84001 (75.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week5_S56_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week5_S56_L001_R2_001.fastq.gz
+Read in 130865 paired-sequences, output 97621 (74.6%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week6_S57_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week6_S57_L001_R2_001.fastq.gz
+Read in 129022 paired-sequences, output 94459 (73.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week7_S58_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week7_S58_L001_R2_001.fastq.gz
+Read in 131992 paired-sequences, output 93657 (71%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week9_S59_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1067R_R_M_S2_week9_S59_L001_R2_001.fastq.gz
+Read in 109737 paired-sequences, output 84197 (76.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1075R_L_M_NS6_week9_S84_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1075R_L_M_NS6_week9_S84_L001_R2_001.fastq.gz
+Read in 109724 paired-sequences, output 89178 (81.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1076R_0_M_S5_week9_S76_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1076R_0_M_S5_week9_S76_L001_R2_001.fastq.gz
+Read in 93722 paired-sequences, output 68516 (73.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week5_S26_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week5_S26_L001_R2_001.fastq.gz
+Read in 99163 paired-sequences, output 72838 (73.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week6_S27_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week6_S27_L001_R2_001.fastq.gz
+Read in 100255 paired-sequences, output 75847 (75.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week7_S28_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week7_S28_L001_R2_001.fastq.gz
+Read in 87117 paired-sequences, output 66462 (76.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week9_S29_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1121R_0_M_NS1_week9_S29_L001_R2_001.fastq.gz
+Read in 98067 paired-sequences, output 74602 (76.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1136R_0_F_S5_week9_S69_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1136R_0_F_S5_week9_S69_L001_R2_001.fastq.gz
+Read in 152473 paired-sequences, output 118794 (77.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week5_S30_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week5_S30_L001_R2_001.fastq.gz
+Read in 106887 paired-sequences, output 83139 (77.8%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week6_S31_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week6_S31_L001_R2_001.fastq.gz
+Read in 114642 paired-sequences, output 87250 (76.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week7_S32_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week7_S32_L001_R2_001.fastq.gz
+Read in 114445 paired-sequences, output 85540 (74.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week9_S33_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1151R_R_M_NS1_week9_S33_L001_R2_001.fastq.gz
+Read in 105201 paired-sequences, output 80166 (76.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1152R_0_M_S2_week9_S60_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1152R_0_M_S2_week9_S60_L001_R2_001.fastq.gz
+Read in 135723 paired-sequences, output 104052 (76.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1184R_0_M_NS6_week9_S85_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1184R_0_M_NS6_week9_S85_L001_R2_001.fastq.gz
+Read in 124528 paired-sequences, output 99427 (79.8%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1186R_0_M_NS6_week9_S86_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1186R_0_M_NS6_week9_S86_L001_R2_001.fastq.gz
+Read in 119159 paired-sequences, output 94101 (79%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1186R_RR_M_NS6_week9_S87_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1186R_RR_M_NS6_week9_S87_L001_R2_001.fastq.gz
+Read in 123350 paired-sequences, output 97422 (79%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week5_S1_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week5_S1_L001_R2_001.fastq.gz
+Read in 104538 paired-sequences, output 81234 (77.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week6_S2_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week6_S2_L001_R2_001.fastq.gz
+Read in 85111 paired-sequences, output 65479 (76.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week7_S3_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week7_S3_L001_R2_001.fastq.gz
+Read in 91027 paired-sequences, output 70512 (77.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week9_S4_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/1193R_R_F_NS1_week9_S4_L001_R2_001.fastq.gz
+Read in 98208 paired-sequences, output 73534 (74.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/184R_0_M_NS6_week9_S88_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/184R_0_M_NS6_week9_S88_L001_R2_001.fastq.gz
+Read in 135991 paired-sequences, output 106219 (78.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2402R_0_F_S5_week9_S70_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2402R_0_F_S5_week9_S70_L001_R2_001.fastq.gz
+Read in 123105 paired-sequences, output 90704 (73.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2403R_0_F_NS6_week9_S80_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2403R_0_F_NS6_week9_S80_L001_R2_001.fastq.gz
+Read in 134161 paired-sequences, output 99832 (74.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week5_S35_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week5_S35_L001_R2_001.fastq.gz
+Read in 98636 paired-sequences, output 79765 (80.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week6_S36_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week6_S36_L001_R2_001.fastq.gz
+Read in 112292 paired-sequences, output 88214 (78.6%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week7_S37_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week7_S37_L001_R2_001.fastq.gz
+Read in 119783 paired-sequences, output 91814 (76.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week9_S38_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2404R_R_F_S2_week9_S38_L001_R2_001.fastq.gz
+Read in 97536 paired-sequences, output 76742 (78.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2433R_0_F_S5_week9_S71_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2433R_0_F_S5_week9_S71_L001_R2_001.fastq.gz
+Read in 125962 paired-sequences, output 95723 (76%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week5_S39_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week5_S39_L001_R2_001.fastq.gz
+Read in 91885 paired-sequences, output 69817 (76%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week6_S40_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week6_S40_L001_R2_001.fastq.gz
+Read in 117836 paired-sequences, output 88509 (75.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week7_S41_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week7_S41_L001_R2_001.fastq.gz
+Read in 107820 paired-sequences, output 76722 (71.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week9_S42_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2446R_L_F_S2_week9_S42_L001_R2_001.fastq.gz
+Read in 95028 paired-sequences, output 69254 (72.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2475R_0_M_S5_week9_S77_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2475R_0_M_S5_week9_S77_L001_R2_001.fastq.gz
+Read in 122438 paired-sequences, output 88699 (72.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2476R_R_F_NS6_week9_S81_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2476R_R_F_NS6_week9_S81_L001_R2_001.fastq.gz
+Read in 121338 paired-sequences, output 94260 (77.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2518R_0_M_S5_week9_S78_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2518R_0_M_S5_week9_S78_L001_R2_001.fastq.gz
+Read in 107273 paired-sequences, output 77675 (72.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week5_S5_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week5_S5_L001_R2_001.fastq.gz
+Read in 91538 paired-sequences, output 71322 (77.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week6_S6_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week6_S6_L001_R2_001.fastq.gz
+Read in 93012 paired-sequences, output 72295 (77.7%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week7_S7_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week7_S7_L001_R2_001.fastq.gz
+Read in 94989 paired-sequences, output 71189 (74.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week9_S8_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2529R_R_F_NS1_week9_S8_L001_R2_001.fastq.gz
+Read in 89407 paired-sequences, output 65731 (73.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2562R_0_F_NS6_week9_S82_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2562R_0_F_NS6_week9_S82_L001_R2_001.fastq.gz
+Read in 113077 paired-sequences, output 88457 (78.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2562R_RL_F_NS6_week9_S83_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/2562R_RL_F_NS6_week9_S83_L001_R2_001.fastq.gz
+Read in 102159 paired-sequences, output 82886 (81.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week5_S43_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week5_S43_L001_R2_001.fastq.gz
+Read in 117241 paired-sequences, output 89046 (76%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week6_S44_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week6_S44_L001_R2_001.fastq.gz
+Read in 93669 paired-sequences, output 68657 (73.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week7_S45_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week7_S45_L001_R2_001.fastq.gz
+Read in 99709 paired-sequences, output 73031 (73.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week9_S46_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3795R_0_F_S2_week9_S46_L001_R2_001.fastq.gz
+Read in 124626 paired-sequences, output 91274 (73.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3861R_R_M_NS1_week9_S34_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3861R_R_M_NS1_week9_S34_L001_R2_001.fastq.gz
+Read in 94548 paired-sequences, output 73062 (77.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week5_S61_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week5_S61_L001_R2_001.fastq.gz
+Read in 143274 paired-sequences, output 105041 (73.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week6_S62_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week6_S62_L001_R2_001.fastq.gz
+Read in 176770 paired-sequences, output 128945 (72.9%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week7_S63_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week7_S63_L001_R2_001.fastq.gz
+Read in 121357 paired-sequences, output 89180 (73.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week9_S64_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3909R_0_M_S2_week9_S64_L001_R2_001.fastq.gz
+Read in 126122 paired-sequences, output 91292 (72.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week5_S65_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week5_S65_L001_R2_001.fastq.gz
+Read in 114847 paired-sequences, output 86461 (75.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week6_S66_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week6_S66_L001_R2_001.fastq.gz
+Read in 116860 paired-sequences, output 88115 (75.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week7_S67_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week7_S67_L001_R2_001.fastq.gz
+Read in 125704 paired-sequences, output 98270 (78.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week9_S68_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3918R_R_M_S2_week9_S68_L001_R2_001.fastq.gz
+Read in 91520 paired-sequences, output 71570 (78.2%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3924R_L_F_S5_week9_S72_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3924R_L_F_S5_week9_S72_L001_R2_001.fastq.gz
+Read in 122110 paired-sequences, output 91078 (74.6%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3929R_0_F_S5_week9_S73_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3929R_0_F_S5_week9_S73_L001_R2_001.fastq.gz
+Read in 119931 paired-sequences, output 81497 (68%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week5_S47_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week5_S47_L001_R2_001.fastq.gz
+Read in 103981 paired-sequences, output 76029 (73.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week6_S48_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week6_S48_L001_R2_001.fastq.gz
+Read in 104692 paired-sequences, output 75996 (72.6%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week7_S49_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week7_S49_L001_R2_001.fastq.gz
+Read in 132354 paired-sequences, output 97635 (73.8%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week9_S50_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3969R_0_F_S2_week9_S50_L001_R2_001.fastq.gz
+Read in 103791 paired-sequences, output 79417 (76.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week5_S9_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week5_S9_L001_R2_001.fastq.gz
+Read in 114312 paired-sequences, output 83991 (73.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week6_S10_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week6_S10_L001_R2_001.fastq.gz
+Read in 108295 paired-sequences, output 80456 (74.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week7_S11_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week7_S11_L001_R2_001.fastq.gz
+Read in 97625 paired-sequences, output 74961 (76.8%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week9_S12_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3971R_L_F_NS1_week9_S12_L001_R2_001.fastq.gz
+Read in 104302 paired-sequences, output 80856 (77.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_0_F_NS1_week9_S13_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_0_F_NS1_week9_S13_L001_R2_001.fastq.gz
+Read in 129619 paired-sequences, output 98661 (76.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week5_S14_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week5_S14_L001_R2_001.fastq.gz
+Read in 104377 paired-sequences, output 77576 (74.3%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week6_S15_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week6_S15_L001_R2_001.fastq.gz
+Read in 106048 paired-sequences, output 78472 (74%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week7_S16_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week7_S16_L001_R2_001.fastq.gz
+Read in 113495 paired-sequences, output 82265 (72.5%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week9_S17_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3975R_R_F_NS1_week9_S17_L001_R2_001.fastq.gz
+Read in 131797 paired-sequences, output 100152 (76%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3980R_0_F_S2_week9_S51_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/3980R_0_F_S2_week9_S51_L001_R2_001.fastq.gz
+Read in 129149 paired-sequences, output 98654 (76.4%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/Positive_control_S89_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/Positive_control_S89_L001_R2_001.fastq.gz
+Read in 135081 paired-sequences, output 91949 (68.1%) filtered paired-sequences.
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/negative_control_S90_L001_R1_001.fastq.gz
+Overwriting file:/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/plate2/dada2/dada2_filter/negative_control_S90_L001_R2_001.fastq.gz
+Read in 62943 paired-sequences, output 37849 (60.1%) filtered paired-sequences.
+Not cleaning up /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/.snakemake/scripts/tmp1wxeajbk.dada2_filter.R
+[Wed Jun  4 13:40:04 2025]
+Finished job 0.
+1 of 1 steps (100%) done

@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 01:59:43 2025]
+rule newickTree:
+    input: plate3.1/phylogeny/ASV_aligned.fasta
+    output: plate3.1/phylogeny/ASV_tree.nwk
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: fastree_mafft
+FastTree Version 2.1.11 Double precision (No SSE3), OpenMP (1 threads)
+Alignment: plate3.1/phylogeny/ASV_aligned.fasta
+Nucleotide distances: Jukes-Cantor Joins: balanced Support: SH-like 1000
+Search: Normal +NNI +SPR (4 rounds range 10) +ML-NNI opt-each=1
+TopHits: 1.00*sqrtN close=default refresh=0.80
+ML Model: Jukes-Cantor, CAT approximation with 20 rate categories
+Initial topology in 0.07 seconds
+Refining topology: 30 rounds ME-NNIs, 4 rounds ME-SPRs, 15 rounds ML-NNIs
+      0.14 seconds: SPR round   1 of   4, 101 of 372 nodes
+      0.26 seconds: SPR round   1 of   4, 301 of 372 nodes
+      0.38 seconds: SPR round   2 of   4, 101 of 372 nodes
+      0.51 seconds: SPR round   2 of   4, 301 of 372 nodes
+      0.61 seconds: SPR round   3 of   4, 101 of 372 nodes
+      0.74 seconds: SPR round   3 of   4, 301 of 372 nodes
+      0.84 seconds: SPR round   4 of   4, 101 of 372 nodes
+      0.97 seconds: SPR round   4 of   4, 301 of 372 nodes
+Total branch-length 7.620 after 1.03 sec
+      1.08 seconds: ML NNI round 1 of 15, 1 of 185 splits
+ML-NNI round 1: LogLk = -15720.903 NNIs 32 max delta 8.97 Time 1.26
+      1.25 seconds: Site likelihoods with rate category 1 of 20
+Switched to using 20 rate categories (CAT approximation)
+Rate categories were divided by 0.917 so that average rate = 1.0
+CAT-based log-likelihoods may not be comparable across runs
+      1.40 seconds: ML NNI round 2 of 15, 101 of 185 splits, 3 changes (max delta 0.203)
+ML-NNI round 2: LogLk = -13847.830 NNIs 11 max delta 4.98 Time 1.48
+      1.58 seconds: ML NNI round 3 of 15, 101 of 185 splits, 7 changes (max delta 1.178)
+ML-NNI round 3: LogLk = -13842.924 NNIs 7 max delta 1.18 Time 1.59
+ML-NNI round 4: LogLk = -13842.839 NNIs 3 max delta 0.01 Time 1.66
+Turning off heuristics for final round of ML NNIs (converged)
+      1.76 seconds: ML NNI round 5 of 15, 101 of 185 splits, 2 changes (max delta 0.000)
+ML-NNI round 5: LogLk = -13842.605 NNIs 2 max delta 0.00 Time 1.84 (final)
+Optimize all lengths: LogLk = -13842.557 Time 1.88
+      2.01 seconds: ML split tests for    100 of    184 internal splits
+      2.12 seconds: Site likelihoods with rate category 1 of 20
+Gamma(20) LogLk = -14270.370 alpha = 0.488 rescaling lengths by 1.221
+Total time: 2.18 seconds Unique: 187/187 Bad splits: 0/184
+[Thu Jun 26 01:59:51 2025]
+Finished job 0.
+1 of 1 steps (100%) done

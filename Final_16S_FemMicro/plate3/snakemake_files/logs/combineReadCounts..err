@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 01:59:06 2025]
+rule combineReadCounts:
+    input: plate3.1/dada2/Parsed_rawReadCount.txt, plate3.1/dada2/Nreads_filtered.txt, plate3.1/dada2/Nreads_with_chimeras.txt, plate3.1/dada2/Nreads_nochimera.txt
+    output: plate3.1/dada2/Nreads.tsv
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+[Thu Jun 26 01:59:06 2025]
+Finished job 0.
+1 of 1 steps (100%) done

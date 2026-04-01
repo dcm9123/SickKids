@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 00:30:15 2025]
+rule numSeqParse:
+    input: plate3.1/dada2/rawReadCount.txt
+    output: plate3.1/dada2/Parsed_rawReadCount.txt
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+[Thu Jun 26 00:30:15 2025]
+Finished job 0.
+1 of 1 steps (100%) done

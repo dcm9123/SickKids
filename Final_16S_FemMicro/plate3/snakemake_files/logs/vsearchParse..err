@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 02:11:35 2025]
+rule vsearchParse:
+    input: plate3.1/vsearch/GTDB/All_results_GTDB.tsv, plate3.1/taxonomy/dada2_tables/dada2_all_databases_merged.csv, plate3.1/vsearch/URE/Vsearch_URE_selected.tsv
+    output: plate3.1/vsearch/Final_uncollapsed_output.tsv, plate3.1/vsearch/Final_colapsed_output.tsv, plate3.1/taxonomy/vsearch_tables/Vsearch_output.tsv, plate3.1/taxonomy/final_merged_tables/vsearch_dada2_merged.tsv
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: dada2
+`summarise()` has grouped output by 'asv_num', 'identity'. You can override
+using the `.groups` argument.
+Not cleaning up /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate3/.snakemake/scripts/tmplqvko2n4.vsearch_parsing.R
+[Thu Jun 26 02:11:46 2025]
+Finished job 0.
+1 of 1 steps (100%) done

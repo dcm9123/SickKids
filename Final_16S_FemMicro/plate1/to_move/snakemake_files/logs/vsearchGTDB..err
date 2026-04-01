@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 01:09:58 2025]
+rule vsearchGTDB:
+    input: plate1.1/fasta_files/ASVs_seqs.fasta
+    output: plate1.1/vsearch/GTDB/Vsearch_GTDB_selected.tsv, plate1.1/vsearch/GTDB/Vsearch_GTDB_raw.tsv
+    log: plate1.1/vsearch/logs/GTDB_logfile.txt
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: vsearch
+vsearch v2.10.4_linux_x86_64, 251.8GB RAM, 56 cores
+https://github.com/torognes/vsearch
+
+Reading file /bulk/IMCshared_bulk/shared/dbs/T1D_db_updated/t1d_db2_withIDs_andDups_fullTaxo.fasta.gz 100%
+320683 nt in 220 seqs, min 983, max 1558, avg 1458
+Masking 100%
+Counting k-mers 100%
+Creating k-mer index 100%
+Searching 100%
+Matching query sequences: 142 of 172 (82.56%)
+
+real	0m3.212s
+user	0m2.367s
+sys	0m0.019s
+[Thu Jun 26 01:10:22 2025]
+Finished job 0.
+1 of 1 steps (100%) done

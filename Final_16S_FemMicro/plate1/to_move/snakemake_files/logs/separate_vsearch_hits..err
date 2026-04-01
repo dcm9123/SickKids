@@ -1,0 +1,20 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 01:18:10 2025]
+rule separate_vsearch_hits:
+    input: plate1.1/vsearch/GTDB/Vsearch_GTDB_selected.tsv, plate1.1/taxonomy/dada2_tables/dada2_all_databases_merged.csv
+    output: plate1.1/vsearch/GTDB/All_results_GTDB.tsv, plate1.1/vsearch/GTDB/no_hits_GTDB.fasta
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: dada2
+Not cleaning up /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate1/.snakemake/scripts/tmppc10dm16.vsearch.R
+[Thu Jun 26 01:18:24 2025]
+Finished job 0.
+1 of 1 steps (100%) done

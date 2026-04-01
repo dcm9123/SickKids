@@ -1,0 +1,10 @@
+vsearch v2.10.4_linux_x86_64, 251.8GB RAM, 56 cores
+vsearch --usearch_global plate2/fasta_files/ASVs_seqs.fasta --db /bulk/IMCshared_bulk/shared/dbs/T1D_db_updated/t1d_db2_withIDs_andDups_fullTaxo.fasta.gz --notrunclabels --userout plate2/vsearch/GTDB/Vsearch_GTDB_selected.tsv --userfields query+target+id --uc plate2/vsearch/GTDB/Vsearch_GTDB_raw.tsv --id 0.993 --iddef 0 --log plate2/vsearch/logs/GTDB_logfile.txt --threads 1 --uc_allhits --maxaccepts 30 --top_hits_only --strand both --gapopen *
+Started  Wed Jun  4 14:17:37 2025
+320683 nt in 220 seqs, min 983, max 1558, avg 1458
+
+Matching query sequences: 121 of 161 (75.16%)
+
+Finished Wed Jun  4 14:17:40 2025
+Elapsed time 00:03
+Max memory 16.3MB

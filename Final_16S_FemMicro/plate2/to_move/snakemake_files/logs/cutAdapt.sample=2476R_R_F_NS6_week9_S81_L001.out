@@ -1,0 +1,107 @@
+This is cutadapt 5.0 with Python 3.13.1
+Command line parameters: -m 50 -O 15 -e 0.15 -g CCTAYGGGDBGCWGCAG -G GACTACNVGGGTMTCTAATCC -a GGATTAGAKACCCBNGTAGTC -A CTGCWGCVHCCCRTAGG -o plate2/cutadapt/2476R_R_F_NS6_week9_S81_L001_R1_001.fastq.gz -p plate2/cutadapt/2476R_R_F_NS6_week9_S81_L001_R2_001.fastq.gz plate2/filtN/2476R_R_F_NS6_week9_S81_L001_R1_001.fastq.gz plate2/filtN/2476R_R_F_NS6_week9_S81_L001_R2_001.fastq.gz
+Processing paired-end reads on 1 core ...
+
+=== Summary ===
+
+Total read pairs processed:            122,102
+  Read 1 with adapter:                 121,925 (99.9%)
+  Read 2 with adapter:                 121,034 (99.1%)
+
+== Read fate breakdown ==
+Pairs that were too short:                   2 (0.0%)
+Pairs written (passing filters):       122,100 (100.0%)
+
+Total basepairs processed:    73,505,404 bp
+  Read 1:    36,752,702 bp
+  Read 2:    36,752,702 bp
+Total written (filtered):     68,879,644 bp (93.7%)
+  Read 1:    34,682,421 bp
+  Read 2:    34,197,223 bp
+
+=== First read: Adapter 1 ===
+
+Sequence: CCTAYGGGDBGCWGCAG; Type: regular 5'; Length: 17; Trimmed: 121904 times
+
+Minimum overlap: 15
+No. of allowed errors:
+1-5 bp: 0; 6-12 bp: 1; 13-17 bp: 2
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+14	2	0.0	2	0 1 1
+15	193	0.0	2	7 55 131
+16	3059	0.0	2	548 2227 284
+17	118363	0.0	2	117067 1255 41
+18	285	0.0	2	40 206 39
+19	2	0.0	2	0 1 1
+
+
+=== First read: Adapter 2 ===
+
+Sequence: GGATTAGAKACCCBNGTAGTC; Type: regular 3'; Length: 21; Trimmed: 21 times
+
+Minimum overlap: 15
+No. of allowed errors:
+1-5 bp: 0; 6-12 bp: 1; 13-19 bp: 2; 20 bp: 3
+
+Bases preceding removed adapters:
+  A: 52.4%
+  C: 0.0%
+  G: 47.6%
+  T: 0.0%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+24	18	0.0	3	14 4
+25	3	0.0	3	3
+
+
+=== Second read: Adapter 3 ===
+
+Sequence: GACTACNVGGGTMTCTAATCC; Type: regular 5'; Length: 21; Trimmed: 121030 times
+
+Minimum overlap: 15
+No. of allowed errors:
+1-5 bp: 0; 6-12 bp: 1; 13-19 bp: 2; 20 bp: 3
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+15	1	0.0	2	1
+17	1	0.0	2	0 0 1
+18	6	0.0	2	1 1 1 3
+19	72	0.0	2	2 6 47 17
+20	1652	0.0	3	141 1107 361 43
+21	118686	0.0	3	111487 6428 518 253
+22	272	0.0	3	20 202 45 5
+23	1	0.0	3	0 0 1
+58	1	0.0	3	0 1
+60	1	0.0	3	0 0 1
+61	3	0.0	3	0 1 0 2
+62	12	0.0	3	1 0 2 9
+63	38	0.0	3	2 13 13 10
+64	220	0.0	3	28 50 63 79
+65	64	0.0	3	4 20 18 22
+
+
+=== Second read: Adapter 4 ===
+
+Sequence: CTGCWGCVHCCCRTAGG; Type: regular 3'; Length: 17; Trimmed: 4 times
+
+Minimum overlap: 15
+No. of allowed errors:
+1-5 bp: 0; 6-12 bp: 1; 13-17 bp: 2
+
+Bases preceding removed adapters:
+  A: 0.0%
+  C: 50.0%
+  G: 25.0%
+  T: 25.0%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+20	1	0.0	2	0 0 1
+217	1	0.0	2	0 0 1
+297	2	0.0	2	0 0 2

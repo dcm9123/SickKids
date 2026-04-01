@@ -1,0 +1,26 @@
+This is cutadapt 5.0 with Python 3.13.1
+Command line parameters: -A XXX -q 20,20 -m 50 -o plate1.1/cutadapt_qc/T1D_NS6_defined_mouse_inocula_S82_L001_R1_001.fastq.gz -p plate1.1/cutadapt_qc/T1D_NS6_defined_mouse_inocula_S82_L001_R2_001.fastq.gz plate1.1/cutadapt/T1D_NS6_defined_mouse_inocula_S82_L001_R1_001.fastq.gz plate1.1/cutadapt/T1D_NS6_defined_mouse_inocula_S82_L001_R2_001.fastq.gz
+Processing paired-end reads on 1 core ...
+
+=== Summary ===
+
+Total read pairs processed:            105,116
+  Read 2 with adapter:                       0 (0.0%)
+
+== Read fate breakdown ==
+Pairs that were too short:                 425 (0.4%)
+Pairs written (passing filters):       104,691 (99.6%)
+
+Total basepairs processed:    59,295,206 bp
+  Read 1:    29,857,615 bp
+  Read 2:    29,437,591 bp
+Quality-trimmed:               2,496,751 bp (4.2%)
+  Read 1:       445,807 bp
+  Read 2:     2,050,944 bp
+Total written (filtered):     56,673,258 bp (95.6%)
+  Read 1:    29,297,620 bp
+  Read 2:    27,375,638 bp
+
+=== Second read: Adapter 1 ===
+
+Sequence: XXX; Type: regular 3'; Length: 3; Trimmed: 0 times

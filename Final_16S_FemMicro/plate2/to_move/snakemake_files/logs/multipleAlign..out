@@ -1,0 +1,51 @@
+[1] "ASV sequences written to FASTA file"
+Determining distance matrix based on shared 8-mers:
+================================================================================
+
+Time difference of 0.25 secs
+
+Clustering into groups by similarity:
+================================================================================
+
+Time difference of 0.03 secs
+
+Aligning Sequences:
+================================================================================
+
+Time difference of 1.55 secs
+
+Iteration 1 of 2:
+
+Determining distance matrix based on alignment:
+================================================================================
+
+Time difference of 0.02 secs
+
+Reclustering into groups by similarity:
+================================================================================
+
+Time difference of 0.04 secs
+
+Realigning Sequences:
+================================================================================
+
+Time difference of 0.67 secs
+
+Iteration 2 of 2:
+
+Determining distance matrix based on alignment:
+================================================================================
+
+Time difference of 0.08 secs
+
+Reclustering into groups by similarity:
+================================================================================
+
+Time difference of 0.04 secs
+
+Realigning Sequences:
+================================================================================
+
+Time difference of 0.15 secs
+
+[1] "Multiple sequence alignment written to FASTA file"

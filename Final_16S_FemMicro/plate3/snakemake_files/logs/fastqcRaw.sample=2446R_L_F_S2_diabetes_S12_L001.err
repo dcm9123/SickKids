@@ -1,0 +1,60 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Thu Jun 26 00:15:09 2025]
+rule fastqcRaw:
+    input: /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/GF_Mouse_Fecal_Pellet_FASTQ_Files/plate3/fastq/2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz, /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/GF_Mouse_Fecal_Pellet_FASTQ_Files/plate3/fastq/2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+    output: plate3.1/fastqc_raw/2446R_L_F_S2_diabetes_S12_L001_R1_001_fastqc.html, plate3.1/fastqc_raw/2446R_L_F_S2_diabetes_S12_L001_R2_001_fastqc.html
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=2446R_L_F_S2_diabetes_S12_L001
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=plate3.1/fastqc_raw/tmp/
+
+Activating conda environment: QC
+Started analysis of 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 5% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 10% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 15% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 20% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 25% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 30% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 35% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 40% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 45% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 50% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 55% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 60% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 65% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 70% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 75% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 80% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 85% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 90% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Approx 95% complete for 2446R_L_F_S2_diabetes_S12_L001_R1_001.fastq.gz
+Started analysis of 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 5% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 10% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 15% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 20% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 25% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 30% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 35% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 40% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 45% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 50% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 55% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 60% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 65% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 70% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 75% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 80% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 85% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 90% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+Approx 95% complete for 2446R_L_F_S2_diabetes_S12_L001_R2_001.fastq.gz
+[Thu Jun 26 00:15:34 2025]
+Finished job 0.
+1 of 1 steps (100%) done

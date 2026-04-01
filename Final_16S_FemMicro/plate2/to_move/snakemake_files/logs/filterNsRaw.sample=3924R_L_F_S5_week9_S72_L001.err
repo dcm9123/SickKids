@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Wed May 28 10:17:26 2025]
+rule filterNsRaw:
+    input: /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/GF_Mouse_Fecal_Pellet_FASTQ_Files/plate2/fastq/3924R_L_F_S5_week9_S72_L001_R1_001.fastq.gz, /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/GF_Mouse_Fecal_Pellet_FASTQ_Files/plate2/fastq/3924R_L_F_S5_week9_S72_L001_R2_001.fastq.gz
+    output: plate2/filtN/3924R_L_F_S5_week9_S72_L001_R1_001.fastq.gz, plate2/filtN/3924R_L_F_S5_week9_S72_L001_R2_001.fastq.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=3924R_L_F_S5_week9_S72_L001
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/home/daniel.castanedamogo/tmp
+
+Activating conda environment: dada2
+Not cleaning up /bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/FemMicro16S_Daniel/blackbox_testing/FemMicro16S_plate2/.snakemake/scripts/tmp7secvknu.filtN.R
+[Wed May 28 10:18:22 2025]
+Finished job 0.
+1 of 1 steps (100%) done

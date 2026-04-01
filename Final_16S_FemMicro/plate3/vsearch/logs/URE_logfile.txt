@@ -1,0 +1,10 @@
+vsearch v2.10.4_linux_x86_64, 251.8GB RAM, 56 cores
+vsearch --usearch_global plate3.1/vsearch/GTDB/no_hits_GTDB.fasta --db /bulk/IMCshared_bulk/shared/dbs/GTDB_16S_r220/GTDB_bac120_arc53_ssu_r220_fullTaxo.fa.gz --notrunclabels --userout plate3.1/vsearch/URE/Vsearch_URE_selected.tsv --userfields query+target+id --uc plate3.1/vsearch/URE/Vsearch_URE_raw.tsv --id 0.993 --iddef 0 --log plate3.1/vsearch/logs/URE_logfile.txt --threads 1 --uc_allhits --maxaccepts 30 --top_hits_only --strand both --gapopen *
+Started  Thu Jun 26 02:10:03 2025
+75972019 nt in 61774 seqs, min 200, max 3539, avg 1230
+
+Matching query sequences: 36 of 80 (45.00%)
+
+Finished Thu Jun 26 02:10:29 2025
+Elapsed time 00:26
+Max memory 283.9MB
