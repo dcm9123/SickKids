@@ -624,4 +624,10 @@ I ran the picrust2 pathway prediction, and it seems that the ASVs pointing at th
 
 ![Alt text](/Users/danielcm/Desktop/ASV_taxa_pathway_test.png)
 
+The next part was to run `merge_functional_predictions.py` to merge the pathway predictions across the filtered resullts, so I have only one file with all of the consortia and all the pathways.
+
+The next step is to run `maaslin2_t1d_db2.R` to generate the enrichment prediction across groups, I had to modify the metadata file so the sample names match the ones Laura coded for. I also had to modify the output file name, and the input directory where the predicted pathway merged file is located.
+
+### April 10th, 2026 (back from vacation)
+
 
