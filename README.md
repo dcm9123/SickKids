@@ -649,4 +649,13 @@ In PICRUSt2.6 I will have the newest results with the fixed IDs. This is what I 
 ```
 for i in {ns1,ns6,s2,s5}; do place_seqs.py -s ${i}_input/*.fasta -r ${i}_local_files -o ${i}_output/${i}_placed_seqs.tre -p 32 --intermediate ${i}_output/${i}_intermediate_asvs; done;
 ```
-
+7. I ran the `hsp.py` step of PICRUSt2 for each consortium with the nearest neighbor approach:
+```
+for i in {ns1,ns6,s2,s5}; do hsp.py -t ${i}_output/${i}_placed_seqs.tre --observed_trait_table trait_tables/16S.txt --calculate_NSTI -m nearest_neighbor -p 32 --seed 23 --verbose -o ${i}_output/${i}_16S_nsti_predicted.tsv; done;
+```
+8. I ran the `hsp.py` step of PICRUSt2 for each consortium with the nearest neighbor approach for the ECs:
+```
+for i in {ns1,ns6,s2,s5}; do hsp.py -t ${i}_output/${i}_placed_seqs.tre --observed_trait_table trait_tables/EC_for_picrust2_renamed.tsv --calculate_NSTI -m nearest_neighbor -p 32 --seed 23 --verbose -o ${i}_output/${i}_EC_nsti_predicted.tsv; done;
+```
+9. I ran the `metagenome_pipeline.py` step of PICRUSt2 for each consortium:
+```
