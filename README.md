@@ -636,6 +636,9 @@ In parallel, I will be running the Parkinson's Data for my talk next friday (24t
 
 I have finished up the script `renaming_sample_IDs.py` that takes the old sample names and replaces them with the new ones. I will be running this script across all consortia so it gets the new SRA names. This is now in the repo. The files I have generated with the new names are in `/Phyloseq2/Filtered_to_use/` and they have the SRA ID in the name of the file. These are good ASV count tables and are ready to be analyzed by PICRUSt2 after I create new fasta files for each ID.
 
+### April 14th, 2026
 
+In PICRUSt2.6 I will have the newest results with the fixed IDs. This is what I have done so far:
 
-
+1. Run `Phyloseq_2.2.R` to generate new .csv files with the filter criteria we decided on. Then I manually transformed the output file of that script (i.e. `NS1_filtered_ASVs_count600_len400_prev20.csv`) to only keep the asv_id column as well as the sample names (one per column). This file has the same nomenclature but ends with `_f.csv` to indicate it is the filtered version. I did this for all the consortia, and I have them in the `Phyloseq2/Filtered_to_use/` folder. 
+2. 
