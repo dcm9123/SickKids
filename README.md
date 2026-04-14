@@ -659,3 +659,5 @@ for i in {ns1,ns6,s2,s5}; do hsp.py -t ${i}_output/${i}_placed_seqs.tre --observ
 ```
 9. I ran the `metagenome_pipeline.py` step of PICRUSt2 for each consortium:
 ```
+for i in {ns1,s2,ns6,s5}; do metagenome_pipeline.py -i ${i}_input/${i}_filtered_asvs_count600_len400_prev20_f_sra.tsv -m ${i}_output/${i}_16S_nsti_predicted.tsv -f ${i}_output/${i}_EC_nsti_predicted.tsv --strat_out --wide_table -o ${i}_output/${i}_EC_metagenome_out; done;
+```
