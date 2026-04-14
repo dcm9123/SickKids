@@ -644,5 +644,7 @@ In PICRUSt2.6 I will have the newest results with the fixed IDs. This is what I 
 2. I ran the `renaming_sample_IDs.py` script to change the sample names in the filtered files to the SRA IDs. I have these new files in the same folder, but they end with `_f_sra.csv` to indicate they are filtered and have the SRA IDs.
 3. I generated the new fasta files for each consortium with the new ASV IDs, and I have them in the same folder, but they end with `_f_sra.fasta` to indicate they are filtered and have the SRA IDs. To make sure that the names matched between these sample IDs and the metadata, I simply took the IDs of my file and the metadata and put them into Venny, making sure the intersection of both was 100%
 4. I copied these files into ARC in the `PICRUSt2.6` folder, and using a bash command, I transformed the `_f_sra.csv` files into `.tsv` by doing: `tr ',' '\t' < NS1_filtered_ASVs_count600_len400_prev20_f_sra.csv > NS1_filtered_ASVs_count600_len400_prev20_f_sra.tsv` and I did this for all the consortia. If I don't, then PICRUSt2 will not recognize the .csv files as an ASV input table.
-5. 
+5. `conda activate picrust2_mod` to activate the modified conda environment with the new hsp method.
+6. I ran the `place_seqs` step of PICRUSt2 for each consortium:
+
 
