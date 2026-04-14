@@ -646,5 +646,7 @@ In PICRUSt2.6 I will have the newest results with the fixed IDs. This is what I 
 4. I copied these files into ARC in the `PICRUSt2.6` folder, and using a bash command, I transformed the `_f_sra.csv` files into `.tsv` by doing: `tr ',' '\t' < NS1_filtered_ASVs_count600_len400_prev20_f_sra.csv > NS1_filtered_ASVs_count600_len400_prev20_f_sra.tsv` and I did this for all the consortia. If I don't, then PICRUSt2 will not recognize the .csv files as an ASV input table.
 5. `conda activate picrust2_mod` to activate the modified conda environment with the new hsp method.
 6. I ran the `place_seqs` step of PICRUSt2 for each consortium:
-
+```
+for i in {ns1,ns6,s2,s5}; do place_seqs.py -s ${i}_input/*.fasta -r ${i}_local_files -o ${i}_output/${i}_placed_seqs.tre -p 32 --intermediate ${i}_output/${i}_intermediate_asvs; done;
+```
 
