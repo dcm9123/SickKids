@@ -56,25 +56,25 @@ picrust_to_maaslin2<-function(path_picrust2, file_to_use, variable, normalizatio
 ### SAME SUBCOMMUNITY AND DIFFERENT TIMEPOINTS ANALYSIS### - DONE
 cons1 = c("NS1","NS6","S2","S5")
 cons2 = c("NS1","NS6","S2","S5")
-picrust2_path_current = "/Users/danielcm/Desktop/Sickkids/PICRUSt2.3/"
+picrust2_path_current = "/Users/danielcm/Desktop/Sickkids/PICRUSt2.5/"
 
 for (i in cons1[1:4]) # DONE
 {
   for (k in c("EC","KO"))
   {
     feature = k
-    subs = paste0(i,"_w5w6_vs_",i,"_w9w10")
+    subs = paste0(i,"_w5_vs_",i,"_w9w10")
     picrust_to_maaslin2(path_picrust2 = picrust2_path_current, # nolint
                         variable = "Week_and_consortia",
                         normalization_method = "TSS",
                         transformation = "LOG",
                         file_to_use = paste0(feature,"_merged_metagenome.tsv"),
-                        metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                        metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                         feature_to_use = feature,
                         random_input = "Sex",
                         reference_val = paste0("Week_and_consortia,",i,"_w9w10"),
-                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
-                        subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(i,"_w9w10"))
+                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.5/", # nolint
+                        subset = TRUE, subset1 = paste0(i,"_w5"), subset2 = paste0(i,"_w9w10"))
     beepr::beep(3)
     print(paste0("Finished ", subs, " ", feature))
   }
@@ -94,18 +94,18 @@ for (i in cons1[1:4])
       for (k in func[1:2])
       {
         feature = k
-        subs = paste0(i,"_w5w6_vs_",j,"_w5w6")
+        subs = paste0(i,"_w5_vs_",j,"_w5")
         picrust_to_maaslin2(path_picrust2 = picrust2_path_current, # nolint
                             variable = "Week_and_consortia",
                             normalization_method = "TSS",
                             transformation = "LOG",
                             file_to_use = paste0(feature,"_merged_metagenome.tsv"),
-                            metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                            metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                             feature_to_use = feature,
                             random_input = "Sex",
-                            reference_val = paste0("Week_and_consortia,",j,"_w5w6"),
-                            maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/",# nolint
-                            subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(j,"_w5w6"))
+                            reference_val = paste0("Week_and_consortia,",j,"_w5"),
+                            maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.5/",# nolint
+                            subset = TRUE, subset1 = paste0(i,"_w5"), subset2 = paste0(j,"_w5"))
         beepr::beep(3)
         print(paste0("Finished ", subs, " ", feature))
       }
@@ -135,11 +135,11 @@ for (i in cons1[1:4])
                             normalization_method = "TSS",
                             transformation = "LOG",
                             file_to_use = paste0(feature,"_merged_metagenome.tsv"),
-                            metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                            metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                             feature_to_use = feature,
                             random_input = "Sex",
                             reference_val = paste0("Week_and_consortia,",j,"_w9w10"),
-                            maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/",# nolint
+                            maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.5/",# nolint
                             subset = TRUE, subset1 = paste0(i,"_w9w10"), subset2 = paste0(j,"_w9w10"))
         beepr::beep(3)
         print(paste0("Finished ", subs, " ", feature))
@@ -158,11 +158,11 @@ for (subs in c("NS1", "NS6", "S2", "S5"))
                         normalization_method = "TSS",
                         transformation = "LOG",
                         file_to_use = paste0(feature, "_merged_metagenome.tsv"),
-                        metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                        metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                         feature_to_use = feature,
                         random_input = NULL,
                         reference_val = paste0("Sex_and_consortia,Male", "_", subs),
-                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
+                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.5/", # nolint
                         subset = TRUE, subset1 = paste0("Male", "_", subs), subset2 = paste0("Female", "_", subs))
     beepr::beep(3)
     print(paste0("Finished ", subs, " ", feature))
@@ -179,12 +179,12 @@ for (subs in c("NS1", "NS6", "S2", "S5"))
                         normalization_method = "TSS",
                         transformation = "LOG",
                         file_to_use = "Pathway_merged_metagenome.tsv",
-                        metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                        metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                         feature_to_use = "pathway", # Change to pathway when doing metacyc
                         random_input = "Sex",
                         reference_val = paste0("Week_and_consortia,",i,"_w9w10"),
-                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
-                        subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(i,"_w9w10"))
+                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.5/", # nolint
+                        subset = TRUE, subset1 = paste0(i,"_w5"), subset2 = paste0(i,"_w9w10"))
     beepr::beep(3)
     print(paste0("Finished ", i, " ", feature))
     }
@@ -200,18 +200,18 @@ for (i in cons1[1:4])
     }
     else{
       feature = k
-      subs = paste0(i,"_w5w6_vs_",j,"_w5")
+      subs = paste0(i,"_w5_vs_",j,"_w5")
       picrust_to_maaslin2(path_picrust2 = picrust2_path_current, # nolint
                           variable = "Week_and_consortia",
                           normalization_method = "TSS",
                           transformation = "LOG",
                           file_to_use = "Pathway_merged_metagenome.tsv",
-                          metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                          metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                           feature_to_use = "pathway", # Change to pathway when doing metacyc
                           random_input = "Sex",
-                          reference_val = paste0("Week_and_consortia,",j,"_w5w6"),
-                          maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
-                          subset = TRUE, subset1 = paste0(i,"_w5w6"), subset2 = paste0(j,"_w5w6"))
+                          reference_val = paste0("Week_and_consortia,",j,"_w5"),
+                          maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.5/", # nolint
+                          subset = TRUE, subset1 = paste0(i,"_w5"), subset2 = paste0(j,"_w5"))
       beepr::beep(3)
       print(paste0("Finished ", i," vs ",j, " ", feature))
       }
@@ -235,11 +235,11 @@ for (i in cons1[1:4])
                           normalization_method = "TSS",
                           transformation = "LOG",
                           file_to_use = "Pathway_merged_metagenome.tsv",
-                          metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                          metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                           feature_to_use = "pathway", # Change to pathway when doing metacyc
                           random_input = "Sex",
                           reference_val = paste0("Week_and_consortia,",j,"_w9w10"),
-                          maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
+                          maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.5/", # nolint
                           subset = TRUE, subset1 = paste0(i,"_w9w10"), subset2 = paste0(j,"_w9w10"))
       beepr::beep(3)
       print(paste0("Finished ", i," vs ",j," ", feature))
@@ -256,11 +256,11 @@ for (i in cons1[1:4]){
                         normalization_method = "TSS",
                         transformation = "LOG",
                         file_to_use = "Pathway_merged_metagenome.tsv",
-                        metadata_file = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/maaslin2_july2025/metadata_ps_without_w7.csv", # nolint
+                        metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
                         feature_to_use = feature,
                         random_input = NULL,
                         reference_val = paste0("Sex_and_consortia,Male", "_", subs),
-                        maaslin_path = "/Users/danielcm/Desktop/Sickkids/Maaslin2.4/", # nolint
+                        maaslin_path = "/Users/danielcm/Desktop/SickKids/Maaslin2.5/", # nolint
                         subset = TRUE, subset1 = paste0("Male", "_", subs), subset2 = paste0("Female", "_", subs))
     beepr::beep(3)
     print(paste0("Finished ", subs, " ", feature))

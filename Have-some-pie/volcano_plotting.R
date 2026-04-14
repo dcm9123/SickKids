@@ -227,8 +227,9 @@ donut_chart = function(df_volcano, output_path, category_left, category_right){
 }
 
 global = function(){
-    path = "/Users/danielcm/Desktop/SickKids/Maaslin2.4/"
-    group = c("consortium","w5","w9w10","sex")
+    path = "/Users/danielcm/Desktop/SickKids/Maaslin2.5/"
+    #group = c("consortium","w5","w9w10","sex")
+    group = c("w9w10")
     for(g in group){
     files_to_process = list.files(path = paste0(path,g), pattern = "all_results.tsv", full.names = TRUE, recursive = TRUE)
         for(f in files_to_process){
@@ -268,3 +269,9 @@ global = function(){
 
 global()
 
+
+
+
+#Hello my name is Daniel and I am currently working on the volcano plot, vertical barplot,
+# BUT I dontCheck()
+#know shit

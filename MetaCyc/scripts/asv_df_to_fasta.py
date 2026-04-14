@@ -10,6 +10,7 @@ import pandas as pd
 import re
 from Bio import SeqIO
 import glob as glob
+import os
 
 # %%
 path = "/Users/danielcm/Desktop/Sickkids/Phyloseq2/Filtered_to_use/"

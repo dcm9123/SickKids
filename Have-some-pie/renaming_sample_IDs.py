@@ -13,7 +13,7 @@ path = "/Users/danielcm/Desktop/SickKids/"
 os.chdir(path)
 
 comm = "S5" #Change this for the community you want to work with
-metadata_file_granato = pd.read_csv("Danska_diabetes_metadata364_20260409.csv", sep=',', header=0)
+metadata_file_granato = pd.read_csv("Metadata/Danska_diabetes_metadata364_20260409.csv", sep=',', header=0)
 file_to_read = f"Phyloseq2/Filtered_to_use/{comm}_filtered_ASVs_count600_len400_prev20_f.csv" #This is the formatted ASV table
 file_to_read2 = f"Phyloseq2/{comm}_filtered_ASVs_count600_len400_prev20.csv" #In here I use the seq and ID
 file_to_write = f"Phyloseq2/Filtered_to_use/{comm}_filtered_ASVs_count600_len400_prev20_f_SRA.csv" #Output file
@@ -27,11 +27,11 @@ df_in2 = pd.read_csv(file_to_read2, sep=',', header=0)
 for row in metadata_file_granato.itertuples():
     my_dict[row.STATA_FemMicro364] = row.SRA_sample_name
 
-#for row in df_in2.itertuples(): Unlock for NS1, NS6
-#    asv_dict[row.asv_id] = row.asv_seq
+for row in df_in2.itertuples(): #Unlock for NS1, NS6
+    asv_dict[row.asv_id] = row.asv_seq
 
 df_in.rename(columns=my_dict, inplace=True)
-#df_in["asv_id"] = df_in["asv_id"].map(asv_dict) Unlock for NS1, NS6
+df_in["asv_id"] = df_in["asv_id"].map(asv_dict) #Unlock for NS1, NS6
 df_in.to_csv(file_to_write, sep=',', index=False)
 
 

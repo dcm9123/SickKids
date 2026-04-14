@@ -16,7 +16,7 @@ maaslin2_path = paste0(master_path, "Maaslin2.4/")
 assigning_categories_to_enriched_pairwise_comparisons = function(cons1, cons2){
     setwd(master_path)
     df_categories = read.csv("MetaCyc/Master_Files/Master_Metacyc_pathway_file_with_categories.tsv", sep = "\t")
-    df_enriched = read.csv(paste0(maaslin2_path,"w9w10/maaslin2_Week_and_consortia_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_consortia,S2_w9w10/all_results.tsv"), sep = "\t")
+    df_enriched = read.csv(paste0(maaslin2_path,"w5/maaslin2_Week_and_consortia_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_consortia,S2_w5w6/all_results.tsv"), sep = "\t")
 
     if(!("NegLog10_qval" %in% colnames(df_enriched))){
     print("NegLog10_qval column is not there, adding it now...")
@@ -48,7 +48,7 @@ assigning_categories_to_enriched_pairwise_comparisons = function(cons1, cons2){
     df_enriched_pwys = df_enriched_pwys[!is.na(df_enriched_pwys$Level.1),]
     print(paste0("Number of enriched pathways with assigned categories: ", nrow(df_enriched_pwys)))
 
-    write.csv(df_enriched_pwys, paste0(maaslin2_path,"w9w10/maaslin2_Week_and_consortia_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_consortia,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"), row.names = FALSE)
+    write.csv(df_enriched_pwys, paste0(maaslin2_path,"w5/maaslin2_Week_and_consortia_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_consortia,S2_w5w6/NS1_w5w6_vs_S2_w5w6_enriched_pathways_with_categories.csv"), row.names = FALSE)
     #View(df_enriched_pwys)
 
     return(df_enriched_pwys)
@@ -58,7 +58,7 @@ plotting_data = function(df){
 
 }
 
-df_enriched_data = assigning_categories_to_enriched_pairwise_comparisons("NS1 w9w10", "S2 w9w10")
+df_enriched_data = assigning_categories_to_enriched_pairwise_comparisons("NS1 w5w6", "S2 w5w6")
 
 unique_level1 = c(unique(df_enriched_data$Level.1), unique(df_enriched_data$Level.1.1), unique(df_enriched_data$Level.1.2), unique(df_enriched_data$Level.1.3))
 unique_level1 = unique(unique_level1[!is.na(unique_level1)])
@@ -100,7 +100,7 @@ names(fold_values2)
 
 fold_tbl <- enframe(fold_values2, name = "Category", value = "coef") %>%
   unnest(coef) %>%
-  mutate(group = ifelse(coef > 1, "NS1 w9w10", "S2 w9w10"))
+  mutate(group = ifelse(coef > 1, "NS1 w5w6", "S2 w5w6"))
 
 
   ggplot(fold_tbl, aes(x = coef, y = Category, fill = group)) +
@@ -120,8 +120,8 @@ fold_tbl <- enframe(fold_values2, name = "Category", value = "coef") %>%
 
   scale_fill_manual(
     values = c(
-      "NS1 w9w10" = "darkorange1",
-      "S2 w9w10" = "darkturquoise"
+      "NS1 w5w6" = "darkorange1",
+      "S2 w5w6" = "darkturquoise"
     )
   ) +
   theme_bw() +
@@ -137,6 +137,6 @@ fold_tbl <- enframe(fold_values2, name = "Category", value = "coef") %>%
 
     scale_x_continuous(limits = c(-7.5, 7.5))
     
-    ggsave("/Users/danielcm/Desktop/SickKids/Maaslin2.4/w9w10/maaslin2_Week_and_consortia_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_consortia,S2_w9w10/NS1_w9w10_vs_S2_w9w10_all_enriched.png", width = 10, height = 6, dpi = 600)
+    ggsave("/Users/danielcm/Desktop/SickKids/Maaslin2.4/w5/maaslin2_Week_and_consortia_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_consortia,S2_w5w6/NS1_w5w6_vs_S2_w5w6_all_enriched.png", width = 10, height = 6, dpi = 600)
 
 # Summarize explicitly (avoids stat_summary quirks)

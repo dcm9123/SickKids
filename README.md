@@ -661,3 +661,13 @@ for i in {ns1,ns6,s2,s5}; do hsp.py -t ${i}_output/${i}_placed_seqs.tre --observ
 ```
 for i in {ns1,s2,ns6,s5}; do metagenome_pipeline.py -i ${i}_input/${i}_filtered_asvs_count600_len400_prev20_f_sra.tsv -m ${i}_output/${i}_16S_nsti_predicted.tsv -f ${i}_output/${i}_EC_nsti_predicted.tsv --strat_out --wide_table -o ${i}_output/${i}_EC_metagenome_out; done;
 ```
+10. I ran the `pathway_pipeline.py` step of PICRUSt2 for each consortium:
+```
+for i in {ns1,ns6,s2,s5}; do pathway_pipeline.py -i ${i}_output/${i}_EC_metagenome_out/pred_metagenome_strat.tsv.gz -o ${i}_output/${i}_pathway_inference/ --intermediate ${i}_output/${i}_pathway_intermediate_files/ -p 32 --coverage --per_sequence_contrib --per_sequence_abun ${i}_output/${i}_EC_metagenome_out/seqtab_norm.tsv.gz --per_sequence_function ${i}_output/${i}_EC_nsti_predicted.tsv --wide_table; done;
+```
+
+11. I checked that the PICRUSt2 sample IDs from its output were matching the metadata from Alessandra. And they do, for the most part. NS1 is fine, S2 is fine, but NS6 and S5 have a duplicate, so I had to add a '.1' to one of them. In S5, the metadata has 2 extra samples that we agreed to remove, so they are not in the picrust2 output.
+
+12. I ran the `merge_functional_predictions.py` script to merge the pathway predictions across the consortia, so I have one file with all the consortia and all the pathways. This is important for running maaslin2 later on. I only ran it for EC and Pathways (for now...)
+
+13. 

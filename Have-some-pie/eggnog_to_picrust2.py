@@ -107,7 +107,7 @@ def formatting_picrust2_annotations(path):
                 df["EC"] = df["EC"].astype(str).str.replace(r'(\d+(?:\.\d+)+)', r'EC:\1', regex=True)
                 df["KEGG_ko"] = df["KEGG_ko"].replace("-","NA") #Replaces entire cell containing '-'
                 df["KEGG_ko"] = df["KEGG_ko"].str.replace("ko:","") #Replaces instances of "ko:" in a cell, that's why we used str.replace
-                df_subset = df.iloc[:,[0,11,12]].copy() #This calls only the ID of the sample, the ECs, and the KOs, and makes sure I work on a copy and do not modify the original df
+                df_subset = df[["#query", "EC", "KEGG_ko"]].copy() #This calls only the ID of the sample, the ECs, and the KOs, and makes sure I work on a copy and do not modify the original df
                 for column in df_subset.columns[1:3]:
                     os.makedirs(path+"/"+consortium+"/"+column.replace("KEGG_",""), exist_ok=True)
                     df_subset[column] = df_subset[column].astype(str) #Makes sure that the EC numbers are treated as a string

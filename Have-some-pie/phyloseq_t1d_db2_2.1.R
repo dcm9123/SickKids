@@ -33,13 +33,12 @@ loading_packages = function(){
 path = "/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/t1d_db_fixed_discussed/FemMicro_Daniel/"
 setwd(path)                                                                     #Setting the path of where Im working
 
-
 ###MODIFYING RDS OBJECTS BY ADDING WORD 'PLATE' TO EACH SAMPLE\
 #Purpose: Writes a modified RDS file by adding the word 'Plate' to each sample, no other modifications are made
 #Input: None
 #Returns: Nothing
 reshaping_rds_objects = function(){
-  obj1 = readRDS("plate1.1/seqtab_nochimeras_p1.rds")
+  obj1 = readRDS("plate1/seqtab_nochimeras_p1.rds")
   rownames(obj1) = paste0("Plate1_",rownames(obj1))
   saveRDS(obj1,"plate1/seqtab_nochimeras_m_p1.rds")
   
@@ -66,7 +65,7 @@ reshaping_rds_objects = function(){
 #Input: None
 #Returns: Nothing
 retrieving_nonchimera_obj = function(){
-  seqtab_nochim_p1 <<- readRDS(file = "plate1.1/seqtab_nochimeras_m_p1.rds")  #Reading the non-chimeric sequences from FemMicro using the updated db.
+  seqtab_nochim_p1 <<- readRDS(file = "plate1/seqtab_nochimeras_m_p1.rds")  #Reading the non-chimeric sequences from FemMicro using the updated db.
   seqtab_nochim_p2 <<- readRDS(file = "plate2.1/seqtab_nochimeras_m_p2.rds")
   seqtab_nochim_p3 <<- readRDS(file = "plate3.1/seqtab_nochimeras_m_p3.rds")
   seqtab_nochim_p4 <<- readRDS(file = "plate4.1/seqtab_nochimeras_m_p4.rds")
@@ -459,7 +458,7 @@ samdf4 = initializing(seqtab_nochim_p4)
 samdf5 = initializing(seqtab_nochim_p5)
 
 #Creating ps objects, leaving asv_sequences = TRUE to get ASV sequences as IDs and not taxa names
-ps1 = taxonomy_and_ps("plate1.1/final_merged_tables/p1_vsearch_dada2_merged.tsv",seqtab_nochim_p1,samdf1,"p1_",asv_sequences = TRUE)
+ps1 = taxonomy_and_ps("plate1/p1_vsearch_dada2_merged_jl.txt",seqtab_nochim_p1,samdf1,"p1_",asv_sequences = TRUE)
 ps2 = taxonomy_and_ps("plate2.1/final_merged_tables/p2_vsearch_dada2_merged.tsv",seqtab_nochim_p2,samdf2,"p2_",asv_sequences = TRUE)
 ps3 = taxonomy_and_ps("plate3.1/final_merged_tables/p3_vsearch_dada2_merged.tsv",seqtab_nochim_p3,samdf3,"p3_",asv_sequences = TRUE)
 ps4 = taxonomy_and_ps("plate4.1/final_merged_tables/p4_vsearch_dada2_merged.tsv",seqtab_nochim_p4,samdf4,"p4_",asv_sequences = TRUE)
@@ -483,6 +482,15 @@ counting_asvs("plate5.1/final_merged_tables/p5_vsearch_dada2_merged.tsv")
 
 #Printing raw ps object generated
 printing_ps(ps1) #172 ASVs and 38 samples
+#View(otu_table(ps1))
+print(colSums(otu_table(ps1)))
+for(val in rowSums(otu_table(ps1))){
+
+  cat(paste0(val,"\n"))
+}
+
+dim(otu_table(ps1))
+
 printing_ps(ps2) #161 ASVs and 90 samples
 printing_ps(ps3) #187 ASVs and 90 samples
 printing_ps(ps4) #279 ASVs and 90 samples

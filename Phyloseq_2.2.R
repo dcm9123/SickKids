@@ -375,7 +375,6 @@ applying_best_filters_across_all = function(community,merged_file_tunning){
         for(col in colnames(subset_file)){
             column_to_check = col
             if(grepl("NS1", column_to_check) | grepl("NS6", column_to_check)){
-                print(column_to_check)
                 subset_file = subset_file[, !colnames(subset_file) %in% column_to_check]
             }
         }
