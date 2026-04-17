@@ -671,3 +671,8 @@ for i in {ns1,ns6,s2,s5}; do pathway_pipeline.py -i ${i}_output/${i}_EC_metageno
 12. I ran the `merge_functional_predictions.py` script to merge the pathway predictions across the consortia, so I have one file with all the consortia and all the pathways. This is important for running maaslin2 later on. I only ran it for EC and Pathways (for now...)
 
 13. I made a new script called `Maaslin2 - simplified.r` that is a simplified version of the original `maaslin2_t1d_db2.R` script, where everything runs smoothly and less modification of the initial parameters are needed.
+
+
+### April 17th, 2026
+
+I ran the latest Maaslin2 results, and now I will be focusing on the figure generation from these new folders.
