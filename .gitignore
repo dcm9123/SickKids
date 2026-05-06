@@ -1,1 +1,18 @@
 PICRUSt2.3/
+
+.DS_Store
+__pycache__/
+*.pyc
+~$*
+
+# Generated analysis outputs
+Maaslin2.6/community/
+Maaslin2.6/sex/
+Maaslin2.6/w5/
+Maaslin2.6/w9w10/
+Old_PICRUSt2/PICRUSt2.5/
+PICRUSt2.6/*_output/*_EC_metagenome_out/
+PICRUSt2.6/*_output/*_KO_metagenome_out/
+PICRUSt2.6/*_output/*_pathway_inference/
+PICRUSt2.6/*_output/*_pathway_intermediate_files/
+PICRUSt2.6/*_output/*_intermediate_asvs/

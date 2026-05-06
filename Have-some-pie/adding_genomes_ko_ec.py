@@ -6,31 +6,31 @@
 # 16S sequence names (in my case I have multiple 16S from the same strains from Sanger or barrnap).
 
 #Input: The user needs to provide a path where the reference 16S database is found (which should be a .fasta file called
-# reference_16S.fasta")
+# 16S_ref_all_communities.fasta")
 
+#%%
 import os
-
 import numpy as np
 import pandas as pd
 from Bio import SeqIO
 from collections import Counter
-
+#%%
 def setting_up():
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_columns', None)
     pd.set_option('display.width', 0)  # Let pandas auto-detect width
     return()
-
+#%%
 def listing_genomes(path):
     reference_16_list = []
-    file = os.path.join(path,"reference_16S.fasta")
+    file = os.path.join(path,"16S_ref_all_communities.fasta")
     with open(file,'r') as handle:
         for record in SeqIO.parse(handle, "fasta"):
             reference_16_list.append(record.id)
     #print(reference_16_list)
     return(reference_16_list)
 
-
+#%%
 def getting_files(path):
     file_ko = pd.read_csv(os.path.join(path,'Final_KO_file.tsv'), sep='\t', header=0, encoding='utf-8')
     file_ec = pd.read_csv(os.path.join(path,'Final_EC_file.tsv'), sep='\t')
@@ -39,7 +39,7 @@ def getting_files(path):
     #print(file_ko)
     genome_list = file_ko_transposed.iloc[0].tolist()
     return(genome_list,file_ko,file_ec)
-
+#%%
 def adding_names(reference_16S_list,genome_list, file_ko, file_ec):
     #reference_16S_list is the list of headers I have for my 16S database (209)
     #genome_list is the number of genome IDs found in the final KO fila (116)
@@ -76,19 +76,24 @@ def adding_names(reference_16S_list,genome_list, file_ko, file_ec):
             ko_id = genome_dict[header] #This is the actual name that will match the annotated genome file from eggnog
             if ko_id in ko_indexed.index:
                 row = ko_indexed.loc[ko_id].copy() #Copying the row that belongs to the ko_id
+            else:
+                print(f"MISSING! {ko_id} is not found in the {name} file.")
+                #row = pd.Series([0]*len(ko_indexed.columns), index=ko_indexed.columns) # Create a row of zeros if missing
             row.name = header #This names the assembly just like the original database
             output_rows.append(row) #appending into the list
         final_df = pd.DataFrame(output_rows) #Conveerting the list into a data frame
         final_df.index.name = "assembly" #Making sure the header says 'assembly'
         final_df = final_df.replace(r"^\s*$", 0, regex=True) #Replacing empty cells with 0
         final_df = final_df.fillna(0) #Replacing NAs with zeroes.
-        final_df.to_csv(f"/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/picrust2_june232025/{name}_for_picrust2.tsv",sep='\t', index=True)
-
+        final_df.to_csv(f"/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/picrust2_june232025/{name}_for_picrust2_may.tsv",sep='\t', index=True)
+#%%
 def main():
     setting_up()
-    reference_16S_list = listing_genomes('/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/picrust2_june232025/')
-    genome_list,file_ko,file_ec = getting_files('/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/picrust2_june232025/eggnogs_annotations/FINAL/')
+    reference_16S_list = listing_genomes('/Users/danielcm/Desktop/SickKids/PICRUSt2.6/')
+    genome_list,file_ko,file_ec = getting_files('/Users/danielcm/Desktop/Sycuro/Projects/Diabetes/picrust2_june232025/eggnogs_annotations/Final_merged/')
     adding_names(reference_16S_list,genome_list, file_ko, file_ec)
 
 if __name__ == '__main__':
     main()
+
+# %%

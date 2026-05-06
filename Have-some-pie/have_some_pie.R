@@ -82,7 +82,7 @@ fetching_files = function(){
     #timepoint = readline(prompt = "Enter the timepoint e.g., w5w6: ")
 
     
-    pathway_file = "/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/Pathway_merged_metagenome.tsv"
+    pathway_file = "/Users/danielcm/Desktop/SickKids6PICRUSt2.6/pathway_merged_metagenome.tsv"
     taxa_file = "/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ps_ns1_final.csv"
     maaslin_filt_file = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/same_community/Pathway/maaslin2_Week_and_consortia_pathway_NS1_w5_vs_NS1_w9w10_ref_Week_and_consortia,NS1_w9w10/all_results.tsv"
     metadata_file = "/Users/danielcm/Desktop/diammatics/T1D/metadata_ps.csv"
@@ -123,12 +123,12 @@ correcting_names = function(maaslin_pathways, significant, filtering_category, f
     if (significant == "yes") {
         if(filtering_value == ref_value){
             maaslin_pathways = maaslin_pathways[maaslin_pathways$qval < 0.05 & maaslin_pathways$coef < -1, ] # If the filtering value is the reference, we look for negative coefficients
-            if(length(maaslin_pathways) == 0){
+            if(nrow(maaslin_pathways) == 0){
                 return(NULL)
             }
         } else {
             maaslin_pathways = maaslin_pathways[maaslin_pathways$qval < 0.05 & maaslin_pathways$coef > 1, ] # If the filtering value is not the reference, we look for positive coefficients
-            if(length(maaslin_pathways) == 0){
+            if(nrow(maaslin_pathways) == 0){
                 return(NULL)
             }
         }
@@ -281,7 +281,7 @@ self_normalizing_and_filtering = function(pathway_file, taxa_file, metadata_file
     }
 
     sign_ass = sum(as.numeric(abs(clean_correlation_test) > rho_minimum & pval_matrix_clean < alpha_sign)) # This will give you the number of significant correlations with rho > 0.8 and adjusted p-value < 0.001
-    range_ass = range(clean_correlation_test) # This will give you the range of correlation coefficients in your matrix
+    range_ass = range(clean_correlation_test, na.rm = TRUE) # This will give you the range of correlation coefficients in your matrix
     
     print(paste0("Correlation test: ", dim(correlation_test)))
     print(paste0("Clean correlation test: ", dim(clean_correlation_test)))
@@ -303,7 +303,7 @@ self_normalizing_and_filtering = function(pathway_file, taxa_file, metadata_file
     sentence8 = paste0("There is a total of ", sign_ass, "/", length(clean_correlation_test), " significant associations with rho > ", rho_minimum, " and adjusted p-value < ", alpha_sign, "\n")
     sentence9 = paste0("The range of correlation coefficients is: ", range_ass[1], " to ", range_ass[2], "\n")
     writeLines(c(sentence4, sentence5, sentence6, sentence7, sentence8, sentence9), paste0(output_path, "/summary_analysis.txt"))
-    write.table(clean_correlation_test, file = paste0(output_path, "/",filtering_value, "_","which_correlationspearman_clean_correlation_test.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This saves a file where the columns/rows with NAs are removed from the Spearman correlation in taxa and pathways
+    write.table(clean_correlation_test, file = paste0(output_path, "/", filtering_value, "_", which_correlation, "_spearman_clean_correlation_test.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This saves a file where the columns/rows with NAs are removed from the Spearman correlation in taxa and pathways
     write.table(pval_matrix_clean, file = paste0(output_path, "/spearman_p_val_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This saves a file with the p-values instead of the spearman correlation rho after removing NAs from taxa and pathways
     write.table(significant_matrix, file = paste0(output_path, "/spearman_significant_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This prints the spearman values of those that have a greater 'n' rho, and lower 'n' q-value
     beepr::beep(1) # Beep when done
@@ -442,14 +442,14 @@ filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
     significant_matrix = clean_correlation_test
     for (i in 1:nrow(significant_matrix)) {
         for (j in 1:ncol(significant_matrix)) {
-            if (is.na(significant_matrix[i, j]) || significant_matrix[i, j] < abs(rho_minimum) || pval_matrix_clean[i, j] >= alpha_sign) {
+            if (is.na(significant_matrix[i, j]) || abs(significant_matrix[i, j]) < rho_minimum || pval_matrix_clean[i, j] >= alpha_sign) {
                 significant_matrix[i, j] = NA
             }
         }
     }
 
     sign_ass = sum(as.numeric(abs(clean_correlation_test) > rho_minimum & pval_matrix_clean < alpha_sign)) # This will give you the number of significant correlations with rho > 0.8 and adjusted p-value < 0.001
-    range_ass = range(clean_correlation_test) # This will give you the range of correlation coefficients in your matrix
+    range_ass = range(clean_correlation_test, na.rm = TRUE) # This will give you the range of correlation coefficients in your matrix
 
 
     # Printing analyses and files
@@ -514,7 +514,7 @@ heatmap_plotting = function(input_data_name, matrix_to_plot, per_sequence_contri
     matrix_to_plot <- matrix_to_plot[, !grepl("_NA", colnames(matrix_to_plot)), drop = FALSE] # Remove columns with '_NA' in their names
     markdown = "X"
     encoded_mat = make_encoded_matrix(per_seq_contrib = per_sequence_contribution_file,
-        asv_to_taxa_df = asv_to_taxa_file,
+        asv_to_taxa_df = NULL,
         taxa_list = rownames(matrix_to_plot),
         pathway_list = colnames(matrix_to_plot),
         min_copy = 1e-9
@@ -562,7 +562,7 @@ heatmap_plotting = function(input_data_name, matrix_to_plot, per_sequence_contri
     write.table(colnames(matrix_to_plot), file = paste0(input_data_name,".tsv"), sep = "\t", quote = FALSE, col.names = FALSE)
 
     matrix_col_names_sorted = colnames(matrix_to_plot)[heatmap1$colInd] # Print column names in the order they appear in the heatmap
-    write.table(colnames(matrix_to_plot), file = paste0(input_data_name,".tsv"), sep = "\t", quote = FALSE, col.names = FALSE)
+    write.table(matrix_col_names_sorted, file = paste0(input_data_name,"_sorted.tsv"), sep = "\t", quote = FALSE, col.names = FALSE)
     
     dev.off()
     beep(1)
@@ -577,7 +577,7 @@ mapping_taxa_to_pathway = function(picrust2_file_strat, asv_to_taxa, consortia){
     df_asv_to_taxa = read.table(asv_to_taxa, header = TRUE, sep = "\t", row.names = 1)
     df_asv_to_taxa$ASV_ID = rownames(df_asv_to_taxa) # Moving rownames to a column
     df_asv_to_taxa = df_asv_to_taxa[, c("ASV_ID", setdiff(colnames(df_asv_to_taxa), "ASV_ID"))] # Putting the ASV_ID column first
-    df_picrust2 = df_picrust2 %>% rename("sequence" = "ASV_ID")
+    df_picrust2 = df_picrust2 %>% rename("ASV_ID" = "sequence")
     df_merged = full_join(df_picrust2, df_asv_to_taxa, by = "ASV_ID")
     df_merged$genus_and_species = paste0(df_merged$genus_final, "_", df_merged$species_final)
     df_merged = na.omit(df_merged)
@@ -931,7 +931,7 @@ global = function() {
     }
 
     else if(decision == 2){
-        m_values = c(1) #This variable will help alternate between the two consortia in the pairwise comparison as reference and filtering value
+        m_values = c(1, 2) #This variable will help alternate between the two consortia in the pairwise comparison as reference and filtering value
         for(i in 1:length(consortia)){
             for(j in 1:length(consortia)){
                 if(i==j | j<i){
@@ -1029,7 +1029,8 @@ global = function() {
                     rho_minimum = as.numeric(rho_minimum),
                     which_correlation = which_correlation)
         output_file_name_heat = paste0(heatmap_output_path, consortia[[i]],"_", timepoints[[j]], "_self_",which_correlation,"_correlation_analysis")
-        heatmap_plotting(input_data_name = output_file_name_heat, matrix_to_plot = self_clean_correlation_test)
+        uncollapsed_file_self = paste0("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/", consortia[[i]], "_inocula_output/", consortia[[i]], "_pathway_out_contrib/", consortia[[i]], "_picrust2_pathway_with_taxa_names_uncollapsed.tsv")
+        heatmap_plotting(input_data_name = output_file_name_heat, matrix_to_plot = self_clean_correlation_test, per_sequence_contribution_file = uncollapsed_file_self)
             }
         }
     }
