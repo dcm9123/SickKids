@@ -6,8 +6,8 @@
 import pandas as pd
 import os
 import glob as glob
-from Bio import SeqIO
-from Bio.SeqIO import FastaIO
+#from Bio import SeqIO
+#from Bio.SeqIO import FastaIO
 #%%
 
 path = "/Users/danielcm/Desktop/SickKids/"
@@ -83,10 +83,10 @@ for(key,value) in asv_dict.items():
 
 #%%
 df1["Genus_species"] = (df1["genus_final"].str.strip() + " " + df1["species_final"].str.strip())
-asv_dict = df1.set_index("ASV_Seq")["Genus_species"].to_dict()
+asv_dict = df1.set_index("ASV_ID")["Genus_species"].to_dict()
 
 for com in communities:
-    for file in glob.glob(f"PICRUSt2.3/{com}_output/{com}_pathway_inference/*_strat.tsv"):
+    for file in glob.glob(f"PICRUSt2.6/{com}_output/{com}_pathway_inference/*_strat.tsv"):
         
         df_in = pd.read_csv(file, sep = "\t")
         df_in["Taxa"] = df_in["sequence"].map(asv_dict).fillna("Unknown")

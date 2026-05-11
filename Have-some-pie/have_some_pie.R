@@ -25,7 +25,7 @@ welcome_function = function() {
     print("2. Filtering value: The value within the filtering category that you wish to analyze, i.e. NS1_w9w10")
     print("3. An alpha significance value: This is for plotting significant correlations, i.e. 0.05, 0.001")
     print("4. A rho minimum value: This is for plotting edges in the network, i.e. 0.7, 0.8 (We recommend not less than 0.7 for busy graphs)")
-    print("5. Community name: The name of the community you are individually analyzing in a single plot, i.e. NS1, S2, S5, NS6") 
+    print("5. Community name: The name of the community you are individually analyzing in a single plot, i.e. NS1, S2, S5, NS6")
     print("6. Timepoint: The timepoint you are analyzing, i.e. w5w6, w9w10")
     print("---------------------------------------------------")
     print("OUTPUT FILES AND FIGURES: ")
@@ -51,7 +51,7 @@ welcome_function = function() {
 }
 
 fetching_files = function(){
-    
+
     #pathway_file = readline(prompt = "Enter the full path to the pathway file e.g., /path/to/pathway_file.tsv: ")
     #if(!file.exists(pathway_file)){
     #    stop("Pathway file does not exist. Please check the path and try again.")
@@ -81,13 +81,13 @@ fetching_files = function(){
     #community = readline(prompt = "Enter the community name e.g., NS1: ")
     #timepoint = readline(prompt = "Enter the timepoint e.g., w5w6: ")
 
-    
+
     pathway_file = "/Users/danielcm/Desktop/SickKids6PICRUSt2.6/pathway_merged_metagenome.tsv"
-    taxa_file = "/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ps_ns1_final.csv"
-    maaslin_filt_file = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/same_community/Pathway/maaslin2_Week_and_consortia_pathway_NS1_w5_vs_NS1_w9w10_ref_Week_and_consortia,NS1_w9w10/all_results.tsv"
-    metadata_file = "/Users/danielcm/Desktop/diammatics/T1D/metadata_ps.csv"
-    output_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/Networks/NS1"
-    filtering_category = "Week_and_consortia"
+    taxa_file = "/Users/danielcm/Desktop/diammatics/T1D/Phyloseq2/NS1_filtered_ASVs_count600_len400_prev20.csv"
+    maaslin_filt_file = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.6/w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/all_results.tsv"
+    metadata_file = "/Users/danielcm/Desktop/SickKids/Metadata/Danska_diabetes_metadata364_20260409.csv"
+    output_path = "/Users/danielcm/Desktop/SickKids/T1D/Maaslin2.6/Networks/NS1"
+    filtering_category = "Week_and_Consortium"
     filtering_value = "NS1_w9w10"
     alpha_sign = 0.05
     rho_minimum = 0.7
@@ -96,8 +96,8 @@ fetching_files = function(){
 
     ref_value = sub(".*,(.*?)\\/.*", "\\1", maaslin_filt_file) # Extracting the reference value from the maaslin filtered file path)
 
-    return(c(pathway_file = pathway_file, taxa_file = taxa_file, maaslin_filt_file = maaslin_filt_file, metadata_file = metadata_file, 
-                output_path = output_path, filtering_category = filtering_category, filtering_value = filtering_value, alpha_sign = alpha_sign, 
+    return(c(pathway_file = pathway_file, taxa_file = taxa_file, maaslin_filt_file = maaslin_filt_file, metadata_file = metadata_file,
+                output_path = output_path, filtering_category = filtering_category, filtering_value = filtering_value, alpha_sign = alpha_sign,
                 rho_minimum = rho_minimum, community = strsplit(filtering_value,"_",)[[1]][1], timepoint = strsplit(filtering_value,"_",)[[1]][2], ref_value = ref_value))
 }
 
@@ -190,7 +190,7 @@ self_normalizing_and_filtering = function(pathway_file, taxa_file, metadata_file
 
     common_samples = intersect(colnames(pathway_mat), colnames(taxa_mat)) # This wll print the common samples between the two matrices, which in this case should be 100% identical
     unique_samples = setdiff(colnames(pathway_mat), colnames(taxa_mat)) # This will print the samples that are unique to clr_pathway, in theory only week 7 should be different
-    
+
     sample_sanity_check = sample_size_revision(common_samples, taxa_mat, pathway_mat)
     if(sample_sanity_check == TRUE){
         print("Proceeding with CLR normalization and correlation analysis...")
@@ -282,7 +282,7 @@ self_normalizing_and_filtering = function(pathway_file, taxa_file, metadata_file
 
     sign_ass = sum(as.numeric(abs(clean_correlation_test) > rho_minimum & pval_matrix_clean < alpha_sign)) # This will give you the number of significant correlations with rho > 0.8 and adjusted p-value < 0.001
     range_ass = range(clean_correlation_test, na.rm = TRUE) # This will give you the range of correlation coefficients in your matrix
-    
+
     print(paste0("Correlation test: ", dim(correlation_test)))
     print(paste0("Clean correlation test: ", dim(clean_correlation_test)))
     print(paste0("P-value matrix clean: ", dim(pval_matrix_clean)))
@@ -307,13 +307,13 @@ self_normalizing_and_filtering = function(pathway_file, taxa_file, metadata_file
     write.table(pval_matrix_clean, file = paste0(output_path, "/spearman_p_val_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This saves a file with the p-values instead of the spearman correlation rho after removing NAs from taxa and pathways
     write.table(significant_matrix, file = paste0(output_path, "/spearman_significant_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This prints the spearman values of those that have a greater 'n' rho, and lower 'n' q-value
     beepr::beep(1) # Beep when done
-    
+
     return(clean_correlation_test)
 }
 
-normalizing_and_filtering = function(pathway_file, taxa_file, maaslin_filt_file, metadata_file, output_path, output_file_name_net, network_categories_output, 
+normalizing_and_filtering = function(pathway_file, taxa_file, maaslin_filt_file, metadata_file, output_path, output_file_name_net, network_categories_output,
 filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
-    # Open and read files 
+    # Open and read files
     maaslin_filt = read.table(maaslin_filt_file, header = TRUE, sep = "\t")
     metadata_df = read.csv(metadata_file, header = TRUE, sep = ",", row.names = 1)
     pathway_mat = as.matrix(read.table(pathway_file, header = TRUE, sep = "\t", row.names = 1))
@@ -333,7 +333,7 @@ filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
 
     common_samples = intersect(colnames(pathway_mat), colnames(taxa_mat)) # This wll print the common samples between the two matrices
     unique_samples = setdiff(colnames(pathway_mat), colnames(taxa_mat)) # This will print the samples that are unique to clr_pathway, in theory only week 7 should be different
-    
+
     sample_sanity_check = sample_size_revision(common_samples, taxa_mat, pathway_mat)
     if(sample_sanity_check == TRUE){
         print("Proceeding with CLR normalization and correlation analysis...")
@@ -349,7 +349,7 @@ filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
 
     common_samples2 = intersect(colnames(clr_pathway), colnames(clr_taxa)) # This wll print the common samples between the two matrices
     unique_samples2 = setdiff(colnames(clr_pathway), colnames(clr_taxa)) # This will print the samples that are unique to clr_pathway, in theory only week 7 should be different
-    
+
     if (length(common_samples2) < 3) {
     stop("Not enough common samples (", length(common_samples2),
             ") between taxa and pathway CLR matrices for correlation. Exiting.")
@@ -386,7 +386,7 @@ filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
         dimnames = list(rownames(clr_taxa), rownames(clr_pathway))
     )
     p_values_mat = correlation_test # Create an empty matrix for p-values with the same dimensions as correlation_test
-    
+
     #Returns a vector of corrected names that are significant pathways under Maaslin2's eyes (q-val 0.001 and coef > 1 or < -1)
     corrected_pathways_names = correcting_names(maaslin_pathways = maaslin_filt, significant = "yes", filtering_category = filtering_category, filtering_value = filtering_value, ref_value = ref_value) #Modifying maaslin2 names for the right name and filtering by p-val and coefficient value Log2FC
     if(length(corrected_pathways_names) == 0){
@@ -399,11 +399,11 @@ filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
     pathway_sanity_check = corrected_pathways_names %in% colnames(correlation_test)
 
     if(any(!pathway_sanity_check)){
-        missing_pathways = corrected_pathways_names[!pathway_sanity_check] # Getting the names of the missing pathways 
+        missing_pathways = corrected_pathways_names[!pathway_sanity_check] # Getting the names of the missing pathways
         print(paste0("The following pathways were found significant by Maaslin2 but are missing in the pathway matrix: ", paste(missing_pathways, collapse = ", ")))
         stop("PATHWAY NAMING MISMATCH - EXITING FUNCTION")
-    } 
-    
+    }
+
     print(pathway_sanity_check)
     sentence1 = paste0("Originally, there were a total of ", nrow(pathway_mat), " pathways in the merged metagenome pathway prediction file from PICRUSt2 across all data sets. \n")
     sentence2 = paste0("After filtering by significant pathways found in the ", basename(taxa_file), " community, there are a total of: ", length(corrected_pathways_names), " pathways. \n")
@@ -471,9 +471,9 @@ filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
     write.table(pval_matrix_clean, file = paste0(output_file_name_net, "_spearman_p_val_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This saves a file with the p-values instead of the spearman correlation rho after removing NAs from taxa and pathways
     write.table(significant_matrix, file = paste0(output_file_name_net, "_spearman_significant_matrix.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This prints the spearman values of those that have a greater 'n' rho, and lower 'n' q-value
     write.table(enriched_clean_correlation_test, file = paste0(output_file_name_net, "_spearman_maaslin2_enriched_clean_correlation_test.tsv"), sep = "\t", quote = FALSE, col.names = NA) # This one writes a file with the spearman correlation only found in the pathways enriched in maaslin2 when comparing it against another group.
-    
+
     writeLines(colnames(enriched_clean_correlation_test), paste0(network_categories_output,".txt")) # This writes a file with the names of the pathways that were found significant by Maaslin2 and used for the network construction
-    
+
     beepr::beep(1) # Beep when done
     return(enriched_clean_correlation_test)
 }
@@ -481,26 +481,26 @@ filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value) {
 make_encoded_matrix = function(per_seq_contrib, asv_to_taxa_df, taxa_list, pathway_list, min_copy = 1e-9){
     # Read the collapsed contribution file (from mapping_taxa_to_pathway function)
     df_seq_contribution = read.table(per_seq_contrib, header = TRUE, sep = "\t")
-    
+
     # Filter to only include taxa and pathways from the correlation analysis
-    df_seq_contribution = df_seq_contribution[df_seq_contribution$genus_and_species %in% taxa_list & df_seq_contribution$function. %in% pathway_list, ] 
-    
+    df_seq_contribution = df_seq_contribution[df_seq_contribution$genus_and_species %in% taxa_list & df_seq_contribution$function. %in% pathway_list, ]
+
     # Determine if each species encodes the pathway (genome_function_count > min_copy)
-    df_seq_contribution$encodes = df_seq_contribution$genome_function_count > min_copy 
-    
+    df_seq_contribution$encodes = df_seq_contribution$genome_function_count > min_copy
+
     # Get unique pairs of pathways and taxa where encoding occurs
-    pairs_correlated = unique(df_seq_contribution[df_seq_contribution$encodes, c("function.", "genus_and_species")]) 
+    pairs_correlated = unique(df_seq_contribution[df_seq_contribution$encodes, c("function.", "genus_and_species")])
 
     # Create empty matrix
-    encoded_matrix = matrix(FALSE, nrow = length(taxa_list), 
+    encoded_matrix = matrix(FALSE, nrow = length(taxa_list),
                                 ncol = length(pathway_list),
                                 dimnames = list(taxa_list, pathway_list))
-    
+
     # Fill matrix with TRUE where species encodes pathway
     if (nrow(pairs_correlated) > 0){
         encoded_matrix[cbind(match(pairs_correlated$genus_and_species, taxa_list),
                             match(pairs_correlated$function., pathway_list))] <- TRUE
-    } 
+    }
     View(encoded_matrix)
     return(encoded_matrix)
 }
@@ -522,7 +522,7 @@ heatmap_plotting = function(input_data_name, matrix_to_plot, per_sequence_contri
 
     png(paste0(input_data_name, ".png"), width = 2800, height = 2400, res = 150)
     my_palette = colorRampPalette(c("purple", "blue", "white", "orange", "darkred"))(n = 30)
-    
+
     # Create cellnote matrix with black circle where encoding is TRUE
     cellnote_matrix = ifelse(encoded_mat, "●", "")
 
@@ -551,7 +551,7 @@ heatmap_plotting = function(input_data_name, matrix_to_plot, per_sequence_contri
     taxa_ordered = rownames(matrix_to_plot)[heatmap1$rowInd] # Print row names in the order they appear in the heatmap
     pathways_ordered = colnames(matrix_to_plot)[heatmap1$colInd] # Print column names in the order they appear in the heatmap
     encoded_ordered = encoded_mat[taxa_ordered, pathways_ordered, drop = FALSE] # Reorder the encoded matrix to match heatmap order
-    
+
     not_encoded = which(encoded_ordered == FALSE, arr.ind = TRUE)
     if(nrow(not_encoded) > 0){
         x = not_encoded[, "col"]
@@ -563,7 +563,7 @@ heatmap_plotting = function(input_data_name, matrix_to_plot, per_sequence_contri
 
     matrix_col_names_sorted = colnames(matrix_to_plot)[heatmap1$colInd] # Print column names in the order they appear in the heatmap
     write.table(matrix_col_names_sorted, file = paste0(input_data_name,"_sorted.tsv"), sep = "\t", quote = FALSE, col.names = FALSE)
-    
+
     dev.off()
     beep(1)
     return(NULL)
@@ -581,7 +581,7 @@ mapping_taxa_to_pathway = function(picrust2_file_strat, asv_to_taxa, consortia){
     df_merged = full_join(df_picrust2, df_asv_to_taxa, by = "ASV_ID")
     df_merged$genus_and_species = paste0(df_merged$genus_final, "_", df_merged$species_final)
     df_merged = na.omit(df_merged)
-    
+
     # Collapse ASVs from the same species contributing to the same pathway by summing their contributions
     df_collapsed = df_merged %>%
         group_by(sample, function., genus_and_species) %>%
@@ -595,7 +595,7 @@ mapping_taxa_to_pathway = function(picrust2_file_strat, asv_to_taxa, consortia){
             n_ASVs = n(),
             .groups = 'drop'
         )
-    
+
     write.table(df_merged, file = paste0("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/",consortia,"_inocula_output/",consortia,"_pathway_out_contrib/",consortia,"_picrust2_pathway_with_taxa_names_uncollapsed.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
     write.table(df_collapsed, file = paste0("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/",consortia,"_inocula_output/",consortia,"_pathway_out_contrib/",consortia,"_picrust2_pathway_with_taxa_names_collapsed.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
     return(df_collapsed)
@@ -620,7 +620,7 @@ print(cytoscapePing()) # Checking connection to Cytoscape
 
     metadata_filtered = metadata_df[(metadata_df$Merged_weeks) == timepoint, ]
     metadata_filtered = metadata_filtered[metadata_filtered$Subcommunity == community, ]
-    
+
     path_matrix_clean = path_file[,colnames(path_file) %in% metadata_filtered$ID, drop = FALSE] #Filtering pathway matrix by IDs matching the community and timepoint of the filtered metadata
     taxa_matrix_clean = as.matrix(taxa_file[,colnames(taxa_file) %in% metadata_filtered$ID, drop = FALSE]) #Filtering by sample IDs matching the community and timepoint
     total_mice = ncol(path_matrix_clean) #Getting total number of mice after filtering by metadata filtered variable, 52
@@ -702,7 +702,7 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
     pivoted_edge_table = pivoted_edge_table %>%
         mutate(source = gsub("_", " ", source)) %>%
         mutate(taxon_and_pathway = gsub("_", " ", taxon_and_pathway))
-    
+
     #Sanity check(looking at a random rows), choosing 10 random numbers from a uniform distribution to test if the values match in the pivoted table and the original matrices.
     for(i in round(runif(10, min = 1, max = nrow(pivoted_edge_table)))) {
         print(paste0("Row ", i, ": Taxon = ", pivoted_edge_table$taxon[i], ", Pathway = ", pivoted_edge_table$pathway[i], ", Rho = ", pivoted_edge_table$rho[i]))
@@ -721,7 +721,7 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
 
     degree_taxa = degree_taxa %>% mutate(taxon = gsub("_", " ", taxon)) #Replacing underscores with spaces for better visualization in Cytoscape
     degree_pathway = degree_pathway %>% mutate(pathway = gsub("_", " ", pathway)) #Replacing underscores with spaces for better visualization in Cytoscape
-    
+
     degree_node = bind_rows(degree_taxa, degree_pathway) #Merging both into one
 
     pivoted_edge_table = pivoted_edge_table %>% #Filters the edge table to only include those with filtered rho not equal to 0, meaning those that passed the rho minimum threshold
@@ -731,7 +731,7 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
     all_maaslin_pathways = gsub("_", " ", colnames(clean_correlation_matrix_file))
     pathways_in_network = unique(pivoted_edge_table$target)
     excluded_pathways = setdiff(all_maaslin_pathways, pathways_in_network)
-    
+
     if(length(excluded_pathways) > 0) {
         writeLines(paste0("\nPathways excluded from network due to no correlations meeting rho >= ", rho_minimum, " threshold:"), con = con)
         writeLines(paste0("Total excluded: ", length(excluded_pathways), " out of ", length(all_maaslin_pathways), " Maaslin2-significant pathways"), con = con)
@@ -742,8 +742,8 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
     nodes_ids_in_both = sort(unique(c(pivoted_edge_table$source, pivoted_edge_table$target))) #Getting unique node IDs present in the edge table after filtering by rho minimum
     close(con)
 
-    taxa_ids     = unique(pivoted_edge_table$source)   
-    pathway_ids  = unique(pivoted_edge_table$target) 
+    taxa_ids     = unique(pivoted_edge_table$source)
+    pathway_ids  = unique(pivoted_edge_table$target)
 
     nodes_ids_in_both = sort(unique(c(pivoted_edge_table$source, pivoted_edge_table$target)))
 
@@ -771,13 +771,13 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
                                 mutate(degree = coalesce(degree.x, degree.y)) %>%
                                 select(-degree.x, -degree.y) %>%
                                 mutate(id = gsub("_", " ", id))
-    
+
     nodes_table = nodes_table %>% mutate(id = gsub("_", " ", id)) #Replacing underscores with spaces for better visualization in Cytoscape
 
     nodes_table = nodes_table %>%
     mutate(opacity_category = case_when(
         score >= 0 & score < 20 ~ "1-20%",
-        score >= 20 & score < 40 ~ "20-40%", 
+        score >= 20 & score < 40 ~ "20-40%",
         score >= 40 & score < 60 ~ "40-60%",
         score >= 60 & score < 80 ~ "60-80%",
         score >= 80 & score <= 100 ~ "80-100%",
@@ -785,7 +785,7 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
     ),
     size_category = case_when(
         degree >= 1 & degree < 3 ~ "1-2",
-        degree >= 3 & degree < 5 ~ "3-4", 
+        degree >= 3 & degree < 5 ~ "3-4",
         degree >= 5 & degree < 7 ~ "5-6",
         degree >= 7 & degree < 8 ~ "7-8",
         degree >= 8 & degree < 10000 ~ "8+",
@@ -802,10 +802,10 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
 
     #Setting default visual styles for the network
     #Nodes first
-    setNodeShapeDefault("ellipse", style.name = "default")             
+    setNodeShapeDefault("ellipse", style.name = "default")
     setNodeFontSizeDefault(new.size = 18, style.name = "default")       #Setting default font size to 18
     setNodeLabelPositionDefault(new.nodeAnchor = "S",                   #Setting position of the node and text label
-                new.graphicAnchor = "S", new.justification = "c", 
+                new.graphicAnchor = "S", new.justification = "c",
                 new.xOffset = 0, new.yOffset = 20, style.name = "default")
     setNodeBorderWidthDefault(new.width = 2, style.name = "default")    # Setting border width to 2 for all nodes
     setNodeBorderColorDefault(new.color = "black", style.name = "default")  #Setting border color to black for all nodes
@@ -820,30 +820,30 @@ make_network = function(pathway_file_name, taxa_file_name, maaslin_file_name, me
                     colors = c("darkblue", "#ca7717"),
                     mapping.type = "discrete",
                     style.name = "default")
-    
-    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_SHAPE", 
+
+    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_SHAPE",
                             value = "rectangle"), style.name = "default")   # Shape of the label_background
-    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_COLOR", 
+    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_COLOR",
                             value = "black"), style.name = "default")       # label background to black
-    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_OPACITY", 
+    setVisualPropertyDefault(style.string = list(visualProperty = "NODE_LABEL_BACKGROUND_OPACITY",
                             value = 250), style.name = "default")           # label background opacity to none
-    
+
 
     longnames = any(nchar(nodes_table$id) > 19) #Check if any node name is longer than 15 characters
-    
+
     if(longnames == TRUE){
        setNodeLabelPositionDefault(new.nodeAnchor = "S",
-                               new.graphicAnchor = "N", 
+                               new.graphicAnchor = "N",
                                new.justification = "c",
-                               new.xOffset = 0, 
+                               new.xOffset = 0,
                                new.yOffset = 10,  # Move further down
                                style.name = "default")
     } else {
     # For normal names, use standard position
     setNodeLabelPositionDefault(new.nodeAnchor = "S",
-                               new.graphicAnchor = "N", 
+                               new.graphicAnchor = "N",
                                new.justification = "c",
-                               new.xOffset = 0, 
+                               new.xOffset = 0,
                                new.yOffset = 0,  # Standard position
                                style.name = "default")
     }
@@ -874,29 +874,30 @@ global = function() {
     inocula = TRUE
 
     consortia = c("NS1","S2")
-    timepoints = c("w5", "w9w10")
-    pathway_file = "/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/Pathway_merged_metagenome.tsv"
-    metadata_file = "/Users/danielcm/Desktop/diammatics/T1D/metadata_ps_final.csv"
-    filtering_category = "Week_and_consortia"
+    #timepoints = c("w5", "w9w10")
+    timepoints = c("w9w10")
+    pathway_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.6/pathway_merged_metagenome.tsv"
+    metadata_file = "/Users/danielcm/Desktop/SickKids/Metadata/Danska_diabetes_metadata364_20260409.csv"
+    filtering_category = "Week_and_Consortium"
     alpha_sign = 0.05
     rho_minimum = 0.7
-    heatmap_output_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/Heatmaps/"
-    network_output_path = "/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/Networks/"
-    picrust2_path = "/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/"
+    heatmap_output_path = "/Users/danielcm/Desktop/SickKids/Maaslin2.6/Heatmaps/"
+    network_output_path = "/Users/danielcm/Desktop/SickKids/Maaslin2.6/Networks/"
+    picrust2_path = "/Users/danielcm/Desktop/SickKids/PICRUSt2.6/"
 
     if(decision == 1){
         for(i in seq(consortia)){
             for(j in seq(timepoints)){
-                taxa_file = paste0("/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ps_",tolower(consortia[[i]]),"_final.csv")
-                maaslin_filt_file = paste0("/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/pairwise_comparisons/same_community/Pathway/maaslin2_Week_and_consortia_pathway_", consortia[[i]], "_", timepoints[[1]], "_vs_", 
-                                        consortia[[i]], "_", timepoints[[2]], "_ref_Week_and_consortia,", consortia[[i]], "_", timepoints[[2]], "/all_results.tsv")
+                taxa_file = paste0("/Users/danielcm/Desktop/SickKids/Phyloseq2/ps_",tolower(consortia[[i]]),"_final.csv")
+                maaslin_filt_file = paste0("/Users/danielcm/Desktop/SickKids/Maaslin2.6/pairwise_comparisons/same_community/Pathway/maaslin2_Week_and_Consortium_pathway_", consortia[[i]], "_", timepoints[[1]], "_vs_",
+                                        consortia[[i]], "_", timepoints[[2]], "_ref_Week_and_Consortium,", consortia[[i]], "_", timepoints[[2]], "/all_results.tsv")
                 filtering_value = paste0(consortia[[i]], "_", timepoints[[j]])
-                output_path = paste0("/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/Networks/", consortia[[i]])
+                output_path = paste0("/Users/danielcm/Desktop/SickKids/Maaslin2.6/Networks/", consortia[[i]])
                 output_file_name_heat = paste0(heatmap_output_path, consortia[[i]],"_", timepoints[[j]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[1]], "_and_",consortia[[i]], "_", timepoints[[2]])
                 output_file_name_net = paste0(output_path, "/", consortia[[i]], "_", timepoints[[j]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[1]], "_and_",consortia[[i]],"_", timepoints[[2]])
                 output_file_ids_network = paste0(output_path, "/", consortia[[i]], "_", timepoints[[j]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[1]], "_and_",consortia[[i]],"_", timepoints[[2]], "_network_pathway_IDs")
                 ref_value = sub(".*,(.*?)\\/.*", "\\1", maaslin_filt_file) # Extracting the reference value from the maaslin filtered file path)
-                
+
                 enriched_clean_correlation_test = normalizing_and_filtering(
                     pathway_file = pathway_file,
                     taxa_file = taxa_file,
@@ -936,36 +937,36 @@ global = function() {
             for(j in 1:length(consortia)){
                 if(i==j | j<i){
                     next
-                }   
+                }
                 for(k in 1:length(timepoints)){
                     for(m in seq(m_values)){
                         print("-----------------------------------")
                         print(paste0("PROCESSING CONSORTIA ", consortia[[i]], " AND ", consortia[[j]], " AT TIMEPOINT ", timepoints[[k]], " WITH REFERENCE AS ", ifelse(m == 1, consortia[[i]], consortia[[j]])))
 
-                        maaslin_filt_file = paste0("/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/pairwise_comparisons/",timepoints[[k]],"/Pathway/maaslin2_Week_and_consortia_pathway_", consortia[[i]], "_", timepoints[[k]],"_vs_", 
-                                                consortia[[j]], "_", timepoints[[k]], "_ref_Week_and_consortia,", consortia[[j]], "_", timepoints[[k]], "/all_results.tsv")
+                        maaslin_filt_file = paste0("/Users/danielcm/Desktop/SickKids/Maaslin2.6/",timepoints[[k]],"/maaslin2_Week_and_Consortium_pathway_", consortia[[i]], "_", timepoints[[k]],"_vs_",
+                                                consortia[[j]], "_", timepoints[[k]], "_ref_Week_and_Consortium,", consortia[[j]], "_", timepoints[[k]], "/all_results.tsv")
                         if(m == 1){
                             filtering_value = paste0(consortia[[i]],"_", timepoints[[k]])
                             output_file_name_heat = paste0(heatmap_output_path,"/", consortia[[i]],"_", timepoints[[k]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[k]], "_and_",consortia[[j]], "_", timepoints[[k]])
-                            output_path = paste0("/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/Networks/", consortia[[i]])
+                            output_path = paste0("/Users/danielcm/Desktop/SickKids/Maaslin2.6/Networks/", consortia[[i]])
                             output_file_name_net = paste0(output_path, "/", consortia[[i]], "_", timepoints[[k]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[k]], "_and_",consortia[[j]],"_", timepoints[[k]])
-                            taxa_file = paste0("/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ps_",tolower(consortia[[i]]),"_final.csv")
-                            picrust2_file_strat = paste0("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/",consortia[[i]],"_inocula_output/",consortia[[i]],"_pathway_out_contrib/path_abun_contrib.tsv")
-                            asv_to_taxa = paste0("/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ASV_to_taxa_",consortia[[i]],"_inoc.tsv")
+                            taxa_file = paste0("/Users/danielcm/Desktop/SickKids/Phyloseq2/",consortia[[i]],"_filtered_ASVs_count600_len400_prev20.csv")
+                            picrust2_file_strat = paste0("/Users/danielcm/Desktop/SickKids/T1D/PICRUSt2.2/",consortia[[i]],"_inocula_output/",consortia[[i]],"_pathway_out_contrib/path_abun_contrib.tsv")
+                            asv_to_taxa = paste0("/Users/danielcm/Desktop/SickKids/T1D/Phyloseq2/ASV_to_taxa_",consortia[[i]],"_inoc.tsv")
                             community = consortia[[i]]
                         }
                         else if(m == 2){
                             filtering_value = paste0(consortia[[j]],"_", timepoints[[k]])
-                            output_path = paste0("/Users/danielcm/Desktop/diammatics/T1D/Maaslin2.3/Networks/", consortia[[j]])
+                            output_path = paste0("/Users/danielcm/Desktop/SickKids/Maaslin2.6/Networks/", consortia[[j]])
                             output_file_name_heat = paste0(heatmap_output_path, consortia[[j]],"_", timepoints[[k]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[k]], "_and_",consortia[[j]], "_", timepoints[[k]])
                             output_file_name_net = paste0(output_path, "/", consortia[[j]], "_", timepoints[[k]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[k]], "_and_",consortia[[j]],"_", timepoints[[k]])
-                            taxa_file = paste0("/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ps_",tolower(consortia[[j]]),"_final.csv")
-                            picrust2_file_strat = paste0("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/",consortia[[j]],"_inocula_output/",consortia[[j]],"_pathway_out_contrib/path_abun_contrib.tsv")
-                            asv_to_taxa = paste0("/Users/danielcm/Desktop/diammatics/T1D/Phyloseq/ASV_to_taxa_",consortia[[j]],"_inoc.tsv")
+                            taxa_file = paste0("/Users/danielcm/Desktop/SickKids/Phyloseq2/",consortia[[j]],"_filtered_ASVs_count600_len400_prev20.csv")
+                            picrust2_file_strat = paste0("/Users/danielcm/Desktop/SickKids/T1D/PICRUSt2.2/",consortia[[j]],"_inocula_output/",consortia[[j]],"_pathway_out_contrib/path_abun_contrib.tsv")
+                            asv_to_taxa = paste0("/Users/danielcm/Desktop/SickKids/Phyloseq2/ASV_to_taxa_",consortia[[j]],"_inoc.tsv")
                             community = consortia[[j]]
                         }
                         ref_value = sub(".*,(.*?)\\/.*", "\\1", maaslin_filt_file) # Extracting the reference value from the maaslin filtered file path)
-                        
+
                         enriched_clean_correlation_test = normalizing_and_filtering(
                             pathway_file = pathway_file,
                             taxa_file = taxa_file,
@@ -979,20 +980,20 @@ global = function() {
                             output_file_name_net = output_file_name_net,
                             network_categories_output = paste0(output_path, "/", community, "_", timepoints[[k]], "_when_pairwise_is_", consortia[[i]], "_", timepoints[[k]], "_and_",consortia[[j]],"_", timepoints[[k]], "_network_pathway_IDs"),
                             ref_value = ref_value)
-                        
+
                         taxa_to_pathway_inocula = mapping_taxa_to_pathway(picrust2_file_strat = picrust2_file_strat, asv_to_taxa = asv_to_taxa, consortia = community)
-                        
+
                         uncollapsed_file = paste0("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/", community, "_inocula_output/", community, "_pathway_out_contrib/", community, "_picrust2_pathway_with_taxa_names_uncollapsed.tsv")
-                        
-                        #encoded_matrix = make_encoded_matrix(per_seq_contrib = collapsed_file, asv_to_taxa_df = asv_to_taxa, taxa_list = rownames(enriched_clean_correlation_test), 
+
+                        #encoded_matrix = make_encoded_matrix(per_seq_contrib = collapsed_file, asv_to_taxa_df = asv_to_taxa, taxa_list = rownames(enriched_clean_correlation_test),
                         #                    pathway_list = colnames(enriched_clean_correlation_test), min_copy = 1e-9)
-                        
-                        heatmap_plotting(input_data_name = output_file_name_heat, matrix_to_plot = enriched_clean_correlation_test, 
-                                            per_sequence_contribution_file = uncollapsed_file)  
+
+                        heatmap_plotting(input_data_name = output_file_name_heat, matrix_to_plot = enriched_clean_correlation_test,
+                                            per_sequence_contribution_file = uncollapsed_file)
                         # Inoc_file is taxa as rows and samples as columns
                         # Pathway_inocula_merged_metagenome has columns as pathways and samples as rows)
                         # asv_to_taxa has ASVs an taxa in each column.
-                        # PICRUSt2 
+                        # PICRUSt2
                        #make_network(pathway_file_name = pathway_file,
                        #     taxa_file_name = taxa_file,
                        #     maaslin_file_name = maaslin_filt_file,
@@ -1029,7 +1030,7 @@ global = function() {
                     rho_minimum = as.numeric(rho_minimum),
                     which_correlation = which_correlation)
         output_file_name_heat = paste0(heatmap_output_path, consortia[[i]],"_", timepoints[[j]], "_self_",which_correlation,"_correlation_analysis")
-        uncollapsed_file_self = paste0("/Users/danielcm/Desktop/diammatics/T1D/PICRUSt2.2/", consortia[[i]], "_inocula_output/", consortia[[i]], "_pathway_out_contrib/", consortia[[i]], "_picrust2_pathway_with_taxa_names_uncollapsed.tsv")
+        uncollapsed_file_self = paste0("/Users/danielcm/Desktop/SickKids/PICRUSt2.6/", consortia[[i]], "_inocula_output/", consortia[[i]], "_pathway_out_contrib/", consortia[[i]], "_picrust2_pathway_with_taxa_names_uncollapsed.tsv")
         heatmap_plotting(input_data_name = output_file_name_heat, matrix_to_plot = self_clean_correlation_test, per_sequence_contribution_file = uncollapsed_file_self)
             }
         }

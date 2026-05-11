@@ -45,9 +45,9 @@ colnames(tmp)
 rownames(mtd)
 
 # INPUT:
-# This function takes as input a taxa file for a consortium (NS1, NS6, etc) with genus_final, curated_species_femmicro, 
-# and the columns having sample names, and creates a new column with the combined genus and species name, 
-# and then collapses the table to genus_species level by summing the counts for ASVs that belong to the same genus_species. 
+# This function takes as input a taxa file for a consortium (NS1, NS6, etc) with genus_final, curated_species_femmicro,
+# and the columns having sample names, and creates a new column with the combined genus and species name,
+# and then collapses the table to genus_species level by summing the counts for ASVs that belong to the same genus_species.
 # It also reads in the pathway file and makes sure the sample names match between the taxa and pathway tables, and if not, identifies which ones are missing from each table. It returns a list with the processed pathway dataframe and the processed taxa dataframe.
 
 # OUTPUT: Returns a count table with the names matching the pathway_merged_metagenome file from PICRUSt2
@@ -71,21 +71,14 @@ reading_files_and_matching_names = function(pathway_file, taxa_file, metadata_fi
     # Store genus_species names before any column filtering (tibbles don't support rownames, assigned at the end)
     genus_species_names = gsub(" ", "_", taxa_df_collapsed$genus_species)
     rownames(taxa_df_collapsed) = genus_species_names
-    # Getting the right nomenclature
+
+    # Getting the right nomenclature for the pathway file
     colnames(pathway_df) = gsub("^X", "", colnames(pathway_df)) # Removing any leading X from column names if present
     colnames(pathway_df) = gsub("\\.", "-", colnames(pathway_df)) # Replacing dots with dashes to match metacyc names
 
     print(paste0("Originally, there are a total of ", ncol(taxa_df_collapsed) - 1, " samples in the taxa table and ", ncol(pathway_df), " samples in the pathway table.")) # -1 to exclude the genus_species column
- 
-    # drop the genus_species column since we will assign it as rownames at the end, and we don't want it to interfere with the matching of sample names between the taxa and pathway tables
-   
-    # Replace the names of the samples in the taxa file with the updated SRA names
-    # setNames(new_names, old_names): rownames(metadata_df) are the Id values (current taxa column names), metadata_df$SRA_sample_name are the target names
 
-    mapping <- setNames(metadata_df$SRA_sample_name, rownames(metadata_df))
-
-    taxa_df_collapsed_renamed <- taxa_df_collapsed %>%
-        rename(any_of(mapping))
+    taxa_df_collapsed_renamed = taxa_df_collapsed
 
     pattern = "(?i)(inoc|inocula|inoculum|control|ctrl|positive|negative|defined_inocula)"    # Keeping only real sample columns, dropping controls/inocula
     taxa_df_collapsed_f = taxa_df_collapsed_renamed %>%
@@ -96,13 +89,13 @@ reading_files_and_matching_names = function(pathway_file, taxa_file, metadata_fi
     dropped_cols = setdiff(colnames(taxa_df_collapsed_renamed), c("genus_species", colnames(taxa_df_collapsed_f)))
     print(paste0("After removing controls and inocula, there are a total of ", ncol(taxa_df_collapsed_f), " samples in the taxa table."))
     print(paste0("The dropped non-plate columns are: ", paste(dropped_cols, collapse = ", ")))
- 
+
     # Sanity check: how many taxa columns now match pathway columns
     matched = intersect(colnames(taxa_df_collapsed_f), rownames(pathway_df)) # Rownames for pathway_df are samples, and colnames for taxa
     missing_from_pathway = setdiff(colnames(taxa_df_collapsed_f), rownames(pathway_df))
     missing_from_taxa = setdiff(rownames(pathway_df), colnames(taxa_df_collapsed_f))
     print(paste0(length(matched), "/", ncol(taxa_df_collapsed_f), " taxa sample columns match pathway table rows after renaming."))
-    
+
     if(length(missing_from_pathway) > 0){
         print(paste0("In taxa but NOT in pathway table: ", paste(missing_from_pathway, collapse = ", ")))
     }
@@ -154,15 +147,15 @@ ncol(pathway_file2_f) # should be the same as nrow(maaslin_df)
 
 
 
-normalizing_and_filtering = function(pathway_file, taxa_file, maaslin_filt_file, metadata_file, output_path, output_file_name_net, network_categories_output, 
+normalizing_and_filtering = function(pathway_file, taxa_file, maaslin_filt_file, metadata_file, output_path, output_file_name_net, network_categories_output,
 filtering_category, filtering_value, alpha_sign, rho_minimum, ref_value){
-    
+
     # Reading master files as tables and matrices
     maaslin_filt = read.table(maaslin_filt_file, header = TRUE, sep = "\t")
     metadata_df = read.csv(metadata_file, header = TRUE, sep = ",", row.names = 1)
     pathway_mat = as.matrix(read.table(pathway_file, header = TRUE, sep = "\t", row.names = 1))
     taxa_mat = as.matrix(read.csv(taxa_file, header = TRUE, sep = ",", row.names = 1))
-    
+
     # Renaming columns, keeping it consistent
     colnames(pathway_mat) = gsub("^X", "", colnames(pathway_mat)) # Removing any leading X from column names if present
     colnames(pathway_mat) = gsub("\\.", "-", colnames(pathway_mat)) # Replacing dots with dashes to match metacyc names

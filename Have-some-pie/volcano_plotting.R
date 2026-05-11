@@ -24,10 +24,10 @@ fetching_files = function(){
     if(!file.exists(pathway_classification)){
         stop("MetaCyc pathway classification file does not exist. Please check the path and try again.")
     }
-    
+
     category_left = readline(prompt = "Enter the specific name of the category on the left side of your plots (e.g., 'NS1 w9w10'): ")
     category_right = readline(prompt = "Enter the specific name of the category on the right side of your plots (e.g., 'S2 w9w10'): ")
-    
+
     output_path = readline(prompt = "Enter the full path to the output directory e.g., /path/to/output_directory/: ")
     if(!dir.exists(output_path)){
         print("The output directory does not exist. Creating it now...")
@@ -62,7 +62,7 @@ enrichment_and_filtering = function(df_name, df_classification_name){
     df$significant_left = ifelse(df$qval < 0.001 & df$coef < -1.0, "yes", "no") #Identifying significant points on the left side
     df$not_significant = ifelse(df$qval >= 0.001, "yes", "no")                  #Identifying non-significant points
     df$middle = ifelse(df$qval < 0.001 & abs(df$coef) <= 1.0, "yes", "no")      #Identifying points that are qval significant but with log2FC between -1 and 1
-    total_significant = length(df$significant_left[df$significant_left == "yes"]) + 
+    total_significant = length(df$significant_left[df$significant_left == "yes"]) +
                         length(df$significant_right[df$significant_right == "yes"]) #Counting total significant points from both sides
 
     return(list(df, total_significant)) #Returning the dataframe with new columns and the total significant points
@@ -117,7 +117,7 @@ vertical_barplot = function(df_volcano, output_path, category_left, category_rig
     rownames(df_volcano_sorted) = 1:nrow(df_volcano_sorted)                     #Adding a new index column
     top_ten_left = 0                #Variable for top left enriched categories
     top_ten_right = 0               #Variable for top right enriched categories
-    
+
     top_ten_left = list(features = c(),coefs = c()) #Making a list for the name of the features and its log2FC
     top_ten_right = list(features = c(),coefs = c()) #Same but for top right side.
     for(i in (nrow(df_volcano_sorted)):(nrow(df_volcano_sorted)-9)){        #Loop that goes from the top 10 left enriched categories (most negative coef)
@@ -142,7 +142,7 @@ vertical_barplot = function(df_volcano, output_path, category_left, category_rig
     }
 
     order_index = order(top_ten_right$coefs, decreasing = FALSE) #Ordering the right side from lowest to highest log2FC for better visualization
-    top_ten_right_sorted = list(features = top_ten_right$features[order_index], 
+    top_ten_right_sorted = list(features = top_ten_right$features[order_index],
                             coefs = top_ten_right$coefs[order_index])
     #--SANITY CHECK --
     top_ten_right
@@ -156,7 +156,7 @@ vertical_barplot = function(df_volcano, output_path, category_left, category_rig
     #df_left
     df_both = rbind(df_left, df_right)
     write.table(x = df_both, file = paste0(output_path,"/vertical_plot_data.tsv"), sep = "\t") #Saving the dataframe used for plotting
-    
+
     scale_left_side = round(min(df_both$coefs)) - 1
     scale_right_side = round(max(df_both$coefs)) + 1
 
@@ -170,7 +170,7 @@ vertical_barplot = function(df_volcano, output_path, category_left, category_rig
             geom_col(aes(fill = category), color = "black", width = 0.8) +
             scale_fill_manual(values = c("left" = "darkturquoise", "right" = "darkorange1")) +
             theme(axis.text.x = element_text(size = 28, face = "bold"),
-                axis.text.y = element_text(size = 28, face = "bold"), 
+                axis.text.y = element_text(size = 28, face = "bold"),
                 axis.title.x = element_text(size = 30, face = "bold"),
                 axis.title.y = element_text(size = 0),
                 legend.position = "none",
@@ -178,7 +178,7 @@ vertical_barplot = function(df_volcano, output_path, category_left, category_rig
                 legend.text = element_text(size = 0),
                 panel.background = element_rect(fill = "white", color = "black", size = 3)) +
                 geom_hline(yintercept = 0, color = "black", linewidth = 1.5)
-    
+
     ggsave(paste0(output_path,"/vertical_barplot.png"), width = 13, height = 9, dpi = 600, bg = "white")
     #Function to create vertical barplots showing the number of significant features per category
 }
@@ -214,7 +214,7 @@ donut_chart = function(df_volcano, output_path, category_left, category_right){
 
     ggplot(donut_data, aes(x = hole_size, y = values, fill = category)) +
         geom_col(color = "black", linewidth = 1.5) + coord_polar(theta = "y") +
-        scale_fill_manual(values = colors2) + 
+        scale_fill_manual(values = colors2) +
         xlim(c(0.4, hole_size + 0.5)) +
         theme_void() +
         theme(legend.text = element_text(size = 18, face = "bold"),
@@ -227,9 +227,9 @@ donut_chart = function(df_volcano, output_path, category_left, category_right){
 }
 
 global = function(){
-    path = "/Users/danielcm/Desktop/SickKids/Maaslin2.5/"
-    #group = c("consortium","w5","w9w10","sex")
-    group = c("w9w10")
+    path = "/Users/danielcm/Desktop/SickKids/Maaslin2.6/"
+    group = c("consortium","w5","w9w10","sex")
+    #group = c("w5","w9w10")
     for(g in group){
     files_to_process = list.files(path = paste0(path,g), pattern = "all_results.tsv", full.names = TRUE, recursive = TRUE)
         for(f in files_to_process){
@@ -268,10 +268,3 @@ global = function(){
 }
 
 global()
-
-
-
-
-#Hello my name is Daniel and I am currently working on the volcano plot, vertical barplot,
-# BUT I dontCheck()
-#know shit

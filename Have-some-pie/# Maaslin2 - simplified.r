@@ -18,6 +18,7 @@ picrust_to_maaslin2<-function(file_to_use, variable,
                               feature_to_use,random_input,reference_val,
                               subset,subset1,subset2){
   setwd(path_picrust2)
+
   maaslin_input = read.table(file_to_use, header = TRUE, row.names = 1, sep='\t')
   metadata_input = read.csv(metadata_file, header = TRUE, row.names = metadata_id_to_match)
   fixed_effects_to_use = variable
@@ -143,10 +144,10 @@ same_subcommunities_diff_sex = function(){
 }
 
 main_function = function(){
-  #subcommunities_diff_time()
-  time_w5_diff_subcommunities()
-  time_w9w10_diff_subcommunities()
-  same_subcommunities_diff_sex()
+  subcommunities_diff_time()
+  #time_w5_diff_subcommunities()
+  #time_w9w10_diff_subcommunities()
+  #same_subcommunities_diff_sex()
 }
 
 main_function()

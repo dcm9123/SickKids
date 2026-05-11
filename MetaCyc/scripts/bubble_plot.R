@@ -61,7 +61,7 @@ bubble = function(maaslin_f,df_contr,saving_file,direction){
 
             df_tmp = data.frame(Taxa = bacteria, Pathway = pathway, Contribution = bact_contribution, Mice = num_of_mice, Prop_mice = prop_mice, Name = path_name)
             #View(df_tmp)
-            
+
             contribution_df = rbind(contribution_df, df_tmp)
         }
     }
@@ -91,9 +91,9 @@ bubble = function(maaslin_f,df_contr,saving_file,direction){
     !grepl("_nan$", contribution_df$Taxa),]
 
 
-    bubble_plot = ggplot(contribution_df, aes(x = Taxa_abbrev, y = Pathway, size = Mice, fill = Rel_Contribution)) +
+    bubble_plot = ggplot(contribution_df, aes(x = Taxa_abbrev, y = Pathway, size = Prop_mice, fill = Rel_Contribution)) +
     geom_point(shape = 21, alpha = 0.8) +
-    scale_size_continuous(name = "Number of Mice", range = c(1, 24)) +
+    scale_size_continuous(name = "Proportion of Mice", range = c(4, 18), limits = c(0.30, 1), breaks = c(0.30, 0.50, 0.70, 0.90, 1.00)) +
     scale_fill_gradient2(low = "#ffffff", mid = "darkorange", high = "darkred" ,midpoint = 0.47, name = "Relative Contribution",) +
     guides(fill = guide_colorbar(title.vjust = 2)) +
     theme_bw() +
@@ -110,32 +110,42 @@ bubble = function(maaslin_f,df_contr,saving_file,direction){
 
     print(bubble_plot)
 
-    ggsave(saving_file, 
-        plot = bubble_plot, 
+    ggsave(saving_file,
+        plot = bubble_plot,
         width = 18, height = 14, dpi = 600)
 
 }
 
 
-bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"), 
+bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"),
                             df_contr = paste0(path_pie,"ns1_output/ns1_pathway_inference/path_abun_strat_with_taxa.tsv"),
                             saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/ns1_w9w10_when_compared_s2_w9w10_bubble_plot.png"),
                             direction = "right") #NS1 enriched pathways and its contributing taxa in w9w10 comparison
 
-bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"), 
+bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"),
                             df_contr = paste0(path_pie,"s2_output/s2_pathway_inference/path_abun_strat_with_taxa.tsv"),
                             saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/s2_w9w10_when_compared_ns1_w9w10_bubble_plot.png"),
                             direction = "left") #S2 enriched pathways and its contributing taxa in w9w10 comparison
 
-bubble(maaslin_f = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"), 
+bubble(maaslin_f = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"),
                             df_contr = paste0(path_pie,"ns1_output/ns1_pathway_inference/path_abun_strat_with_taxa.tsv"),
                             saving_file = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/ns1_w5w6_when_compared_s2_w5w6_bubble_plot.png"),
                             direction = "right")
 
-bubble(maaslin_f = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"), 
+bubble(maaslin_f = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"),
                             df_contr = paste0(path_pie,"s2_output/s2_pathway_inference/path_abun_strat_with_taxa.tsv"),
                             saving_file = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/s2_w5w6_when_compared_ns1_w5w6_bubble_plot.png"),
                             direction = "left")
 
- 
+bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/NS6_w9w10_vs_S5_w9w10_enriched_pathways_with_categories.csv"),
+                            df_contr = paste0(path_pie,"ns6_output/ns6_pathway_inference/path_abun_strat_with_taxa.tsv"),
+                            saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/ns6_w9w10_when_compared_s5_w9w10_bubble_plot.png"),
+                            direction = "right") #S5 enriched pathways and its contributing taxa in w9w10 comparison
+
+
+bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/NS6_w9w10_vs_S5_w9w10_enriched_pathways_with_categories.csv"),
+                            df_contr = paste0(path_pie,"s5_output/s5_pathway_inference/path_abun_strat_with_taxa.tsv"),
+                            saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/s5_w9w10_when_compared_ns6_w9w10_bubble_plot.png"),
+                            direction = "left") #S5 enriched pathways and its contributing taxa in w9w10 comparison
+
 

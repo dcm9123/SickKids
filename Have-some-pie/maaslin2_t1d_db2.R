@@ -56,7 +56,7 @@ picrust_to_maaslin2<-function(path_picrust2, file_to_use, variable, normalizatio
 ### SAME SUBCOMMUNITY AND DIFFERENT TIMEPOINTS ANALYSIS### - DONE
 cons1 = c("NS1","NS6","S2","S5")
 cons2 = c("NS1","NS6","S2","S5")
-picrust2_path_current = "/Users/danielcm/Desktop/Sickkids/PICRUSt2.5/"
+picrust2_path_current = "/Users/danielcm/Desktop/Sickkids/PICRUSt2.6/"
 
 for (i in cons1[1:4]) # DONE
 {
@@ -69,7 +69,7 @@ for (i in cons1[1:4]) # DONE
                         normalization_method = "TSS",
                         transformation = "LOG",
                         file_to_use = paste0(feature,"_merged_metagenome.tsv"),
-                        metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.5/Laura_metadata.csv", # nolint
+                        metadata_file = "/Users/danielcm/Desktop/SickKids/PICRUSt2.6/Laura_metadata.csv", # nolint
                         feature_to_use = feature,
                         random_input = "Sex",
                         reference_val = paste0("Week_and_consortia,",i,"_w9w10"),
