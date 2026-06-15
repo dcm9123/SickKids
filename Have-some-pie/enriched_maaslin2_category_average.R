@@ -1,12 +1,12 @@
 # Daniel Castaneda Mogollon, PhD
 # February 22th, 2026
 # This script, unlike 'Have-some-pie', will get the average per category level of all
-# enriched pathways when doing a pairwise comparison with Maaslin2.
+# enriched pathways when doing a pairwise comparison with Maaslin2. 
 
-# This script takes two inputs: the Maaslin2 all_results.tsv from the NS1 w9w10 vs S2 w9w10 pairwise pathway comparison, and a master MetaCyc reference file that maps pathway IDs to hierarchical categories (Levels 1–2)
-# and human-readable names. It filters the Maaslin2 results to pathways with qval < 0.05 and |coef| > 1, annotates each passing pathway with
+# This script takes two inputs: the Maaslin2 all_results.tsv from the NS1 w9w10 vs S2 w9w10 pairwise pathway comparison, and a master MetaCyc reference file that maps pathway IDs to hierarchical categories (Levels 1–2) 
+# and human-readable names. It filters the Maaslin2 results to pathways with qval < 0.05 and |coef| > 1, annotates each passing pathway with 
 # its MetaCyc category hierarchy and enrichment group (NS1 or S2, based on the sign of the coefficient), and writes the annotated table to a CSV.
-# It then groups the Maaslin2 coefficients by Level 2 MetaCyc category and produces a horizontal boxplot with individual points overlaid, saved as a 600 DPI PNG,
+# It then groups the Maaslin2 coefficients by Level 2 MetaCyc category and produces a horizontal boxplot with individual points overlaid, saved as a 600 DPI PNG, 
 # showing the distribution of fold-changes per category colored by which consortium was enriched.
 
 # Load libraries ----------------------------------------------------------
@@ -42,7 +42,7 @@ assigning_categories_to_enriched_pairwise_comparisons = function(cons1, cons2, c
     significant_enriched = 1.0
 
     # Filter for significant pathways
-    df_enriched_pwys = df_enriched[df_enriched$qval < significant_qval & abs(df_enriched$coef) > significant_enriched,]
+    df_enriched_pwys = df_enriched[df_enriched$qval < significant_qval & abs(df_enriched$coef) > significant_enriched,] 
     df_enriched_pwys$feature = gsub(".", "-", df_enriched_pwys$feature, fixed = TRUE)
     print(df_enriched_pwys$feature)
 
@@ -63,7 +63,7 @@ assigning_categories_to_enriched_pairwise_comparisons = function(cons1, cons2, c
     df_enriched_pwys = df_enriched_pwys[!is.na(df_enriched_pwys$Level.1),] # filter out pathways that don't have an assigned category at level 1, since those are the ones we want to summarize in the boxplots
     print(paste0("Number of enriched pathways with assigned categories: ", nrow(df_enriched_pwys)))
 
-
+    
     print(head(df_enriched_pwys[,1:16]))
     write.csv(df_enriched_pwys, f_out, row.names = FALSE)
 
@@ -75,7 +75,7 @@ assigning_categories_to_enriched_pairwise_comparisons = function(cons1, cons2, c
 making_figure = function(cons1, cons2, comparison){
   communities_comp = c(cons1, cons2)
   df_enriched_data = assigning_categories_to_enriched_pairwise_comparisons(cons1, cons2, comparison, communities_comp)
-
+  
   unique_level1 = c(unique(df_enriched_data$Level.1), unique(df_enriched_data$Level.1.1), unique(df_enriched_data$Level.1.2), unique(df_enriched_data$Level.1.3))
   unique_level1 = unique(unique_level1[!is.na(unique_level1)])
   level1_list = c("Level.1","Level.1.1","Level.1.2","Level.1.3")
@@ -135,7 +135,7 @@ making_figure = function(cons1, cons2, comparison){
     mutate(group = ifelse(coef > 0, paste0(communities_comp[1], " ", comparison), paste0(communities_comp[2], " ", comparison)))
     fig_file = (paste0("/Users/danielcm/Desktop/SickKids/Maaslin2.6/",comparison,"/maaslin2_Week_and_Consortium_pathway_",communities_comp[1],"_",comparison,"_vs_",communities_comp[2],"_",comparison,"_ref_Week_and_Consortium,",communities_comp[2],"_",comparison,"/",communities_comp[1],"_",comparison,"_vs_",communities_comp[2],"_",comparison,"_all_enriched.png"))
     }
-
+  
     category_order = c(level1_categories, setdiff(level2_categories, level1_categories))
     fold_tbl$Category = factor(fold_tbl$Category, levels = rev(category_order))
 
@@ -146,18 +146,19 @@ making_figure = function(cons1, cons2, comparison){
       aes(fill = group),
       outlier.shape = NA,
       alpha = 0.30,
-      position = position_dodge(width = 0.75)
+      position = position_dodge(width = 0.75),
+      outlier.stroke = 0.8
       ) +
       geom_point(
       aes(fill = group),
       shape = 21,
-      size = 2,
+      size = 3,
       color = "black",
-      stroke = 0.8,
+      stroke = 1,
       position = position_dodge(width = 0.75)
     ) +
 
-    guides(fill = guide_legend(reverse = TRUE)) +
+    guides(fill = guide_legend(reverse = FALSE)) +
 
     scale_fill_manual(
       values = setNames(
@@ -176,21 +177,21 @@ making_figure = function(cons1, cons2, comparison){
     labs(
       x = "Log2(FC)",
     ) +
-    theme(axis.text.y = element_text(size = 14, face = "bold"),
-          axis.text.x = element_text(size = 18, face = "bold"),
-          axis.title.x = element_text(size = 20, face = "bold"),
+    theme(axis.text.y = element_text(size = 20, face = "bold"),
+          axis.text.x = element_text(size = 20, face = "bold"),
+          axis.title.x = element_text(size = 22, face = "bold"),
           axis.title.y = element_blank(),
           legend.title = element_blank(),
           legend.position = "bottom",
-          legend.text = element_text(size = 18)) +
+          legend.text = element_text(size = 20)) +
 
-      scale_x_continuous(limits = c(-7.5, 7.5))
+      scale_x_continuous(limits = c(-13, 13))
 
       ggsave(
         filename = fig_file,
         plot = p,
-        width = 10,
-        height = 6,
+        width = 11,
+        height = 11,
         dpi = 600
       )
   print(p)
