@@ -676,3 +676,6 @@ for i in {ns1,ns6,s2,s5}; do pathway_pipeline.py -i ${i}_output/${i}_EC_metageno
 ### April 17th, 2026
 
 I ran the latest Maaslin2 results, and now I will be focusing on the figure generation from these new folders.
+
+### June 15th, 2026
+I am running the pangenomes on Anvi'o once more, but with the latest data we have. To do this, I had to migrate the contigs.db for each genome safely to the newest Anvi'o database. To do this, I ran: `anvi-migrate *.db --migrate-safely ` in `/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/MASTER/Genomes/Anvio/02_CONTIGS`
