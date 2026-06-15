@@ -688,3 +688,6 @@ Then, I created unique projects for each db of contigs by doing:
 
 `anvi-gen-genomes-storage -e blongum_genomes.txt -o BLONGUM-GENOMES.db` and repeated across the rest of the species.
 
+Next, I generated a pangenome analysis with all the specified genomes in each database by running a simple loop:
+
+`for file in *-GENOMES.db; do anvi-pan-genome -g ${file} --project-name ${file%%-GENOMES.db}_PROJECT --num-threads 16 --use-ncbi-blast --output-file ${file%%-GENOMES.db}-PROJECT/${file%%-GENOMES.db}-PAN.db; done;`
