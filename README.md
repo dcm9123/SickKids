@@ -682,3 +682,9 @@ I am running the pangenomes on Anvi'o once more, but with the latest data we hav
 
 I will be running the Anvi'o pangenome generation across the following taxa in all 4 communities: A. muciniphila, E. coli, F. plautii, E. tayi, A. onderdonkii, P. vulgatus, P. distasonis, B. longum, E. lenta, A. finegoldii, H. effluvi, E. bolteae, S. hominis.
 
+To do this, I had to create individual .txt files to indicate the name and path of the contigs database. These files are in `/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/MASTER/Genomes/Anvio/07_PANGENOMICS`
+
+Then, I created unique projects for each db of contigs by doing:
+
+`anvi-gen-genomes-storage -e blongum_genomes.txt -o BLONGUM-GENOMES.db` and repeated across the rest of the species.
+
