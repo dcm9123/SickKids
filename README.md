@@ -679,3 +679,6 @@ I ran the latest Maaslin2 results, and now I will be focusing on the figure gene
 
 ### June 15th, 2026
 I am running the pangenomes on Anvi'o once more, but with the latest data we have. To do this, I had to migrate the contigs.db for each genome safely to the newest Anvi'o database. To do this, I ran: `anvi-migrate *.db --migrate-safely ` in `/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/MASTER/Genomes/Anvio/02_CONTIGS`
+
+I will be running the Anvi'o pangenome generation across the following taxa in all 4 communities: A. muciniphila, E. coli, F. plautii, E. tayi, A. onderdonkii, P. vulgatus, P. distasonis, B. longum, E. lenta, A. finegoldii, H. effluvi, E. bolteae, S. hominis.
+
