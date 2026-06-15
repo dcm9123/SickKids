@@ -4,6 +4,7 @@ PICRUSt2.3/
 __pycache__/
 *.pyc
 ~$*
+*.code-workspace
 
 # Generated analysis outputs
 Maaslin2.6/community/
@@ -16,3 +17,23 @@ PICRUSt2.6/*_output/*_KO_metagenome_out/
 PICRUSt2.6/*_output/*_pathway_inference/
 PICRUSt2.6/*_output/*_pathway_intermediate_files/
 PICRUSt2.6/*_output/*_intermediate_asvs/
+PICRUSt2.6/functional_merged_output/
+PICRUSt2.6/pathway_merged_metagenome_strat_by_pwy_no_taxa.tsv
+
+# Generated network figures
+*_w5_*_network_labels.png
+*_w5_*_network_no_labels.png
+*_w9w10_*_network_labels.png
+*_w9w10_*_network_no_labels.png
+*_w5_*_network_labels
+*_w9w10_*_network_labels
+*mini_w5_*_network_no_labels.png
+*mini_w9w10_*_network_no_labels.png
+test.png
+
+# Local analysis workspaces and large ad hoc exports
+Anvio/ECOLI-PROJECT/
+Final_community_list_for_Daniel.csv
+KO_for_picrust2_may2026.csv
+T1D_data_update-June2026.pptx
+T1D_udpate_june9.pptx
