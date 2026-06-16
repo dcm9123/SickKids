@@ -693,3 +693,11 @@ Next, I generated a pangenome analysis with all the specified genomes in each da
 `for file in *-GENOMES.db; do anvi-pan-genome -g ${file} --project-name ${file%%-GENOMES.db}_PROJECT --num-threads 16 --use-ncbi-blast --output-file ${file%%-GENOMES.db}-PROJECT/${file%%-GENOMES.db}-PAN.db; done;`
 
 If running these commands in an interactive node, it is expected to get 'error messages' related to the busy resources. Anvi'o keeps running regardless, so feel free to ignore them (for now)
+
+
+### June 16th, 2026
+The next step is to generate the basic statistics of each pangenome:
+
+`for dir in *-PROJECT; do cd ${dir}; anvi-summarize -p *-PAN.db -g *-GENOMES.db -o SUMMARIZE; cd ..; done;`
+
+This function needs the databases from the pangenome (-p), the genomes (-g) and an output directory name.
