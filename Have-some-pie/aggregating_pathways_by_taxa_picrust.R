@@ -1,51 +1,60 @@
 # Daniel Castaneda Mogollon, PhD
 # May 20th, 2026
-# This script aggregates the pathways for each taxa, instead of having them as ASV contribution.
-# then, the output will serve for Maaslin2 to identify significantly enriched pathways at the taxa level and not community-based level.
+# This script aggregates PICRUSt2 pathway abundances from ASV/sequence-level
+# contributions to pathway-by-taxon contributions.
 
 library(dplyr)
 
-path = "/Users/danielcm/Desktop/SickKids/PICRUSt2.6/"
-communities = c("ns1","ns6","s2","s5")
+path <- "/Users/danielcm/Desktop/SickKids/PICRUSt2.6/"
+communities <- c("ns1", "ns6", "s2", "s5")
 setwd(path)
 
-for (community in communities){
-    in_file = read.csv(paste0(community, "_output/", community, "_pathway_inference/path_only_abun_strat_no_taxa.tsv"), sep = "\t", check.names = FALSE)
-    #in_file$pathway_taxa = paste(in_file$pathway, in_file$Taxa, sep = "_")
+for (community in communities) {
+    input_file <- paste0(community, "_output/", community, "_pathway_inference/path_abun_strat_with_taxa.tsv")
+    output_file <- paste0(community, "_output/", community, "_pathway_inference/path_abun_strat_with_taxa_aggregated.tsv")
 
-    df = as.data.frame(in_file)
+    in_file <- read.delim(input_file, check.names = FALSE)
 
-    #print(colnames(df))
-    df_aggregated = df %>%
-        #group_by(pathway, Taxa) %>%
-        group_by(pathway) %>%
+    required_columns <- c("pathway", "sequence", "Taxa")
+    missing_columns <- setdiff(required_columns, colnames(in_file))
+    if (length(missing_columns) > 0) {
+        stop(paste0(
+            "Missing required column(s) in ", input_file, ": ",
+            paste(missing_columns, collapse = ", ")
+        ))
+    }
+
+    df_aggregated <- in_file %>%
+        select(-sequence) %>%
+        group_by(pathway, Taxa) %>%
         summarize(
-            across(where(is.numeric), \(x) sum(x, na.rm = TRUE))
+            across(where(is.numeric), \(x) sum(x, na.rm = TRUE)),
+            .groups = "drop"
         )
 
-    # Sanity check, the sum of the original df should match the sum of the aggregated df
-    #col_sums = colSums(df[,5:ncol(df)-1])
-    colnames(df[,2:ncol(df)])
-    col_sums = colSums(df[,2:ncol(df)])
-    sum = sum(col_sums)
+    sample_columns <- setdiff(colnames(in_file), required_columns)
+    input_sum <- sum(colSums(in_file[, sample_columns, drop = FALSE]))
+    aggregated_sum <- sum(colSums(df_aggregated[, sample_columns, drop = FALSE]))
 
-
-    #col_sums2 = colSums(df_aggregated[,3:ncol(df_aggregated)])
-    #colnames(df_aggregated[,3:ncol(df_aggregated)])
-    col_sums2 = colSums(df_aggregated[,2:ncol(df_aggregated)])
-    colnames(df_aggregated[,2:ncol(df_aggregated)])
-
-    sum2 = sum(col_sums2)
-    sum2
-
-    if(sum != sum2){
-        print(paste0("The sums do not match, ",sum," vs ",sum2," there might be an error in the aggregation process."))
-        print(sum2-sum)
-    } else {
-        print(paste0("The sums match, ",sum," vs ",sum2," the aggregation process is likely correct."))
-        print(sum2-sum)
+    if (!isTRUE(all.equal(input_sum, aggregated_sum, tolerance = 1e-8))) {
+        stop(paste0(
+            "The sums do not match for ", community, ": ",
+            input_sum, " vs ", aggregated_sum,
+            ". There might be an error in the aggregation process."
+        ))
     }
-    # Sanity check passed
 
-    write.table(df_aggregated, paste0(community, "_output/", community, "_pathway_inference/path_only_abun_strat_no_taxa_aggregated.tsv"), sep = "\t", row.names = FALSE)
+    print(paste0(
+        community, ": aggregated ", nrow(in_file),
+        " ASV-level rows into ", nrow(df_aggregated),
+        " pathway-taxon rows; total abundance preserved."
+    ))
+
+    write.table(
+        df_aggregated,
+        output_file,
+        sep = "	",
+        row.names = FALSE,
+        quote = FALSE
+    )
 }

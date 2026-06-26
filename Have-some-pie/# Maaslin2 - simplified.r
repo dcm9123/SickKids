@@ -1,6 +1,9 @@
 # Maaslin2 - simplified
 # April 2026
 
+install.packages("beepr")
+biocmanager::install("beepr")
+
 library(Maaslin2)
 library(beepr)
 

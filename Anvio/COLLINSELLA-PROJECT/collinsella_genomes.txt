@@ -1,3 +1,0 @@
-name	contigs_db_path
-S_S2_Ca_088_S36	/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/MASTER/Genomes/Anvio/02_CONTIGS/S_S2_Ca_088-contigs.db
-S_NS1_Ca_028	/bulk/sycuro_bulk/daniel/diabetes/UC_UT_collaboration/MASTER/Genomes/Anvio/02_CONTIGS/S_NS1_Ca_028-contigs.db

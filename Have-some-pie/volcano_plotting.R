@@ -8,6 +8,9 @@
 #INPUT TYPES: dataframe from Maaslin2, dataframe with MetaCyc classification info, output path for the plots,
 # category name for the left side, category name for the right side.
 
+BiocManager::install("ggrepel")
+BiocManager::install("ggpubr")
+
 library(ggplot2)
 library(ggrepel)
 library(RColorBrewer)
@@ -42,7 +45,7 @@ enrichment_and_filtering = function(df_name, df_classification_name){
     df = read.table(df_name, header = TRUE, sep = "\t")                       #Reading the file provided by the user
     df_classification = read.csv(df_classification_name, header = FALSE, sep = "\t")          #Reading the classification file provided by the user
 
-    df_classification = df_classification[,c(1,4,5,6)]
+    df_classification = df_classification[,c(2,14,15)] #changed
     colnames(df_classification) = df_classification[1,]
     df_classification = df_classification[-1,] # Removing the first row
     df_classification[df_classification == ""] = NA
@@ -88,8 +91,8 @@ x = ggplot(data = df_volcano, aes(x = coef, y = neg_log10_qval)) +      #Passing
 
     #Adding jittered points to prevent overlapping
     geom_jitter(data = subset(df_volcano, not_significant == "yes"), shape = 21, color = "black", fill = "antiquewhite4", size = 4, width = 0.1, height = 0.05) +
-    geom_jitter(data = subset(df_volcano, significant_right == "yes"), shape = 21, color = "black", fill = "darkorange1", size = 4, width = 0.1, height = 0.05) +
-    geom_jitter(data = subset(df_volcano, significant_left == "yes"), shape = 21, color = "black", fill = "darkturquoise", size = 4, width = 0.1, height = 0.05) +
+    geom_jitter(data = subset(df_volcano, significant_right == "yes"), shape = 21, color = "black", fill = "#36753B", size = 4, width = 0.1, height = 0.05) +
+    geom_jitter(data = subset(df_volcano, significant_left == "yes"), shape = 21, color = "black", fill = "#F4B9C1", size = 4, width = 0.1, height = 0.05) +
     geom_jitter(data = subset(df_volcano, middle == "yes"), shape = 21, color = "black", fill = "antiquewhite4", size = 4, width = 0.1, height = 0.05) +
     labs(
          x = paste0("← ", category_left, "      Log2(FC)        ", category_right, " →"), #Customizing x-axis label with categories
@@ -168,7 +171,7 @@ vertical_barplot = function(df_volcano, output_path, category_left, category_rig
                             breaks = seq(scale_left_side, scale_right_side, by = 2)) +
             labs(y = paste0("← ", category_left, "  Log2(FC)   ", category_right, " →")) +
             geom_col(aes(fill = category), color = "black", width = 0.8) +
-            scale_fill_manual(values = c("left" = "darkturquoise", "right" = "darkorange1")) +
+            scale_fill_manual(values = c("left" = "#F4B9C1", "right" = "#36753B")) +
             theme(axis.text.x = element_text(size = 28, face = "bold"),
                 axis.text.y = element_text(size = 28, face = "bold"), 
                 axis.title.x = element_text(size = 30, face = "bold"),
@@ -205,8 +208,8 @@ donut_chart = function(df_volcano, output_path, category_left, category_right){
 
     donut_data = data.frame(category = paste(values_percentage,"% ",group), values = values, percentages = values_percentage, labels = values_percentage)
 
-    colors2 = setNames(c("darkturquoise",
-                        "darkorange1",
+    colors2 = setNames(c("#F4B9C1",
+                        "#36753B",
                         "white",
                         "antiquewhite4"), donut_data$category)
 
@@ -229,19 +232,22 @@ donut_chart = function(df_volcano, output_path, category_left, category_right){
 global = function(){
     path = "/Users/danielcm/Desktop/SickKids/Maaslin2.6/"
     group = c("communities","w5","w9w10","sex")
-    #group = c("w9w10")
     for(g in group){
     files_to_process = list.files(path = paste0(path,g), pattern = "all_results.tsv", full.names = TRUE, recursive = TRUE)
         for(f in files_to_process){
             print(paste0("Processing file ",f))
-            cat1 = strsplit(f,"/", fixed = TRUE)[[1]][8]
+            #"/Users/danielcm/Desktop/SickKids/Maaslin2.6/w9w10/PWY/microbe/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_NS6_w9w10_ref_Week_and_Consortium,NS6_w9w10/all_results.tsv"
+            cat1 = strsplit(f,"/", fixed = TRUE)[[1]][10]
+            print(cat1)
             cat1 = strsplit(cat1,"_",fixed = TRUE)[[1]][6:7]
+            print(cat1)
             cat1 = paste(cat1[1],cat1[2],sep=' ')
-            cat2 = strsplit(f,"/", fixed = TRUE)[[1]][8]
+            print(cat1)
+            cat2 = strsplit(f,"/", fixed = TRUE)[[1]][10]
             cat2 = strsplit(cat2,"_",fixed = TRUE)[[1]][9:10]
             cat2 = paste(cat2[1],cat2[2],sep=" ")
             output_path = dirname(f)
-            set_of_data = list(f,"/Users/danielcm/Desktop/diammatics/T1D/metacyc_pathway_details2.tsv",output_path,cat2,cat1)
+            set_of_data = list(f,"/Users/danielcm/Desktop/SickKids/MetaCyc/Master_Files/Master_Metacyc_pathway_file_with_categories.tsv",output_path,cat2,cat1)
             result = enrichment_and_filtering(df_name = set_of_data[[1]],
                                         df_classification = set_of_data[[2]])
             df_volcano_to_use = result[[1]]
@@ -257,12 +263,12 @@ global = function(){
             #                category_left = set_of_data[[4]],
             #                category_right = set_of_data[[5]])
 
-            #donut_chart(df_volcano = df_volcano_to_use,
-            #            output_path = set_of_data[[3]],
-            #            category_left = set_of_data[[4]],
-            #            category_right = set_of_data[[5]])
-            #
-            beep(sound = 3)
+            donut_chart(df_volcano = df_volcano_to_use,
+                        output_path = set_of_data[[3]],
+                        category_left = set_of_data[[4]],
+                        category_right = set_of_data[[5]])
+            
+            #beep(sound = 3)
         }
     }
 }

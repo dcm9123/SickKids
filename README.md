@@ -717,3 +717,72 @@ I then ran `enriched_maaslin2_category_average.R` to generate the category-level
 An important distinction between the two approaches is that the enriched pathway lists are not expected to match exactly. In one NS1-versus-S2 comparison, the community-based MaAsLin2 analysis identified 51 enriched pathways, but only 30 could be represented in the microbial-contribution bubble plots. This is because PICRUSt2 pathway reconstruction, including MinPath, is not additive: inferring pathways after combining the predicted genes from the entire community is not equivalent to inferring pathways separately for each ASV and then combining the results. A pathway can therefore be reconstructed from genes contributed collectively by multiple organisms even when no individual ASV has enough predicted reactions for that pathway to be reconstructed independently.
 
 Consequently, community-based MaAsLin2 results should be interpreted as differences in the total predicted functional capacity of the community and visualized with pathway-level figures. Bubble plots of the contributing species should use enriched pathways from the microbial-contribution MaAsLin2 analysis, because those results and the species contributions originate from the same stratified PICRUSt2 workflow. A community-level pathway that is absent from the stratified output cannot be assigned to a microbial contributor; this does not indicate failed species classification or an additional plotting filter.
+
+### June 25th, 2026
+
+Pangenomics analysis:
+PWYS enriched in NS1 vs S2 at w9w10:
+S04ASSIM-PWY, predicted by A. muciniphila and  E. coli. Machinery needed:
+EC:2.7.7.4 -> Present in 5 strains of E. coli
+EC:2.7.1.25 -> Present in 5 strains of E. coli
+EC:1.8.4.8 -> Not present in any of E. coli genomes
+EC:1.8.1.2 -> Present in 5 strains of E. coli
+
+PWY0-41, predicted by E. bolteae/clostridioformis and E. coli. Machinery needed:
+EC:3.5.2.5 -> Present in 5 strains of E. coli, absent in E. bolteae
+EC:3.5.3.9 -> Present in 5 strains of E. coli, absent in E. bolteae 
+EC:3.5.3.26 -> Present in 5 strains of E. coli, absent in E. bolteae
+EC:1.1.1.350 -> Not present in any of E. coli and E. bolteae
+EC:2.1.3.5 -> Not present in any of E. coli (this may suggest that osamate is not produced in this pathway), or present in E. bolteae
+EC:2.7.2.2 -> Present in 5 strains of E. coli, not present in E. bolteae
+EC:1.1.1.154 -> Not present in any of E. coli, not prsent in E. bolteae
+
+The absence of the ECs 1.1.1.350 and 1.1.1.154 suggests that the pathway is interrupted  in the middle for E. coli
+
+PWY0-321, predictd solely by E. coli. Machinery needed:
+EC:6.2.1.30 -> Present only in 017, 018
+EC:1.14.13.149 -> Present only in 017, 018
+EC:5.3.3.18 -> Present only in 017, 018
+EC:3.3.2.12 -> Present only in 017, 018
+EC:1.2.1.91 -> Present only in 017, 018
+EC:2.3.1.223 -> Present only in 017, 018
+EC:4.2.1.17 -> Present in all 5 strains of E. coli
+EC:1.1.1.35 -> Present in all 5 strains of E. coli
+EC:2.3.1.174 -> Present only in 017, 018
+
+PWY0-1277, predicted solely by E. coli. Machinery needed:
+EC:1.14.12.19 -> Present in 051, 017, and 018.
+EC:1.3.1.87 -> Present in 051, 017, and 018.
+EC:1.13.11.16 -> Present in 051, 104, 017, and 018
+EC:3.7.1.14 -> Present in 051, 104, 017, and 018
+EC:4.2.1.80 -> Present in 051, 104, 017, and 018
+EC:4.1.3.39 -> Present in 051, 104, 017, and 018
+EC:1.2.1.10 -> Present in 051, 104, 017, and 018
+EC:1.14.13.127 -> Present in 051, 104, 017, and 018
+
+The abscent ECs in the 104 E. coli could be compensated by an alternative route in the pathway itself.
+
+PWY-6690, predicted solely by E. coli. Machinery needed:
+EC:1.14.12.19 ->Present in 051, 017, and 018.
+EC:1.3.1.87 -> Present in 051, 017, and 018.
+EC:1.13.11.16 -> Present in 051, 104, 017, and 018
+EC:3.7.1.14 -> Present in 051, 104, 017, and 018
+
+EC:1.14.13.127 -> Present in 051, 104, 017, and 018
+
+Similar to the previous PWY, the abscent ECs in the 104 E. coli could be compensated by an alternative route in the pathway itself.
+
+PWY-6071, predicted solely by E. coli. Machinery needed:
+EC:1.4.3.4 or 1.4.3.21 -> First enzyme abscent in all 5, second enzyme present in 017, and 018.
+EC:1.2.1.39 -> Present in 017 and 018.
+EC:6.2.1.30 -> Present in 017 and 018.
+EC:1.14.13.149 -> Present in 017 and 018.
+EC:5.3.3.18 -> Present in 017 and 018.
+EC:3.3.2.12 -> Present in 017 and 018.
+EC:1.2.1.81 -> Present in 017 and 018.
+EC:2.3.1.223 -> Present in 017 and 018.
+EC:4.2.1.17 -> Present in all 5 strains of E. coli.
+EC:1.1.1.35 -> Present in all 5 strains of E. coli.
+EC:2.3.1.174 -> Present in 017 and 018.
+
+All the machinery is needed for this superpathway. It seems to be only present in NS1 strains only.

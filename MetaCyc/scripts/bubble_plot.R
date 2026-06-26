@@ -35,7 +35,7 @@ bubble = function(maaslin_f,df_contr,saving_file,direction){
             df_bacteria = df_contribution_enriched[df_contribution_enriched$Taxa == bacteria, ]
             df_bacteria = df_bacteria[df_bacteria$pathway == pathway, ]
             if (nrow(df_bacteria) == 0){
-                #print(paste0("No enriched pathways for ", bacteria))
+                print(paste0("No enriched pathways for ", bacteria))
                 next
             } # bacteria has none of the enriched pathways
             abundance_matrix = as.matrix(df_bacteria[ , 4:(ncol(df_bacteria))])
@@ -87,8 +87,8 @@ bubble = function(maaslin_f,df_contr,saving_file,direction){
     })
 
     contribution_df$Taxa_abbrev <- genus_and_species_name
-    contribution_df <- contribution_df[
-    !grepl("_nan$", contribution_df$Taxa),]
+    #contribution_df <- contribution_df[
+    #!grepl("_nan$", contribution_df$Taxa),]
 
 
     bubble_plot = ggplot(contribution_df, aes(x = Taxa_abbrev, y = Pathway, size = Prop_mice, fill = Rel_Contribution)) +
@@ -115,37 +115,38 @@ bubble = function(maaslin_f,df_contr,saving_file,direction){
         width = 18, height = 14, dpi = 600)
 
 }
+path = "/Users/danielcm/Desktop/SickKids/Maaslin2.6/"
+path_pie = "/Users/danielcm/Desktop/SickKids/PICRUSt2.6/"
 
-
-bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"),
+bubble(maaslin_f = paste0(path,"w9w10/PWY/community_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"),
                             df_contr = paste0(path_pie,"ns1_output/ns1_pathway_inference/path_abun_strat_with_taxa.tsv"),
-                            saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/ns1_w9w10_when_compared_s2_w9w10_bubble_plot.png"),
+                            saving_file = paste0(path,"w9w10/PWY/microbe_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_bubble_plot.png"),
                             direction = "right") #NS1 enriched pathways and its contributing taxa in w9w10 comparison
 
-bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"),
+bubble(maaslin_f = paste0(path,"w9w10/PWY/community_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/NS1_w9w10_vs_S2_w9w10_enriched_pathways_with_categories.csv"),
                             df_contr = paste0(path_pie,"s2_output/s2_pathway_inference/path_abun_strat_with_taxa.tsv"),
-                            saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/s2_w9w10_when_compared_ns1_w9w10_bubble_plot.png"),
+                            saving_file = paste0(path,"w9w10/PWY/microbe_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w9w10_vs_S2_w9w10_ref_Week_and_Consortium,S2_w9w10/S2_w9w10_vs_NS1_w9w10_bubble_plot.png"),
                             direction = "left") #S2 enriched pathways and its contributing taxa in w9w10 comparison
 
-bubble(maaslin_f = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"),
+bubble(maaslin_f = paste0(path,"w5/PWY/community_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"),
                             df_contr = paste0(path_pie,"ns1_output/ns1_pathway_inference/path_abun_strat_with_taxa.tsv"),
-                            saving_file = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/ns1_w5w6_when_compared_s2_w5w6_bubble_plot.png"),
+                            saving_file = paste0(path,"w5/PWY/microbe_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/NS1_w5w6_vs_S2_w5w6_bubble_plot.png"),
                             direction = "right")
 
-bubble(maaslin_f = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"),
+bubble(maaslin_f = paste0(path,"w5/PWY/community_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/all_resultswith_categories.tsv"),
                             df_contr = paste0(path_pie,"s2_output/s2_pathway_inference/path_abun_strat_with_taxa.tsv"),
-                            saving_file = paste0(path,"w5/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/s2_w5w6_when_compared_ns1_w5w6_bubble_plot.png"),
+                            saving_file = paste0(path,"w5/PWY/microbe_contribution/maaslin2_Week_and_Consortium_pathway_NS1_w5w6_vs_S2_w5w6_ref_Week_and_Consortium,S2_w5w6/S2_w5w6_vs_NS1_w5w6_bubble_plot.png"),
                             direction = "left")
 
-bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/NS6_w9w10_vs_S5_w9w10_enriched_pathways_with_categories.csv"),
+bubble(maaslin_f = paste0(path,"w9w10/PWY/community_contribution/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/NS6_w9w10_vs_S5_w9w10_enriched_pathways_with_categories.csv"),
                             df_contr = paste0(path_pie,"ns6_output/ns6_pathway_inference/path_abun_strat_with_taxa.tsv"),
-                            saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/ns6_w9w10_when_compared_s5_w9w10_bubble_plot.png"),
+                            saving_file = paste0(path,"w9w10/PWY/microbe_contribution/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/NS6_w9w10_vs_S5_w9w10_bubble_plot.png"),
                             direction = "right") #S5 enriched pathways and its contributing taxa in w9w10 comparison
 
 
-bubble(maaslin_f = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/NS6_w9w10_vs_S5_w9w10_enriched_pathways_with_categories.csv"),
+bubble(maaslin_f = paste0(path,"w9w10/PWY/community_contribution/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/NS6_w9w10_vs_S5_w9w10_enriched_pathways_with_categories.csv"),
                             df_contr = paste0(path_pie,"s5_output/s5_pathway_inference/path_abun_strat_with_taxa.tsv"),
-                            saving_file = paste0(path,"w9w10/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/s5_w9w10_when_compared_ns6_w9w10_bubble_plot.png"),
+                            saving_file = paste0(path,"w9w10/PWY/microbe_contribution/maaslin2_Week_and_Consortium_pathway_NS6_w9w10_vs_S5_w9w10_ref_Week_and_Consortium,S5_w9w10/S5_w9w10_vs_NS6_w9w10_bubble_plot.png"),
                             direction = "left") #S5 enriched pathways and its contributing taxa in w9w10 comparison
 
 
