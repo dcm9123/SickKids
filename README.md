@@ -804,3 +804,12 @@ From the 8 of solely E. coli:
 - PWY0-1277: This pathway shows that the NS isolates have the machinery to start and complete it, whereas the S isolates do not have any. This could suggest that pangenome differences could be driving the enrichment.
 - PWY-6690: This pathway is complete in NS isolates. The S5 isolates have partial machinery to complete it as well, but S2 does not. Pangenome differences could be driving the enrichment.
 - PWY-6071: This pathway is complete in NS1 isolates, but NS6, S2, and S5 do not. Pangenome differences could be driving the enrichment.
+
+E. coli & others:
+
+Am001, NS1
+Am_061, S2, missing 2.7.7.4,2.7.1.25,1.8.4.8 according to eggnog
+Am089, S5
+
+SO4ASSIM-PWY E. coli & A. muciniphila: E. coli strains all have the machinery and the same pangenome to complete it, but the three isolates from A. muciniphila (001,061,089; NS1,S2,S5) have different pangenomes. S2 only has the last enzyme to complete the pathway, whereas NS1 and S5 have all. Differences in A. muciniphila pangenomes could be driving the enrichment, but not in E. coli
+
