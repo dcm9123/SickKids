@@ -786,3 +786,21 @@ EC:1.1.1.35 -> Present in all 5 strains of E. coli.
 EC:2.3.1.174 -> Present in 017 and 018.
 
 All the machinery is needed for this superpathway. It seems to be only present in NS1 strains only.
+
+### June 29th, 2026
+
+I kept working using the same approach as above, but for every pathway that is significantly enriched in NS1 w9w10 vs S2 w9w10. Of the 25 present, 11 were shown to be present by a single contributor organism, of which E. coli was the most common with 8, follwed by 1 of A. muciniphila, 1 of S. perfringens, and 1 from B. thetaiotaomicron. E. coli and A. muciniphila are present in both communities, while S. perfringens and B. thetaiotaomicron are only present in NS1.
+
+From these 25, I decided to investigate those that are comprised by only by species present in both communities, which are:
+
+11 from the previously mentioned pathways + 1 (SO4ASSIM-PWY E. coli, A. muciniphila) + 1 (PWY0-41 E. bolteae/clostridioformis, E. coli), totalling 13.
+
+From the 8 of solely E. coli:
+- ORNDEG-PWY shows pangenome differences between the S isolates and the NS isolates. However, both communities are lacking the first enzyme to start (4.1.1.17). If this enzyme were present in the community, then NS can get to the final product via two routes, whereas S only has one route. Interestingly, Eggnog doesn't agree with Anvi'o regarding the absence of 4.1.1.17, suggesting differences in pangenome could be driving the enrichment.
+- ORNARDEG-PWY: This superpathway is similar to the previous one, except that it allows the degradation of arginine and ornithine. Anvi'o says the enzyme from L-ornithine initiation is missing, but eggnog disagrees. If eggnog were right, then this pathway is possible by two routes from the NS isolates, but only one for the S isolates (via arginine, and L-glutamate only).
+- HCAMHPDEG-PWY: This pathway has two routes of entry to start with. The NS isolates have one route, and the S isolates do not have any. This could suggest that enrichment differences could come from pangenome differences.
+- ARGED-PWY: This pathway has a similar structure of ORNARDEG-PWY (I suspect it is part of that superpathway), where the NS isolates have the enzymes to start in two routes, whereas the S isolates only have one route. This suggests that pangenome differences could be driving the enrichment.
+- PWY0-321: This pathway shows that the NS1 has the enzymes to complete the pathway, whereas the rest (NS6, S2, S5) do not. Eggnog does not agree with anvio regarding the presence of 5.3.3.18, regardless, the rest are needed for pathway completion. This could suggest that pangenome differences could be driving the enrichment.
+- PWY0-1277: This pathway shows that the NS isolates have the machinery to start and complete it, whereas the S isolates do not have any. This could suggest that pangenome differences could be driving the enrichment.
+- PWY-6690: This pathway is complete in NS isolates. The S5 isolates have partial machinery to complete it as well, but S2 does not. Pangenome differences could be driving the enrichment.
+- PWY-6071: This pathway is complete in NS1 isolates, but NS6, S2, and S5 do not. Pangenome differences could be driving the enrichment.
