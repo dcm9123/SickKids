@@ -805,11 +805,28 @@ From the 8 of solely E. coli:
 - PWY-6690: This pathway is complete in NS isolates. The S5 isolates have partial machinery to complete it as well, but S2 does not. Pangenome differences could be driving the enrichment.
 - PWY-6071: This pathway is complete in NS1 isolates, but NS6, S2, and S5 do not. Pangenome differences could be driving the enrichment.
 
+
+From A. muciniphila only:
+001 - NS1, 061 - S2, 089 - S5
+- PWY-5345: This pathway is complete in NS1 and S5. S2 lacks an enzyme from a route of entry but still completes the pathway, suggesting an imbalance. Pangenome differences could be driving the enrichment.
+
+
 E. coli & others:
 
-Am001, NS1
-Am_061, S2, missing 2.7.7.4,2.7.1.25,1.8.4.8 according to eggnog
-Am089, S5
+Ebolteae - 011 NS1, 041 NS6, 068 S2, 096 S5 
+Eclostridioformis - 070 S2,098 S5
 
 SO4ASSIM-PWY E. coli & A. muciniphila: E. coli strains all have the machinery and the same pangenome to complete it, but the three isolates from A. muciniphila (001,061,089; NS1,S2,S5) have different pangenomes. S2 only has the last enzyme to complete the pathway, whereas NS1 and S5 have all. Differences in A. muciniphila pangenomes could be driving the enrichment, but not in E. coli
+
+PWY0-41 E. bolteae/clostridioformis & E. coli: The E. coli pangenome is identical for all enzymes in this pathway, and missing 1.1.1.154. However the latter is not needed for completion. In the case of both E. bolteae and E. clostridioformis, the pangenome is also identical where they are missing 1.1.1.154 (like E. coli) and 2.1.3.5. The absence of the latter suggests this pathway cannot be completed. Differences in pangenomes are not driving the enrichment.
+
+### June 30th, 2026
+
+Others shared:
+
+E. citroniae - 097 - S5, 012 - S2
+
+P164-PWY E. bolteae and E. citroniae: Across the six samples (4 for bolteae, 2 for citroniae), the pangenome is identical, and they are missing 3.5.4.8, 2.1.2.4, 4.3.1.4, 3.5.1.10, 2.7.2.15, 1.17.1.M5. The pathway cannot be completed. Enrichment differences are not driven by pangenome differences.
+
+PWY-7209 E. bolteae and E. citroniae: Identical pangenomes once more. Missing enzyme 1.3.1.2 which is needed to complete the pathway. Enrichment differences are not driven by pangenome differences.
 
