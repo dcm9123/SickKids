@@ -830,3 +830,8 @@ P164-PWY E. bolteae and E. citroniae: Across the six samples (4 for bolteae, 2 f
 
 PWY-7209 E. bolteae and E. citroniae: Identical pangenomes once more. Missing enzyme 1.3.1.2 which is needed to complete the pathway. Enrichment differences are not driven by pangenome differences.
 
+### July 2nd, 2026
+
+The manual pangenome-enrichment tracking workbook was updated at `Anvio/07_PANGENOMICS/pathway_enrichment_pangenome.xlsx`. This file now serves as the current working summary for pathway-level pangenome checks, with separate sheets for `NS1 w9w10 enrichment` and `S2 w9w10 enrichment`.
+
+The workbook links enriched pathways to their contributing organisms and records the strain-level EC presence/absence checks used to decide whether enrichment differences are likely explained by pangenome differences, incomplete pathway machinery, or shared machinery across compared isolates.
