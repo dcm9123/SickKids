@@ -721,7 +721,7 @@ Consequently, community-based MaAsLin2 results should be interpreted as differen
 ### June 25th, 2026
 
 Pangenomics analysis:
-PWYS enriched in NS1 vs S2 at w9w10:
+### PWYS enriched in NS1 vs S2 at w9w10:
 S04ASSIM-PWY, predicted by A. muciniphila and  E. coli. Machinery needed:
 EC:2.7.7.4 -> Present in 5 strains of E. coli
 EC:2.7.1.25 -> Present in 5 strains of E. coli
@@ -830,8 +830,29 @@ P164-PWY E. bolteae and E. citroniae: Across the six samples (4 for bolteae, 2 f
 
 PWY-7209 E. bolteae and E. citroniae: Identical pangenomes once more. Missing enzyme 1.3.1.2 which is needed to complete the pathway. Enrichment differences are not driven by pangenome differences.
 
-### July 2nd, 2026
 
-The manual pangenome-enrichment tracking workbook was updated at `Anvio/07_PANGENOMICS/pathway_enrichment_pangenome.xlsx`. This file now serves as the current working summary for pathway-level pangenome checks, with separate sheets for `NS1 w9w10 enrichment` and `S2 w9w10 enrichment`.
+Now that I've finished the pangenome analysis for the enriched pathways in NS1 vs S2, I will be moving on to the next comparison, which is S2 vs NS1 (enriched in S2). I will be using the same approach as before, and I will be looking at the pangenomes of the species that are present in both communities. The enriched pathways in S2 vs NS1 from sole contributors are 2 in E. coli, and 2. in A. finegoldii , 2 in E. lenta, one from O. symbiosa (not shared) and 2 from an unknown organism (not shared).
 
-The workbook links enriched pathways to their contributing organisms and records the strain-level EC presence/absence checks used to decide whether enrichment differences are likely explained by pangenome differences, incomplete pathway machinery, or shared machinery across compared isolates.
+From the 2 solely by E. coli:
+
+
+A. finegoldii: 003-NS1, 030-NS6, 119 - S2, 090 and 091 S5
+
+
+E. lenta: 014-NS1, 044 045 - NS6, 072 073 - S2, 100 - S5
+
+
+### July 7th, 2026
+I have finished the pangenome analysis for the enriched pathways in S2 vs NS1. Now I have a table we could use for the manuscript (it is attached in the ppt for July 9th). Now we want to visualize the pangenome by core, accessory and strain-specific gene clusters. This was more challenging that I expected (Anvi'o is not very friendly when it comes to adding or modifying existing functions). So, I decided to do this in the pangenome directory `/Users/danielcm/Desktop/SickKids/Anvio/07_PANGENOMICS`
+
+Get the core pangenome for each species by doing:
+`for dir in *-PROJECT; do cd ${dir}; genome_count=$(($(wc -l < *genomes.txt) -1)); anvi-get-sequences-for-gene-clusters -g *-GENOMES.db -p *-PAN.db --min-num-genomes-gene-cluster-occurs ${genome_count} -o core_genes.fa --force-overwrite; cd ..; done`
+
+Get the accessory pangenome for each species by doing:
+`for dir in *-PROJECT; do cd ${dir}; genome_count=$(($(wc -l < *genomes.txt) -2)); anvi-get-sequences-for-gene-clusters -g *-GENOMES.db -p *-PAN.db --max-num-genomes-gene-cluster-occurs ${genome_count} --min-num-genomes-gene-cluster-occurs 2 -o accessory_genes.fa --force-overwrite; cd ..; done;`
+
+Naturally, if there are only 2 genomes, then the accessory pangenome will not be computed. In that case, we can skip that component.
+
+Get the strain-specific pangenome for each species by doing:
+`for dir in *-PROJECT; do cd ${dir}; anvi-get-sequences-for-gene-clusters -g *-GENOMES.db -p *-PAN.db --max-num-genomes-gene-cluster-occurs 1 --min-num-genomes-gene-cluster-occurs 1 -o strain_specific_genes.fa --force-overwrite; cd ..; done;`
+
