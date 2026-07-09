@@ -856,3 +856,6 @@ Naturally, if there are only 2 genomes, then the accessory pangenome will not be
 Get the strain-specific pangenome for each species by doing:
 `for dir in *-PROJECT; do cd ${dir}; anvi-get-sequences-for-gene-clusters -g *-GENOMES.db -p *-PAN.db --max-num-genomes-gene-cluster-occurs 1 --min-num-genomes-gene-cluster-occurs 1 -o strain_specific_genes.fa --force-overwrite; cd ..; done;`
 
+### July 8th, 2026
+I had to modify the `pangenome_sorting_genomes.py` script so that it can sort the genome functions according to the pangenome component (core, accessory, and strain-specific). The goal is to use this sorting to eventually translate the functional organization into the pangenome diagrams, where gene clusters can be visually grouped by their pangenome category.
+
